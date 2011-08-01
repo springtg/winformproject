@@ -1,0 +1,716 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E7600231-86F6-4591-8C10-6DD20A915E3E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FlexAPS</RootNamespace>
+    <AssemblyName>FlexAPS</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.RDVIEWER40Lib, Version=4.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\AxInterop.RDVIEWER40Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Command.2, Version=2.0.20071.19104, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Command.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid.2, Version=2.6.20071.324, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1FlexGrid.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Input.2, Version=2.0.20071.32002, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Input.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1List.2, Version=2.1.20071.117, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1List.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Sizer.2, Version=2.1.20071.17, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Sizer.2.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win, Version=1.0.2.2, Culture=neutral, PublicKeyToken=327c3516b1b18457">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\FarPoint.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Spread, Version=1.0.2.0, Culture=neutral, PublicKeyToken=327c3516b1b18457">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\FarPoint.Win.Spread.dll</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.DlgFlow, Version=1.5.0.0, Culture=neutral, PublicKeyToken=16e1f8979c0e1bdb">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Lassalle.DlgFlow.DLL</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.Flow, Version=1.5.1.0, Culture=neutral, PublicKeyToken=bfc5c756e54a9d2a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Lassalle.Flow.DLL</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.Flow.Layout.Tree, Version=2.1.0.0, Culture=neutral, PublicKeyToken=577d6084e440e212">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Lassalle.Flow.Layout.Tree.DLL</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.PrnFlow, Version=1.0.0.2, Culture=neutral, PublicKeyToken=2e7b12f33f0a77f8">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Lassalle.PrnFlow.DLL</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.XMLFlow, Version=1.5.0.0, Culture=neutral, PublicKeyToken=3f172701c0e98f8a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Lassalle.XMLFlow.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualC, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Microsoft.VisualC.Dll</HintPath>
+    </Reference>
+    <Reference Include="NETRONIC.XGantt, Version=3.1.3311.229, Culture=neutral, PublicKeyToken=3658bc8cab00a1a5">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\NETRONIC.XGantt.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassLib\ClassForm.cs" />
+    <Compile Include="ClassLib\Class_PERT.cs" />
+    <Compile Include="ClassLib\Class_PERT_Detail.cs" />
+    <Compile Include="ClassLib\ComCtl.cs" />
+    <Compile Include="ClassLib\ComFunction.cs" />
+    <Compile Include="ClassLib\ComVar.cs" />
+    <Compile Include="ClassLib\IXTable.cs" />
+    <Compile Include="ProdBase\Form_PB_BOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Form_PB_BOMRout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Form_PB_Line.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Form_PB_Model.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Form_PB_Mold_Last.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Form_PB_OpCd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Form_PB_WorkCal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Pop_CreateCmpCd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Pop_CreateCopyBom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Pop_CreateDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Pop_CreateLeadTimeCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Pop_CreateMiniLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Pop_CreateMiniLineGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Pop_CreateOPMoldTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Pop_DisplayOpLeadTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Pop_GetBomCdInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Pop_MoldLast_Inventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Pop_PB_Rout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Pop_ProcessWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Pop_SelectionChange_FSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Pop_SetBomRoutInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Pop_SetCmpInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Pop_SetCostCenterDiv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Pop_SetRoutInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Pop_SetType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdBase\Pop_StyleUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdOrder\Form_PO_Lot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdOrder\Form_PO_Lot_Display.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdOrder\Form_PO_Lot_OA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdOrder\Form_PO_Lot_Req.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdOrder\Form_PO_Lot_Size.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdOrder\Form_PO_MoldCapa_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdOrder\Form_PO_OrderRecv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdOrder\Form_PO_OrderRecv_Loss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdOrder\Pop_ChangeVtoRLot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdOrder\Pop_SetDirectLotDayily.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Form_PB_Model_Bom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Form_PB_Model_Mold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Form_PB_Mold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Form_PB_Mold_Using.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Form_PB_StyleMold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Form_PO_LOTAddLoss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Form_PO_LOTDaily.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Form_PO_LOTDailyMini.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Form_PO_LOTDailySize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Form_PO_LOTDaily_History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Form_PO_LOT_and_REQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Form_PO_LOT_MoldCapa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Form_PO_ShortageMold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Pop_AdaptLeadTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Pop_LOTDaily_DelayProduction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Pop_LOTDaily_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Pop_LOTDivide_Merge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Pop_LOTMold_Inv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Pop_MPSDeploySize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Pop_Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Pop_SelMLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Pop_SetLOTInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Pop_SetReqPriority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlan\Pop_ShowDailyQuantity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdSchedule\Form_CFM_Schedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdSchedule\Pop_CFM_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdSchedule\Pop_CFM_History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdSchedule\Pop_CFM_Select_Style.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdSheet\FormPD_JIT_REQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdSheet\Form_PD_JIT_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdSheet\Form_PD_LOTDaily_MiniSize_TS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdSheet\Form_PD_LOTDaily_Out.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdSheet\Form_PD_MiniSize_TS_Check.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdSheet\Form_PD_MiniSize_TS_Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdSheet\Form_PD_MPSByOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdSheet\Form_PD_WorkSheetByOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdSheet\Form_PD_WorkSheetBySeq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdSheet\Form_PD_WorkSheetBySeq_Sum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdSheet\Form_PD_WorkSheetByStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdSheet\Form_PD_WorkSheet_Release.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdSheet\Pop_ReleaseCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdSheet\Pop_ReleaseNoFinish.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdSheet\Pop_ReleasePCard_Error.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdSheet\Pop_ReleaseSize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ProdBase\Form_PB_BOM.resx">
+      <DependentUpon>Form_PB_BOM.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Form_PB_BOMRout.resx">
+      <DependentUpon>Form_PB_BOMRout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Form_PB_Line.resx">
+      <DependentUpon>Form_PB_Line.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Form_PB_Model.resx">
+      <DependentUpon>Form_PB_Model.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Form_PB_Mold_Last.resx">
+      <DependentUpon>Form_PB_Mold_Last.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Form_PB_OpCd.resx">
+      <DependentUpon>Form_PB_OpCd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Form_PB_WorkCal.resx">
+      <DependentUpon>Form_PB_WorkCal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Pop_CreateCmpCd.resx">
+      <DependentUpon>Pop_CreateCmpCd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Pop_CreateCopyBom.resx">
+      <DependentUpon>Pop_CreateCopyBom.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Pop_CreateDate.resx">
+      <DependentUpon>Pop_CreateDate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Pop_CreateLeadTimeCode.resx">
+      <DependentUpon>Pop_CreateLeadTimeCode.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Pop_CreateMiniLine.resx">
+      <DependentUpon>Pop_CreateMiniLine.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Pop_CreateMiniLineGroup.resx">
+      <DependentUpon>Pop_CreateMiniLineGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Pop_CreateOPMoldTypes.resx">
+      <DependentUpon>Pop_CreateOPMoldTypes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Pop_DisplayOpLeadTime.resx">
+      <DependentUpon>Pop_DisplayOpLeadTime.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Pop_GetBomCdInfo.resx">
+      <DependentUpon>Pop_GetBomCdInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Pop_MoldLast_Inventory.resx">
+      <DependentUpon>Pop_MoldLast_Inventory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Pop_PB_Rout.resx">
+      <DependentUpon>Pop_PB_Rout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Pop_ProcessWait.resx">
+      <DependentUpon>Pop_ProcessWait.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Pop_SelectionChange_FSP.resx">
+      <DependentUpon>Pop_SelectionChange_FSP.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Pop_SetBomRoutInfo.resx">
+      <DependentUpon>Pop_SetBomRoutInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Pop_SetCmpInfo.resx">
+      <DependentUpon>Pop_SetCmpInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Pop_SetCostCenterDiv.resx">
+      <DependentUpon>Pop_SetCostCenterDiv.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Pop_SetRoutInfo.resx">
+      <DependentUpon>Pop_SetRoutInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Pop_SetType.resx">
+      <DependentUpon>Pop_SetType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdBase\Pop_StyleUp.resx">
+      <DependentUpon>Pop_StyleUp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdOrder\Form_PO_Lot.resx">
+      <DependentUpon>Form_PO_Lot.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdOrder\Form_PO_Lot_Display.resx">
+      <DependentUpon>Form_PO_Lot_Display.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdOrder\Form_PO_Lot_OA.resx">
+      <DependentUpon>Form_PO_Lot_OA.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdOrder\Form_PO_Lot_Req.resx">
+      <DependentUpon>Form_PO_Lot_Req.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdOrder\Form_PO_Lot_Size.resx">
+      <DependentUpon>Form_PO_Lot_Size.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdOrder\Form_PO_MoldCapa_1.resx">
+      <DependentUpon>Form_PO_MoldCapa_1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdOrder\Form_PO_OrderRecv.resx">
+      <DependentUpon>Form_PO_OrderRecv.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdOrder\Form_PO_OrderRecv_Loss.resx">
+      <DependentUpon>Form_PO_OrderRecv_Loss.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdOrder\Pop_ChangeVtoRLot.resx">
+      <DependentUpon>Pop_ChangeVtoRLot.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdOrder\Pop_SetDirectLotDayily.resx">
+      <DependentUpon>Pop_SetDirectLotDayily.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Form_PB_Model_Bom.resx">
+      <DependentUpon>Form_PB_Model_Bom.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Form_PB_Model_Mold.resx">
+      <DependentUpon>Form_PB_Model_Mold.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Form_PB_Mold.resx">
+      <DependentUpon>Form_PB_Mold.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Form_PB_Mold_Using.resx">
+      <DependentUpon>Form_PB_Mold_Using.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Form_PB_StyleMold.resx">
+      <DependentUpon>Form_PB_StyleMold.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Form_PO_LOTAddLoss.resx">
+      <DependentUpon>Form_PO_LOTAddLoss.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Form_PO_LOTDaily.resx">
+      <DependentUpon>Form_PO_LOTDaily.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Form_PO_LOTDailyMini.resx">
+      <DependentUpon>Form_PO_LOTDailyMini.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Form_PO_LOTDailySize.resx">
+      <DependentUpon>Form_PO_LOTDailySize.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Form_PO_LOTDaily_History.resx">
+      <DependentUpon>Form_PO_LOTDaily_History.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Form_PO_LOT_and_REQ.resx">
+      <DependentUpon>Form_PO_LOT_and_REQ.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Form_PO_LOT_MoldCapa.resx">
+      <DependentUpon>Form_PO_LOT_MoldCapa.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Form_PO_ShortageMold.resx">
+      <DependentUpon>Form_PO_ShortageMold.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Pop_AdaptLeadTime.resx">
+      <DependentUpon>Pop_AdaptLeadTime.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Pop_LOTDaily_DelayProduction.resx">
+      <DependentUpon>Pop_LOTDaily_DelayProduction.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Pop_LOTDaily_Modify.resx">
+      <DependentUpon>Pop_LOTDaily_Modify.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Pop_LOTDivide_Merge.resx">
+      <DependentUpon>Pop_LOTDivide_Merge.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Pop_LOTMold_Inv.resx">
+      <DependentUpon>Pop_LOTMold_Inv.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Pop_MPSDeploySize.resx">
+      <DependentUpon>Pop_MPSDeploySize.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Pop_Password.resx">
+      <DependentUpon>Pop_Password.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Pop_SelMLine.resx">
+      <DependentUpon>Pop_SelMLine.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Pop_SetLOTInformation.resx">
+      <DependentUpon>Pop_SetLOTInformation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Pop_SetReqPriority.resx">
+      <DependentUpon>Pop_SetReqPriority.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlan\Pop_ShowDailyQuantity.resx">
+      <DependentUpon>Pop_ShowDailyQuantity.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdSchedule\Form_CFM_Schedule.resx">
+      <DependentUpon>Form_CFM_Schedule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdSchedule\Pop_CFM_Add.resx">
+      <DependentUpon>Pop_CFM_Add.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdSchedule\Pop_CFM_History.resx">
+      <DependentUpon>Pop_CFM_History.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdSchedule\Pop_CFM_Select_Style.resx">
+      <DependentUpon>Pop_CFM_Select_Style.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdSheet\FormPD_JIT_REQ.resx">
+      <DependentUpon>FormPD_JIT_REQ.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdSheet\Form_PD_JIT_List.resx">
+      <DependentUpon>Form_PD_JIT_List.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdSheet\Form_PD_LOTDaily_MiniSize_TS.resx">
+      <DependentUpon>Form_PD_LOTDaily_MiniSize_TS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdSheet\Form_PD_LOTDaily_Out.resx">
+      <DependentUpon>Form_PD_LOTDaily_Out.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdSheet\Form_PD_MiniSize_TS_Check.resx">
+      <DependentUpon>Form_PD_MiniSize_TS_Check.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdSheet\Form_PD_MiniSize_TS_Search.resx">
+      <DependentUpon>Form_PD_MiniSize_TS_Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdSheet\Form_PD_MPSByOP.resx">
+      <DependentUpon>Form_PD_MPSByOP.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdSheet\Form_PD_WorkSheetByOP.resx">
+      <DependentUpon>Form_PD_WorkSheetByOP.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdSheet\Form_PD_WorkSheetBySeq.resx">
+      <DependentUpon>Form_PD_WorkSheetBySeq.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdSheet\Form_PD_WorkSheetBySeq_Sum.resx">
+      <DependentUpon>Form_PD_WorkSheetBySeq_Sum.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdSheet\Form_PD_WorkSheetByStyle.resx">
+      <DependentUpon>Form_PD_WorkSheetByStyle.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdSheet\Form_PD_WorkSheet_Release.resx">
+      <DependentUpon>Form_PD_WorkSheet_Release.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdSheet\Pop_ReleaseCancel.resx">
+      <DependentUpon>Pop_ReleaseCancel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdSheet\Pop_ReleaseNoFinish.resx">
+      <DependentUpon>Pop_ReleaseNoFinish.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdSheet\Pop_ReleasePCard_Error.resx">
+      <DependentUpon>Pop_ReleasePCard_Error.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdSheet\Pop_ReleaseSize.resx">
+      <DependentUpon>Pop_ReleaseSize.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Form_RdViewer.resx">
+      <DependentUpon>Form_RdViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\viewer.bak" />
+    <None Include="Report\viewer.rdf" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Report\Form_RdViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\COM\Com.csproj">
+      <Project>{992378C3-66A1-4E98-96F5-CE2B26E0CAB2}</Project>
+      <Name>Com</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
