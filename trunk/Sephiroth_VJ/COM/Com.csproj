@@ -1,0 +1,578 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{992378C3-66A1-4E98-96F5-CE2B26E0CAB2}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>COM</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>COM</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <WebReference_EnableProperties>true</WebReference_EnableProperties>
+    <WebReference_EnableSQLTypes>false</WebReference_EnableSQLTypes>
+    <WebReference_EnableLegacyEventingModel>true</WebReference_EnableLegacyEventingModel>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.RDVIEWER40Lib">
+      <Name>AxInterop.RDVIEWER40Lib</Name>
+      <HintPath>..\DLL\AxInterop.RDVIEWER40Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Command.2, Version=2.0.20071.19104, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Command.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid.2, Version=2.6.20071.324, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1FlexGrid.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1List.2, Version=2.1.20071.117, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1List.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Sizer.2, Version=2.1.20071.17, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Sizer.2.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.CalcEngine, Version=1.0.2.2, Culture=neutral, PublicKeyToken=327c3516b1b18457">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\FarPoint.CalcEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Excel, Version=1.0.2.2, Culture=neutral, PublicKeyToken=327c3516b1b18457">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\FarPoint.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.PluginCalendar.WinForms, Version=1.0.9999.0, Culture=neutral, PublicKeyToken=327c3516b1b18457">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\FarPoint.PluginCalendar.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win, Version=1.0.2.2, Culture=neutral, PublicKeyToken=327c3516b1b18457">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\FarPoint.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Spread, Version=1.0.2.0, Culture=neutral, PublicKeyToken=327c3516b1b18457">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\FarPoint.Win.Spread.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.OracleClient">
+      <Name>System.Data.OracleClient</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APSWinForm\Form_CM_CodeAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APSWinForm\Form_Top.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APSWinForm\Pop_Large.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APSWinForm\Pop_Small.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CDCWinForm\Form_Top.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CDCWinForm\Pop_Large.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CDCWinForm\Pop_Large_B.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CDCWinForm\Pop_Small.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassErp.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ComCtl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ComFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ComVar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Com_Form\Form_Manual_Language.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Com_Form\Form_Proc_Error.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Com_Form\Form_PS_NoticeAuto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Com_Form\Form_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Com_Form\Pop_Proc_Error.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Com_Form\Pop_Proc_StatusView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Com_Form\Pop_PS_NoticeWrite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Com_Form\Pop_Work_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IXTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MoldWinForm\Form_CM_CodeAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoldWinForm\Form_Top.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoldWinForm\Pop_Large.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoldWinForm\Pop_Small.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OraDB.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OrderWinForm\Form_Top.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderWinForm\Pop_Large.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderWinForm\Pop_Small.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCHWinForm\Form_Small.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCHWinForm\Form_SOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCHWinForm\Form_Top.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCHWinForm\Form_Top_Light.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCHWinForm\Pop_Large.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCHWinForm\Pop_Large_Light.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCHWinForm\Pop_Medium.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCHWinForm\Pop_Menu_SOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCHWinForm\Pop_Normal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCHWinForm\Pop_Normal_Light.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCHWinForm\Pop_Small.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCHWinForm\Pop_Small_Light.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCHWinForm\Pop_Large_B.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SQMWinForm\Form_Top.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SQMWinForm\Pop_Large.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SQMWinForm\Pop_Medium.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SQMWinForm\Pop_Normal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SQMWinForm\Pop_Small.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SSP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SSPComboBoxCellType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TradeWinForm\Form_Top.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TradeWinForm\Pop_Large.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TradeWinForm\Pop_Medium.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TradeWinForm\Pop_Normal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TradeWinForm\Pop_Small.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainingWinForm\Form_Top.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainingWinForm\Pop_Large.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainingWinForm\Pop_Medium.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainingWinForm\Pop_Normal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainingWinForm\Pop_Small.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VJ_CommonWinForm\Form_Top.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VJ_CommonWinForm\Pop_Large.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VJ_CommonWinForm\Pop_Medium.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VJ_CommonWinForm\Pop_Normal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VJ_CommonWinForm\Pop_Small.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Web References\WebSvc\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <EmbeddedResource Include="APSWinForm\Form_CM_CodeAdd.resx">
+      <DependentUpon>Form_CM_CodeAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APSWinForm\Form_Top.resx">
+      <DependentUpon>Form_Top.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APSWinForm\Pop_Large.resx">
+      <DependentUpon>Pop_Large.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APSWinForm\Pop_Small.resx">
+      <DependentUpon>Pop_Small.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CDCWinForm\Form_Top.resx">
+      <DependentUpon>Form_Top.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CDCWinForm\Pop_Large.resx">
+      <DependentUpon>Pop_Large.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CDCWinForm\Pop_Large_B.resx">
+      <DependentUpon>Pop_Large_B.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CDCWinForm\Pop_Small.resx">
+      <DependentUpon>Pop_Small.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Com_Form\Form_Manual_Language.resx">
+      <DependentUpon>Form_Manual_Language.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Com_Form\Form_Proc_Error.resx">
+      <DependentUpon>Form_Proc_Error.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Com_Form\Form_PS_NoticeAuto.resx">
+      <DependentUpon>Form_PS_NoticeAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Com_Form\Form_Report.resx">
+      <DependentUpon>Form_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Com_Form\Pop_Proc_Error.resx">
+      <DependentUpon>Pop_Proc_Error.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Com_Form\Pop_Proc_StatusView.resx">
+      <DependentUpon>Pop_Proc_StatusView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Com_Form\Pop_PS_NoticeWrite.resx">
+      <DependentUpon>Pop_PS_NoticeWrite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Com_Form\Pop_Work_Info.resx">
+      <DependentUpon>Pop_Work_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSP.resx">
+      <DependentUpon>FSP.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="licenses.licx" />
+    <EmbeddedResource Include="MoldWinForm\Form_CM_CodeAdd.resx">
+      <DependentUpon>Form_CM_CodeAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoldWinForm\Form_Top.resx">
+      <DependentUpon>Form_Top.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoldWinForm\Pop_Large.resx">
+      <DependentUpon>Pop_Large.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoldWinForm\Pop_Small.resx">
+      <DependentUpon>Pop_Small.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderWinForm\Form_Top.resx">
+      <DependentUpon>Form_Top.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderWinForm\Pop_Large.resx">
+      <DependentUpon>Pop_Large.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderWinForm\Pop_Small.resx">
+      <DependentUpon>Pop_Small.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCHWinForm\Form_Small.resx">
+      <DependentUpon>Form_Small.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCHWinForm\Form_SOS.resx">
+      <DependentUpon>Form_SOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCHWinForm\Form_Top.resx">
+      <DependentUpon>Form_Top.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCHWinForm\Form_Top_Light.resx">
+      <DependentUpon>Form_Top_Light.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCHWinForm\Pop_Large.resx">
+      <DependentUpon>Pop_Large.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCHWinForm\Pop_Large_Light.resx">
+      <DependentUpon>Pop_Large_Light.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCHWinForm\Pop_Medium.resx">
+      <DependentUpon>Pop_Medium.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCHWinForm\Pop_Menu_SOS.resx">
+      <DependentUpon>Pop_Menu_SOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCHWinForm\Pop_Normal.resx">
+      <DependentUpon>Pop_Normal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCHWinForm\Pop_Normal_Light.resx">
+      <DependentUpon>Pop_Normal_Light.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCHWinForm\Pop_Small.resx">
+      <DependentUpon>Pop_Small.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCHWinForm\Pop_Small_Light.resx">
+      <DependentUpon>Pop_Small_Light.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCHWinForm\Pop_Large_B.resx">
+      <DependentUpon>Pop_Large_B.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SQMWinForm\Form_Top.resx">
+      <DependentUpon>Form_Top.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SQMWinForm\Pop_Large.resx">
+      <DependentUpon>Pop_Large.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SQMWinForm\Pop_Medium.resx">
+      <DependentUpon>Pop_Medium.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SQMWinForm\Pop_Normal.resx">
+      <DependentUpon>Pop_Normal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SQMWinForm\Pop_Small.resx">
+      <DependentUpon>Pop_Small.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SSP.resx">
+      <DependentUpon>SSP.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TradeWinForm\Form_Top.resx">
+      <DependentUpon>Form_Top.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TradeWinForm\Pop_Large.resx">
+      <DependentUpon>Pop_Large.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TradeWinForm\Pop_Medium.resx">
+      <DependentUpon>Pop_Medium.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TradeWinForm\Pop_Normal.resx">
+      <DependentUpon>Pop_Normal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TradeWinForm\Pop_Small.resx">
+      <DependentUpon>Pop_Small.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainingWinForm\Form_Top.resx">
+      <DependentUpon>Form_Top.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainingWinForm\Pop_Large.resx">
+      <DependentUpon>Pop_Large.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainingWinForm\Pop_Medium.resx">
+      <DependentUpon>Pop_Medium.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainingWinForm\Pop_Normal.resx">
+      <DependentUpon>Pop_Normal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainingWinForm\Pop_Small.resx">
+      <DependentUpon>Pop_Small.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VJ_CommonWinForm\Form_Top.resx">
+      <DependentUpon>Form_Top.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VJ_CommonWinForm\Pop_Large.resx">
+      <DependentUpon>Pop_Large.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VJ_CommonWinForm\Pop_Medium.resx">
+      <DependentUpon>Pop_Medium.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VJ_CommonWinForm\Pop_Normal.resx">
+      <DependentUpon>Pop_Normal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VJ_CommonWinForm\Pop_Small.resx">
+      <DependentUpon>Pop_Small.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="PCHWinForm\vssver.scc" />
+    <None Include="TradeWinForm\vssver.scc" />
+    <None Include="Web References\WebSvc\OraPKG.disco" />
+    <None Include="Web References\WebSvc\OraPKG.wsdl" />
+    <None Include="Web References\WebSvc\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <WebReferenceUrl Include="http://211.54.128.6/Sephiroth_WebSvc/OraPKG.asmx">
+      <RelPath>Web References\WebSvc\</RelPath>
+      <UrlBehavior>Static</UrlBehavior>
+      <UpdateFromURL>http://211.54.128.6/Sephiroth_WebSvc/OraPKG.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
