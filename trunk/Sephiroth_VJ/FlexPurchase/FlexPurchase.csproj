@@ -1,0 +1,1355 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99018055-312F-495F-BB17-6B77662015B3}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>FlexPurchase</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FlexPurchase</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.RDVIEWER40Lib">
+      <Name>AxInterop.RDVIEWER40Lib</Name>
+      <HintPath>..\DLL\AxInterop.RDVIEWER40Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Common, Version=1.0.20031.116, Culture=neutral, PublicKeyToken=e272bb32d11b1948">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Command.2, Version=2.0.20071.19104, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Command.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid.2, Version=2.6.20071.324, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1FlexGrid.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Input.2, Version=2.0.20071.32002, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Input.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1List.2, Version=2.1.20071.117, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1List.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Report, Version=1.1.20023.28, Culture=neutral, PublicKeyToken=c9c7ad9c0a5706c9">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Report.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Sizer.2, Version=2.1.20071.17, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Sizer.2.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.CalcEngine">
+      <Name>FarPoint.CalcEngine</Name>
+      <HintPath>..\DLL\FarPoint.CalcEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Excel">
+      <Name>FarPoint.Excel</Name>
+      <HintPath>..\DLL\FarPoint.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.PluginCalendar.WinForms">
+      <Name>FarPoint.PluginCalendar.WinForms</Name>
+      <HintPath>..\DLL\FarPoint.PluginCalendar.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win">
+      <Name>FarPoint.Win</Name>
+      <HintPath>..\DLL\FarPoint.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Spread">
+      <Name>FarPoint.Win.Spread</Name>
+      <HintPath>..\DLL\FarPoint.Win.Spread.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <Name>Interop.Excel</Name>
+      <HintPath>..\DLL\Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core">
+      <Name>Interop.Microsoft.Office.Core</Name>
+      <HintPath>..\DLL\Interop.Microsoft.Office.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.RDVIEWER40Lib">
+      <Name>Interop.RDVIEWER40Lib</Name>
+      <HintPath>..\DLL\Interop.RDVIEWER40Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.Flow, Version=1.5.1.0, Culture=neutral, PublicKeyToken=bfc5c756e54a9d2a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Lassalle.Flow.DLL</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.OracleClient">
+      <Name>System.Data.OracleClient</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ClassForm.cs" />
+    <Compile Include="ClassLib\Class_PERT.cs" />
+    <Compile Include="ClassLib\Class_PERT_Detail.cs" />
+    <Compile Include="ClassLib\ComCtl.cs" />
+    <Compile Include="ClassLib\ComFunction.cs" />
+    <Compile Include="ClassLib\ComVar.cs" />
+    <Compile Include="ClassLib\IXTable.cs" />
+    <Compile Include="Incoming\Form_BI_Incoming.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incoming\Form_BI_Incoming_Adjust.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incoming\Form_BI_Incoming_Item_Inspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incoming\Form_BI_Incoming_Overseas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incoming\Form_BI_Incoming_SearchByOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incoming\Form_BI_Incoming_Vendor_Total.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incoming\Form_BI_In_Monthly_Vendor_Total.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incoming\Form_BI_In_Moving_Method.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incoming\Pop_BI_Incoming_Adjust_Desc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incoming\Pop_BI_Incoming_Barcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incoming\Pop_BI_Incoming_DCExchanger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incoming\Pop_BI_Incoming_InNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incoming\Pop_BI_Incoming_InSize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incoming\Pop_BI_Incoming_Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incoming\Pop_BI_Incoming_List_BItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Incoming\Pop_BI_Incoming_List_Changer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incoming\Pop_BI_Incoming_List_CItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Incoming\Pop_BI_Incoming_List_LItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Incoming\Pop_BI_Incoming_List_MixedItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Incoming\Pop_BI_Incoming_NoShipping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incoming\Pop_BI_Incoming_Purchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incoming\Pop_BI_Incoming_Purchase_Overseas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incoming\Pop_BI_Incoming_Rate_Exchanger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incoming\Pop_BI_Incoming_Search_Rate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incoming\Pop_BI_Incomming_ChekcPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outgoing\Form_BO_Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outgoing\Form_BO_OnboardDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outgoing\Form_BO_Outgoing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outgoing\Form_BO_Outgoing_Normal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outgoing\Form_BO_Outgoing_Normal_VJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outgoing\Form_BO_Outgoing_Outside.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outgoing\Form_BO_Outside_Normal_Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outgoing\Form_BO_Outside_Normal_Print_DPO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outgoing\Form_BO_Remainder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outgoing\Form_BO_Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outgoing\Form_BO_Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outgoing\Form_BO_SearchByOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outgoing\Pop_BO_Outgoing_Cont.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outgoing\POP_BO_Outgoing_Copy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outgoing\Pop_BO_Outgoing_From_Incoming.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outgoing\Pop_BO_Outgoing_OutNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outgoing\POP_BO_Outgoing_Outside_Copy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outgoing\Pop_BO_Outgoing_OutSize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outgoing\Pop_BO_Outgoing_RealYmd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outgoing\Pop_BO_Outgoing_RealYmd_Exchanger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outgoing\Pop_BO_Outgoing_Req.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Form_BP_CFM_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Form_BP_Item_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Form_BP_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Form_BP_Purchase_Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Form_BP_Purchase_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Form_BP_Purchase_Order_VJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Form_BP_Purchase_Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Form_BP_Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Form_BP_Request_Divide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Pop_BC_Yield_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Pop_BP_Exchange_Rate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Pop_BP_Item_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Pop_BP_Outside_Calc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Pop_BP_Print_Type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Pop_BP_Purchase_List_Changer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Pop_BP_Purchase_List_CItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Purchase\Pop_BP_Purchase_List_DItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Purchase\Pop_BP_Purchase_List_LItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Purchase\Pop_BP_Purchase_List_MixedItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Purchase\Pop_BP_Purchase_Order_Ct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Pop_BP_Purchase_Order_Pur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Pop_BP_Purchase_Order_SearchType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Pop_BP_Purchase_Order_Tree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Pop_BP_Purchase_Wait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Pop_BP_Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Pop_BP_Request_Excel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Pop_BP_Request_Offer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Pop_BP_Request_Size.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\Form_QC_Component.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\Form_QC_Lab_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\Form_QC_Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\Form_QC_Shipping_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\Form_QC_SPEC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\Pop_QC_Result_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\Pop_QC_Shipping_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\Form_BW_DPO_Analysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\Form_BW_Item_Analysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\Form_BW_Order_Analysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\Form_BW_Pegasus_Upload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\Form_BW_Purchase_Analysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\Form_BW_Query_Analysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\Form_BW_Style_LifeCycle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\Form_EO_Analysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\Form_EO_Analysis_II.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\Pop_BW_Order_Analysis_GAC_Score.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\Pop_BW_Order_Analysis_Size.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\Pop_BW_QE_Parameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\Pop_BW_QE_Wait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\POP_Monthly_Budget.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\POP_Monthly_Fob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Form_BC_CBD_Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Form_BC_Container.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Form_BR_Report_MRP_To_SL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Form_BS_No_Shipping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Form_BS_Scan_InOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Form_BS_Scan_InOut_Outside.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Form_BS_Scan_Out.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Form_BS_Shipping_Container.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Form_BS_Shipping_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Form_BS_Shipping_Material.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Form_BS_Shipping_Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Form_BS_Shipping_Request_Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BC_CBD_Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BC_CBD_Information_3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BC_CBD_Master_Create.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BC_CBD_Master_Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Container_Outgoing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_No_Shipping_Virgin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Outgoing_Process.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Print_Type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_PurchaseList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Scan_Changer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Scan_In.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Scan_Out_Btn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Scan_Out_Ctx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Shipping_Change.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Shipping_Container.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Shipping_Container_Change.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Shipping_Export.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Shipping_History_Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Shipping_List_Changer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Shipping_List_CItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Shipping_List_DItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Shipping_List_Head.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Shipping_List_LItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Shipping_List_MixedItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Shipping_List_Schedule_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Shipping_List_Style.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Shipping_List_Trade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Shipping_List_Wait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Shipping_Material_AutoCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Shipping_Request_Item_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Usage_Check.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_BS_Vendor_Change.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping\Pop_Finder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Form_BK_Outside_Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Form_BK_Outside_Stock_Closing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Form_BK_Remainder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Form_BK_Stock_Base.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Form_BK_Stock_Closing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Form_BK_Stock_Daily.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Form_BK_Stock_Management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Form_BK_Stock_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Form_BK_Stock_SearchByOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Form_BK_Stock_Subul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Pop_BK_CodeChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Pop_BK_InOut_Infomation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Pop_BK_Material_Relation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Pop_BK_Material_Relation_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Pop_BK_Moving_WareHouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Pop_BK_Outside_Stock_Close_Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Pop_BK_Outside_Stock_Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Pop_BK_Stock_Close_DS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Pop_BK_Stock_Closing_Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Pop_BK_Stock_Daily_Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Pop_BK_Stock_Remake_InOut_Qty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Pop_BK_Stock_Report_Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\Stock_VJ\Form_BK_Stock_Daily.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Incoming\Form_BI_Incoming.resx">
+      <DependentUpon>Form_BI_Incoming.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Form_BI_Incoming_Adjust.resx">
+      <DependentUpon>Form_BI_Incoming_Adjust.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Form_BI_Incoming_Item_Inspection.resx">
+      <DependentUpon>Form_BI_Incoming_Item_Inspection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Form_BI_Incoming_Overseas.resx">
+      <DependentUpon>Form_BI_Incoming_Overseas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Form_BI_Incoming_SearchByOption.resx">
+      <DependentUpon>Form_BI_Incoming_SearchByOption.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Form_BI_Incoming_Vendor_Total.resx">
+      <DependentUpon>Form_BI_Incoming_Vendor_Total.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Form_BI_In_Monthly_Vendor_Total.resx">
+      <DependentUpon>Form_BI_In_Monthly_Vendor_Total.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Form_BI_In_Moving_Method.resx">
+      <DependentUpon>Form_BI_In_Moving_Method.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Pop_BI_Incoming_Adjust_Desc.resx">
+      <DependentUpon>Pop_BI_Incoming_Adjust_Desc.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Pop_BI_Incoming_Barcode.resx">
+      <DependentUpon>Pop_BI_Incoming_Barcode.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Pop_BI_Incoming_DCExchanger.resx">
+      <DependentUpon>Pop_BI_Incoming_DCExchanger.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Pop_BI_Incoming_InNo.resx">
+      <DependentUpon>Pop_BI_Incoming_InNo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Pop_BI_Incoming_InSize.resx">
+      <DependentUpon>Pop_BI_Incoming_InSize.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Pop_BI_Incoming_Invoice.resx">
+      <DependentUpon>Pop_BI_Incoming_Invoice.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Pop_BI_Incoming_List_BItem.resx">
+      <DependentUpon>Pop_BI_Incoming_List_BItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Pop_BI_Incoming_List_Changer.resx">
+      <DependentUpon>Pop_BI_Incoming_List_Changer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Pop_BI_Incoming_List_CItem.resx">
+      <DependentUpon>Pop_BI_Incoming_List_CItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Pop_BI_Incoming_List_LItem.resx">
+      <DependentUpon>Pop_BI_Incoming_List_LItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Pop_BI_Incoming_List_MixedItem.resx">
+      <DependentUpon>Pop_BI_Incoming_List_MixedItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Pop_BI_Incoming_NoShipping.resx">
+      <DependentUpon>Pop_BI_Incoming_NoShipping.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Pop_BI_Incoming_Purchase.resx">
+      <DependentUpon>Pop_BI_Incoming_Purchase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Pop_BI_Incoming_Purchase_Overseas.resx">
+      <DependentUpon>Pop_BI_Incoming_Purchase_Overseas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Pop_BI_Incoming_Rate_Exchanger.resx">
+      <DependentUpon>Pop_BI_Incoming_Rate_Exchanger.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Pop_BI_Incoming_Search_Rate.resx">
+      <DependentUpon>Pop_BI_Incoming_Search_Rate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\Pop_BI_Incomming_ChekcPrice.resx">
+      <DependentUpon>Pop_BI_Incomming_ChekcPrice.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="licenses.licx" />
+    <EmbeddedResource Include="Outgoing\Form_BO_Confirm.resx">
+      <DependentUpon>Form_BO_Confirm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\Form_BO_OnboardDay.resx">
+      <DependentUpon>Form_BO_OnboardDay.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\Form_BO_Outgoing.resx">
+      <DependentUpon>Form_BO_Outgoing.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\Form_BO_Outgoing_Normal.resx">
+      <DependentUpon>Form_BO_Outgoing_Normal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\Form_BO_Outgoing_Normal_VJ.resx">
+      <DependentUpon>Form_BO_Outgoing_Normal_VJ.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\Form_BO_Outgoing_Outside.resx">
+      <DependentUpon>Form_BO_Outgoing_Outside.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\Form_BO_Outside_Normal_Print.resx">
+      <DependentUpon>Form_BO_Outside_Normal_Print.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\Form_BO_Outside_Normal_Print_DPO.resx">
+      <DependentUpon>Form_BO_Outside_Normal_Print_DPO.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\Form_BO_Remainder.resx">
+      <DependentUpon>Form_BO_Remainder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\Form_BO_Request.resx">
+      <DependentUpon>Form_BO_Request.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\Form_BO_Search.resx">
+      <DependentUpon>Form_BO_Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\Form_BO_SearchByOption.resx">
+      <DependentUpon>Form_BO_SearchByOption.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\Pop_BO_Outgoing_Cont.resx">
+      <DependentUpon>Pop_BO_Outgoing_Cont.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\POP_BO_Outgoing_Copy.resx">
+      <DependentUpon>POP_BO_Outgoing_Copy.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\Pop_BO_Outgoing_From_Incoming.resx">
+      <DependentUpon>Pop_BO_Outgoing_From_Incoming.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\Pop_BO_Outgoing_OutNo.resx">
+      <DependentUpon>Pop_BO_Outgoing_OutNo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\POP_BO_Outgoing_Outside_Copy.resx">
+      <DependentUpon>POP_BO_Outgoing_Outside_Copy.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\Pop_BO_Outgoing_OutSize.resx">
+      <DependentUpon>Pop_BO_Outgoing_OutSize.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\Pop_BO_Outgoing_RealYmd.resx">
+      <DependentUpon>Pop_BO_Outgoing_RealYmd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\Pop_BO_Outgoing_RealYmd_Exchanger.resx">
+      <DependentUpon>Pop_BO_Outgoing_RealYmd_Exchanger.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\Pop_BO_Outgoing_Req.resx">
+      <DependentUpon>Pop_BO_Outgoing_Req.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Form_BP_CFM_Report.resx">
+      <DependentUpon>Form_BP_CFM_Report.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Form_BP_Item_List.resx">
+      <DependentUpon>Form_BP_Item_List.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Form_BP_Order.resx">
+      <DependentUpon>Form_BP_Order.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Form_BP_Purchase_Manager.resx">
+      <DependentUpon>Form_BP_Purchase_Manager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Form_BP_Purchase_Order.resx">
+      <DependentUpon>Form_BP_Purchase_Order.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Form_BP_Purchase_Order_VJ.resx">
+      <DependentUpon>Form_BP_Purchase_Order_VJ.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Form_BP_Purchase_Request.resx">
+      <DependentUpon>Form_BP_Purchase_Request.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Form_BP_Request.resx">
+      <DependentUpon>Form_BP_Request.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Form_BP_Request_Divide.resx">
+      <DependentUpon>Form_BP_Request_Divide.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Pop_BC_Yield_Info.resx">
+      <DependentUpon>Pop_BC_Yield_Info.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Pop_BP_Exchange_Rate.resx">
+      <DependentUpon>Pop_BP_Exchange_Rate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Pop_BP_Item_List.resx">
+      <DependentUpon>Pop_BP_Item_List.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Pop_BP_Outside_Calc.resx">
+      <DependentUpon>Pop_BP_Outside_Calc.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Pop_BP_Print_Type.resx">
+      <DependentUpon>Pop_BP_Print_Type.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Pop_BP_Purchase_List_Changer.resx">
+      <DependentUpon>Pop_BP_Purchase_List_Changer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Pop_BP_Purchase_List_CItem.resx">
+      <DependentUpon>Pop_BP_Purchase_List_CItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Pop_BP_Purchase_List_DItem.resx">
+      <DependentUpon>Pop_BP_Purchase_List_DItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Pop_BP_Purchase_List_LItem.resx">
+      <DependentUpon>Pop_BP_Purchase_List_LItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Pop_BP_Purchase_List_MixedItem.resx">
+      <DependentUpon>Pop_BP_Purchase_List_MixedItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Pop_BP_Purchase_Order_Ct.resx">
+      <DependentUpon>Pop_BP_Purchase_Order_Ct.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Pop_BP_Purchase_Order_Pur.resx">
+      <DependentUpon>Pop_BP_Purchase_Order_Pur.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Pop_BP_Purchase_Order_SearchType.resx">
+      <DependentUpon>Pop_BP_Purchase_Order_SearchType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Pop_BP_Purchase_Order_Tree.resx">
+      <DependentUpon>Pop_BP_Purchase_Order_Tree.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Pop_BP_Purchase_Wait.resx">
+      <DependentUpon>Pop_BP_Purchase_Wait.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Pop_BP_Request.resx">
+      <DependentUpon>Pop_BP_Request.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Pop_BP_Request_Excel.resx">
+      <DependentUpon>Pop_BP_Request_Excel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Pop_BP_Request_Offer.resx">
+      <DependentUpon>Pop_BP_Request_Offer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Pop_BP_Request_Size.resx">
+      <DependentUpon>Pop_BP_Request_Size.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\Form_QC_Component.resx">
+      <DependentUpon>Form_QC_Component.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\Form_QC_Lab_Test.resx">
+      <DependentUpon>Form_QC_Lab_Test.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\Form_QC_Request.resx">
+      <DependentUpon>Form_QC_Request.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\Form_QC_Shipping_List.resx">
+      <DependentUpon>Form_QC_Shipping_List.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\Form_QC_SPEC.resx">
+      <DependentUpon>Form_QC_SPEC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\Pop_QC_Result_List.resx">
+      <DependentUpon>Pop_QC_Result_List.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\Pop_QC_Shipping_List.resx">
+      <DependentUpon>Pop_QC_Shipping_List.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\Form_BW_DPO_Analysis.resx">
+      <DependentUpon>Form_BW_DPO_Analysis.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\Form_BW_Item_Analysis.resx">
+      <DependentUpon>Form_BW_Item_Analysis.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\Form_BW_Order_Analysis.resx">
+      <DependentUpon>Form_BW_Order_Analysis.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\Form_BW_Pegasus_Upload.resx">
+      <DependentUpon>Form_BW_Pegasus_Upload.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\Form_BW_Purchase_Analysis.resx">
+      <DependentUpon>Form_BW_Purchase_Analysis.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\Form_BW_Query_Analysis.resx">
+      <DependentUpon>Form_BW_Query_Analysis.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\Form_BW_Style_LifeCycle.resx">
+      <DependentUpon>Form_BW_Style_LifeCycle.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\Form_EO_Analysis.resx">
+      <DependentUpon>Form_EO_Analysis.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\Form_EO_Analysis_II.resx">
+      <DependentUpon>Form_EO_Analysis_II.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\Pop_BW_Order_Analysis_GAC_Score.resx">
+      <DependentUpon>Pop_BW_Order_Analysis_GAC_Score.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\Pop_BW_Order_Analysis_Size.resx">
+      <DependentUpon>Pop_BW_Order_Analysis_Size.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\Pop_BW_QE_Parameter.resx">
+      <DependentUpon>Pop_BW_QE_Parameter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\Pop_BW_QE_Wait.resx">
+      <DependentUpon>Pop_BW_QE_Wait.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\POP_Monthly_Budget.resx">
+      <DependentUpon>POP_Monthly_Budget.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\POP_Monthly_Fob.resx">
+      <DependentUpon>POP_Monthly_Fob.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Form_BC_CBD_Master.resx">
+      <DependentUpon>Form_BC_CBD_Master.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Form_BC_Container.resx">
+      <DependentUpon>Form_BC_Container.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Form_BR_Report_MRP_To_SL.resx">
+      <DependentUpon>Form_BR_Report_MRP_To_SL.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Form_BS_No_Shipping.resx">
+      <DependentUpon>Form_BS_No_Shipping.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Form_BS_Scan_InOut.resx">
+      <DependentUpon>Form_BS_Scan_InOut.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Form_BS_Scan_InOut_Outside.resx">
+      <DependentUpon>Form_BS_Scan_InOut_Outside.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Form_BS_Scan_Out.resx">
+      <DependentUpon>Form_BS_Scan_Out.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Form_BS_Shipping_Container.resx">
+      <DependentUpon>Form_BS_Shipping_Container.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Form_BS_Shipping_List.resx">
+      <DependentUpon>Form_BS_Shipping_List.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Form_BS_Shipping_Material.resx">
+      <DependentUpon>Form_BS_Shipping_Material.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Form_BS_Shipping_Request.resx">
+      <DependentUpon>Form_BS_Shipping_Request.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Form_BS_Shipping_Request_Search.resx">
+      <DependentUpon>Form_BS_Shipping_Request_Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BC_CBD_Information.resx">
+      <DependentUpon>Pop_BC_CBD_Information.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BC_CBD_Information_3.resx">
+      <DependentUpon>Pop_BC_CBD_Information_3.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BC_CBD_Master_Create.resx">
+      <DependentUpon>Pop_BC_CBD_Master_Create.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BC_CBD_Master_Print.resx">
+      <DependentUpon>Pop_BC_CBD_Master_Print.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Container_Outgoing.resx">
+      <DependentUpon>Pop_BS_Container_Outgoing.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_No_Shipping_Virgin.resx">
+      <DependentUpon>Pop_BS_No_Shipping_Virgin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Outgoing_Process.resx">
+      <DependentUpon>Pop_BS_Outgoing_Process.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Print_Type.resx">
+      <DependentUpon>Pop_BS_Print_Type.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_PurchaseList.resx">
+      <DependentUpon>Pop_BS_PurchaseList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Scan_Changer.resx">
+      <DependentUpon>Pop_BS_Scan_Changer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Scan_In.resx">
+      <DependentUpon>Pop_BS_Scan_In.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Scan_Out_Btn.resx">
+      <DependentUpon>Pop_BS_Scan_Out_Btn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Scan_Out_Ctx.resx">
+      <DependentUpon>Pop_BS_Scan_Out_Ctx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Shipping_Change.resx">
+      <DependentUpon>Pop_BS_Shipping_Change.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Shipping_Container.resx">
+      <DependentUpon>Pop_BS_Shipping_Container.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Shipping_Container_Change.resx">
+      <DependentUpon>Pop_BS_Shipping_Container_Change.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Shipping_Export.resx">
+      <DependentUpon>Pop_BS_Shipping_Export.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Shipping_History_Print.resx">
+      <DependentUpon>Pop_BS_Shipping_History_Print.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Shipping_List_Changer.resx">
+      <DependentUpon>Pop_BS_Shipping_List_Changer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Shipping_List_CItem.resx">
+      <DependentUpon>Pop_BS_Shipping_List_CItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Shipping_List_DItem.resx">
+      <DependentUpon>Pop_BS_Shipping_List_DItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Shipping_List_Head.resx">
+      <DependentUpon>Pop_BS_Shipping_List_Head.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Shipping_List_LItem.resx">
+      <DependentUpon>Pop_BS_Shipping_List_LItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Shipping_List_MixedItem.resx">
+      <DependentUpon>Pop_BS_Shipping_List_MixedItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Shipping_List_Schedule_2.resx">
+      <DependentUpon>Pop_BS_Shipping_List_Schedule_2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Shipping_List_Style.resx">
+      <DependentUpon>Pop_BS_Shipping_List_Style.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Shipping_List_Trade.resx">
+      <DependentUpon>Pop_BS_Shipping_List_Trade.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Shipping_List_Wait.resx">
+      <DependentUpon>Pop_BS_Shipping_List_Wait.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Shipping_Material_AutoCheck.resx">
+      <DependentUpon>Pop_BS_Shipping_Material_AutoCheck.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Shipping_Request_Item_List.resx">
+      <DependentUpon>Pop_BS_Shipping_Request_Item_List.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Usage_Check.resx">
+      <DependentUpon>Pop_BS_Usage_Check.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_BS_Vendor_Change.resx">
+      <DependentUpon>Pop_BS_Vendor_Change.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping\Pop_Finder.resx">
+      <DependentUpon>Pop_Finder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Form_BK_Outside_Stock.resx">
+      <DependentUpon>Form_BK_Outside_Stock.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Form_BK_Outside_Stock_Closing.resx">
+      <DependentUpon>Form_BK_Outside_Stock_Closing.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Form_BK_Remainder.resx">
+      <DependentUpon>Form_BK_Remainder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Form_BK_Stock_Base.resx">
+      <DependentUpon>Form_BK_Stock_Base.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Form_BK_Stock_Closing.resx">
+      <DependentUpon>Form_BK_Stock_Closing.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Form_BK_Stock_Daily.resx">
+      <DependentUpon>Form_BK_Stock_Daily.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Form_BK_Stock_Management.resx">
+      <DependentUpon>Form_BK_Stock_Management.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Form_BK_Stock_Report.resx">
+      <DependentUpon>Form_BK_Stock_Report.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Form_BK_Stock_SearchByOption.resx">
+      <DependentUpon>Form_BK_Stock_SearchByOption.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Form_BK_Stock_Subul.resx">
+      <DependentUpon>Form_BK_Stock_Subul.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Pop_BK_CodeChange.resx">
+      <DependentUpon>Pop_BK_CodeChange.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Pop_BK_InOut_Infomation.resx">
+      <DependentUpon>Pop_BK_InOut_Infomation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Pop_BK_Material_Relation.resx">
+      <DependentUpon>Pop_BK_Material_Relation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Pop_BK_Material_Relation_Modify.resx">
+      <DependentUpon>Pop_BK_Material_Relation_Modify.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Pop_BK_Moving_WareHouse.resx">
+      <DependentUpon>Pop_BK_Moving_WareHouse.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Pop_BK_Outside_Stock_Close_Print.resx">
+      <DependentUpon>Pop_BK_Outside_Stock_Close_Print.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Pop_BK_Outside_Stock_Print.resx">
+      <DependentUpon>Pop_BK_Outside_Stock_Print.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Pop_BK_Stock_Close_DS.resx">
+      <DependentUpon>Pop_BK_Stock_Close_DS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Pop_BK_Stock_Closing_Print.resx">
+      <DependentUpon>Pop_BK_Stock_Closing_Print.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Pop_BK_Stock_Daily_Print.resx">
+      <DependentUpon>Pop_BK_Stock_Daily_Print.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Pop_BK_Stock_Remake_InOut_Qty.resx">
+      <DependentUpon>Pop_BK_Stock_Remake_InOut_Qty.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Pop_BK_Stock_Report_Print.resx">
+      <DependentUpon>Pop_BK_Stock_Report_Print.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\Stock_VJ\Form_BK_Stock_Daily.resx">
+      <DependentUpon>Form_BK_Stock_Daily.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\COM\Com.csproj">
+      <Project>{992378C3-66A1-4E98-96F5-CE2B26E0CAB2}</Project>
+      <Name>Com</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FlexBase\FlexBase.csproj">
+      <Project>{7EDD1127-0A21-4B58-A3A8-8BC506D437FD}</Project>
+      <Name>FlexBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FlexMRP\FlexMRP.csproj">
+      <Project>{2DD36F35-4D27-46E7-95B0-B8A87F60BBA4}</Project>
+      <Name>FlexMRP</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

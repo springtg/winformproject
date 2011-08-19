@@ -1,0 +1,821 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{53F29353-58C1-4EFF-AC77-78853812A2D5}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>sephiroth_desktop_icon.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>ERP</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ERP</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>5E36ED1C1728BD86F438BEB51975DD0BA9263FB9</ManifestCertificateThumbprint>
+    <ManifestKeyFile>ERP_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <SignManifests>false</SignManifests>
+    <PublishUrl>\\203.228.108.19\Sephiroth_Liveupdate\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://203.228.108.19/CDC_Sephiroth/</InstallUrl>
+    <ProductName>Sephiroth</ProductName>
+    <PublisherName>CSI</PublisherName>
+    <MinimumRequiredVersion>1.2.1.71</MinimumRequiredVersion>
+    <WebPage>publish.aspx</WebPage>
+    <ApplicationVersion>1.2.1.%2a</ApplicationVersion>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.RDVIEWER40Lib">
+      <Name>AxInterop.RDVIEWER40Lib</Name>
+      <HintPath>..\DLL\AxInterop.RDVIEWER40Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.SHDocVw">
+      <Name>AxInterop.SHDocVw</Name>
+      <HintPath>..\DLL\AxInterop.SHDocVw.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Command.2, Version=2.0.20071.19104, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Command.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid.2, Version=2.6.20071.324, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1FlexGrid.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1List.2, Version=2.1.20071.117, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1List.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Sizer.2, Version=2.1.20071.17, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Sizer.2.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.Designer, Version=7.0.2893.24841, Culture=neutral, PublicKeyToken=a1878e2052c08dce, processorArchitecture=MSIL" />
+    <Reference Include="ChartFX.WinForms, Version=7.0.2893.24916, Culture=neutral, PublicKeyToken=a1878e2052c08dce, processorArchitecture=MSIL" />
+    <Reference Include="ChartFX.WinForms.Adornments, Version=7.0.2893.24805, Culture=neutral, PublicKeyToken=a1878e2052c08dce, processorArchitecture=MSIL" />
+    <Reference Include="ChartFX.WinForms.Annotation, Version=7.0.2893.25191, Culture=neutral, PublicKeyToken=a1878e2052c08dce, processorArchitecture=MSIL" />
+    <Reference Include="ChartFX.WinForms.Base, Version=7.0.2893.24781, Culture=neutral, PublicKeyToken=a1878e2052c08dce, processorArchitecture=MSIL" />
+    <Reference Include="ChartFX.WinForms.Data, Version=7.0.2893.25079, Culture=neutral, PublicKeyToken=a1878e2052c08dce, processorArchitecture=MSIL" />
+    <Reference Include="ChartFX.WinForms.Wrapper, Version=7.0.1500.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce, processorArchitecture=MSIL" />
+    <Reference Include="ChartFX.WinForms.Wrapper.Exporter, Version=7.0.1500.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce, processorArchitecture=MSIL" />
+    <Reference Include="ChartFX.Wizard, Version=7.0.2893.24841, Culture=neutral, PublicKeyToken=a1878e2052c08dce, processorArchitecture=MSIL" />
+    <Reference Include="FarPoint.CalcEngine">
+      <Name>FarPoint.CalcEngine</Name>
+      <HintPath>..\DLL\FarPoint.CalcEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Excel">
+      <Name>FarPoint.Excel</Name>
+      <HintPath>..\DLL\FarPoint.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.PluginCalendar.WinForms">
+      <Name>FarPoint.PluginCalendar.WinForms</Name>
+      <HintPath>..\DLL\FarPoint.PluginCalendar.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win">
+      <Name>FarPoint.Win</Name>
+      <HintPath>..\DLL\FarPoint.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Spread">
+      <Name>FarPoint.Win.Spread</Name>
+      <HintPath>..\DLL\FarPoint.Win.Spread.dll</HintPath>
+    </Reference>
+    <Reference Include="FlexAPS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\FlexAPS.dll</HintPath>
+    </Reference>
+    <Reference Include="FlexPurchase, Version=1.0.4204.14177, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\FlexPurchase.dll</HintPath>
+    </Reference>
+    <Reference Include="FlexSQM, Version=1.0.4185.28735, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FlexSQM\bin\Debug\FlexSQM.dll</HintPath>
+    </Reference>
+    <Reference Include="FlexVJ_Common, Version=1.0.4185.28729, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FlexVJ_Common\bin\Debug\FlexVJ_Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <Name>Interop.Excel</Name>
+      <HintPath>..\DLL\Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core">
+      <Name>Interop.Microsoft.Office.Core</Name>
+      <HintPath>..\DLL\Interop.Microsoft.Office.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.RDVIEWER40Lib">
+      <Name>Interop.RDVIEWER40Lib</Name>
+      <HintPath>..\DLL\Interop.RDVIEWER40Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SHDocVw">
+      <Name>Interop.SHDocVw</Name>
+      <HintPath>..\DLL\Interop.SHDocVw.dll</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.Flow, Version=1.5.1.0, Culture=neutral, PublicKeyToken=bfc5c756e54a9d2a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Lassalle.Flow.DLL</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.Flow.Layout.Tree, Version=2.1.0.0, Culture=neutral, PublicKeyToken=577d6084e440e212">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Lassalle.Flow.Layout.Tree.DLL</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.XMLFlow, Version=1.5.0.0, Culture=neutral, PublicKeyToken=3f172701c0e98f8a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Lassalle.XMLFlow.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualC, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Microsoft.VisualC.Dll</HintPath>
+    </Reference>
+    <Reference Include="NETRONIC.XGantt, Version=3.1.3311.229, Culture=neutral, PublicKeyToken=3658bc8cab00a1a5">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\NETRONIC.XGantt.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.OracleClient">
+      <Name>System.Data.OracleClient</Name>
+    </Reference>
+    <Reference Include="System.DirectoryServices">
+      <Name>System.DirectoryServices</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Security">
+      <Name>System.Security</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassErp.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ClassForm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ClassMenu.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ComCtl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ComFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ComVar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\IXTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ErpCom\Form_CM_Code.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErpCom\Form_CM_Factory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErpCom\Form_CM_Table.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErpCom\Form_CM_TableDesc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErpCom\Form_PC_DataDictionary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErpCom\Form_PC_DataDictionary.Designer.cs">
+      <DependentUpon>Form_PC_DataDictionary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ErpCom\Form_PS_Message_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErpCom\Form_PS_Message_Regist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErpCom\Pop_SetCols.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErpCom\Pop_SetMajorCd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErpCom\Pop_SetPgId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErpCom\Pop_TableClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Sephiroth_About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogBase\ClassLog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LoginWnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Form_PC_Menu_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Form_PC_Menu_Main.Designer.cs">
+      <DependentUpon>Form_PC_Menu_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Form_PC_Menu_Role.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Form_PC_Menu_Role.Designer.cs">
+      <DependentUpon>Form_PC_Menu_Role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Pop_PC_Menu_Role.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Pop_PC_Menu_Role.Designer.cs">
+      <DependentUpon>Pop_PC_Menu_Role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Pop_PC_Menu_Copy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Pop_PC_Menu_Copy.Designer.cs">
+      <DependentUpon>Pop_PC_Menu_Copy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Form_PC_Menu_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Form_PC_Menu_User.Designer.cs">
+      <DependentUpon>Form_PC_Menu_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SysBase\Class_PS_Schedule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PC_Date_Set.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PS_Auto_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PS_NoticeAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PS_NoticeAuto_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PS_NoticeAuto_PG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PS_NoticeAuto_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PS_NoticeING_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PS_NoticeING_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PS_NoticeING_Write.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PS_NoticeModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PS_NoticeUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PS_NoticeUser_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PS_NoticeUser_Receiver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PS_NoticeUser_Sender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PS_NoticeUser_UserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PS_NoticeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PS_NoticeWrite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PS_Schedule_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PS_Schedule_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PS_Schedule_Write.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PS_Work_Info_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_PS_Work_Info_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_Work_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_Work_Info_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysBase\Pop_Work_Info_RUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="ErpCom\Form_CM_Code.resx">
+      <DependentUpon>Form_CM_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErpCom\Form_CM_Factory.resx">
+      <DependentUpon>Form_CM_Factory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErpCom\Form_CM_Table.resx">
+      <DependentUpon>Form_CM_Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErpCom\Form_CM_TableDesc.resx">
+      <DependentUpon>Form_CM_TableDesc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErpCom\Form_PC_DataDictionary.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_PC_DataDictionary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErpCom\Form_PS_Message_List.resx">
+      <DependentUpon>Form_PS_Message_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErpCom\Form_PS_Message_Regist.resx">
+      <DependentUpon>Form_PS_Message_Regist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErpCom\Pop_SetCols.resx">
+      <DependentUpon>Pop_SetCols.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErpCom\Pop_SetMajorCd.resx">
+      <DependentUpon>Pop_SetMajorCd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErpCom\Pop_SetPgId.resx">
+      <DependentUpon>Pop_SetPgId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErpCom\Pop_TableClass.resx">
+      <DependentUpon>Pop_TableClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Home.resx">
+      <DependentUpon>Form_Home.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Sephiroth_About.resx">
+      <DependentUpon>Form_Sephiroth_About.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="LoginWnd.resx">
+      <DependentUpon>LoginWnd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWnd.resx">
+      <DependentUpon>MainWnd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Form_PC_Menu_Main.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_PC_Menu_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Form_PC_Menu_Role.resx">
+      <DependentUpon>Form_PC_Menu_Role.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Pop_PC_Menu_Role.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Pop_PC_Menu_Role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Pop_PC_Menu_Copy.resx">
+      <DependentUpon>Pop_PC_Menu_Copy.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Form_PC_Menu_User.resx">
+      <DependentUpon>Form_PC_Menu_User.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PC_Date_Set.resx">
+      <DependentUpon>Pop_PC_Date_Set.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PS_Auto_Info.resx">
+      <DependentUpon>Pop_PS_Auto_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PS_NoticeAdmin.resx">
+      <DependentUpon>Pop_PS_NoticeAdmin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PS_NoticeAuto_Admin.resx">
+      <DependentUpon>Pop_PS_NoticeAuto_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PS_NoticeAuto_PG.resx">
+      <DependentUpon>Pop_PS_NoticeAuto_PG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PS_NoticeAuto_User.resx">
+      <DependentUpon>Pop_PS_NoticeAuto_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PS_NoticeING_List.resx">
+      <DependentUpon>Pop_PS_NoticeING_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PS_NoticeING_View.resx">
+      <DependentUpon>Pop_PS_NoticeING_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PS_NoticeING_Write.resx">
+      <DependentUpon>Pop_PS_NoticeING_Write.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PS_NoticeModify.resx">
+      <DependentUpon>Pop_PS_NoticeModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PS_NoticeUser.resx">
+      <DependentUpon>Pop_PS_NoticeUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PS_NoticeUser_List.resx">
+      <DependentUpon>Pop_PS_NoticeUser_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PS_NoticeUser_Receiver.resx">
+      <DependentUpon>Pop_PS_NoticeUser_Receiver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PS_NoticeUser_Sender.resx">
+      <DependentUpon>Pop_PS_NoticeUser_Sender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PS_NoticeUser_UserList.resx">
+      <DependentUpon>Pop_PS_NoticeUser_UserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PS_NoticeView.resx">
+      <DependentUpon>Pop_PS_NoticeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PS_NoticeWrite.resx">
+      <DependentUpon>Pop_PS_NoticeWrite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PS_Schedule_List.resx">
+      <DependentUpon>Pop_PS_Schedule_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PS_Schedule_View.resx">
+      <DependentUpon>Pop_PS_Schedule_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PS_Schedule_Write.resx">
+      <DependentUpon>Pop_PS_Schedule_Write.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PS_Work_Info_User.resx">
+      <DependentUpon>Pop_PS_Work_Info_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_PS_Work_Info_View.resx">
+      <DependentUpon>Pop_PS_Work_Info_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_Work_Info.resx">
+      <DependentUpon>Pop_Work_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_Work_Info_List.resx">
+      <DependentUpon>Pop_Work_Info_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysBase\Pop_Work_Info_RUser.resx">
+      <DependentUpon>Pop_Work_Info_RUser.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="rdocx40_pro">
+      <Visible>False</Visible>
+      <ProductName>ReportDesigner4.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="C1.C1Zip">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="C1.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="C1.Win.C1Command">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="C1.Win.C1FlexGrid">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="C1.Win.C1Input">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="C1.Win.C1List">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="C1.Win.C1Report">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="C1.Win.C1Sizer">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ChartFX.Base">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ChartFX.Designer">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ChartFX.WinForms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ChartFX.WinForms.Adornments">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ChartFX.WinForms.Annotation">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ChartFX.WinForms.Base">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ChartFX.WinForms.Data">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="FarPoint.CalcEngine">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="FarPoint.Excel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="FarPoint.PluginCalendar.WinForms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="FarPoint.Win">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="FarPoint.Win.Spread">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Office.Interop.Excel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Vbe.Interop">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="office">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="stdole">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\COM\Com.csproj">
+      <Project>{992378C3-66A1-4E98-96F5-CE2B26E0CAB2}</Project>
+      <Name>Com</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FlexBase\FlexBase.csproj">
+      <Project>{7EDD1127-0A21-4B58-A3A8-8BC506D437FD}</Project>
+      <Name>FlexBase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\app.manifest" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
