@@ -1,0 +1,57 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastOpenVersion>7.10.3077</LastOpenVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ReferencePath>D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070416_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070416_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070417_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070417_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070418_Local\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070418_Local\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070419_Local\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070419_Local\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070420_Local\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070420_Local\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070423_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070423_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070424_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070424_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070425_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070425_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070426_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070426_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070427_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070427_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070502_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070502_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070503_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070503_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070504_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070504_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070507_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070507_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070508_Local\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070508_Local\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070509_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070509_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070510_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070510_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070515_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070515_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070516_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070516_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070517_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070517_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070518_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070518_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070521_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070521_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070522_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070522_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070523_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070523_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070524_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070524_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070525_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070525_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070528_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070528_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070530_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070530_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070531_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070531_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070601_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070601_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070604_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070604_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070605_최종\COM\bin\Debug\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070605_최종\DLL\;D:\19. BSC\2. Source\Sephiroth\DLL\</ReferencePath>
+    <CopyProjectDestinationFolder>
+    </CopyProjectDestinationFolder>
+    <CopyProjectUncPath>
+    </CopyProjectUncPath>
+    <CopyProjectOption>0</CopyProjectOption>
+    <ProjectView>ProjectFiles</ProjectView>
+    <ProjectTrust>0</ProjectTrust>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <EnableASPDebugging>false</EnableASPDebugging>
+    <EnableASPXDebugging>false</EnableASPXDebugging>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <EnableSQLServerDebugging>false</EnableSQLServerDebugging>
+    <RemoteDebugEnabled>false</RemoteDebugEnabled>
+    <RemoteDebugMachine>
+    </RemoteDebugMachine>
+    <StartAction>Project</StartAction>
+    <StartArguments>
+    </StartArguments>
+    <StartPage>
+    </StartPage>
+    <StartProgram>
+    </StartProgram>
+    <StartURL>
+    </StartURL>
+    <StartWorkingDirectory>
+    </StartWorkingDirectory>
+    <StartWithIE>true</StartWithIE>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <EnableASPDebugging>false</EnableASPDebugging>
+    <EnableASPXDebugging>false</EnableASPXDebugging>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <EnableSQLServerDebugging>false</EnableSQLServerDebugging>
+    <RemoteDebugEnabled>false</RemoteDebugEnabled>
+    <RemoteDebugMachine>
+    </RemoteDebugMachine>
+    <StartAction>Project</StartAction>
+    <StartArguments>
+    </StartArguments>
+    <StartPage>
+    </StartPage>
+    <StartProgram>
+    </StartProgram>
+    <StartURL>
+    </StartURL>
+    <StartWorkingDirectory>
+    </StartWorkingDirectory>
+    <StartWithIE>true</StartWithIE>
+  </PropertyGroup>
+</Project>

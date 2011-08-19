@@ -1,0 +1,850 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7EDD1127-0A21-4B58-A3A8-8BC506D437FD}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>FlexBase</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FlexBase</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.RDVIEWER40Lib">
+      <Name>AxInterop.RDVIEWER40Lib</Name>
+      <HintPath>..\DLL\AxInterop.RDVIEWER40Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.SHDocVw">
+      <Name>AxInterop.SHDocVw</Name>
+      <HintPath>..\DLL\AxInterop.SHDocVw.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.C1Zip.2, Version=2.1.20071.39, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Command.2, Version=2.0.20071.19104, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Command.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid.2, Version=2.6.20071.324, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1FlexGrid.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Input.2, Version=2.0.20071.32002, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Input.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1List.2, Version=2.1.20071.117, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1List.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Sizer.2, Version=2.1.20071.17, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Sizer.2.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.CalcEngine, Version=1.0.2.2, Culture=neutral, PublicKeyToken=327c3516b1b18457">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\FarPoint.CalcEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Excel, Version=1.0.2.2, Culture=neutral, PublicKeyToken=327c3516b1b18457">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\FarPoint.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.PluginCalendar.WinForms, Version=1.0.9999.0, Culture=neutral, PublicKeyToken=327c3516b1b18457">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\FarPoint.PluginCalendar.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win, Version=1.0.2.2, Culture=neutral, PublicKeyToken=327c3516b1b18457">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\FarPoint.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Spread, Version=1.0.2.0, Culture=neutral, PublicKeyToken=327c3516b1b18457">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\FarPoint.Win.Spread.dll</HintPath>
+    </Reference>
+    <Reference Include="FlatTabControl, Version=1.0.3937.19549, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FlatTabControl\FlatTabControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <Name>Interop.Excel</Name>
+      <HintPath>..\DLL\Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core">
+      <Name>Interop.Microsoft.Office.Core</Name>
+      <HintPath>..\DLL\Interop.Microsoft.Office.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.RDVIEWER40Lib">
+      <Name>Interop.RDVIEWER40Lib</Name>
+      <HintPath>..\DLL\Interop.RDVIEWER40Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SHDocVw">
+      <Name>Interop.SHDocVw</Name>
+      <HintPath>..\DLL\Interop.SHDocVw.dll</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.DlgFlow, Version=1.5.0.0, Culture=neutral, PublicKeyToken=16e1f8979c0e1bdb">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Lassalle.DlgFlow.DLL</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.Flow, Version=1.5.1.0, Culture=neutral, PublicKeyToken=bfc5c756e54a9d2a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Lassalle.Flow.DLL</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.Flow.Layout.Hierarchic, Version=1.1.0.0, Culture=neutral, PublicKeyToken=a5098d67a8d68ddf">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Lassalle.Flow.Layout.Hierarchic.DLL</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.Flow.Layout.Tree, Version=2.1.0.0, Culture=neutral, PublicKeyToken=577d6084e440e212">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Lassalle.Flow.Layout.Tree.DLL</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.XMLFlow, Version=1.5.0.0, Culture=neutral, PublicKeyToken=3f172701c0e98f8a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Lassalle.XMLFlow.DLL</HintPath>
+    </Reference>
+    <Reference Include="RecursiveFileExplorer, Version=1.0.3160.30037, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RecursiveFileExplorer\RecursiveFileExplorer.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.OracleClient">
+      <Name>System.Data.OracleClient</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ClassForm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\Class_Check_InOut.cs" />
+    <Compile Include="ClassLib\Class_PERT.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\Class_PERT_Detail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ComCtl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ComFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ComVar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\IXTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Develop\Form_DC_Model.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Develop\Form_DC_Style.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Develop\Pop_DC_Model.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Develop\Pop_DC_ModelSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Develop\Pop_DC_Style.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Develop\Pop_DC_StyleName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Form_BC_Color.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Form_BC_Component.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Form_BC_Group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Form_BC_Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Form_BC_Mcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Form_BC_Mcs_Color.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Form_BC_Spec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Form_BC_Warehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Form_CM_Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Form_CM_Rate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Pop_BC_Yield_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Pop_Color.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Pop_Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Pop_GroupInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Pop_GroupSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Pop_GroupSearchAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Pop_Item_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Pop_Item_List_Show.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Pop_Item_Show.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Pop_Mcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Pop_Mcs_Color.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Pop_SaveName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Pop_SelectionChange_Box.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Pop_SelectionChange_FSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Pop_SelectionChange_SSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialBase\Pop_SelectionChange_Vendor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\Form_RdViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Form_BC_BOMTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Form_BC_FormulaN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Form_BC_Yield_Inspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Form_BC_Yield_Size_Group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Form_BC_Yield_Status.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Form_BC_Yield_Warning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Form_BC_Yield_withExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Pop_BC_Yield_History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Pop_Finder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Pop_FormulaMuti_Change.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Pop_Formula_Base_Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Pop_Formula_Copy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Pop_Formula_Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Pop_Item_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Pop_Style_Mcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Pop_Yield_Backup_Restore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Pop_Yield_Check_Status.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Pop_Yield_Copy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Pop_Yield_History_Clear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Pop_Yield_Inspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Pop_Yield_Modify_withSRF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Pop_Yield_Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Pop_Yield_Replace_Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Pop_Yield_Status.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Pop_Yield_Template.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Pop_Yield_Upload_Condition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Pop_Yield_Value.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield\Pop_Yield_Value_Conversion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield_New\Form_BC_Yield.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield_New\Form_BC_Yield.Designer.cs">
+      <DependentUpon>Form_BC_Yield.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yield_New\Form_BC_Yield_Item_Group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield_New\Form_BC_Yield_Item_Group.Designer.cs">
+      <DependentUpon>Form_BC_Yield_Item_Group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yield_New\Form_BC_Yield_Status.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield_New\Form_BC_Yield_Status.Designer.cs">
+      <DependentUpon>Form_BC_Yield_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Finder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Finder.Designer.cs">
+      <DependentUpon>Pop_Finder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Backup_Restore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Backup_Restore.Designer.cs">
+      <DependentUpon>Pop_Yield_Backup_Restore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Component_Duplicate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Component_Duplicate.Designer.cs">
+      <DependentUpon>Pop_Yield_Component_Duplicate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Copy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Copy.Designer.cs">
+      <DependentUpon>Pop_Yield_Copy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Copy_Duplicate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Copy_Duplicate.Designer.cs">
+      <DependentUpon>Pop_Yield_Copy_Duplicate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Grid_Combo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Grid_Combo.Designer.cs">
+      <DependentUpon>Pop_Yield_Grid_Combo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Input_Value.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Input_Value.Designer.cs">
+      <DependentUpon>Pop_Yield_Input_Value.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Inspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Inspection.Designer.cs">
+      <DependentUpon>Pop_Yield_Inspection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Joint_Template.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Joint_Template.Designer.cs">
+      <DependentUpon>Pop_Yield_Joint_Template.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Loading_Condition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Loading_Condition.Designer.cs">
+      <DependentUpon>Pop_Yield_Loading_Condition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_MultiChange_Material.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_MultiChange_Material.Designer.cs">
+      <DependentUpon>Pop_Yield_MultiChange_Material.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Print.Designer.cs">
+      <DependentUpon>Pop_Yield_Print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Select_Material.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Select_Material.Designer.cs">
+      <DependentUpon>Pop_Yield_Select_Material.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Status_Check.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Status_Check.Designer.cs">
+      <DependentUpon>Pop_Yield_Status_Check.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Status_Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yield_New\Pop_Yield_Status_Confirm.Designer.cs">
+      <DependentUpon>Pop_Yield_Status_Confirm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Develop\Form_DC_Model.resx">
+      <DependentUpon>Form_DC_Model.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Develop\Form_DC_Style.resx">
+      <DependentUpon>Form_DC_Style.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Develop\Pop_DC_Model.resx">
+      <DependentUpon>Pop_DC_Model.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Develop\Pop_DC_ModelSearch.resx">
+      <DependentUpon>Pop_DC_ModelSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Develop\Pop_DC_Style.resx">
+      <DependentUpon>Pop_DC_Style.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Develop\Pop_DC_StyleName.resx">
+      <DependentUpon>Pop_DC_StyleName.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="licenses.licx" />
+    <EmbeddedResource Include="MaterialBase\Form_BC_Color.resx">
+      <DependentUpon>Form_BC_Color.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Form_BC_Component.resx">
+      <DependentUpon>Form_BC_Component.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Form_BC_Group.resx">
+      <DependentUpon>Form_BC_Group.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Form_BC_Item.resx">
+      <DependentUpon>Form_BC_Item.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Form_BC_Mcs.resx">
+      <DependentUpon>Form_BC_Mcs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Form_BC_Mcs_Color.resx">
+      <DependentUpon>Form_BC_Mcs_Color.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Form_BC_Spec.resx">
+      <DependentUpon>Form_BC_Spec.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Form_BC_Warehouse.resx">
+      <DependentUpon>Form_BC_Warehouse.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Form_CM_Customer.resx">
+      <DependentUpon>Form_CM_Customer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Form_CM_Rate.resx">
+      <DependentUpon>Form_CM_Rate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Pop_BC_Yield_Info.resx">
+      <DependentUpon>Pop_BC_Yield_Info.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Pop_Color.resx">
+      <DependentUpon>Pop_Color.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Pop_Customer.resx">
+      <DependentUpon>Pop_Customer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Pop_GroupInfo.resx">
+      <DependentUpon>Pop_GroupInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Pop_GroupSearch.resx">
+      <DependentUpon>Pop_GroupSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Pop_GroupSearchAll.resx">
+      <DependentUpon>Pop_GroupSearchAll.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Pop_Item_List.resx">
+      <DependentUpon>Pop_Item_List.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Pop_Item_List_Show.resx">
+      <DependentUpon>Pop_Item_List_Show.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Pop_Item_Show.resx">
+      <DependentUpon>Pop_Item_Show.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Pop_Mcs.resx">
+      <DependentUpon>Pop_Mcs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Pop_Mcs_Color.resx">
+      <DependentUpon>Pop_Mcs_Color.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Pop_SaveName.resx">
+      <DependentUpon>Pop_SaveName.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Pop_SelectionChange_Box.resx">
+      <DependentUpon>Pop_SelectionChange_Box.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Pop_SelectionChange_FSP.resx">
+      <DependentUpon>Pop_SelectionChange_FSP.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Pop_SelectionChange_SSP.resx">
+      <DependentUpon>Pop_SelectionChange_SSP.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialBase\Pop_SelectionChange_Vendor.resx">
+      <DependentUpon>Pop_SelectionChange_Vendor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Form_RdViewer.resx">
+      <DependentUpon>Form_RdViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Form_BC_BOMTemplate.resx">
+      <DependentUpon>Form_BC_BOMTemplate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Form_BC_FormulaN.resx">
+      <DependentUpon>Form_BC_FormulaN.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Form_BC_Yield_Inspection.resx">
+      <DependentUpon>Form_BC_Yield_Inspection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Form_BC_Yield_Size_Group.resx">
+      <DependentUpon>Form_BC_Yield_Size_Group.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Form_BC_Yield_Status.resx">
+      <DependentUpon>Form_BC_Yield_Status.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Form_BC_Yield_Warning.resx">
+      <DependentUpon>Form_BC_Yield_Warning.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Form_BC_Yield_withExcel.resx">
+      <DependentUpon>Form_BC_Yield_withExcel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Pop_BC_Yield_History.resx">
+      <DependentUpon>Pop_BC_Yield_History.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Pop_Finder.resx">
+      <DependentUpon>Pop_Finder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Pop_FormulaMuti_Change.resx">
+      <DependentUpon>Pop_FormulaMuti_Change.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Pop_Formula_Base_Register.resx">
+      <DependentUpon>Pop_Formula_Base_Register.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Pop_Formula_Copy.resx">
+      <DependentUpon>Pop_Formula_Copy.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Pop_Formula_Register.resx">
+      <DependentUpon>Pop_Formula_Register.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Pop_Item_List.resx">
+      <DependentUpon>Pop_Item_List.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Pop_Style_Mcs.resx">
+      <DependentUpon>Pop_Style_Mcs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Pop_Yield_Backup_Restore.resx">
+      <DependentUpon>Pop_Yield_Backup_Restore.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Pop_Yield_Check_Status.resx">
+      <DependentUpon>Pop_Yield_Check_Status.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Pop_Yield_Copy.resx">
+      <DependentUpon>Pop_Yield_Copy.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Pop_Yield_History_Clear.resx">
+      <DependentUpon>Pop_Yield_History_Clear.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Pop_Yield_Inspection.resx">
+      <DependentUpon>Pop_Yield_Inspection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Pop_Yield_Modify_withSRF.resx">
+      <DependentUpon>Pop_Yield_Modify_withSRF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Pop_Yield_Print.resx">
+      <DependentUpon>Pop_Yield_Print.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Pop_Yield_Replace_Item.resx">
+      <DependentUpon>Pop_Yield_Replace_Item.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Pop_Yield_Status.resx">
+      <DependentUpon>Pop_Yield_Status.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Pop_Yield_Template.resx">
+      <DependentUpon>Pop_Yield_Template.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Pop_Yield_Upload_Condition.resx">
+      <DependentUpon>Pop_Yield_Upload_Condition.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Pop_Yield_Value.resx">
+      <DependentUpon>Pop_Yield_Value.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield\Pop_Yield_Value_Conversion.resx">
+      <DependentUpon>Pop_Yield_Value_Conversion.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield_New\Form_BC_Yield.resx">
+      <DependentUpon>Form_BC_Yield.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield_New\Form_BC_Yield_Item_Group.resx">
+      <DependentUpon>Form_BC_Yield_Item_Group.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield_New\Form_BC_Yield_Status.resx">
+      <DependentUpon>Form_BC_Yield_Status.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield_New\Pop_Finder.resx">
+      <DependentUpon>Pop_Finder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield_New\Pop_Yield_Backup_Restore.resx">
+      <DependentUpon>Pop_Yield_Backup_Restore.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield_New\Pop_Yield_Component_Duplicate.resx">
+      <DependentUpon>Pop_Yield_Component_Duplicate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield_New\Pop_Yield_Copy.resx">
+      <DependentUpon>Pop_Yield_Copy.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield_New\Pop_Yield_Copy_Duplicate.resx">
+      <DependentUpon>Pop_Yield_Copy_Duplicate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield_New\Pop_Yield_Grid_Combo.resx">
+      <DependentUpon>Pop_Yield_Grid_Combo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield_New\Pop_Yield_Input_Value.resx">
+      <DependentUpon>Pop_Yield_Input_Value.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield_New\Pop_Yield_Inspection.resx">
+      <DependentUpon>Pop_Yield_Inspection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield_New\Pop_Yield_Joint_Template.resx">
+      <DependentUpon>Pop_Yield_Joint_Template.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield_New\Pop_Yield_Loading_Condition.resx">
+      <DependentUpon>Pop_Yield_Loading_Condition.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield_New\Pop_Yield_MultiChange_Material.resx">
+      <DependentUpon>Pop_Yield_MultiChange_Material.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield_New\Pop_Yield_Print.resx">
+      <DependentUpon>Pop_Yield_Print.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield_New\Pop_Yield_Select_Material.resx">
+      <DependentUpon>Pop_Yield_Select_Material.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield_New\Pop_Yield_Status_Check.resx">
+      <DependentUpon>Pop_Yield_Status_Check.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yield_New\Pop_Yield_Status_Confirm.resx">
+      <DependentUpon>Pop_Yield_Status_Confirm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\COM\Com.csproj">
+      <Project>{992378C3-66A1-4E98-96F5-CE2B26E0CAB2}</Project>
+      <Name>Com</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Report\viewer.bak" />
+    <None Include="Report\viewer.rdf" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
