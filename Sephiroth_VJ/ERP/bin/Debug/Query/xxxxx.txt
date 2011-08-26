@@ -1,0 +1,26 @@
+ 
+
+
+EXEC PKG_SBK_STOCK_EXPEND.RUN_STOCK_INCOMING('VJ', '200807', 'jaesung.cho');
+COMMIT;
+EXEC PKG_SBK_STOCK_EXPEND.RUN_STOCK_INCOMING('QD', '200807', 'jaesung.cho');
+COMMIT;
+
+
+EXEC Xxx_Sbc_Jaesung.INSERT_SBK_STOCK_CLOSE('VJ', '1', '200807', 'jaesung.cho');
+COMMIT;
+EXEC Xxx_Sbc_Jaesung.INSERT_SBK_STOCK_CLOSE('VJ', '2', '200807', 'jaesung.cho');
+COMMIT;
+EXEC Xxx_Sbc_Jaesung.INSERT_SBK_STOCK_CLOSE('VJ', '3', '200807', 'jaesung.cho');
+COMMIT;
+EXEC Xxx_Sbc_Jaesung.INSERT_SBK_STOCK_CLOSE('VJ', '4', '200807', 'jaesung.cho');
+COMMIT;
+
+EXEC Xxx_Sbc_Jaesung.INSERT_SBK_STOCK_CLOSE('QD', '1', '200807', 'jaesung.cho');
+COMMIT;
+EXEC Xxx_Sbc_Jaesung.INSERT_SBK_STOCK_CLOSE('QD', '2', '200807', 'jaesung.cho');
+COMMIT;
+EXEC Xxx_Sbc_Jaesung.INSERT_SBK_STOCK_CLOSE('QD', '3', '200807', 'jaesung.cho');
+COMMIT;
+EXEC Xxx_Sbc_Jaesung.INSERT_SBK_STOCK_CLOSE('QD', '4', '200807', 'jaesung.cho');
+COMMIT;
