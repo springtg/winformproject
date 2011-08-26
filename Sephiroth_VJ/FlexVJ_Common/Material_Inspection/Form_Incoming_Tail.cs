@@ -11,38 +11,7 @@ using System.Collections;
 
 namespace FlexVJ_Common.Material_Inspection
 {
-    public enum GRID_ALIAS_D : int
-    {
-        IxDIVISION = 0,
-        IxFACTORY = 1,
-        IxINCOMING_YMD = 2,
-        IxINCOMING_LOCATION = 3,
-        IxINCOMING_SEQ = 4,
-        IxCUST_CD = 5,
-        IxINSP_SEQ = 6,
-        IxINSP_YMD = 7,
-        IxOBS_ID = 8,
-        IxSTYLE_CD = 9,
-        IxSTYLE_NAME = 10,
-        IxLINE_CD = 11,
-        IxSUPPLIER_CD = 12,
-        IxGROUP_CD = 13,
-        IxCLASS_CD = 14,
-        IxCLASS_NAME = 15,
-        IxMATERIAL_CD = 16,
-        IxMATERIAL_NAME = 17,
-        IxCOLOR_CD = 18,
-        IxCOLOR_NAME = 19,
-        IxUNIT = 20,
-        IxINCOMING_QTY = 21,
-        IxERROR_QTY1 = 22,
-        IxREASON_CD1 = 23,
-        IxERROR_QTY2 = 24,
-        IxREASON_CD2 = 25,
-        IxWEEKLY_CD = 26,
-        IxREMARK = 27,
-        IxFIX_YN = 28
-    }
+
 
     public partial class Form_Incoming_Tail : COM.VJ_CommonWinForm.Form_Top
     {
@@ -94,12 +63,13 @@ namespace FlexVJ_Common.Material_Inspection
 
         #endregion
 
+        #region "Method"
+
         public Form_Incoming_Tail()
         {
             InitializeComponent();
         }
 
-        #region "Method"
         private void InitForm()
         {
             tbtn_Append.Enabled = false;
@@ -379,6 +349,7 @@ namespace FlexVJ_Common.Material_Inspection
             {
                 btn_AddRow.Enabled = true;
                 btn_Cancel.Enabled = true;
+                btn_Confirm.Enabled = false;
             }
             FormatGrid(arg_FSP);
             //arg_FSP.Redraw = false;
@@ -451,7 +422,7 @@ namespace FlexVJ_Common.Material_Inspection
             l_Flexd[l_Flex.Rows.Fixed, Convert.ToInt32(GRID_ALIAS_D.IxFACTORY)] = l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.FACTORY)];
             l_Flexd[l_Flex.Rows.Fixed, Convert.ToInt32(GRID_ALIAS_D.IxINCOMING_SEQ)] = l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.INCOMING_SEQ)];
             l_Flexd[l_Flex.Rows.Fixed, Convert.ToInt32(GRID_ALIAS_D.IxCUST_CD)] = l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.CUST_CD)];
-            l_Flexd[l_Flex.Rows.Fixed, Convert.ToInt32(GRID_ALIAS_D.IxINCOMING_LOCATION)] = l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.INCOMING_LOCATION)];
+            l_Flexd[l_Flex.Rows.Fixed, Convert.ToInt32(GRID_ALIAS_D.IxINCOMING_LOCATION)] = l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.LOCATION)];
             l_Flexd[l_Flex.Rows.Fixed, Convert.ToInt32(GRID_ALIAS_D.IxINCOMING_YMD)] = l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.INCOMING_YMD)];
             //them dieu kien default
             l_Flexd[l_Flex.Rows.Fixed, Convert.ToInt32(GRID_ALIAS_D.IxWEEKLY_CD)] = l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.WEEKLY_CD)];
@@ -727,7 +698,7 @@ namespace FlexVJ_Common.Material_Inspection
                 COM.ComFunction.User_Message("Pls 'Save Data' before 'Confirm'", "Error", MessageBoxButtons.OK);
                 return false;
             }
-            if (COM.ComFunction.User_Message("Are you want to Confirm This Row", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (COM.ComFunction.User_Message("Are you want to Cancel This Row", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 return true;
             }
@@ -858,9 +829,11 @@ namespace FlexVJ_Common.Material_Inspection
                 Display_FlexGrid(fgrid_Incoming, SEARCH_SMI_INCOMING());
                 fgrid_Incoming.Enabled = true;
                 Clear_FlexGrid(fgrid_Incoming_detail);
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsEndSearch, this);
             }
             catch (Exception ex)
             {
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotSearch, this);
                 COM.ComFunction.User_Message(ex.Message, "tbtn_Search_Click", MessageBoxButtons.OK);
             }
             finally
@@ -878,10 +851,12 @@ namespace FlexVJ_Common.Material_Inspection
                 {
                     fgrid_Incoming_Click(fgrid_Incoming, EventArgs.Empty);
                     fgrid_Incoming.Enabled = true;
+                    ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsEndSave, this);
                 }
             }
             catch (Exception ex)
             {
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotSave, this);
                 COM.ComFunction.User_Message(ex.Message, "tbtn_Save_Click", MessageBoxButtons.OK);
             }
             finally
@@ -906,9 +881,11 @@ namespace FlexVJ_Common.Material_Inspection
                 {
                     l_Flex.Delete_Row(l_Flex.RowSel);
                 }
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsEndDelete, this);
             }
             catch (Exception ex)
             {
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotDelete, this);
                 COM.ComFunction.User_Message(ex.Message, "tbtn_Delete_Click", MessageBoxButtons.OK);
             }
             finally
@@ -934,34 +911,44 @@ namespace FlexVJ_Common.Material_Inspection
 
         private void fgrid_Incoming_detail_DoubleClick(object sender, EventArgs e)
         {
-            COM.FSP l_Flex = (COM.FSP)sender;
-            if (l_Flex.Rows.Count <= l_Flex.Rows.Fixed) return;
-            if (l_Flex.ColSel == Convert.ToInt32(GRID_ALIAS_D.IxSTYLE_CD) || l_Flex.ColSel == Convert.ToInt32(GRID_ALIAS_D.IxSTYLE_NAME))
+            try
             {
-                int[] checks = new int[]{ Convert.ToInt32(GRID_ALIAS_D.IxSTYLE_CD),
-                                          Convert.ToInt32(GRID_ALIAS_D.IxCOLOR_CD)};
-                Pop_BC_Yield_Info l_Pop_BC_Yield_Info = new Pop_BC_Yield_Info(fgrid_Incoming_detail, checks);
-                l_Pop_BC_Yield_Info.ShowDialog();
-                if (ClassLib.ComVar.Parameter_PopUpTable.Rows.Count <= 0 || l_Pop_BC_Yield_Info.DialogResult != DialogResult.OK)
+                COM.FSP l_Flex = (COM.FSP)sender;
+                if (l_Flex.Rows.Count <= l_Flex.Rows.Fixed) return;
+                if (l_Flex.ColSel == Convert.ToInt32(GRID_ALIAS_D.IxSTYLE_CD) || l_Flex.ColSel == Convert.ToInt32(GRID_ALIAS_D.IxSTYLE_NAME))
                 {
+                    if (ClassLib.ComFunction.NullToBlank(l_Flex[l_Flex.RowSel, (int)GRID_ALIAS_D.IxFIX_YN]).Equals("Y"))
+                        return;
+                    int[] checks = new int[]{ Convert.ToInt32(GRID_ALIAS_D.IxSTYLE_CD),
+                                          Convert.ToInt32(GRID_ALIAS_D.IxCOLOR_CD)};
+                    Pop_BC_Yield_Info l_Pop_BC_Yield_Info = new Pop_BC_Yield_Info(fgrid_Incoming_detail, checks);
+                    l_Pop_BC_Yield_Info.ShowDialog();
+                    if (ClassLib.ComVar.Parameter_PopUpTable.Rows.Count <= 0 || l_Pop_BC_Yield_Info.DialogResult != DialogResult.OK)
+                    {
+                        l_Pop_BC_Yield_Info.Dispose();
+                        return;
+                    }
                     l_Pop_BC_Yield_Info.Dispose();
-                    return;
+                    if (ClassLib.ComVar.Parameter_PopUpTable.Rows.Count == 0) return;
+                    l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxCOLOR_CD)] = ClassLib.ComVar.Parameter_PopUpTable.Rows[0]["color_cd"];
+                    l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxCOLOR_NAME)] = ClassLib.ComVar.Parameter_PopUpTable.Rows[0]["color_nm"];
+                    l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxUNIT)] = ClassLib.ComVar.Parameter_PopUpTable.Rows[0]["unit"];
+                    l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxSTYLE_CD)] = ClassLib.ComVar.Parameter_PopUpTable.Rows[0]["style_cd"];
+                    l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxSTYLE_NAME)] = ClassLib.ComVar.Parameter_PopUpTable.Rows[0]["style_name"];
+                    l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxMATERIAL_CD)] = ClassLib.ComVar.Parameter_PopUpTable.Rows[0]["item_cd"];
+                    l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxMATERIAL_NAME)] = ClassLib.ComVar.Parameter_PopUpTable.Rows[0]["item_nm"];
+                    l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxGROUP_CD)] = ClassLib.ComVar.Parameter_PopUpTable.Rows[0]["group_cd"];
+                    l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxCLASS_CD)] = ClassLib.ComVar.Parameter_PopUpTable.Rows[0]["group_cd"];
+                    l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxCLASS_NAME)] = ClassLib.ComVar.Parameter_PopUpTable.Rows[0]["group_name2"];
+                    if (ClassLib.ComFunction.NullToBlank(l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxDIVISION)]).Equals(""))
+                        l_Flex.Update_Row(l_Flex.RowSel);
+                    ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsEndSearch, this);
                 }
-                l_Pop_BC_Yield_Info.Dispose();
-                if (ClassLib.ComVar.Parameter_PopUpTable.Rows.Count == 0) return;
-                l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxCOLOR_CD)] = ClassLib.ComVar.Parameter_PopUpTable.Rows[0]["color_cd"];
-                l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxCOLOR_NAME)] = ClassLib.ComVar.Parameter_PopUpTable.Rows[0]["color_nm"];
-                l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxUNIT)] = ClassLib.ComVar.Parameter_PopUpTable.Rows[0]["unit"];
-                l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxSTYLE_CD)] = ClassLib.ComVar.Parameter_PopUpTable.Rows[0]["style_cd"];
-                l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxSTYLE_NAME)] = ClassLib.ComVar.Parameter_PopUpTable.Rows[0]["style_name"];
-                l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxMATERIAL_CD)] = ClassLib.ComVar.Parameter_PopUpTable.Rows[0]["item_cd"];
-                l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxMATERIAL_NAME)] = ClassLib.ComVar.Parameter_PopUpTable.Rows[0]["item_nm"];
-                l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxGROUP_CD)] = ClassLib.ComVar.Parameter_PopUpTable.Rows[0]["group_cd"];
-                l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxCLASS_CD)] = ClassLib.ComVar.Parameter_PopUpTable.Rows[0]["group_cd"];
-                l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxCLASS_NAME)] = ClassLib.ComVar.Parameter_PopUpTable.Rows[0]["group_name2"];
-
-                //l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxCOLOR_CD)] = ClassLib.ComVar.Parameter_PopUpTable.Rows[0]["color_cd"];
-
+            }
+            catch (Exception ex)
+            {
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotSearch, this);
+                COM.ComFunction.User_Message(ex.Message, "fgrid_Incoming_detail_DoubleClick");
             }
         }
 
@@ -977,14 +964,16 @@ namespace FlexVJ_Common.Material_Inspection
                 string l_incoming_date = string.Format("{0}", l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.INCOMING_YMD)]);
                 DateTime l_DateTmp = DateTime.ParseExact(l_incoming_date.Substring(0, 10), "yyyy-MM-dd", System.Globalization.CultureInfo.CurrentCulture);
                 l_incoming_date = l_DateTmp.ToString("yyyyMMdd");
-                string l_location = string.Format("{0}", l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.INCOMING_LOCATION)]);
+                string l_location = string.Format("{0}", l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.LOCATION)]);
                 string l_cust = string.Format("{0}", l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.CUST_CD)]);
                 string l_incoming_seq = string.Format("{0}", l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.INCOMING_SEQ)]);
 
                 Display_FlexGrid(fgrid_Incoming_detail, SEARCH_SMI_INCOMING_TAIL(l_factory, l_incoming_date, l_location, l_cust, l_incoming_seq));
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsEndSearch, this);
             }
             catch (Exception ex)
             {
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotSearch, this);
                 COM.ComFunction.User_Message(ex.Message, "fgrid_Incoming_Click", MessageBoxButtons.OK);
             }
             finally
@@ -995,9 +984,21 @@ namespace FlexVJ_Common.Material_Inspection
 
         private void fgrid_Incoming_detail_AfterEdit(object sender, RowColEventArgs e)
         {
-            COM.FSP l_Flex = (COM.FSP)sender;
-            if (l_Flex.Rows.Count <= l_Flex.Rows.Fixed) return;
-            l_Flex.Update_Row();
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                COM.FSP l_Flex = (COM.FSP)sender;
+                if (l_Flex.Rows.Count <= l_Flex.Rows.Fixed) return;
+                l_Flex.Update_Row();
+            }
+            catch (Exception ex)
+            {
+                COM.ComFunction.User_Message(ex.Message, "fgrid_Incoming_detail_AfterEdit");
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+            }
         }
 
         private void btn_Confirm_Click(object sender, EventArgs e)
@@ -1010,11 +1011,17 @@ namespace FlexVJ_Common.Material_Inspection
                     if (CONFIRM_SMI_INCOMING_TAIL(fgrid_Incoming_detail, "CONFIRM"))
                     {
                         fgrid_Incoming_Click(fgrid_Incoming, EventArgs.Empty);
+                        ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsEndSave, this);
+                    }
+                    else
+                    {
+                        ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotSave, this);
                     }
                 }
             }
             catch (Exception ex)
             {
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotSave, this);
                 COM.ComFunction.User_Message(ex.Message, "tbtn_Save_Click", MessageBoxButtons.OK);
             }
             finally
@@ -1033,11 +1040,18 @@ namespace FlexVJ_Common.Material_Inspection
                     if (CONFIRM_SMI_INCOMING_TAIL(fgrid_Incoming_detail, "CANCEL"))
                     {
                         fgrid_Incoming_Click(fgrid_Incoming, EventArgs.Empty);
+                        ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsEndSave, this);
+                    }
+                    else
+                    {
+                        ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotSave, this);
+ 
                     }
                 }
             }
             catch (Exception ex)
             {
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotSave, this);
                 COM.ComFunction.User_Message(ex.Message, "tbtn_Save_Click", MessageBoxButtons.OK);
             }
             finally
@@ -1046,12 +1060,10 @@ namespace FlexVJ_Common.Material_Inspection
             }
         }
 
-
         private void cmb_Location_SelectedValueChanged(object sender, EventArgs e)
         {
             FilterCust_ByLoc();
         }
-        #endregion
 
         private void chk_ViewAction_CheckStateChanged(object sender, EventArgs e)
         {
@@ -1075,5 +1087,71 @@ namespace FlexVJ_Common.Material_Inspection
             }
 
         }
+
+        private void fgrid_Incoming_detail_SelChange(object sender, EventArgs e)
+        {
+            COM.FSP l_Flex = (COM.FSP)sender;
+            if (l_Flex.Rows.Count <= l_Flex.Rows.Fixed)
+            {
+                return;
+            }
+            if (!ClassLib.ComFunction.NullToBlank(l_Flex[l_Flex.RowSel, 0]).Equals(""))
+            {
+                return;
+            }
+            if (ClassLib.ComFunction.NullToBlank(l_Flex[l_Flex.RowSel, 0]).Equals(""))
+            {
+                if (ClassLib.ComFunction.NullToBlank(l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS_D.IxFIX_YN)]).Equals("Y"))
+                {
+                    btn_Confirm.Enabled = false;
+                    btn_Cancel_Confirm.Enabled = true;
+                    tbtn_Delete.Enabled = false;
+                }
+                else
+                {
+                    btn_Confirm.Enabled = true;
+                    btn_Cancel_Confirm.Enabled = false;
+                    tbtn_Delete.Enabled = true;
+                }
+            }
+        }
+
+        #endregion
+    }
+
+    /// <summary>
+    /// Grid alias
+    /// </summary>
+    public enum GRID_ALIAS_D : int
+    {
+        IxDIVISION = 0,
+        IxFACTORY = 1,
+        IxINCOMING_YMD = 2,
+        IxINCOMING_LOCATION = 3,
+        IxINCOMING_SEQ = 4,
+        IxCUST_CD = 5,
+        IxINSP_SEQ = 6,
+        IxINSP_YMD = 7,
+        IxOBS_ID = 8,
+        IxSTYLE_CD = 9,
+        IxSTYLE_NAME = 10,
+        IxLINE_CD = 11,
+        IxSUPPLIER_CD = 12,
+        IxGROUP_CD = 13,
+        IxCLASS_CD = 14,
+        IxCLASS_NAME = 15,
+        IxMATERIAL_CD = 16,
+        IxMATERIAL_NAME = 17,
+        IxCOLOR_CD = 18,
+        IxCOLOR_NAME = 19,
+        IxUNIT = 20,
+        IxINCOMING_QTY = 21,
+        IxERROR_QTY1 = 22,
+        IxREASON_CD1 = 23,
+        IxERROR_QTY2 = 24,
+        IxREASON_CD2 = 25,
+        IxWEEKLY_CD = 26,
+        IxREMARK = 27,
+        IxFIX_YN = 28
     }
 }

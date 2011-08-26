@@ -30,31 +30,33 @@ namespace FlexVJ_Common.Material_Inspection
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Incoming_Tail));
-            C1.Win.C1List.Style style49 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style50 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style51 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style52 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style53 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style54 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style55 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style56 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style57 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style58 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style59 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style60 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style61 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style62 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style63 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style64 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style65 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style66 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style67 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style68 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style69 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style70 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style71 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style72 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style1 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style2 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style3 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style4 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style5 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style6 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style7 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style8 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style9 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style10 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style11 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style12 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style13 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style14 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style15 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style16 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style17 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style18 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style19 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style20 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style21 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style22 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style23 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style24 = new C1.Win.C1List.Style();
             this.pnl_head = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.chk_ViewAction = new System.Windows.Forms.CheckBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.cmb_Cust = new C1.Win.C1List.C1Combo();
             this.cmb_Location = new C1.Win.C1List.C1Combo();
@@ -83,8 +85,6 @@ namespace FlexVJ_Common.Material_Inspection
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_AddRow = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.chk_ViewAction = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.c1CommandHolder1)).BeginInit();
             this.pnl_head.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -273,6 +273,34 @@ namespace FlexVJ_Common.Material_Inspection
             this.pnl_head.Size = new System.Drawing.Size(1016, 96);
             this.pnl_head.TabIndex = 31;
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
+            this.label1.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ImageIndex = 1;
+            this.label1.ImageList = this.img_Label;
+            this.label1.Location = new System.Drawing.Point(708, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 21);
+            this.label1.TabIndex = 571;
+            this.label1.Text = "View Data";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // chk_ViewAction
+            // 
+            this.chk_ViewAction.AutoSize = true;
+            this.chk_ViewAction.Checked = true;
+            this.chk_ViewAction.CheckState = System.Windows.Forms.CheckState.Indeterminate;
+            this.chk_ViewAction.Location = new System.Drawing.Point(815, 43);
+            this.chk_ViewAction.Name = "chk_ViewAction";
+            this.chk_ViewAction.Size = new System.Drawing.Size(40, 18);
+            this.chk_ViewAction.TabIndex = 570;
+            this.chk_ViewAction.Text = "All";
+            this.chk_ViewAction.ThreeState = true;
+            this.toolTip1.SetToolTip(this.chk_ViewAction, "All");
+            this.chk_ViewAction.UseVisualStyleBackColor = true;
+            this.chk_ViewAction.CheckStateChanged += new System.EventHandler(this.chk_ViewAction_CheckStateChanged);
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -294,7 +322,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.cmb_Cust.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cmb_Cust.Caption = "";
             this.cmb_Cust.CaptionHeight = 17;
-            this.cmb_Cust.CaptionStyle = style49;
+            this.cmb_Cust.CaptionStyle = style1;
             this.cmb_Cust.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.cmb_Cust.ColumnCaptionHeight = 18;
             this.cmb_Cust.ColumnFooterHeight = 18;
@@ -310,11 +338,11 @@ namespace FlexVJ_Common.Material_Inspection
             this.cmb_Cust.EditorFont = new System.Drawing.Font("Gulim", 9F);
             this.cmb_Cust.EditorForeColor = System.Drawing.SystemColors.WindowText;
             this.cmb_Cust.EditorHeight = 16;
-            this.cmb_Cust.EvenRowStyle = style50;
+            this.cmb_Cust.EvenRowStyle = style2;
             this.cmb_Cust.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_Cust.FooterStyle = style51;
-            this.cmb_Cust.HeadingStyle = style52;
-            this.cmb_Cust.HighLightRowStyle = style53;
+            this.cmb_Cust.FooterStyle = style3;
+            this.cmb_Cust.HeadingStyle = style4;
+            this.cmb_Cust.HighLightRowStyle = style5;
             this.cmb_Cust.Images.Add(((System.Drawing.Image)(resources.GetObject("cmb_Cust.Images"))));
             this.cmb_Cust.ItemHeight = 15;
             this.cmb_Cust.Location = new System.Drawing.Point(531, 62);
@@ -323,13 +351,13 @@ namespace FlexVJ_Common.Material_Inspection
             this.cmb_Cust.MaxLength = 32767;
             this.cmb_Cust.MouseCursor = System.Windows.Forms.Cursors.Default;
             this.cmb_Cust.Name = "cmb_Cust";
-            this.cmb_Cust.OddRowStyle = style54;
+            this.cmb_Cust.OddRowStyle = style6;
             this.cmb_Cust.RowDivider.Color = System.Drawing.Color.DarkGray;
             this.cmb_Cust.RowDivider.Style = C1.Win.C1List.LineStyleEnum.None;
             this.cmb_Cust.RowSubDividerColor = System.Drawing.Color.DarkGray;
-            this.cmb_Cust.SelectedStyle = style55;
+            this.cmb_Cust.SelectedStyle = style7;
             this.cmb_Cust.Size = new System.Drawing.Size(171, 20);
-            this.cmb_Cust.Style = style56;
+            this.cmb_Cust.Style = style8;
             this.cmb_Cust.TabIndex = 569;
             this.cmb_Cust.PropBag = resources.GetString("cmb_Cust.PropBag");
             // 
@@ -339,7 +367,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.cmb_Location.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cmb_Location.Caption = "";
             this.cmb_Location.CaptionHeight = 17;
-            this.cmb_Location.CaptionStyle = style57;
+            this.cmb_Location.CaptionStyle = style9;
             this.cmb_Location.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.cmb_Location.ColumnCaptionHeight = 18;
             this.cmb_Location.ColumnFooterHeight = 18;
@@ -354,11 +382,11 @@ namespace FlexVJ_Common.Material_Inspection
             this.cmb_Location.EditorFont = new System.Drawing.Font("Gulim", 9F);
             this.cmb_Location.EditorForeColor = System.Drawing.SystemColors.WindowText;
             this.cmb_Location.EditorHeight = 16;
-            this.cmb_Location.EvenRowStyle = style58;
+            this.cmb_Location.EvenRowStyle = style10;
             this.cmb_Location.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_Location.FooterStyle = style59;
-            this.cmb_Location.HeadingStyle = style60;
-            this.cmb_Location.HighLightRowStyle = style61;
+            this.cmb_Location.FooterStyle = style11;
+            this.cmb_Location.HeadingStyle = style12;
+            this.cmb_Location.HighLightRowStyle = style13;
             this.cmb_Location.Images.Add(((System.Drawing.Image)(resources.GetObject("cmb_Location.Images"))));
             this.cmb_Location.ItemHeight = 15;
             this.cmb_Location.Location = new System.Drawing.Point(446, 40);
@@ -367,13 +395,13 @@ namespace FlexVJ_Common.Material_Inspection
             this.cmb_Location.MaxLength = 32767;
             this.cmb_Location.MouseCursor = System.Windows.Forms.Cursors.Default;
             this.cmb_Location.Name = "cmb_Location";
-            this.cmb_Location.OddRowStyle = style62;
+            this.cmb_Location.OddRowStyle = style14;
             this.cmb_Location.RowDivider.Color = System.Drawing.Color.DarkGray;
             this.cmb_Location.RowDivider.Style = C1.Win.C1List.LineStyleEnum.None;
             this.cmb_Location.RowSubDividerColor = System.Drawing.Color.DarkGray;
-            this.cmb_Location.SelectedStyle = style63;
+            this.cmb_Location.SelectedStyle = style15;
             this.cmb_Location.Size = new System.Drawing.Size(256, 20);
-            this.cmb_Location.Style = style64;
+            this.cmb_Location.Style = style16;
             this.cmb_Location.TabIndex = 568;
             this.cmb_Location.SelectedValueChanged += new System.EventHandler(this.cmb_Location_SelectedValueChanged);
             this.cmb_Location.PropBag = resources.GetString("cmb_Location.PropBag");
@@ -486,7 +514,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.cmb_Factory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cmb_Factory.Caption = "";
             this.cmb_Factory.CaptionHeight = 17;
-            this.cmb_Factory.CaptionStyle = style65;
+            this.cmb_Factory.CaptionStyle = style17;
             this.cmb_Factory.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.cmb_Factory.ColumnCaptionHeight = 18;
             this.cmb_Factory.ColumnFooterHeight = 18;
@@ -497,11 +525,11 @@ namespace FlexVJ_Common.Material_Inspection
             this.cmb_Factory.EditorFont = new System.Drawing.Font("Gulim", 9F);
             this.cmb_Factory.EditorForeColor = System.Drawing.SystemColors.WindowText;
             this.cmb_Factory.EditorHeight = 16;
-            this.cmb_Factory.EvenRowStyle = style66;
+            this.cmb_Factory.EvenRowStyle = style18;
             this.cmb_Factory.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_Factory.FooterStyle = style67;
-            this.cmb_Factory.HeadingStyle = style68;
-            this.cmb_Factory.HighLightRowStyle = style69;
+            this.cmb_Factory.FooterStyle = style19;
+            this.cmb_Factory.HeadingStyle = style20;
+            this.cmb_Factory.HighLightRowStyle = style21;
             this.cmb_Factory.Images.Add(((System.Drawing.Image)(resources.GetObject("cmb_Factory.Images"))));
             this.cmb_Factory.ItemHeight = 15;
             this.cmb_Factory.Location = new System.Drawing.Point(109, 40);
@@ -510,13 +538,13 @@ namespace FlexVJ_Common.Material_Inspection
             this.cmb_Factory.MaxLength = 32767;
             this.cmb_Factory.MouseCursor = System.Windows.Forms.Cursors.Default;
             this.cmb_Factory.Name = "cmb_Factory";
-            this.cmb_Factory.OddRowStyle = style70;
+            this.cmb_Factory.OddRowStyle = style22;
             this.cmb_Factory.RowDivider.Color = System.Drawing.Color.DarkGray;
             this.cmb_Factory.RowDivider.Style = C1.Win.C1List.LineStyleEnum.None;
             this.cmb_Factory.RowSubDividerColor = System.Drawing.Color.DarkGray;
-            this.cmb_Factory.SelectedStyle = style71;
+            this.cmb_Factory.SelectedStyle = style23;
             this.cmb_Factory.Size = new System.Drawing.Size(210, 20);
-            this.cmb_Factory.Style = style72;
+            this.cmb_Factory.Style = style24;
             this.cmb_Factory.TabIndex = 10;
             this.cmb_Factory.PropBag = resources.GetString("cmb_Factory.PropBag");
             // 
@@ -637,6 +665,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.fgrid_Incoming_detail.StyleInfo = resources.GetString("fgrid_Incoming_detail.StyleInfo");
             this.fgrid_Incoming_detail.TabIndex = 180;
             this.fgrid_Incoming_detail.AfterEdit += new C1.Win.C1FlexGrid.RowColEventHandler(this.fgrid_Incoming_detail_AfterEdit);
+            this.fgrid_Incoming_detail.SelChange += new System.EventHandler(this.fgrid_Incoming_detail_SelChange);
             this.fgrid_Incoming_detail.DoubleClick += new System.EventHandler(this.fgrid_Incoming_detail_DoubleClick);
             // 
             // panel4
@@ -702,34 +731,6 @@ namespace FlexVJ_Common.Material_Inspection
             this.btn_AddRow.TabIndex = 595;
             this.btn_AddRow.UseVisualStyleBackColor = false;
             this.btn_AddRow.Click += new System.EventHandler(this.btn_AddRow_Click);
-            // 
-            // chk_ViewAction
-            // 
-            this.chk_ViewAction.AutoSize = true;
-            this.chk_ViewAction.Checked = true;
-            this.chk_ViewAction.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-            this.chk_ViewAction.Location = new System.Drawing.Point(815, 43);
-            this.chk_ViewAction.Name = "chk_ViewAction";
-            this.chk_ViewAction.Size = new System.Drawing.Size(40, 18);
-            this.chk_ViewAction.TabIndex = 570;
-            this.chk_ViewAction.Text = "All";
-            this.chk_ViewAction.ThreeState = true;
-            this.toolTip1.SetToolTip(this.chk_ViewAction, "All");
-            this.chk_ViewAction.UseVisualStyleBackColor = true;
-            this.chk_ViewAction.CheckStateChanged += new System.EventHandler(this.chk_ViewAction_CheckStateChanged);
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
-            this.label1.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ImageIndex = 1;
-            this.label1.ImageList = this.img_Label;
-            this.label1.Location = new System.Drawing.Point(708, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 21);
-            this.label1.TabIndex = 571;
-            this.label1.Text = "View Data";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Form_Incoming_Tail
             // 

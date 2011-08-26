@@ -10,21 +10,59 @@ using System.Threading;
 using C1.Win.C1FlexGrid;
 
 namespace FlexVJ_Common.Material_Inspection
-{      
+{
     public partial class Form_MI_Reason : COM.VJ_CommonWinForm.Pop_Large
     {
+        #region "Variable"
         private COM.OraDB MyOraDB = new COM.OraDB();
+
+        #endregion
+
+        #region "Event"
+
+        private void Form_MI_Reason_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void btn_Insert_Click(object sender, EventArgs e)
+        {
+            addrow();
+        }
+        private void fgrid_main_AfterEdit(object sender, C1.Win.C1FlexGrid.RowColEventArgs e)
+        {
+            fgrid_main.Update_Row();
+        }
+        private void tbtn_Save_Click(object sender, C1.Win.C1Command.ClickEventArgs e)
+        {
+            Tbtn_SaveProcess();
+        }
+
+        private void tbtn_Search_Click(object sender, C1.Win.C1Command.ClickEventArgs e)
+        {
+            Tbtn_SearchProcess();
+        }
+        private void tbtn_New_Click(object sender, C1.Win.C1Command.ClickEventArgs e)
+        {
+            addrow();
+
+        }
+        private void fgrid_main_DoubleClick(object sender, EventArgs e)
+        {
+            COM.FSP l_Flex = (COM.FSP)sender;
+            if (l_Flex.RowSel < l_Flex.Rows.Fixed) return;
+            this.Tag = l_Flex[l_Flex.RowSel, 1];
+            DialogResult = DialogResult.OK;
+        }
+
+        #endregion
+
+        #region "Method"
 
         public Form_MI_Reason()
         {
             InitializeComponent();
 
             Init_Form();
-        }
-
-        private void Form_MI_Reason_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void Init_Form()
@@ -61,10 +99,6 @@ namespace FlexVJ_Common.Material_Inspection
             }
         }
 
-        private void btn_Insert_Click(object sender, EventArgs e)
-        {
-            addrow();
-        }
         private void addrow()
         {
             fgrid_main.Rows.Add();
@@ -74,7 +108,7 @@ namespace FlexVJ_Common.Material_Inspection
             int iCol = fgrid_main.Selection.c1;
             int iRow = fgrid_main.Selection.r1;
 
-            fgrid_main.Select(fgrid_main.Rows.Count-1  , 2);
+            fgrid_main.Select(fgrid_main.Rows.Count - 1, 2);
             fgrid_main[fgrid_main.Rows.Count - 1, 5] = true;
             //fgrid_main.
 
@@ -82,11 +116,6 @@ namespace FlexVJ_Common.Material_Inspection
             //    fgrid_Main[fgrid_Main.Rows.Count - 1, 1] = Convert.ToInt16(fgrid_Main[fgrid_Main.Rows.Count - 2, 1]) + 1;
             //else
             //    fgrid_Main[fgrid_Main.Rows.Count - 1, 1] = 1;
-        }
-
-        private void fgrid_main_AfterEdit(object sender, C1.Win.C1FlexGrid.RowColEventArgs e)
-        {
-            fgrid_main.Update_Row();
         }
 
         private void Tbtn_SaveProcess()
@@ -196,17 +225,7 @@ namespace FlexVJ_Common.Material_Inspection
 
         }
 
-        private void tbtn_Save_Click(object sender, C1.Win.C1Command.ClickEventArgs e)
-        {
-            Tbtn_SaveProcess();
-        }
-
-        private void tbtn_Search_Click(object sender, C1.Win.C1Command.ClickEventArgs e)
-        {
-            Tbtn_SearchProcess();
-        }
-
-        private void Tbtn_SearchProcess() 
+        private void Tbtn_SearchProcess()
         {
             DataTable vDt1 = null;
             fgrid_main.Clear();
@@ -240,12 +259,6 @@ namespace FlexVJ_Common.Material_Inspection
             }
         }
 
-        private void tbtn_New_Click(object sender, C1.Win.C1Command.ClickEventArgs e)
-        {
-            addrow();
-            
-        }
-
         private System.Data.DataTable SELECT_MAT_REASON()
         {
             DataSet vds_ret;
@@ -270,7 +283,7 @@ namespace FlexVJ_Common.Material_Inspection
             //04.DATA Á¤ÀÇ
             MyOraDB.Parameter_Values[0] = cmb_factory.SelectedValue.ToString();
             MyOraDB.Parameter_Values[1] = txt_Rea_code.Text.Trim();
-            MyOraDB.Parameter_Values[2] = txt_Rea_Name.Text ;
+            MyOraDB.Parameter_Values[2] = txt_Rea_Name.Text;
             MyOraDB.Parameter_Values[3] = "";
 
             MyOraDB.Add_Select_Parameter(true);
@@ -281,14 +294,8 @@ namespace FlexVJ_Common.Material_Inspection
 
         }
 
-        private void fgrid_main_DoubleClick(object sender, EventArgs e)
-        {
-            COM.FSP l_Flex = (COM.FSP)sender;
-            if (l_Flex.RowSel < l_Flex.Rows.Fixed) return;
-            this.Tag = l_Flex[l_Flex.RowSel, 1];
-            DialogResult = DialogResult.OK;
-        }
-     
+        #endregion
+
     }
 }
 

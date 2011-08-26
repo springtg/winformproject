@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using C1.Win.C1FlexGrid;
 using System.Data.OracleClient;
 using System.Collections;
+using System.IO;
 
 namespace FlexVJ_Common.Material_Inspection
 {
@@ -17,6 +18,7 @@ namespace FlexVJ_Common.Material_Inspection
     {
         #region "Variable"
         private COM.OraDB MyOraDB = new COM.OraDB();
+        private object _BuffVal = null;
 
         private const string ARG_FACTORY = "arg_factory";
         private const string ARG_GRP_CODE = "ARG_GRP_CODE";
@@ -46,13 +48,13 @@ namespace FlexVJ_Common.Material_Inspection
 
         #endregion
 
+        #region "Methods"
 
         public Form_Incoming()
         {
             InitializeComponent();
         }
 
-        #region "Methods"
         private void InitForm()
         {
             tbtn_Append.Enabled = false;
@@ -75,7 +77,7 @@ namespace FlexVJ_Common.Material_Inspection
 
             //set cho goods group 
             vDt = SEARCH_GOODSGROUP();
-            COM.ComCtl.Set_ComboList(vDt, cmb_GoodGroup, 0, 1, false, COM.ComVar.ComboList_Visible.Code_Name);
+            COM.ComCtl.Set_ComboList(vDt, cmb_GoodGroup, 0, 1, true, COM.ComVar.ComboList_Visible.Code_Name);
             cmb_GoodGroup.SelectedIndex = 0;
 
             // 그리드 설정
@@ -89,6 +91,8 @@ namespace FlexVJ_Common.Material_Inspection
             fgrid_Incoming.Cols[Convert.ToInt32(GRID_ALIAS.REASON_QTY)].Style.Format = "###,###,##0.#";
             fgrid_Incoming.Cols[Convert.ToInt32(GRID_ALIAS.TR_TOTAL_QTY)].Style.Format = "###,###,##0.#";
             fgrid_Incoming.Cols[Convert.ToInt32(GRID_ALIAS.FAIL_QTY)].Style.Format = "###,###,##0.#";
+            fgrid_Incoming.Cols[Convert.ToInt32(GRID_ALIAS.CASE)].Style.Format = "###,###,##0.#";
+            fgrid_Incoming.Make_CmbDataList(COM.ComVar.ComboList_Type.Query, vDt, Convert.ToInt32(GRID_ALIAS.METARIAL_CAT));
 
             //LOCATION SET DATA
 
@@ -114,16 +118,18 @@ namespace FlexVJ_Common.Material_Inspection
                 rsMsg += "Pls Select 'Location'\n";
                 cmb_Location.Focus();
             }
-            if (dpk_Incomingdate.Value == null)
-            {
-                rsMsg += "Pls Select 'Incoming Date'\n";
-                dpk_Incomingdate.Focus();
-            }
             if (COM.ComFunction.Empty_Combo(cmb_Cust, string.Empty).Equals(string.Empty))
             {
                 rsMsg += "Pls Select 'Customer'\n";
                 cmb_Cust.Focus();
             }
+
+            if (COM.ComFunction.Empty_Combo(cmb_GoodGroup, string.Empty).Trim().Equals(string.Empty))
+            {
+                rsMsg += "Pls Select 'Material cat'\n";
+                cmb_GoodGroup.Focus();
+            }
+
             if (rsMsg.Equals(string.Empty))
             {
                 return true;
@@ -404,7 +410,7 @@ namespace FlexVJ_Common.Material_Inspection
                         DateTime l_DateTmp = DateTime.ParseExact(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.INCOMING_YMD)].ToString().Substring(0, 10), "yyyy-MM-dd", System.Globalization.CultureInfo.CurrentCulture);
                         vModifyList.Add(Convert.ToString(l_DateTmp.ToString("yyyyMMdd")));//incoming_ymd
 
-                        vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.INCOMING_LOCATION)]));//incoming_location
+                        vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.LOCATION)]));//incoming_location
                         vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.CUST_CD)]));//cust_cd
                         vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.INCOMING_SEQ)]));//incoming_seq
                         vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.INVOICE)]));//invoice 
@@ -415,12 +421,12 @@ namespace FlexVJ_Common.Material_Inspection
                         vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.FAIL_QTY)]));//fail_qty   
                         vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.REASON_CD)]));//reason_cd 
                         vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.REASON_QTY)]));//reason_qty 
-                        vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.INCOMING_CASE)]));//incoming_case   
-                        vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.INCOMING_REMARK)]));//incoming_remark  
+                        vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.CASE)]));//incoming_case   
+                        vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.REMARK)]));//incoming_remark  
                         vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.WEEKLY_CD)]));//weekly_cd  
                         vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.FIX_TF)]));//FIX_TF  
                         vModifyList.Add(COM.ComVar.This_User);//upd_user  
-                        vModifyList.Add(COM.ComFunction.Empty_Combo(cmb_GoodGroup, ""));//goods group
+                        vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.METARIAL_CAT)]));//material Cat
                         //para_ct += iCount;
                     }
                 }
@@ -447,7 +453,7 @@ namespace FlexVJ_Common.Material_Inspection
         }
 
         /// <summary>
-        /// 
+        /// comfirm tung dong du lieu
         /// </summary>
         /// <param name="arg_fsp"></param>
         /// <param name="arg_RowConfirmIndex"></param>
@@ -491,12 +497,85 @@ namespace FlexVJ_Common.Material_Inspection
                     vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.FACTORY)]));//factory
                     DateTime l_DateTmp = DateTime.ParseExact(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.INCOMING_YMD)].ToString().Substring(0, 10), "yyyy-MM-dd", System.Globalization.CultureInfo.CurrentCulture);
                     vModifyList.Add(Convert.ToString(l_DateTmp.ToString("yyyyMMdd")));//incoming_ymd 
-                    vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.INCOMING_LOCATION)]));//incoming_location
+                    vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.LOCATION)]));//incoming_location
                     vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.CUST_CD)]));//cust_cd
                     vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.INCOMING_SEQ)]));//incoming_seq
                     vModifyList.Add(COM.ComVar.This_User);//upd_user  
                 }
 
+                MyOraDB.Parameter_Values = new string[vModifyList.Count];
+                for (int j = 0; j < vModifyList.Count; j++)
+                {
+                    MyOraDB.Parameter_Values[j] = vModifyList[j].ToString().Trim();
+                }
+
+                MyOraDB.Add_Modify_Parameter(true);	// 파라미터 데이터를 DataSet에 추가
+
+
+                if (MyOraDB.Exe_Modify_Procedure() == null)
+                    return false;
+                else
+                    return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+
+        /// <summary>
+        /// comfirm tat ca du lieu theo tung vender
+        /// </summary>
+        /// <param name="arg_fsp"></param>
+        /// <param name="arg_RowConfirmIndex"></param>
+        /// <param name="arg_Action"></param>
+        /// <returns></returns>
+        public bool CONFIRM_SMI_INCOMING(COM.FSP arg_fsp, string arg_Action)
+        {
+            try
+            {
+                int para_ct = 0;
+                int iCount = 7;
+                MyOraDB.ReDim_Parameter(iCount);
+
+                //01.PROCEDURE명
+                MyOraDB.Process_Name = "pkg_smi_mat_ins.comfirm_smi_incoming";
+
+                //02.ARGURMENT 명
+                MyOraDB.Parameter_Name[0] = ARG_DIVISION;
+                MyOraDB.Parameter_Name[1] = ARG_FACTORY;
+                MyOraDB.Parameter_Name[2] = ARG_INCOMING_YMD;
+                MyOraDB.Parameter_Name[3] = ARG_INCOMING_LOCATION;
+                MyOraDB.Parameter_Name[4] = ARG_CUST_CD;
+                MyOraDB.Parameter_Name[5] = ARG_INCOMING_SEQ;
+                MyOraDB.Parameter_Name[6] = ARG_UPD_USER;
+
+                MyOraDB.Parameter_Type[0] = (int)OracleType.VarChar;
+                MyOraDB.Parameter_Type[1] = (int)OracleType.VarChar;
+                MyOraDB.Parameter_Type[2] = (int)OracleType.VarChar;
+                MyOraDB.Parameter_Type[3] = (int)OracleType.VarChar;
+                MyOraDB.Parameter_Type[4] = (int)OracleType.VarChar;
+                MyOraDB.Parameter_Type[5] = (int)OracleType.Number;
+                MyOraDB.Parameter_Type[6] = (int)OracleType.VarChar;
+
+
+                COM.FSP l_Flex = arg_fsp;
+                ArrayList vModifyList = new ArrayList();
+                for (int iRow = l_Flex.Rows.Fixed; iRow < l_Flex.Rows.Count; iRow++)
+                {
+                    if (ClassLib.ComFunction.NullToBlank(l_Flex[iRow, 0]).Equals(""))
+                    {
+                        vModifyList.Add(arg_Action);
+                        vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.FACTORY)]));//factory
+                        DateTime l_DateTmp = DateTime.ParseExact(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.INCOMING_YMD)].ToString().Substring(0, 10), "yyyy-MM-dd", System.Globalization.CultureInfo.CurrentCulture);
+                        vModifyList.Add(Convert.ToString(l_DateTmp.ToString("yyyyMMdd")));//incoming_ymd 
+                        vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.LOCATION)]));//incoming_location
+                        vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.CUST_CD)]));//cust_cd
+                        vModifyList.Add(Convert.ToString(l_Flex[iRow, Convert.ToInt32(GRID_ALIAS.INCOMING_SEQ)]));//incoming_seq
+                        vModifyList.Add(COM.ComVar.This_User);//upd_user  
+                    }
+                }
                 MyOraDB.Parameter_Values = new string[vModifyList.Count];
                 for (int j = 0; j < vModifyList.Count; j++)
                 {
@@ -526,6 +605,12 @@ namespace FlexVJ_Common.Material_Inspection
         /// <returns></returns>
         private bool ValidateValueBeforeConfirm(COM.FSP arg_fsp, int arg_RowConfirmIndex)
         {
+            //check have data
+            if (arg_fsp.Rows.Fixed == arg_fsp.Rows.Count)
+            {
+                COM.ComFunction.User_Message("No data to comfirm!", "Infor", MessageBoxButtons.OK);
+                return false;
+            }
             if (!ClassLib.ComFunction.NullToBlank(arg_fsp[arg_RowConfirmIndex, 0]).Equals(""))
             {
                 COM.ComFunction.User_Message("Pls 'Save Data' before 'Confirm'", "Error", MessageBoxButtons.OK);
@@ -544,6 +629,56 @@ namespace FlexVJ_Common.Material_Inspection
         }
 
         /// <summary>
+        /// check on value before confirm action on control
+        /// </summary>
+        /// <param name="arg_fsp"></param>
+        /// <param name="arg_RowConfirmIndex"></param>
+        /// <returns></returns>
+        private bool ValidateValueBeforeConfirm(COM.FSP arg_fsp)
+        {
+            // one comfirm action for a customer
+            if (COM.ComFunction.Empty_Combo(cmb_Cust, string.Empty).Equals(string.Empty))
+            {
+                COM.ComFunction.User_Message("Pls select one Customer!", "Infor", MessageBoxButtons.OK);
+                return false;
+            }
+            //check have data
+            if (arg_fsp.Rows.Fixed == arg_fsp.Rows.Count)
+            {
+                COM.ComFunction.User_Message("No data to comfirm!", "Infor", MessageBoxButtons.OK);
+                return false;
+            }
+            //check data is saved
+            for (int i = arg_fsp.Rows.Fixed; i < arg_fsp.Rows.Count; i++)
+            {
+                if (!ClassLib.ComFunction.NullToBlank(arg_fsp[i, 0]).Equals(""))
+                {
+                    COM.ComFunction.User_Message("Pls 'Save Data' before 'Confirm'", "Error", MessageBoxButtons.OK);
+                    return false;
+                }
+            }
+            //check data comfirm
+            int l_RowNoComfirm = 0;
+            for (int i = arg_fsp.Rows.Fixed; i < arg_fsp.Rows.Count; i++)
+            {
+                if (ClassLib.ComFunction.NullToBlank(arg_fsp[i, (int)GRID_ALIAS.FIX_TF]).Equals("N"))
+                {
+                    l_RowNoComfirm = l_RowNoComfirm + 1;
+                }
+            }
+            if (l_RowNoComfirm == 0)
+            {
+                COM.ComFunction.User_Message("All data Confirmed", "Info", MessageBoxButtons.OK);
+                return false;
+            }
+            if (COM.ComFunction.User_Message(string.Format("Are you want to Confirm All data of vender {0}", cmb_Cust.SelectedText), "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
         /// check on value before cancel confirm action on control
         /// </summary>
         /// <param name="arg_fsp"></param>
@@ -551,7 +686,7 @@ namespace FlexVJ_Common.Material_Inspection
         /// <returns></returns>
         private bool ValidateValueBeforeCancelConfirm(COM.FSP arg_fsp, int arg_RowConfirmIndex)
         {
-            if (COM.ComFunction.User_Message("Are you want to Cancel Confirm This Row", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (COM.ComFunction.User_Message("Are you want to Cancel This Row", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 return true;
             }
@@ -688,15 +823,22 @@ namespace FlexVJ_Common.Material_Inspection
                     CellStyle l_csTmp = arg_FSP.GetCellStyle(i, Convert.ToInt32(GRID_ALIAS.FIX_TF));
                     if (l_csTmp == null) l_csTmp = arg_FSP.Styles.Add("CONFIRM");
                     l_csTmp.BackColor = COM.ComVar.ClrFinishY;
-                    for (int j = Convert.ToInt32(GRID_ALIAS.FACTORY); j < arg_FSP.Cols.Count; j++)
+                    for (int j = Convert.ToInt32(GRID_ALIAS.METARIAL_CAT); j < arg_FSP.Cols.Count; j++)
                     {
                         arg_FSP.SetCellStyle(i, j, l_csTmp);
                     }
 
                 }
             }
-        }
 
+            arg_FSP.AllowMerging = AllowMergingEnum.Free;
+            for (int i = 0; i < arg_FSP.Cols.Count; i++)
+            {
+                arg_FSP.Cols[i].AllowMerging = false;
+            }
+            arg_FSP.Cols[Convert.ToInt32(GRID_ALIAS.CUST_CD)].AllowMerging = true;
+            arg_FSP.Cols[Convert.ToInt32(GRID_ALIAS.METARIAL_CAT)].AllowMerging = true;
+        }
 
         /// <summary>
         /// clear data on grid
@@ -732,6 +874,56 @@ namespace FlexVJ_Common.Material_Inspection
             }
         }
 
+        private bool SMI_INCOMING_CHECK_TAIL(object arg_factory, object arg_ymd, object arg_location, object arg_cust_cd, object arg_seq)
+        {
+            DataSet vds_ret;
+
+            MyOraDB.ReDim_Parameter(6);
+
+            //01.PROCEDURE명
+            MyOraDB.Process_Name = "PKG_SMI_MAT_INS.SMI_INCOMING_CHECK_TAIL";
+
+            //02.ARGURMENT 명
+            MyOraDB.Parameter_Name[0] = ARG_FACTORY;
+            MyOraDB.Parameter_Name[1] = ARG_INCOMING_YMD;
+            MyOraDB.Parameter_Name[2] = ARG_INCOMING_LOCATION;
+            MyOraDB.Parameter_Name[3] = ARG_CUST_CD;
+            MyOraDB.Parameter_Name[4] = ARG_INCOMING_SEQ;
+            MyOraDB.Parameter_Name[5] = OUT_CURSOR;
+
+            //03.DATA TYPE 정의
+            MyOraDB.Parameter_Type[0] = (int)OracleType.VarChar;
+            MyOraDB.Parameter_Type[1] = (int)OracleType.VarChar;
+            MyOraDB.Parameter_Type[2] = (int)OracleType.VarChar;
+            MyOraDB.Parameter_Type[3] = (int)OracleType.VarChar;
+            MyOraDB.Parameter_Type[4] = (int)OracleType.VarChar;
+            MyOraDB.Parameter_Type[5] = (int)OracleType.Cursor;
+
+            //04.DATA 정의
+            MyOraDB.Parameter_Values[0] = string.Format("{0}", arg_factory).Trim();
+            MyOraDB.Parameter_Values[1] = string.Format("{0}", ((DateTime)Convert.ChangeType(arg_ymd, arg_ymd.GetType())).ToString("yyyyMMdd")).Trim();
+            MyOraDB.Parameter_Values[2] = string.Format("{0}", arg_location).Trim();
+            MyOraDB.Parameter_Values[3] = string.Format("{0}", arg_cust_cd).Trim();
+            MyOraDB.Parameter_Values[4] = string.Format("{0}", arg_seq).Trim();
+            MyOraDB.Parameter_Values[5] = "";
+
+            MyOraDB.Add_Select_Parameter(true);
+            vds_ret = MyOraDB.Exe_Select_Procedure();
+            if (vds_ret == null) return false;
+            DataTable l_TbTmp = vds_ret.Tables[MyOraDB.Process_Name];
+            if (l_TbTmp == null) return false;
+            if (l_TbTmp.Rows.Count < 1) return false;
+            string l_strTmp = Convert.ToString(l_TbTmp.Rows[0][0]);
+            if (l_strTmp.Trim().Equals(string.Empty)) return false;
+            int l_IntTmp = Convert.ToInt32(l_strTmp);
+            if (l_IntTmp == 0) return false;
+            else
+            {
+                COM.ComFunction.User_Message("Pls, Delete Tail before", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return true;
+            }
+        }
+
         #endregion
 
         #region "Event"
@@ -748,9 +940,11 @@ namespace FlexVJ_Common.Material_Inspection
                 this.Cursor = Cursors.WaitCursor;
                 Display_FlexGrid(fgrid_Incoming, SEARCH_SMI_INCOMING());
                 ActiveGroupControl(true);
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsEndSearch, this);
             }
             catch (Exception ex)
             {
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotSearch, this);
                 COM.ComFunction.User_Message(ex.Message, "tbtn_Search_Click", MessageBoxButtons.OK);
             }
             finally
@@ -769,12 +963,18 @@ namespace FlexVJ_Common.Material_Inspection
                     if (SAVE_SMI_INCOMING())
                     {
                         Display_FlexGrid(fgrid_Incoming, SEARCH_SMI_INCOMING());
+                        ActiveGroupControl(true);
+                        ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsEndSave, this);
+                    }
+                    else
+                    {
+                        ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotSave, this);
                     }
                 }
-                ActiveGroupControl(true);
             }
             catch (Exception ex)
             {
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotSave, this);
                 COM.ComFunction.User_Message(ex.Message, "tbtn_Save_Click", MessageBoxButtons.OK);
             }
             finally
@@ -790,6 +990,26 @@ namespace FlexVJ_Common.Material_Inspection
                 this.Cursor = Cursors.WaitCursor;
                 COM.FSP l_Flex = fgrid_Incoming;
                 if (l_Flex.Rows.Count <= l_Flex.Rows.Fixed) return;
+                object objTemp = l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.FAIL_QTY)];
+                if (objTemp != null)
+                {
+                    if (!objTemp.Equals(0.0))
+                    {
+                        bool l_haveTail = SMI_INCOMING_CHECK_TAIL(l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.FACTORY)],
+                    l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.INCOMING_YMD)], l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.LOCATION)],
+                    l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.CUST_CD)], l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.INCOMING_SEQ)]);
+                        if (l_haveTail)
+                        {
+                            return;
+                        }
+                    }
+                }
+
+                if (ClassLib.ComFunction.NullToBlank(l_Flex[l_Flex.RowSel, (int)GRID_ALIAS.FIX_TF]).Equals("Y"))
+                {
+                    COM.ComFunction.User_Message("Can't delete this row, this row is comfirmed!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 if (ClassLib.ComFunction.NullToBlank(l_Flex[l_Flex.RowSel, 0]).Equals("I"))
                 {
                     l_Flex.RemoveItem(l_Flex.RowSel);
@@ -799,9 +1019,11 @@ namespace FlexVJ_Common.Material_Inspection
                     l_Flex.Delete_Row(l_Flex.RowSel);
                 }
                 ActiveGroupControl(false);
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsEndDelete, this);
             }
             catch (Exception ex)
             {
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotDelete, this);
                 COM.ComFunction.User_Message(ex.Message, "tbtn_Delete_Click", MessageBoxButtons.OK);
             }
             finally
@@ -819,10 +1041,10 @@ namespace FlexVJ_Common.Material_Inspection
                 l_Flex[l_Flex.Rows.Fixed, Convert.ToInt32(GRID_ALIAS.FACTORY)] = cmb_Factory.SelectedValue;
                 l_Flex[l_Flex.Rows.Fixed, Convert.ToInt32(GRID_ALIAS.INCOMING_SEQ)] = "1";
                 l_Flex[l_Flex.Rows.Fixed, Convert.ToInt32(GRID_ALIAS.CUST_CD)] = cmb_Cust.SelectedValue;
-                l_Flex[l_Flex.Rows.Fixed, Convert.ToInt32(GRID_ALIAS.INCOMING_LOCATION)] = cmb_Location.SelectedValue;
+                l_Flex[l_Flex.Rows.Fixed, Convert.ToInt32(GRID_ALIAS.LOCATION)] = cmb_Location.SelectedValue;
                 l_Flex[l_Flex.Rows.Fixed, Convert.ToInt32(GRID_ALIAS.INCOMING_YMD)] = dpk_Incomingdate.Value.ToString("yyyy-MM-dd");
                 l_Flex[l_Flex.Rows.Fixed, Convert.ToInt32(GRID_ALIAS.UNIT)] = "pk";
-
+                l_Flex[l_Flex.Rows.Fixed, Convert.ToInt32(GRID_ALIAS.METARIAL_CAT)] = COM.ComFunction.Empty_Combo(cmb_GoodGroup, string.Empty);
                 ActiveGroupControl(false);
             }
         }
@@ -901,19 +1123,50 @@ namespace FlexVJ_Common.Material_Inspection
         private void fgrid_Incoming_AfterEdit(object sender, RowColEventArgs e)
         {
             COM.FSP l_Flex = (COM.FSP)sender;
+            object objTemp = l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.FAIL_QTY)];
+            if (objTemp != null)
+            {
+                if (objTemp.Equals(0.0))
+                {
+                    bool l_haveTail = SMI_INCOMING_CHECK_TAIL(l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.FACTORY)],
+                l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.INCOMING_YMD)], l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.LOCATION)],
+                l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.CUST_CD)], l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.INCOMING_SEQ)]);
+                    if (l_haveTail)
+                    {
+                        l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.FAIL_QTY)] = _BuffVal;
+                        l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.DIVISION)] = "";
+                        _BuffVal = null;
+                        return;
+                    }
+                }
+            }
+
             l_Flex.Update_Row();
+
             if (l_Flex.ColSel == Convert.ToInt32(GRID_ALIAS.FAIL_QTY))
             {
                 int l_iTmp = COM.ComFunction.Empty_Number(ClassLib.ComFunction.NullToBlank(l_Flex[l_Flex.RowSel, l_Flex.ColSel]), "0");
                 if (l_iTmp > 0)
                 {
-                    l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.INCOMING_CASE)] = 1;
+                    l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.CASE)] = 1;
                     l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.REASON_QTY)] = l_iTmp;
                 }
                 else
                 {
-                    l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.INCOMING_CASE)] = null;
+                    l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.CASE)] = null;
                     l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.REASON_QTY)] = null;
+                }
+            }
+        }
+
+        private void fgrid_Incoming_BeforeEdit(object sender, RowColEventArgs e)
+        {
+            COM.FSP l_Flex = (COM.FSP)sender;
+            if (l_Flex.ColSel == Convert.ToInt32(GRID_ALIAS.FAIL_QTY))
+            {
+                if (_BuffVal == null)
+                {
+                    _BuffVal = l_Flex[l_Flex.RowSel, Convert.ToInt32(GRID_ALIAS.FAIL_QTY)];
                 }
             }
         }
@@ -951,11 +1204,17 @@ namespace FlexVJ_Common.Material_Inspection
                     if (CONFIRM_SMI_INCOMING(fgrid_Incoming, fgrid_Incoming.RowSel, "CANCEL"))
                     {
                         Display_FlexGrid(fgrid_Incoming, SEARCH_SMI_INCOMING());
+                        ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsEndSave, this);
+                    }
+                    else
+                    {
+                        ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotSave, this);
                     }
                 }
             }
             catch (Exception ex)
             {
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotSave, this);
                 COM.ComFunction.User_Message(ex.Message, "tbtn_Save_Click", MessageBoxButtons.OK);
             }
             finally
@@ -972,15 +1231,13 @@ namespace FlexVJ_Common.Material_Inspection
         private void cmb_Cust_SelectedValueChanged(object sender, EventArgs e)
         {
             C1.Win.C1List.C1Combo l_cmbCust = (C1.Win.C1List.C1Combo)sender;
-            if (ClassLib.ComFunction.NullToBlank(l_cmbCust.SelectedValue).Equals("300_001"))
+            if (ClassLib.ComFunction.NullToBlank(l_cmbCust.SelectedValue).Equals(""))
             {
-                lbl_GooodsGroup.Visible = true;
-                cmb_GoodGroup.Visible = true;
+                btnComfirmAll.Enabled = false;
             }
             else
             {
-                lbl_GooodsGroup.Visible = false;
-                cmb_GoodGroup.Visible = false;
+                btnComfirmAll.Enabled = true;
             }
             tbtn_Search_Click(tbtn_Search, C1.Win.C1Command.ClickEventArgs.Empty);
         }
@@ -990,27 +1247,62 @@ namespace FlexVJ_Common.Material_Inspection
             FilterCust_by_Location();
             tbtn_Search_Click(tbtn_Search, C1.Win.C1Command.ClickEventArgs.Empty);
         }
+
+        private void btnComfirmAll_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                if (ValidateValueBeforeConfirm(fgrid_Incoming))
+                {
+                    if (CONFIRM_SMI_INCOMING(fgrid_Incoming, "CONFIRM"))
+                    {
+                        Display_FlexGrid(fgrid_Incoming, SEARCH_SMI_INCOMING());
+                    }
+                    else
+                    {
+                        ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsEndSave, this);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotSave, this);
+                COM.ComFunction.User_Message(ex.Message, "tbtn_Save_Click", MessageBoxButtons.OK);
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+
         #endregion
+
     }
 
+    /// <summary>
+    /// grid alias
+    /// </summary>
     public enum GRID_ALIAS : int
     {
-        FACTORY = 1,
-        INCOMING_YMD = 2,
-        INCOMING_LOCATION = 3,
-        CUST_CD = 4,
-        INCOMING_SEQ = 5,
-        INVOICE = 6,
-        UNIT = 7,
-        TOTAL_QTY = 8,
-        TR_UNIT = 9,
-        TR_TOTAL_QTY = 10,
-        FAIL_QTY = 11,
-        REASON_CD = 12,
-        REASON_QTY = 13,
-        INCOMING_CASE = 14,
-        WEEKLY_CD = 15,
-        INCOMING_REMARK = 16,
-        FIX_TF = 17
+        DIVISION = 0,
+        METARIAL_CAT = 1,
+        FACTORY = 2,
+        INCOMING_YMD = 3,
+        LOCATION = 4,
+        CUST_CD = 5,
+        INCOMING_SEQ = 6,
+        INVOICE = 7,
+        UNIT = 8,
+        TOTAL_QTY = 9,
+        TR_UNIT = 10,
+        TR_TOTAL_QTY = 11,
+        FAIL_QTY = 12,
+        REASON_CD = 13,
+        REASON_QTY = 14,
+        CASE = 15,
+        WEEKLY_CD = 16,
+        REMARK = 17,
+        FIX_TF = 18
     }
 }

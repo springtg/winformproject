@@ -13,48 +13,13 @@ using ChartFX.WinForms.DataProviders;
 
 namespace FlexVJ_Common.Material_Inspection
 {
-    /// <summary>
-    /// alias for grid
-    /// </summary>
-    public enum GRID_ALIAS_SMI_PPM : int
-    {
-        IxDIVISION = 0,
-        IxSUB_CODE = 1,
-        IxDESCRIPTION = 2,
-        IxINCOMING_1ST = 3,
-        IxPASS_1ST = 4,
-        IxFAIL_1ST = 5,
-        IxPPM_1ST = 6,
-        IxINCOMING_2ND = 7,
-        IxPASS_2ND = 8,
-        IxFAIL_2ND = 9,
-        IxPPM_2ND = 10,
-        IxINCOMING_3RD = 11,
-        IxPASS_3RD = 12,
-        IxFAIL_3RD = 13,
-        IxPPM_3RD = 14,
-        IxINCOMING_4TH = 15,
-        IxPASS_4TH = 16,
-        IxFAIL_4TH = 17,
-        IxPPM_4TH = 18,
-        IxINCOMING_5TH = 19,
-        IxPASS_5TH = 20,
-        IxFAIL_5TH = 21,
-        IxPPM_5TH = 22,
-        IxINCOMING_TOTAL = 23,
-        IxPASS_TOTAL = 24,
-        IxFAIL_TOTAL = 25,
-        IxPPM_TOTAL = 26,
-        IxL_MONYY = 27
-    }
-
-
-
     public partial class Form_PPM : COM.VJ_CommonWinForm.Form_Top
     {
         public Form_PPM()
         {
             InitializeComponent();
+
+
         }
 
         #region "Variable"
@@ -62,6 +27,9 @@ namespace FlexVJ_Common.Material_Inspection
         private cPPM[] lstPPM = null;
         private DataTable l_DataChart = null;
         string l_StrFormat = "###,###,##0.#";
+        private double _TargFrom = 0;
+        private double _TargTo = 0;
+        private double _TargQty = 0;
         private COM.OraDB MyOraDB = new COM.OraDB();
         private CellStyle cs_Bottom = null;//<3000
         private CellStyle cs_Top = null;//>3000~4000
@@ -260,7 +228,6 @@ namespace FlexVJ_Common.Material_Inspection
             }
             if (l_Have5Weekly)
             {
-                //Active5Weekly(arg_FSP, true);
                 l_DataChart = new DataTable();
                 lstPPM = new cPPM[6];
                 lstPPM[0] = new cPPM("1st",
@@ -271,7 +238,9 @@ namespace FlexVJ_Common.Material_Inspection
                     ToDecimal(arg_dt.Rows[2]["ppm_1st"]),
                     string.Format("{0},{1}", arg_dt.Rows[2]["sub_name"], arg_dt.Rows[2]["ppm_1st"]),
                     ToDecimal(arg_dt.Rows[3]["ppm_1st"]),
-                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_1st"]));
+                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_1st"]),
+                    ToDecimal( _TargQty),
+                    string.Format("Target {0}", _TargQty));
 
                 lstPPM[1] = new cPPM("2nd",
                     ToDecimal(arg_dt.Rows[0]["ppm_2nd"]),
@@ -281,7 +250,9 @@ namespace FlexVJ_Common.Material_Inspection
                     ToDecimal(arg_dt.Rows[2]["ppm_2nd"]),
                     string.Format("{0},{1}", arg_dt.Rows[2]["sub_name"], arg_dt.Rows[2]["ppm_2nd"]),
                     ToDecimal(arg_dt.Rows[3]["ppm_2nd"]),
-                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_2nd"]));
+                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_2nd"]),
+                    ToDecimal(_TargQty),
+                    string.Format("Target {0}", _TargQty));
 
                 lstPPM[2] = new cPPM("3rd",
                     ToDecimal(arg_dt.Rows[0]["ppm_3rd"]),
@@ -291,17 +262,21 @@ namespace FlexVJ_Common.Material_Inspection
                     ToDecimal(arg_dt.Rows[2]["ppm_3rd"]),
                     string.Format("{0},{1}", arg_dt.Rows[2]["sub_name"], arg_dt.Rows[2]["ppm_3rd"]),
                     ToDecimal(arg_dt.Rows[3]["ppm_3rd"]),
-                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_3rd"]));
+                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_3rd"]),
+                    ToDecimal(_TargQty),
+                    string.Format("Target {0}", _TargQty));
 
                 lstPPM[3] = new cPPM("4th",
                     ToDecimal(arg_dt.Rows[0]["ppm_4th"]),
                     string.Format("{0},{1}", arg_dt.Rows[0]["sub_name"], arg_dt.Rows[0]["ppm_4th"]),
-                    ToDecimal(arg_dt.Rows[0]["ppm_4th"]),
+                    ToDecimal(arg_dt.Rows[1]["ppm_4th"]),
                     string.Format("{0},{1}", arg_dt.Rows[1]["sub_name"], arg_dt.Rows[1]["ppm_4th"]),
                     ToDecimal(arg_dt.Rows[2]["ppm_4th"]),
                     string.Format("{0},{1}", arg_dt.Rows[2]["sub_name"], arg_dt.Rows[2]["ppm_4th"]),
                     ToDecimal(arg_dt.Rows[3]["ppm_4th"]),
-                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_4th"]));
+                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_4th"]),
+                    ToDecimal(_TargQty),
+                    string.Format("Target {0}", _TargQty));
 
                 lstPPM[4] = new cPPM("5th",
                     ToDecimal(arg_dt.Rows[0]["ppm_5th"]),
@@ -311,7 +286,9 @@ namespace FlexVJ_Common.Material_Inspection
                     ToDecimal(arg_dt.Rows[2]["ppm_5th"]),
                     string.Format("{0},{1}", arg_dt.Rows[2]["sub_name"], arg_dt.Rows[2]["ppm_5th"]),
                     ToDecimal(arg_dt.Rows[3]["ppm_5th"]),
-                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_5th"]));
+                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_5th"]),
+                    ToDecimal(_TargQty),
+                    string.Format("Target {0}", _TargQty));
 
                 lstPPM[5] = new cPPM("Total",
                     ToDecimal(arg_dt.Rows[0]["ppm_5th"]),
@@ -321,13 +298,13 @@ namespace FlexVJ_Common.Material_Inspection
                     ToDecimal(arg_dt.Rows[2]["ppm_5th"]),
                     string.Format("{0},{1}", arg_dt.Rows[2]["sub_name"], arg_dt.Rows[2]["ppm_monthly"]),
                     ToDecimal(arg_dt.Rows[3]["ppm_5th"]),
-                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_monthly"]));
+                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_monthly"]),
+                    ToDecimal(_TargQty),
+                    string.Format("Target {0}", _TargQty));
 
             }
             else
             {
-                //Active5Weekly(arg_FSP, false);               
-
                 lstPPM = new cPPM[5];
                 lstPPM[0] = new cPPM("1st",
                    ToDecimal(arg_dt.Rows[0]["ppm_1st"]),
@@ -337,7 +314,9 @@ namespace FlexVJ_Common.Material_Inspection
                     ToDecimal(arg_dt.Rows[2]["ppm_1st"]),
                     string.Format("{0},{1}", arg_dt.Rows[2]["sub_name"], arg_dt.Rows[2]["ppm_1st"]),
                     ToDecimal(arg_dt.Rows[3]["ppm_1st"]),
-                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_1st"]));
+                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_1st"]),
+                    ToDecimal(_TargQty),
+                    string.Format("Target {0}", _TargQty));
 
                 lstPPM[1] = new cPPM("2nd",
                     ToDecimal(arg_dt.Rows[0]["ppm_2nd"]),
@@ -347,7 +326,9 @@ namespace FlexVJ_Common.Material_Inspection
                     ToDecimal(arg_dt.Rows[2]["ppm_2nd"]),
                     string.Format("{0},{1}", arg_dt.Rows[2]["sub_name"], arg_dt.Rows[2]["ppm_2nd"]),
                     ToDecimal(arg_dt.Rows[3]["ppm_2nd"]),
-                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_2nd"]));
+                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_2nd"]),
+                    ToDecimal(_TargQty),
+                    string.Format("Target {0}", _TargQty));
 
                 lstPPM[2] = new cPPM("3rd",
                     ToDecimal(arg_dt.Rows[0]["ppm_3rd"]),
@@ -357,17 +338,21 @@ namespace FlexVJ_Common.Material_Inspection
                     ToDecimal(arg_dt.Rows[2]["ppm_3rd"]),
                     string.Format("{0},{1}", arg_dt.Rows[2]["sub_name"], arg_dt.Rows[2]["ppm_3rd"]),
                     ToDecimal(arg_dt.Rows[3]["ppm_3rd"]),
-                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_3rd"]));
+                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_3rd"]),
+                    ToDecimal(_TargQty),
+                    string.Format("Target {0}", _TargQty));
 
                 lstPPM[3] = new cPPM("4th",
                     ToDecimal(arg_dt.Rows[0]["ppm_4th"]),
                     string.Format("{0},{1}", arg_dt.Rows[0]["sub_name"], arg_dt.Rows[0]["ppm_4th"]),
-                    ToDecimal(arg_dt.Rows[0]["ppm_4th"]),
+                    ToDecimal(arg_dt.Rows[1]["ppm_4th"]),
                     string.Format("{0},{1}", arg_dt.Rows[1]["sub_name"], arg_dt.Rows[1]["ppm_4th"]),
                     ToDecimal(arg_dt.Rows[2]["ppm_4th"]),
                     string.Format("{0},{1}", arg_dt.Rows[2]["sub_name"], arg_dt.Rows[2]["ppm_4th"]),
                     ToDecimal(arg_dt.Rows[3]["ppm_4th"]),
-                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_4th"]));
+                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_4th"]),
+                    ToDecimal(_TargQty),
+                    string.Format("Target {0}", _TargQty));
 
                 lstPPM[4] = new cPPM("Total",
                     ToDecimal(arg_dt.Rows[0]["ppm_monthly"]),
@@ -377,7 +362,9 @@ namespace FlexVJ_Common.Material_Inspection
                     ToDecimal(arg_dt.Rows[2]["ppm_monthly"]),
                     string.Format("{0},{1}", arg_dt.Rows[2]["sub_name"], arg_dt.Rows[2]["ppm_monthly"]),
                     ToDecimal(arg_dt.Rows[3]["ppm_monthly"]),
-                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_monthly"]));
+                    string.Format("{0},{1}", arg_dt.Rows[3]["sub_name"], arg_dt.Rows[3]["ppm_monthly"]),
+                    ToDecimal(_TargQty),
+                    string.Format("Target {0}", _TargQty));
             }
 
         }
@@ -419,16 +406,16 @@ namespace FlexVJ_Common.Material_Inspection
                             case (int)GRID_ALIAS_SMI_PPM.IxPPM_1ST:
                                 if (!l_tmp.Trim().Equals(string.Empty))
                                 {
-                                    decimal l_decimal = decimal.Parse(l_tmp);
-                                    if (l_decimal < 3000)
+                                    double l_decimal = double.Parse(l_tmp);
+                                    if (l_decimal < _TargFrom)
                                     {
                                         arg_Flex.SetCellStyle(i, j, cs_Bottom);
                                     }
-                                    if (l_decimal >= 3000 && l_decimal <= 4000)
+                                    if (l_decimal >= _TargFrom && l_decimal <= _TargTo)
                                     {
                                         arg_Flex.SetCellStyle(i, j, cs_Midle);
                                     }
-                                    if (l_decimal > 4000)
+                                    if (l_decimal > _TargTo)
                                     {
                                         arg_Flex.SetCellStyle(i, j, cs_Top);
                                     }
@@ -437,16 +424,16 @@ namespace FlexVJ_Common.Material_Inspection
                             case (int)GRID_ALIAS_SMI_PPM.IxPPM_2ND:
                                 if (!l_tmp.Trim().Equals(string.Empty))
                                 {
-                                    decimal l_decimal = decimal.Parse(l_tmp);
-                                    if (l_decimal < 3000)
+                                    double l_decimal = double.Parse(l_tmp);
+                                    if (l_decimal < _TargFrom)
                                     {
                                         arg_Flex.SetCellStyle(i, j, cs_Bottom);
                                     }
-                                    if (l_decimal >= 3000 && l_decimal <= 4000)
+                                    if (l_decimal >= _TargFrom && l_decimal <= _TargTo)
                                     {
                                         arg_Flex.SetCellStyle(i, j, cs_Midle);
                                     }
-                                    if (l_decimal > 4000)
+                                    if (l_decimal > _TargTo)
                                     {
                                         arg_Flex.SetCellStyle(i, j, cs_Top);
                                     }
@@ -455,16 +442,16 @@ namespace FlexVJ_Common.Material_Inspection
                             case (int)GRID_ALIAS_SMI_PPM.IxPPM_3RD:
                                 if (!l_tmp.Trim().Equals(string.Empty))
                                 {
-                                    decimal l_decimal = decimal.Parse(l_tmp);
-                                    if (l_decimal < 3000)
+                                    double l_decimal = double.Parse(l_tmp);
+                                    if (l_decimal < _TargFrom)
                                     {
                                         arg_Flex.SetCellStyle(i, j, cs_Bottom);
                                     }
-                                    if (l_decimal >= 3000 && l_decimal <= 4000)
+                                    if (l_decimal >= _TargFrom && l_decimal <= _TargTo)
                                     {
                                         arg_Flex.SetCellStyle(i, j, cs_Midle);
                                     }
-                                    if (l_decimal > 4000)
+                                    if (l_decimal > _TargTo)
                                     {
                                         arg_Flex.SetCellStyle(i, j, cs_Top);
                                     }
@@ -473,16 +460,16 @@ namespace FlexVJ_Common.Material_Inspection
                             case (int)GRID_ALIAS_SMI_PPM.IxPPM_4TH:
                                 if (!l_tmp.Trim().Equals(string.Empty))
                                 {
-                                    decimal l_decimal = decimal.Parse(l_tmp);
-                                    if (l_decimal < 3000)
+                                    double l_decimal = double.Parse(l_tmp);
+                                    if (l_decimal < _TargFrom)
                                     {
                                         arg_Flex.SetCellStyle(i, j, cs_Bottom);
                                     }
-                                    if (l_decimal >= 3000 && l_decimal <= 4000)
+                                    if (l_decimal >= _TargFrom && l_decimal <= _TargTo)
                                     {
                                         arg_Flex.SetCellStyle(i, j, cs_Midle);
                                     }
-                                    if (l_decimal > 4000)
+                                    if (l_decimal > _TargTo)
                                     {
                                         arg_Flex.SetCellStyle(i, j, cs_Top);
                                     }
@@ -491,16 +478,16 @@ namespace FlexVJ_Common.Material_Inspection
                             case (int)GRID_ALIAS_SMI_PPM.IxPPM_5TH:
                                 if (!l_tmp.Trim().Equals(string.Empty))
                                 {
-                                    decimal l_decimal = decimal.Parse(l_tmp);
-                                    if (l_decimal < 3000)
+                                    double l_decimal = double.Parse(l_tmp);
+                                    if (l_decimal < _TargFrom)
                                     {
                                         arg_Flex.SetCellStyle(i, j, cs_Bottom);
                                     }
-                                    if (l_decimal >= 3000 && l_decimal <= 4000)
+                                    if (l_decimal >= _TargFrom && l_decimal <= _TargTo)
                                     {
                                         arg_Flex.SetCellStyle(i, j, cs_Midle);
                                     }
-                                    if (l_decimal > 4000)
+                                    if (l_decimal > _TargTo)
                                     {
                                         arg_Flex.SetCellStyle(i, j, cs_Top);
                                     }
@@ -520,14 +507,6 @@ namespace FlexVJ_Common.Material_Inspection
                 arg_Flex.SetCellStyle(i, Convert.ToInt32(GRID_ALIAS_SMI_PPM.IxDESCRIPTION), cs_Col1);
             }
             fgrid_PPM.Rows.Count = 7;
-        }
-
-        private void Active5Weekly(COM.FSP arg_Flex, bool arg_Enable)
-        {
-            arg_Flex.Cols[Convert.ToInt32(GRID_ALIAS_SMI_PPM.IxINCOMING_5TH)].Visible = arg_Enable;
-            arg_Flex.Cols[Convert.ToInt32(GRID_ALIAS_SMI_PPM.IxPASS_5TH)].Visible = arg_Enable;
-            arg_Flex.Cols[Convert.ToInt32(GRID_ALIAS_SMI_PPM.IxFAIL_5TH)].Visible = arg_Enable;
-            arg_Flex.Cols[Convert.ToInt32(GRID_ALIAS_SMI_PPM.IxPPM_5TH)].Visible = arg_Enable;
         }
 
         /// <summary>
@@ -611,32 +590,88 @@ namespace FlexVJ_Common.Material_Inspection
             return false;
         }
 
+        /// <summary>
+        /// lay lai thong tin ban dau cho chart setting
+        /// </summary>
         private void ResetChart()
         {
             _memoryStream.Position = 0;
             chr_PPM.Import(FileFormat.Binary, _memoryStream);
             chr_PPM.Data.Clear();
-            chr_PPM.Gallery = Gallery.Bar;
+            //chr_PPM.Gallery = Gallery.Bar;
             chr_PPM.Cursor = Cursors.Default;
         }
 
+        /// <summary>
+        /// ve chart voi du lieu tu db
+        /// </summary>
+        /// <param name="arg_DataSource"></param>
         private void DrawChart(DataTable arg_DataSource)
         {
             ResetChart();
             ListProvider lstProvider = new ListProvider(lstPPM);
             chr_PPM.DataSourceSettings.DataSource = lstProvider;
-
-            CustomGridLine custom1 = new CustomGridLine();
-            custom1.Value = 3000;
+            if (lstPPM != null)
+            {
+                if (lstPPM.Length > 0)
+                {
+                    //chr_PPM.Series[0].Text = "Pass %";
+                    chr_PPM.Series[4].Text = lstPPM[0].TargetLabel;
+                }
+            }
+            /*CustomGridLine custom1 = new CustomGridLine();
+            custom1.Value = _TargQty;
             custom1.Color = Color.DarkBlue;
-            custom1.Text = "Target 3000 ppm";
+            custom1.Text = string.Format("Target {0} ppm", _TargQty);
             custom1.Width = 2;
-            chr_PPM.AxisY.CustomGridLines.Add(custom1);
-
-
-
+            chr_PPM.AxisY.CustomGridLines.Add(custom1);*/
         }
 
+        /// <summary>
+        /// lay target info
+        /// </summary>
+        private void getTargetPPM()
+        {
+            DataTable l_dt = null;
+            DataSet vds_ret;
+
+            MyOraDB.ReDim_Parameter(3);
+
+            //01.PROCEDURE명
+            MyOraDB.Process_Name = "PKG_SMI_MAT_INS.GET_TARGET_PPM_VALUE";
+
+            //02.ARGURMENT 명
+            MyOraDB.Parameter_Name[0] = "arg_factory";
+            MyOraDB.Parameter_Name[1] = "ARG_YYYYMM";
+            MyOraDB.Parameter_Name[2] = "out_cursor";
+
+            //03.DATA TYPE 정의
+            MyOraDB.Parameter_Type[0] = (int)OracleType.VarChar;
+            MyOraDB.Parameter_Type[1] = (int)OracleType.VarChar;
+            MyOraDB.Parameter_Type[2] = (int)OracleType.Cursor;
+
+            //04.DATA 정의
+            MyOraDB.Parameter_Values[0] = COM.ComVar.This_Factory;
+            MyOraDB.Parameter_Values[1] = dpk_Incomingdate.Value.ToString("yyyyMMdd");
+            MyOraDB.Parameter_Values[2] = "";
+
+            MyOraDB.Add_Select_Parameter(true);
+            vds_ret = MyOraDB.Exe_Select_Procedure();
+            if (vds_ret == null) return;
+
+            l_dt = vds_ret.Tables[MyOraDB.Process_Name];
+
+            if (l_dt == null) return;
+            if (l_dt.Rows.Count <= 0) return;
+
+            _TargQty = Convert.ToDouble(l_dt.Rows[0][0]);
+            _TargFrom = Convert.ToDouble(l_dt.Rows[0][1]);
+            _TargTo = Convert.ToDouble(l_dt.Rows[0][2]);
+        }
+
+        /// <summary>
+        /// xu ly thong tin
+        /// </summary>
         public void Tbtn_Print_Click()
         {
             string mrd_Filename = string.Empty;
@@ -672,6 +707,13 @@ namespace FlexVJ_Common.Material_Inspection
             try
             {
                 this.Cursor = Cursors.WaitCursor;
+                chr_PPM.ToolBar.RemoveAt(0);
+                int _lenght = chr_PPM.ToolBar.Length;
+                for (int i = 3; i < _lenght; i++)
+                {
+                    chr_PPM.ToolBar.RemoveAt(i);
+                    _lenght = chr_PPM.ToolBar.Length;
+                }
                 _memoryStream = new MemoryStream();
                 chr_PPM.Export(FileFormat.Binary, _memoryStream);
                 InitForm();
@@ -686,8 +728,6 @@ namespace FlexVJ_Common.Material_Inspection
             {
                 this.Cursor = Cursors.Default;
             }
-
-
         }
 
         private void dpk_Incomingdate_ValueChanged(object sender, EventArgs e)
@@ -707,12 +747,18 @@ namespace FlexVJ_Common.Material_Inspection
                 this.Cursor = Cursors.WaitCursor;
                 InitGrid();
                 DataTable l_dtTmp = GET_PPM_BY_PK();
-                Display_FlexGrid(ref fgrid_PPM, l_dtTmp);
+                getTargetPPM();
+                Display_FlexGrid(ref fgrid_PPM, l_dtTmp);                
+                label1.Text = string.Format("< {0}", _TargFrom);
+                label3.Text = string.Format("> {0}", _TargTo);
+                label4.Text = string.Format("{0}~{1}", _TargFrom, _TargTo);
                 ReFormatGrid(ref fgrid_PPM);
                 DrawChart(l_DataChart);
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsEndSearch, this);
             }
             catch (Exception ex)
             {
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotSearch, this);
                 COM.ComFunction.User_Message(ex.Message, "tbtn_Search_Click", MessageBoxButtons.OK);
             }
             finally
@@ -723,16 +769,19 @@ namespace FlexVJ_Common.Material_Inspection
         }
 
         #endregion
-
-
+        
     }
 
+    /// <summary>
+    /// object for chart data
+    /// </summary>
     public class cPPM
     {
         public cPPM(string arg_weekly, decimal arg_sSHVale, string arg_sHSLable,
             decimal arg_localValue, string arg_localLable,
             decimal arg_importValue, string arg_importLable,
-            decimal arg_totalValue, string arg_totalLabel)
+            decimal arg_totalValue, string arg_totalLabel,
+            decimal arg_TargetValue, string arg_TargetLabel)
         {
             weekly = arg_weekly;
             sSHVale = arg_sSHVale;
@@ -743,6 +792,8 @@ namespace FlexVJ_Common.Material_Inspection
             importLable = arg_importLable;
             totalValue = arg_totalValue;
             totalLable = arg_totalLabel;
+            targetValue = arg_TargetValue;
+            targetLabel = arg_TargetLabel;
 
         }
         private string weekly;
@@ -812,5 +863,55 @@ namespace FlexVJ_Common.Material_Inspection
             get { return totalLable; }
             set { totalLable = value; }
         }
+
+        private decimal targetValue;
+
+        public decimal TargetValue
+        {
+            get { return targetValue; }
+            set { targetValue = value; }
+        }
+        private string targetLabel;
+
+        public string TargetLabel
+        {
+            get { return targetLabel; }
+            set { targetLabel = value; }
+        }
+    }
+
+    /// <summary>
+    /// alias for grid
+    /// </summary>
+    public enum GRID_ALIAS_SMI_PPM : int
+    {
+        IxDIVISION = 0,
+        IxSUB_CODE = 1,
+        IxDESCRIPTION = 2,
+        IxINCOMING_1ST = 3,
+        IxPASS_1ST = 4,
+        IxFAIL_1ST = 5,
+        IxPPM_1ST = 6,
+        IxINCOMING_2ND = 7,
+        IxPASS_2ND = 8,
+        IxFAIL_2ND = 9,
+        IxPPM_2ND = 10,
+        IxINCOMING_3RD = 11,
+        IxPASS_3RD = 12,
+        IxFAIL_3RD = 13,
+        IxPPM_3RD = 14,
+        IxINCOMING_4TH = 15,
+        IxPASS_4TH = 16,
+        IxFAIL_4TH = 17,
+        IxPPM_4TH = 18,
+        IxINCOMING_5TH = 19,
+        IxPASS_5TH = 20,
+        IxFAIL_5TH = 21,
+        IxPPM_5TH = 22,
+        IxINCOMING_TOTAL = 23,
+        IxPASS_TOTAL = 24,
+        IxFAIL_TOTAL = 25,
+        IxPPM_TOTAL = 26,
+        IxL_MONYY = 27
     }
 }

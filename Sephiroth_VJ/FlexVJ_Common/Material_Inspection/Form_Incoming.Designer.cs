@@ -29,6 +29,14 @@ namespace FlexVJ_Common.Material_Inspection
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Incoming));
+            C1.Win.C1List.Style style1 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style2 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style3 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style4 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style5 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style6 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style7 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style8 = new C1.Win.C1List.Style();
             C1.Win.C1List.Style style9 = new C1.Win.C1List.Style();
             C1.Win.C1List.Style style10 = new C1.Win.C1List.Style();
             C1.Win.C1List.Style style11 = new C1.Win.C1List.Style();
@@ -53,15 +61,10 @@ namespace FlexVJ_Common.Material_Inspection
             C1.Win.C1List.Style style30 = new C1.Win.C1List.Style();
             C1.Win.C1List.Style style31 = new C1.Win.C1List.Style();
             C1.Win.C1List.Style style32 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style1 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style2 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style3 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style4 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style5 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style6 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style7 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style8 = new C1.Win.C1List.Style();
             this.pnl_head = new System.Windows.Forms.Panel();
+            this.btnComfirmAll = new System.Windows.Forms.Button();
+            this.cmb_GoodGroup = new C1.Win.C1List.C1Combo();
+            this.lbl_GooodsGroup = new System.Windows.Forms.Label();
             this.btn_Cancel_Confirm = new System.Windows.Forms.Button();
             this.btn_Confirm = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -82,10 +85,11 @@ namespace FlexVJ_Common.Material_Inspection
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.fgrid_Incoming = new COM.FSP();
-            this.cmb_GoodGroup = new C1.Win.C1List.C1Combo();
-            this.lbl_GooodsGroup = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.c1CommandHolder1)).BeginInit();
             this.pnl_head.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_GoodGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Cust)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Location)).BeginInit();
@@ -97,7 +101,7 @@ namespace FlexVJ_Common.Material_Inspection
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fgrid_Incoming)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmb_GoodGroup)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_Action
@@ -248,9 +252,8 @@ namespace FlexVJ_Common.Material_Inspection
             // 
             // pnl_head
             // 
-            this.pnl_head.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_head.BackColor = System.Drawing.SystemColors.Window;
+            this.pnl_head.Controls.Add(this.btnComfirmAll);
             this.pnl_head.Controls.Add(this.cmb_GoodGroup);
             this.pnl_head.Controls.Add(this.lbl_GooodsGroup);
             this.pnl_head.Controls.Add(this.btn_Cancel_Confirm);
@@ -272,11 +275,85 @@ namespace FlexVJ_Common.Material_Inspection
             this.pnl_head.Controls.Add(this.pictureBox2);
             this.pnl_head.Controls.Add(this.pictureBox3);
             this.pnl_head.Controls.Add(this.pictureBox5);
+            this.pnl_head.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_head.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnl_head.Location = new System.Drawing.Point(0, 80);
             this.pnl_head.Name = "pnl_head";
-            this.pnl_head.Size = new System.Drawing.Size(1012, 96);
+            this.pnl_head.Size = new System.Drawing.Size(1016, 96);
             this.pnl_head.TabIndex = 30;
+            // 
+            // btnComfirmAll
+            // 
+            this.btnComfirmAll.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnComfirmAll.Enabled = false;
+            this.btnComfirmAll.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnComfirmAll.ImageIndex = 0;
+            this.btnComfirmAll.ImageList = this.img_Button;
+            this.btnComfirmAll.Location = new System.Drawing.Point(926, 23);
+            this.btnComfirmAll.Name = "btnComfirmAll";
+            this.btnComfirmAll.Size = new System.Drawing.Size(82, 23);
+            this.btnComfirmAll.TabIndex = 599;
+            this.btnComfirmAll.Text = "Confirm All";
+            this.btnComfirmAll.UseVisualStyleBackColor = false;
+            this.btnComfirmAll.Click += new System.EventHandler(this.btnComfirmAll_Click);
+            // 
+            // cmb_GoodGroup
+            // 
+            this.cmb_GoodGroup.AddItemSeparator = ';';
+            this.cmb_GoodGroup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cmb_GoodGroup.Caption = "";
+            this.cmb_GoodGroup.CaptionHeight = 17;
+            this.cmb_GoodGroup.CaptionStyle = style1;
+            this.cmb_GoodGroup.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.cmb_GoodGroup.ColumnCaptionHeight = 18;
+            this.cmb_GoodGroup.ColumnFooterHeight = 18;
+            this.cmb_GoodGroup.ComboStyle = C1.Win.C1List.ComboStyleEnum.DropdownList;
+            this.cmb_GoodGroup.ContentHeight = 16;
+            this.cmb_GoodGroup.DeadAreaBackColor = System.Drawing.Color.Empty;
+            this.cmb_GoodGroup.DragMode = C1.Win.C1List.DragModeEnum.Manual;
+            this.cmb_GoodGroup.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb_GoodGroup.DropdownPosition = C1.Win.C1List.DropdownPositionEnum.RightDown;
+            this.cmb_GoodGroup.DropDownWidth = 250;
+            this.cmb_GoodGroup.DropMode = C1.Win.C1List.DropModeEnum.Manual;
+            this.cmb_GoodGroup.EditorBackColor = System.Drawing.SystemColors.Window;
+            this.cmb_GoodGroup.EditorFont = new System.Drawing.Font("Gulim", 9F);
+            this.cmb_GoodGroup.EditorForeColor = System.Drawing.SystemColors.WindowText;
+            this.cmb_GoodGroup.EditorHeight = 16;
+            this.cmb_GoodGroup.EvenRowStyle = style2;
+            this.cmb_GoodGroup.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_GoodGroup.FooterStyle = style3;
+            this.cmb_GoodGroup.HeadingStyle = style4;
+            this.cmb_GoodGroup.HighLightRowStyle = style5;
+            this.cmb_GoodGroup.Images.Add(((System.Drawing.Image)(resources.GetObject("cmb_GoodGroup.Images"))));
+            this.cmb_GoodGroup.ItemHeight = 15;
+            this.cmb_GoodGroup.Location = new System.Drawing.Point(782, 40);
+            this.cmb_GoodGroup.MatchEntryTimeout = ((long)(2000));
+            this.cmb_GoodGroup.MaxDropDownItems = ((short)(5));
+            this.cmb_GoodGroup.MaxLength = 32767;
+            this.cmb_GoodGroup.MouseCursor = System.Windows.Forms.Cursors.Default;
+            this.cmb_GoodGroup.Name = "cmb_GoodGroup";
+            this.cmb_GoodGroup.OddRowStyle = style6;
+            this.cmb_GoodGroup.RowDivider.Color = System.Drawing.Color.DarkGray;
+            this.cmb_GoodGroup.RowDivider.Style = C1.Win.C1List.LineStyleEnum.None;
+            this.cmb_GoodGroup.RowSubDividerColor = System.Drawing.Color.DarkGray;
+            this.cmb_GoodGroup.SelectedStyle = style7;
+            this.cmb_GoodGroup.Size = new System.Drawing.Size(140, 20);
+            this.cmb_GoodGroup.Style = style8;
+            this.cmb_GoodGroup.TabIndex = 598;
+            this.cmb_GoodGroup.PropBag = resources.GetString("cmb_GoodGroup.PropBag");
+            // 
+            // lbl_GooodsGroup
+            // 
+            this.lbl_GooodsGroup.BackColor = System.Drawing.SystemColors.Window;
+            this.lbl_GooodsGroup.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_GooodsGroup.ImageIndex = 1;
+            this.lbl_GooodsGroup.ImageList = this.img_Label;
+            this.lbl_GooodsGroup.Location = new System.Drawing.Point(681, 39);
+            this.lbl_GooodsGroup.Name = "lbl_GooodsGroup";
+            this.lbl_GooodsGroup.Size = new System.Drawing.Size(100, 21);
+            this.lbl_GooodsGroup.TabIndex = 597;
+            this.lbl_GooodsGroup.Text = "Material Cat";
+            this.lbl_GooodsGroup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btn_Cancel_Confirm
             // 
@@ -284,9 +361,9 @@ namespace FlexVJ_Common.Material_Inspection
             this.btn_Cancel_Confirm.Enabled = false;
             this.btn_Cancel_Confirm.ImageIndex = 0;
             this.btn_Cancel_Confirm.ImageList = this.img_Button;
-            this.btn_Cancel_Confirm.Location = new System.Drawing.Point(934, 27);
+            this.btn_Cancel_Confirm.Location = new System.Drawing.Point(926, 69);
             this.btn_Cancel_Confirm.Name = "btn_Cancel_Confirm";
-            this.btn_Cancel_Confirm.Size = new System.Drawing.Size(74, 23);
+            this.btn_Cancel_Confirm.Size = new System.Drawing.Size(81, 23);
             this.btn_Cancel_Confirm.TabIndex = 596;
             this.btn_Cancel_Confirm.Text = "Cancel";
             this.btn_Cancel_Confirm.UseVisualStyleBackColor = false;
@@ -299,9 +376,9 @@ namespace FlexVJ_Common.Material_Inspection
             this.btn_Confirm.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_Confirm.ImageIndex = 0;
             this.btn_Confirm.ImageList = this.img_Button;
-            this.btn_Confirm.Location = new System.Drawing.Point(860, 27);
+            this.btn_Confirm.Location = new System.Drawing.Point(926, 45);
             this.btn_Confirm.Name = "btn_Confirm";
-            this.btn_Confirm.Size = new System.Drawing.Size(75, 23);
+            this.btn_Confirm.Size = new System.Drawing.Size(82, 23);
             this.btn_Confirm.TabIndex = 595;
             this.btn_Confirm.Text = "Confirm";
             this.btn_Confirm.UseVisualStyleBackColor = false;
@@ -351,7 +428,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.cmb_Cust.HighLightRowStyle = style13;
             this.cmb_Cust.Images.Add(((System.Drawing.Image)(resources.GetObject("cmb_Cust.Images"))));
             this.cmb_Cust.ItemHeight = 15;
-            this.cmb_Cust.Location = new System.Drawing.Point(531, 62);
+            this.cmb_Cust.Location = new System.Drawing.Point(508, 62);
             this.cmb_Cust.MatchEntryTimeout = ((long)(2000));
             this.cmb_Cust.MaxDropDownItems = ((short)(5));
             this.cmb_Cust.MaxLength = 32767;
@@ -396,7 +473,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.cmb_Location.HighLightRowStyle = style21;
             this.cmb_Location.Images.Add(((System.Drawing.Image)(resources.GetObject("cmb_Location.Images"))));
             this.cmb_Location.ItemHeight = 15;
-            this.cmb_Location.Location = new System.Drawing.Point(446, 40);
+            this.cmb_Location.Location = new System.Drawing.Point(423, 40);
             this.cmb_Location.MatchEntryTimeout = ((long)(2000));
             this.cmb_Location.MaxDropDownItems = ((short)(5));
             this.cmb_Location.MaxLength = 32767;
@@ -431,7 +508,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.txt_CustSearchKey.BackColor = System.Drawing.SystemColors.Window;
             this.txt_CustSearchKey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_CustSearchKey.Font = new System.Drawing.Font("Verdana", 7.5F);
-            this.txt_CustSearchKey.Location = new System.Drawing.Point(446, 62);
+            this.txt_CustSearchKey.Location = new System.Drawing.Point(423, 62);
             this.txt_CustSearchKey.MaximumSize = new System.Drawing.Size(86, 20);
             this.txt_CustSearchKey.MaxLength = 10;
             this.txt_CustSearchKey.Name = "txt_CustSearchKey";
@@ -457,7 +534,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.lbl_Cust.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Cust.ImageIndex = 1;
             this.lbl_Cust.ImageList = this.img_Label;
-            this.lbl_Cust.Location = new System.Drawing.Point(344, 63);
+            this.lbl_Cust.Location = new System.Drawing.Point(322, 63);
             this.lbl_Cust.Name = "lbl_Cust";
             this.lbl_Cust.Size = new System.Drawing.Size(100, 21);
             this.lbl_Cust.TabIndex = 543;
@@ -470,7 +547,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.lbl_Location.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Location.ImageIndex = 1;
             this.lbl_Location.ImageList = this.img_Label;
-            this.lbl_Location.Location = new System.Drawing.Point(344, 40);
+            this.lbl_Location.Location = new System.Drawing.Point(322, 40);
             this.lbl_Location.Name = "lbl_Location";
             this.lbl_Location.Size = new System.Drawing.Size(100, 21);
             this.lbl_Location.TabIndex = 405;
@@ -497,7 +574,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.pic_head3.BackColor = System.Drawing.SystemColors.Window;
             this.pic_head3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pic_head3.Image = ((System.Drawing.Image)(resources.GetObject("pic_head3.Image")));
-            this.pic_head3.Location = new System.Drawing.Point(996, 80);
+            this.pic_head3.Location = new System.Drawing.Point(1000, 80);
             this.pic_head3.Name = "pic_head3";
             this.pic_head3.Size = new System.Drawing.Size(16, 16);
             this.pic_head3.TabIndex = 45;
@@ -512,7 +589,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.pic_head4.Image = ((System.Drawing.Image)(resources.GetObject("pic_head4.Image")));
             this.pic_head4.Location = new System.Drawing.Point(136, 79);
             this.pic_head4.Name = "pic_head4";
-            this.pic_head4.Size = new System.Drawing.Size(972, 18);
+            this.pic_head4.Size = new System.Drawing.Size(976, 18);
             this.pic_head4.TabIndex = 40;
             this.pic_head4.TabStop = false;
             // 
@@ -575,7 +652,7 @@ namespace FlexVJ_Common.Material_Inspection
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.pic_head7.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pic_head7.Image = ((System.Drawing.Image)(resources.GetObject("pic_head7.Image")));
-            this.pic_head7.Location = new System.Drawing.Point(911, 30);
+            this.pic_head7.Location = new System.Drawing.Point(915, 30);
             this.pic_head7.Name = "pic_head7";
             this.pic_head7.Size = new System.Drawing.Size(101, 55);
             this.pic_head7.TabIndex = 46;
@@ -587,7 +664,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.pictureBox2.BackColor = System.Drawing.SystemColors.Window;
             this.pictureBox2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(996, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(1000, 0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(16, 32);
             this.pictureBox2.TabIndex = 44;
@@ -614,106 +691,59 @@ namespace FlexVJ_Common.Material_Inspection
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(160, 0);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(932, 25);
+            this.pictureBox5.Size = new System.Drawing.Size(936, 25);
             this.pictureBox5.TabIndex = 39;
             this.pictureBox5.TabStop = false;
             // 
             // fgrid_Incoming
             // 
-            this.fgrid_Incoming.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.fgrid_Incoming.ColumnInfo = "10,1,0,0,0,80,Columns:1{AllowMerging:True;}\t";
+            this.fgrid_Incoming.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fgrid_Incoming.Font = new System.Drawing.Font("Verdana", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.fgrid_Incoming.Location = new System.Drawing.Point(0, 184);
+            this.fgrid_Incoming.Location = new System.Drawing.Point(0, 0);
             this.fgrid_Incoming.Name = "fgrid_Incoming";
             this.fgrid_Incoming.Rows.Count = 2;
             this.fgrid_Incoming.Rows.DefaultSize = 16;
             this.fgrid_Incoming.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Cell;
-            this.fgrid_Incoming.Size = new System.Drawing.Size(1016, 460);
+            this.fgrid_Incoming.Size = new System.Drawing.Size(1016, 468);
             this.fgrid_Incoming.StyleInfo = resources.GetString("fgrid_Incoming.StyleInfo");
             this.fgrid_Incoming.TabIndex = 179;
             this.fgrid_Incoming.AfterEdit += new C1.Win.C1FlexGrid.RowColEventHandler(this.fgrid_Incoming_AfterEdit);
             this.fgrid_Incoming.SelChange += new System.EventHandler(this.fgrid_Incoming_SelChange);
+            this.fgrid_Incoming.BeforeEdit += new C1.Win.C1FlexGrid.RowColEventHandler(this.fgrid_Incoming_BeforeEdit);
             this.fgrid_Incoming.DoubleClick += new System.EventHandler(this.fgrid_Incoming_DoubleClick);
             // 
-            // cmb_GoodGroup
+            // panel2
             // 
-            this.cmb_GoodGroup.AddItemSeparator = ';';
-            this.cmb_GoodGroup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cmb_GoodGroup.Caption = "";
-            this.cmb_GoodGroup.CaptionHeight = 17;
-            this.cmb_GoodGroup.CaptionStyle = style1;
-            this.cmb_GoodGroup.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.cmb_GoodGroup.ColumnCaptionHeight = 18;
-            this.cmb_GoodGroup.ColumnFooterHeight = 18;
-            this.cmb_GoodGroup.ComboStyle = C1.Win.C1List.ComboStyleEnum.DropdownList;
-            this.cmb_GoodGroup.ContentHeight = 16;
-            this.cmb_GoodGroup.DeadAreaBackColor = System.Drawing.Color.Empty;
-            this.cmb_GoodGroup.DragMode = C1.Win.C1List.DragModeEnum.Manual;
-            this.cmb_GoodGroup.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmb_GoodGroup.DropdownPosition = C1.Win.C1List.DropdownPositionEnum.LeftDown;
-            this.cmb_GoodGroup.DropDownWidth = 200;
-            this.cmb_GoodGroup.DropMode = C1.Win.C1List.DropModeEnum.Manual;
-            this.cmb_GoodGroup.EditorBackColor = System.Drawing.SystemColors.Window;
-            this.cmb_GoodGroup.EditorFont = new System.Drawing.Font("Gulim", 9F);
-            this.cmb_GoodGroup.EditorForeColor = System.Drawing.SystemColors.WindowText;
-            this.cmb_GoodGroup.EditorHeight = 16;
-            this.cmb_GoodGroup.EvenRowStyle = style2;
-            this.cmb_GoodGroup.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_GoodGroup.FooterStyle = style3;
-            this.cmb_GoodGroup.HeadingStyle = style4;
-            this.cmb_GoodGroup.HighLightRowStyle = style5;
-            this.cmb_GoodGroup.Images.Add(((System.Drawing.Image)(resources.GetObject("cmb_GoodGroup.Images"))));
-            this.cmb_GoodGroup.ItemHeight = 15;
-            this.cmb_GoodGroup.Location = new System.Drawing.Point(813, 59);
-            this.cmb_GoodGroup.MatchEntryTimeout = ((long)(2000));
-            this.cmb_GoodGroup.MaxDropDownItems = ((short)(5));
-            this.cmb_GoodGroup.MaxLength = 32767;
-            this.cmb_GoodGroup.MouseCursor = System.Windows.Forms.Cursors.Default;
-            this.cmb_GoodGroup.Name = "cmb_GoodGroup";
-            this.cmb_GoodGroup.OddRowStyle = style6;
-            this.cmb_GoodGroup.RowDivider.Color = System.Drawing.Color.DarkGray;
-            this.cmb_GoodGroup.RowDivider.Style = C1.Win.C1List.LineStyleEnum.None;
-            this.cmb_GoodGroup.RowSubDividerColor = System.Drawing.Color.DarkGray;
-            this.cmb_GoodGroup.SelectedStyle = style7;
-            this.cmb_GoodGroup.Size = new System.Drawing.Size(138, 20);
-            this.cmb_GoodGroup.Style = style8;
-            this.cmb_GoodGroup.TabIndex = 598;
-            this.cmb_GoodGroup.Visible = false;
-            this.cmb_GoodGroup.PropBag = resources.GetString("cmb_GoodGroup.PropBag");
+            this.panel2.Controls.Add(this.fgrid_Incoming);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 176);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1016, 468);
+            this.panel2.TabIndex = 180;
             // 
-            // lbl_GooodsGroup
+            // openFileDialog1
             // 
-            this.lbl_GooodsGroup.BackColor = System.Drawing.SystemColors.Window;
-            this.lbl_GooodsGroup.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_GooodsGroup.ImageIndex = 1;
-            this.lbl_GooodsGroup.ImageList = this.img_Label;
-            this.lbl_GooodsGroup.Location = new System.Drawing.Point(709, 58);
-            this.lbl_GooodsGroup.Name = "lbl_GooodsGroup";
-            this.lbl_GooodsGroup.Size = new System.Drawing.Size(100, 21);
-            this.lbl_GooodsGroup.TabIndex = 597;
-            this.lbl_GooodsGroup.Text = "Group";
-            this.lbl_GooodsGroup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_GooodsGroup.Visible = false;
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form_Incoming
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1016, 666);
-            this.Controls.Add(this.fgrid_Incoming);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnl_head);
             this.Name = "Form_Incoming";
             this.Text = "Form_Incoming";
             this.Load += new System.EventHandler(this.Form_Incoming_Load);
-            this.Controls.SetChildIndex(this.pnl_head, 0);
-            this.Controls.SetChildIndex(this.fgrid_Incoming, 0);
             this.Controls.SetChildIndex(this.stbar, 0);
+            this.Controls.SetChildIndex(this.pnl_head, 0);
+            this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.c1ToolBar1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.c1CommandHolder1)).EndInit();
             this.pnl_head.ResumeLayout(false);
             this.pnl_head.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_GoodGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Cust)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Location)).EndInit();
@@ -725,7 +755,7 @@ namespace FlexVJ_Common.Material_Inspection
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fgrid_Incoming)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmb_GoodGroup)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -755,6 +785,9 @@ namespace FlexVJ_Common.Material_Inspection
         private System.Windows.Forms.Button btn_Confirm;
         private C1.Win.C1List.C1Combo cmb_GoodGroup;
         private System.Windows.Forms.Label lbl_GooodsGroup;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnComfirmAll;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
 
     }
 }

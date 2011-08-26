@@ -40,7 +40,12 @@ namespace FlexVJ_Common.Material_Inspection
         private CellStyle cs_Normal = null;//format for cell blank
         private CellStyle cs_NormalTotal = null;//format for cell total normal
 
+        private double _Targ1 = 0;
+        private double _Targ2 = 0;
+        private double _Targ3 = 0;
+
         #endregion
+
         #region "Method"
         private DataTable SEARCH_SMI_CMN()
         {
@@ -266,7 +271,7 @@ namespace FlexVJ_Common.Material_Inspection
             }
             for (int i = _ColMin; i <= _colMax; i++)
             {
-                fgrid_MaterialPassStatus.Cols[i].Style.Format = l_StrFormat;
+                fgrid_MaterialPassStatus.Cols[i].Style.Format = l_StrFormatPercent;
             }
             fgrid_MaterialPassStatus.Set_Action_Image(img_Action);
             fgrid_MaterialPassStatus.KeyActionEnter = KeyActionEnum.MoveAcrossOut;
@@ -282,7 +287,7 @@ namespace FlexVJ_Common.Material_Inspection
             {
                 arg_FSP.Clear(ClearFlags.UserData, arg_FSP.Rows.Fixed, 1, arg_FSP.Rows.Count - 1, arg_FSP.Cols.Count - 1);
 
-                arg_FSP.Rows.Count = arg_FSP.Rows.Fixed ;
+                arg_FSP.Rows.Count = arg_FSP.Rows.Fixed;
             }
         }
 
@@ -406,11 +411,14 @@ namespace FlexVJ_Common.Material_Inspection
         {
             Clear_FlexGrid(ref arg_FSP);
             if (arg_dt == null) return;
-            arg_FSP.Rows.Count =  arg_dt.Rows.Count + 3;
+            if (rbt_PassPercent.Checked)
+                arg_FSP.Rows.Count = arg_dt.Rows.Count + 3;
+            if (rbt_PassTotal.Checked)
+                arg_FSP.Rows.Count = arg_dt.Rows.Count + 4;
             if (arg_dt.Rows.Count < 1) return;
 
             int iCount = arg_dt.Rows.Count;
-            
+
             int iColCount = arg_dt.Columns.Count;
 
             ReInitHeaderLabel(ref arg_FSP, arg_dt, ref iColCount);
@@ -425,25 +433,166 @@ namespace FlexVJ_Common.Material_Inspection
                 }
                 j++;
             }
+
+
+            if (rbt_PassTotal.Checked)
+            {
+                arg_FSP[arg_FSP.Rows.Count - 1, 1] = "Total";
+                arg_FSP[arg_FSP.Rows.Count - 1, 2] = "Total";
+                if (_Have5Week)
+                {
+                    for (int i = 3; i < arg_FSP.Cols.Count; i++)
+                    {
+                        if (i == Convert.ToInt32(SMI_MATERIAL_PASS_STATUS_TOTAL_5WEEK.IxPASS_PERCENT_QTY_1ST)
+                            || i == Convert.ToInt32(SMI_MATERIAL_PASS_STATUS_TOTAL_5WEEK.IxPASS_PERCENT_QTY_2ND)
+                            || i == Convert.ToInt32(SMI_MATERIAL_PASS_STATUS_TOTAL_5WEEK.IxPASS_PERCENT_QTY_3RD)
+                            || i == Convert.ToInt32(SMI_MATERIAL_PASS_STATUS_TOTAL_5WEEK.IxPASS_PERCENT_QTY_4TH)
+                            || i == Convert.ToInt32(SMI_MATERIAL_PASS_STATUS_TOTAL_5WEEK.IxPASS_PERCENT_QTY_5TH)
+                            || i == Convert.ToInt32(SMI_MATERIAL_PASS_STATUS_TOTAL_5WEEK.IxPASS_PERCENT_QTY_TOTAL))
+                        {
+                            double l_inco = 0;
+                            double l_pass = 0;
+                            try
+                            {
+                                l_inco = double.Parse(arg_FSP[arg_FSP.Rows.Count - 1, i - 3].ToString());
+                            }
+                            catch
+                            {
+                                l_inco = 0;
+                            }
+                            try
+                            {
+                                l_pass = double.Parse(arg_FSP[arg_FSP.Rows.Count - 1, i - 2].ToString());
+                            }
+                            catch
+                            {
+                                l_pass = 0;
+                            }
+                            try
+                            {
+                                if (l_inco == 0)
+                                {
+                                    arg_FSP[arg_FSP.Rows.Count - 1, i] = 0;
+                                }
+                                else
+                                {
+                                    arg_FSP[arg_FSP.Rows.Count - 1, i] = l_pass / l_inco;
+                                }
+                            }
+                            catch
+                            {
+                                arg_FSP[arg_FSP.Rows.Count - 1, i] = 0;
+                            }
+                        }
+                        else
+                        {
+                            arg_FSP[arg_FSP.Rows.Count - 1, i] = SumCol(arg_FSP, i);
+                        }
+                    }
+                }
+                else
+                {
+                    for (int i = 3; i < arg_FSP.Cols.Count; i++)
+                    {
+                        if (i == Convert.ToInt32(SMI_MATERIAL_PASS_STATUS_TOTAL.IxPASS_PERCENT_QTY_1ST)
+                            || i == Convert.ToInt32(SMI_MATERIAL_PASS_STATUS_TOTAL.IxPASS_PERCENT_QTY_2ND)
+                            || i == Convert.ToInt32(SMI_MATERIAL_PASS_STATUS_TOTAL.IxPASS_PERCENT_QTY_3RD)
+                            || i == Convert.ToInt32(SMI_MATERIAL_PASS_STATUS_TOTAL.IxPASS_PERCENT_QTY_4TH)
+                            || i == Convert.ToInt32(SMI_MATERIAL_PASS_STATUS_TOTAL.IxPASS_PERCENT_QTY_TOTAL))
+                        {
+                            double l_inco = 0;
+                            double l_pass = 0;
+                            try
+                            {
+                                l_inco = double.Parse(arg_FSP[arg_FSP.Rows.Count - 1, i - 3].ToString());
+                            }
+                            catch
+                            {
+                                l_inco = 0;
+                            }
+                            try
+                            {
+                                l_pass = double.Parse(arg_FSP[arg_FSP.Rows.Count - 1, i - 2].ToString());
+                            }
+                            catch
+                            {
+                                l_pass = 0;
+                            }
+                            try
+                            {
+                                if (l_inco == 0)
+                                {
+                                    arg_FSP[arg_FSP.Rows.Count - 1, i] = 0;
+                                }
+                                else
+                                {
+                                    if (Math.Round(l_pass / l_inco, 4).Equals(1))
+                                    {
+                                        arg_FSP[arg_FSP.Rows.Count - 1, i] = 1;// Math.Round(l_pass / l_inco, 4);
+                                    }
+                                    else
+                                    {
+                                        arg_FSP[arg_FSP.Rows.Count - 1, i] = Math.Round(l_pass / l_inco, 4);
+                                    }
+                                }
+                            }
+                            catch
+                            {
+                                arg_FSP[arg_FSP.Rows.Count - 1, i] = 0;
+                            }
+                        }
+                        else
+                        {
+                            arg_FSP[arg_FSP.Rows.Count - 1, i] = SumCol(arg_FSP, i);
+                        }
+                    }
+                }
+            }
         }
 
-        private void FillCellStyle(ref COM.FSP arg_Flex, int arg_row, int arg_col)
+        /// <summary>
+        /// tinh dong tong cho du lieu tren grid
+        /// </summary>
+        /// <param name="arg_FSP"></param>
+        /// <param name="arg_Col"></param>
+        /// <returns></returns>
+        private double SumCol(COM.FSP arg_FSP, int arg_Col)
+        {
+            double l_tmp = 0;
+            for (int i = arg_FSP.Rows.Fixed; i < arg_FSP.Rows.Count; i++)
+            {
+                object tmp = arg_FSP[i, arg_Col];
+                if (tmp != null)
+                {
+                    l_tmp += double.Parse(tmp.ToString());
+                }
+            }
+            return l_tmp;
+        }
+
+        /// <summary>
+        /// to mau cho cell ung voi target
+        /// </summary>
+        /// <param name="arg_Flex"></param>
+        /// <param name="arg_row"></param>
+        /// <param name="arg_col"></param>
+        private void FillCellStyle(COM.FSP arg_Flex, int arg_row, int arg_col)
         {
             string l_tmp = string.Empty;
             l_tmp = ClassLib.ComFunction.NullToBlank(arg_Flex[arg_row, arg_col]);
 
             if (!l_tmp.Trim().Equals(string.Empty))
             {
-                decimal l_decimal = decimal.Parse(l_tmp);
-                if (l_decimal < 3000)
+                double l_decimal = double.Parse(l_tmp);
+                if (l_decimal >= _Targ3)
                 {
                     arg_Flex.SetCellStyle(arg_row, arg_col, cs_Bottom);
                 }
-                if (l_decimal >= 3000 && l_decimal <= 4000)
+                if (l_decimal > _Targ1 && l_decimal < _Targ3)
                 {
                     arg_Flex.SetCellStyle(arg_row, arg_col, cs_Midle);
                 }
-                if (l_decimal > 4000)
+                if (l_decimal <= _Targ1)
                 {
                     arg_Flex.SetCellStyle(arg_row, arg_col, cs_Top);
                 }
@@ -456,101 +605,111 @@ namespace FlexVJ_Common.Material_Inspection
         /// <param name="arg_Flex"></param>
         private void ReFormatGrid(ref COM.FSP arg_Flex)
         {
-            for (int i = 1; i < arg_Flex.Rows.Count; i++)
+            try
             {
-                if (i == 1)
+                for (int i = 1; i < arg_Flex.Rows.Count; i++)
                 {
-                    //format for header 1
-                    for (int j = 1; j < arg_Flex.Cols.Count; j++)
+                    if (i == 1)
                     {
-                        arg_Flex.SetCellStyle(i, j, cs_Header1);
-                    }
-                }
-                if (i == 2)
-                {
-                    //format for header2
-                    for (int j = 1; j < arg_Flex.Cols.Count; j++)
-                    {
-                        arg_Flex.SetCellStyle(i, j, cs_Header2);
-                    }
-                }
-                if (i >= 3 && i <= arg_Flex.Rows.Count - 1)
-                {
-                    //format for data row
-                    for (int j = 1; j < arg_Flex.Cols.Count; j++)
-                    {
-                        if (rbt_PassTotal.Checked)//for pass total
+                        //format for header 1
+                        for (int j = 1; j < arg_Flex.Cols.Count; j++)
                         {
-                            if (_Have5Week)
-                            {
-                                if (j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL_5WEEK.IxPASS_PERCENT_QTY_1ST
-                                    || j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL_5WEEK.IxPASS_PERCENT_QTY_2ND
-                                    || j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL_5WEEK.IxPASS_PERCENT_QTY_3RD
-                                    || j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL_5WEEK.IxPASS_PERCENT_QTY_4TH
-                                    || j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL_5WEEK.IxPASS_PERCENT_QTY_5TH
-                                    || j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL_5WEEK.IxPASS_PERCENT_QTY_TOTAL)
-                                {
-                                    FillCellStyle(ref arg_Flex, i, j);
-                                }
-                                else
-                                    arg_Flex.SetCellStyle(i, j, cs_Normal);
-                            }
-                            else
-                            {
-                                if (j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL.IxPASS_PERCENT_QTY_1ST
-                                    || j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL.IxPASS_PERCENT_QTY_2ND
-                                    || j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL.IxPASS_PERCENT_QTY_3RD
-                                    || j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL.IxPASS_PERCENT_QTY_4TH
-                                    || j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL.IxPASS_PERCENT_QTY_TOTAL)
-                                {
-                                    FillCellStyle(ref arg_Flex, i, j);
-                                }
-                                else
-                                    arg_Flex.SetCellStyle(i, j, cs_Normal);
-                            }
+                            arg_Flex.SetCellStyle(i, j, cs_Header1);
                         }
-                        if (rbt_PassPercent.Checked)//for pass %
+                    }
+                    if (i == 2)
+                    {
+                        //format for header2
+                        for (int j = 1; j < arg_Flex.Cols.Count; j++)
                         {
-                            if (_Have5Week)
-                            {
-                                if (j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT_5WEEK.IxPASS_PERCENT_QTY_1ST
-                                    || j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT_5WEEK.IxPASS_PERCENT_QTY_2ND
-                                    || j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT_5WEEK.IxPASS_PERCENT_QTY_3RD
-                                    || j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT_5WEEK.IxPASS_PERCENT_QTY_4TH
-                                    || j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT_5WEEK.IxPASS_PERCENT_QTY_5TH
-                                    || j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT_5WEEK.IxPASS_PERCENT_QTY_TOTAL)
-                                {
-                                    FillCellStyle(ref arg_Flex, i, j);
-                                }
-                                else
-                                    arg_Flex.SetCellStyle(i, j, cs_Normal);
-                            }
-                            else
-                            {
-                                if (j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT.IxPASS_PERCENT_QTY_1ST
-                                    || j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT.IxPASS_PERCENT_QTY_2ND
-                                    || j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT.IxPASS_PERCENT_QTY_3RD
-                                    || j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT.IxPASS_PERCENT_QTY_4TH
-                                    || j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT.IxPASS_PERCENT_QTY_TOTAL)
-                                {
-                                    FillCellStyle(ref arg_Flex, i, j);
-                                }
-                                else
-                                    arg_Flex.SetCellStyle(i, j, cs_Normal);
-                            }
+                            arg_Flex.SetCellStyle(i, j, cs_Header2);
                         }
+                    }
+                    if (i >= 3 && i < arg_Flex.Rows.Count)
+                    {
+                        //format for data row
+                        for (int j = 1; j < arg_Flex.Cols.Count; j++)
+                        {
+                            if (rbt_PassTotal.Checked)//for pass total
+                            {
+                                if (_Have5Week)
+                                {
+                                    if (j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL_5WEEK.IxPASS_PERCENT_QTY_1ST
+                                        || j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL_5WEEK.IxPASS_PERCENT_QTY_2ND
+                                        || j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL_5WEEK.IxPASS_PERCENT_QTY_3RD
+                                        || j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL_5WEEK.IxPASS_PERCENT_QTY_4TH
+                                        || j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL_5WEEK.IxPASS_PERCENT_QTY_5TH
+                                        || j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL_5WEEK.IxPASS_PERCENT_QTY_TOTAL)
+                                    {
+                                        FillCellStyle( arg_Flex, i, j);
+                                    }
+                                    else
+                                        arg_Flex.SetCellStyle(i, j, cs_Normal);
+                                }
+                                else
+                                {
+                                    if (j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL.IxPASS_PERCENT_QTY_1ST
+                                        || j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL.IxPASS_PERCENT_QTY_2ND
+                                        || j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL.IxPASS_PERCENT_QTY_3RD
+                                        || j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL.IxPASS_PERCENT_QTY_4TH
+                                        || j == (int)SMI_MATERIAL_PASS_STATUS_TOTAL.IxPASS_PERCENT_QTY_TOTAL)
+                                    {
+                                        FillCellStyle( arg_Flex, i, j);
+                                    }
+                                    else
+                                        arg_Flex.SetCellStyle(i, j, cs_Normal);
+                                }
+                            }
+                            if (rbt_PassPercent.Checked)//for pass %
+                            {
+                                if (_Have5Week)
+                                {
+                                    if (j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT_5WEEK.IxPASS_PERCENT_QTY_1ST
+                                        || j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT_5WEEK.IxPASS_PERCENT_QTY_2ND
+                                        || j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT_5WEEK.IxPASS_PERCENT_QTY_3RD
+                                        || j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT_5WEEK.IxPASS_PERCENT_QTY_4TH
+                                        || j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT_5WEEK.IxPASS_PERCENT_QTY_5TH
+                                        || j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT_5WEEK.IxPASS_PERCENT_QTY_TOTAL)
+                                    {
+                                        FillCellStyle( arg_Flex, i, j);
+                                    }
+                                    else
+                                        arg_Flex.SetCellStyle(i, j, cs_Normal);
+                                }
+                                else
+                                {
+                                    if (j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT.IxPASS_PERCENT_QTY_1ST
+                                        || j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT.IxPASS_PERCENT_QTY_2ND
+                                        || j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT.IxPASS_PERCENT_QTY_3RD
+                                        || j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT.IxPASS_PERCENT_QTY_4TH
+                                        || j == (int)SMI_MATERIAL_PASS_STATUS_PERCENT.IxPASS_PERCENT_QTY_TOTAL)
+                                    {
+                                        FillCellStyle( arg_Flex, i, j);
+                                    }
+                                    else
+                                        arg_Flex.SetCellStyle(i, j, cs_Normal);
+                                }
+                            }
 
+                        }
                     }
+                    //format for row height
+                    arg_Flex.Rows[i].Height = 28;
+                    //format col 1, 2
+                    arg_Flex.SetCellStyle(i, 1, cs_Col1_2);
+                    arg_Flex.SetCellStyle(i, 2, cs_Col1_2);
                 }
-                //format for row height
-                arg_Flex.Rows[i].Height = 28;
-                //format col 1, 2
-                arg_Flex.SetCellStyle(i, 1, cs_Col1_2);
-                arg_Flex.SetCellStyle(i, 2, cs_Col1_2);
+                arg_Flex.AllowMerging = AllowMergingEnum.Free;
+                arg_Flex.Cols[1].AllowMerging = true;
+                for (int i = 3; i < arg_Flex.Cols.Count; i++)
+                {
+                    arg_Flex.Cols[i].AllowMerging = false;
+                }
+                arg_Flex.Rows[arg_Flex.Rows.Count - 1].AllowMerging = true;
             }
-            arg_Flex.AllowMerging = AllowMergingEnum.Free;
-            arg_Flex.Cols[1].AllowMerging = true;
-            arg_Flex.Rows[arg_Flex.Rows.Count-1].AllowMerging = true;
+            catch (Exception ex)
+            {
+            }
         }
 
         /// <summary>
@@ -573,14 +732,22 @@ namespace FlexVJ_Common.Material_Inspection
                 else
                     mrd_Filename = ClassLib.ComFunction.Set_RD_Directory("Form_Material_Pass_Status");
             }
+            if (rbt_StatusChart.Checked == true)//report for pass status chart
+            {
+                mrd_Filename = ClassLib.ComFunction.Set_RD_Directory("Form_Material_Pass_Status_Chart");
+            }
             string Para = " ";
 
-            int iCnt = 4;
+            int iCnt = 5;
             string[] aHead = new string[iCnt];
+
+            aHead = new string[iCnt];
             aHead[0] = COM.ComVar.This_Factory;
             aHead[1] = COM.ComFunction.Empty_Combo(cmb_Location, string.Empty);
             aHead[2] = dpk_Incomingdate.Value.ToString("yyyyMMdd");
-            aHead[3] = "";
+            aHead[3] = cmb_Location.SelectedText;
+            aHead[4] = "";
+
 
             Para = " /rp ";
             for (int i = 1; i <= iCnt; i++)
@@ -601,11 +768,11 @@ namespace FlexVJ_Common.Material_Inspection
         {
             DataSet vds_ret;
 
-            MyOraDB.ReDim_Parameter(4);
+            MyOraDB.ReDim_Parameter(5);
 
             //01.PROCEDURE명
             if (arg_MATERIAL_PASS_STATUS == MATERIAL_PASS_STATUS.PASS_TOTAL)
-                MyOraDB.Process_Name = "PKG_SMI_MAT_INS_RPT.MATERIAL_PASS_STATUS_TOTAL_F";
+                MyOraDB.Process_Name = "PKG_SMI_MAT_INS_RPT.MATERIAL_PASS_STATUS_TOTAL";
             else
                 MyOraDB.Process_Name = "PKG_SMI_MAT_INS_RPT.MATERIAL_PASS_STATUS_PERCENT";
 
@@ -613,7 +780,48 @@ namespace FlexVJ_Common.Material_Inspection
             MyOraDB.Parameter_Name[0] = ARG_FACTORY;
             MyOraDB.Parameter_Name[1] = ARG_INCOMING_YMD;
             MyOraDB.Parameter_Name[2] = ARG_INCOMING_LOCATION;
-            MyOraDB.Parameter_Name[3] = OUT_CURSOR;
+            MyOraDB.Parameter_Name[3] = "ARG_INCOMING_LOC";
+            MyOraDB.Parameter_Name[4] = OUT_CURSOR;
+
+            //03.DATA TYPE 정의
+            MyOraDB.Parameter_Type[0] = (int)OracleType.VarChar;
+            MyOraDB.Parameter_Type[1] = (int)OracleType.VarChar;
+            MyOraDB.Parameter_Type[2] = (int)OracleType.VarChar;
+            MyOraDB.Parameter_Type[3] = (int)OracleType.VarChar;
+            MyOraDB.Parameter_Type[4] = (int)OracleType.Cursor;
+
+            //04.DATA 정의
+            MyOraDB.Parameter_Values[0] = COM.ComVar.This_Factory;
+            MyOraDB.Parameter_Values[1] = dpk_Incomingdate.Value.ToString("yyyyMMdd");
+            MyOraDB.Parameter_Values[2] = COM.ComFunction.Empty_Combo(cmb_Location, string.Empty);
+            MyOraDB.Parameter_Values[3] = cmb_Location.SelectedText;
+            MyOraDB.Parameter_Values[4] = "";
+
+            MyOraDB.Add_Select_Parameter(true);
+            vds_ret = MyOraDB.Exe_Select_Procedure();
+            if (vds_ret == null) return null;
+
+            return vds_ret.Tables[MyOraDB.Process_Name];
+        }
+
+        /// <summary>
+        /// lay thong tin target
+        /// </summary>
+        private void getTargetMaterialPassStatus()
+        {
+            DataTable l_dt = null;
+            DataSet vds_ret;
+
+            MyOraDB.ReDim_Parameter(4);
+
+            //01.PROCEDURE명
+            MyOraDB.Process_Name = "PKG_SMI_MAT_INS_RPT.GET_TARGET_VALUE";
+
+            //02.ARGURMENT 명
+            MyOraDB.Parameter_Name[0] = "arg_factory";
+            MyOraDB.Parameter_Name[1] = "ARG_YYYYMM";
+            MyOraDB.Parameter_Name[2] = "ARG_TAR_DIV";
+            MyOraDB.Parameter_Name[3] = "out_cursor";
 
             //03.DATA TYPE 정의
             MyOraDB.Parameter_Type[0] = (int)OracleType.VarChar;
@@ -624,14 +832,25 @@ namespace FlexVJ_Common.Material_Inspection
             //04.DATA 정의
             MyOraDB.Parameter_Values[0] = COM.ComVar.This_Factory;
             MyOraDB.Parameter_Values[1] = dpk_Incomingdate.Value.ToString("yyyyMMdd");
-            MyOraDB.Parameter_Values[2] = COM.ComFunction.Empty_Combo(cmb_Location, string.Empty);
+            MyOraDB.Parameter_Values[2] = "003";
             MyOraDB.Parameter_Values[3] = "";
 
             MyOraDB.Add_Select_Parameter(true);
             vds_ret = MyOraDB.Exe_Select_Procedure();
-            if (vds_ret == null) return null;
+            if (vds_ret == null) return;
 
-            return vds_ret.Tables[MyOraDB.Process_Name];
+            l_dt = vds_ret.Tables[MyOraDB.Process_Name];
+
+            if (l_dt == null) return;
+            if (l_dt.Rows.Count <= 0) return;
+
+            _Targ1 = Convert.ToDouble(l_dt.Rows[0][0]);
+            _Targ2 = Convert.ToDouble(l_dt.Rows[0][1]);
+            _Targ3 = Convert.ToDouble(l_dt.Rows[0][2]);
+            
+            label1.Text = string.Format("{0}%", _Targ3*100);
+            label3.Text = string.Format("{0}%", _Targ1*100);
+            label4.Text = string.Format("{0}%", _Targ2*100);
         }
 
         #endregion
@@ -645,9 +864,11 @@ namespace FlexVJ_Common.Material_Inspection
                 _Have5Week = Have5Weekly();
                 InitForm();
                 tbtn_Search_Click(tbtn_Search, C1.Win.C1Command.ClickEventArgs.Empty);
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsEndSearch, this);
             }
             catch (Exception ex)
             {
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotSearch, this);
                 COM.ComFunction.User_Message(ex.Message, "Form_Material_Pass_Status_Load");
             }
             finally
@@ -659,13 +880,48 @@ namespace FlexVJ_Common.Material_Inspection
         private void rbt_PassPercent_CheckedChanged(object sender, EventArgs e)
         {
             if (rbt_PassPercent.Checked)
+            {
+                fgrid_MaterialPassStatus.Show();
+                panel4.Controls.RemoveByKey("STATUSCHART");
+                tbtn_Search.Click -= new C1.Win.C1Command.ClickEventHandler(Load_Chart_Status);
+                tbtn_Search.Click -= new C1.Win.C1Command.ClickEventHandler(tbtn_Search_Click);
+                tbtn_Search.Click += new C1.Win.C1Command.ClickEventHandler(tbtn_Search_Click);
                 tbtn_Search_Click(tbtn_Search, C1.Win.C1Command.ClickEventArgs.Empty);
+            }
         }
 
         private void rbt_PassTotal_CheckedChanged(object sender, EventArgs e)
         {
             if (rbt_PassTotal.Checked)
+            {
+                fgrid_MaterialPassStatus.Show();
+                panel4.Controls.RemoveByKey("STATUSCHART");
+                tbtn_Search.Click -= new C1.Win.C1Command.ClickEventHandler(Load_Chart_Status);
+                tbtn_Search.Click -= new C1.Win.C1Command.ClickEventHandler(tbtn_Search_Click);
+                tbtn_Search.Click += new C1.Win.C1Command.ClickEventHandler(tbtn_Search_Click);
                 tbtn_Search_Click(tbtn_Search, C1.Win.C1Command.ClickEventArgs.Empty);
+            }
+        }
+
+        private void rbt_StatusChart_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbt_StatusChart.Checked)
+            {
+                tbtn_Search.Click -= new C1.Win.C1Command.ClickEventHandler(tbtn_Search_Click);
+                tbtn_Search.Click += new C1.Win.C1Command.ClickEventHandler(Load_Chart_Status);
+                fgrid_MaterialPassStatus.Hide();
+                Load_Chart_Status(tbtn_Search, C1.Win.C1Command.ClickEventArgs.Empty);
+
+            }
+        }
+
+        private void Load_Chart_Status(object sender, C1.Win.C1Command.ClickEventArgs e)
+        {
+            panel4.Controls.RemoveByKey("STATUSCHART");
+            US_Material_Pass_Status_Chart _US = new US_Material_Pass_Status_Chart(COM.ComVar.This_Factory, COM.ComFunction.Empty_Combo(cmb_Location, string.Empty), cmb_Location.SelectedText, dpk_Incomingdate.Value.ToString("yyyyMMdd"), 0.99F);
+            _US.Name = "STATUSCHART";
+            _US.Dock = DockStyle.Fill;
+            panel4.Controls.Add(_US);
         }
 
         private void tbtn_Search_Click(object sender, C1.Win.C1Command.ClickEventArgs e)
@@ -691,12 +947,15 @@ namespace FlexVJ_Common.Material_Inspection
                 }
 
                 Display_FlexGrid(ref fgrid_MaterialPassStatus, l_dtTmp);
-                //reformat grid
+                //fgrid_MaterialPassStatus.Rows.Count = fgrid_MaterialPassStatus.Rows.Count-1 ;
+                //reformat grid - 1
+                getTargetMaterialPassStatus();
                 ReFormatGrid(ref fgrid_MaterialPassStatus);
                 ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsEndSearch, this);
             }
             catch (Exception ex)
             {
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotSearch, this);
                 COM.ComFunction.User_Message(ex.Message, "tbtn_Search_Click");
             }
             finally
@@ -711,6 +970,8 @@ namespace FlexVJ_Common.Material_Inspection
         }
 
         #endregion
+
+
     }
 
     #region "IXTable"

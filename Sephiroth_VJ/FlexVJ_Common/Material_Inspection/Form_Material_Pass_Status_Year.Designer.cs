@@ -29,26 +29,27 @@ namespace FlexVJ_Common.Material_Inspection
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Material_Pass_Status_Year));
-            C1.Win.C1List.Style style33 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style34 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style35 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style36 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style37 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style38 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style39 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style40 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style41 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style42 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style43 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style44 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style45 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style46 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style47 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style48 = new C1.Win.C1List.Style();
-            ChartFX.WinForms.SeriesAttributes seriesAttributes9 = new ChartFX.WinForms.SeriesAttributes();
-            ChartFX.WinForms.SeriesAttributes seriesAttributes10 = new ChartFX.WinForms.SeriesAttributes();
-            ChartFX.WinForms.SeriesAttributes seriesAttributes11 = new ChartFX.WinForms.SeriesAttributes();
-            ChartFX.WinForms.SeriesAttributes seriesAttributes12 = new ChartFX.WinForms.SeriesAttributes();
+            ChartFX.WinForms.SeriesAttributes seriesAttributes1 = new ChartFX.WinForms.SeriesAttributes();
+            ChartFX.WinForms.SeriesAttributes seriesAttributes2 = new ChartFX.WinForms.SeriesAttributes();
+            ChartFX.WinForms.SeriesAttributes seriesAttributes3 = new ChartFX.WinForms.SeriesAttributes();
+            ChartFX.WinForms.SeriesAttributes seriesAttributes4 = new ChartFX.WinForms.SeriesAttributes();
+            C1.Win.C1List.Style style1 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style2 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style3 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style4 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style5 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style6 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style7 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style8 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style9 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style10 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style11 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style12 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style13 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style14 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style15 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style16 = new C1.Win.C1List.Style();
+            this.chart1 = new ChartFX.WinForms.Chart();
             this.lbl_IncomingDate = new System.Windows.Forms.Label();
             this.dpk_Incomingdate = new System.Windows.Forms.DateTimePicker();
             this.cmb_Location = new C1.Win.C1List.C1Combo();
@@ -56,9 +57,11 @@ namespace FlexVJ_Common.Material_Inspection
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnl_Search = new System.Windows.Forms.Panel();
             this.pnl_SearchImage = new System.Windows.Forms.Panel();
+            this.txt_CustSearchKey = new System.Windows.Forms.TextBox();
             this.cmb_Cust = new C1.Win.C1List.C1Combo();
             this.label1 = new System.Windows.Forms.Label();
-            this.picb_MR = new System.Windows.Forms.PictureBox();
+            this.dpk_IncomingdateTo = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             this.picb_BR = new System.Windows.Forms.PictureBox();
             this.picb_TM = new System.Windows.Forms.PictureBox();
             this.lbl_SubTitle1 = new System.Windows.Forms.Label();
@@ -68,16 +71,15 @@ namespace FlexVJ_Common.Material_Inspection
             this.picb_ML = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.picb_MR = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.chart1 = new ChartFX.WinForms.Chart();
-            this.txt_CustSearchKey = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.c1CommandHolder1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Location)).BeginInit();
             this.panel2.SuspendLayout();
             this.pnl_Search.SuspendLayout();
             this.pnl_SearchImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Cust)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picb_MR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_BR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_TM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_TR)).BeginInit();
@@ -85,8 +87,8 @@ namespace FlexVJ_Common.Material_Inspection
             ((System.ComponentModel.ISupportInitialize)(this.picb_BL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_ML)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picb_MR)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // img_Action
@@ -217,28 +219,83 @@ namespace FlexVJ_Common.Material_Inspection
             this.img_SmallButton.Images.SetKeyName(28, "");
             this.img_SmallButton.Images.SetKeyName(29, "");
             // 
+            // chart1
+            // 
+            this.chart1.AllSeries.Gallery = ChartFX.WinForms.Gallery.Bar;
+            this.chart1.AllSeries.Volume = ((short)(30));
+            this.chart1.AxisX.LabelAngle = ((short)(90));
+            this.chart1.AxisX.LabelsFormat.CustomFormat = "###,###.##";
+            this.chart1.AxisX.LabelsFormat.Decimals = 1;
+            this.chart1.AxisX.LabelsFormat.Format = ChartFX.WinForms.AxisFormat.Number;
+            this.chart1.AxisX.Title.Text = "";
+            this.chart1.AxisY.LabelsFormat.CustomFormat = "###,###.##";
+            this.chart1.AxisY.LabelsFormat.Decimals = 2;
+            this.chart1.AxisY.LabelsFormat.Format = ChartFX.WinForms.AxisFormat.Number;
+            this.chart1.AxisY.Title.Text = "";
+            this.chart1.AxisY2.LabelsFormat.Decimals = 2;
+            this.chart1.AxisY2.LabelsFormat.Format = ChartFX.WinForms.AxisFormat.Percentage;
+            this.chart1.ContextMenus = false;
+            this.chart1.DataGrid.ShowHiddenSeries = true;
+            this.chart1.DataGrid.Visible = true;
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chart1.Highlight.Speed = ChartFX.WinForms.HighlightSpeed.Fast;
+            this.chart1.LegendBox.Visible = false;
+            this.chart1.Location = new System.Drawing.Point(0, 0);
+            this.chart1.Margin = new System.Windows.Forms.Padding(0);
+            this.chart1.Name = "chart1";
+            this.chart1.RandomData.Series = 4;
+            seriesAttributes1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            seriesAttributes1.PointLabels.LineAlignment = System.Drawing.StringAlignment.Far;
+            seriesAttributes1.PointLabels.Visible = false;
+            seriesAttributes1.Stacked = false;
+            seriesAttributes1.Text = "Incoming Qty";
+            seriesAttributes2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            seriesAttributes2.FillMode = ChartFX.WinForms.FillMode.Solid;
+            seriesAttributes2.Gallery = ChartFX.WinForms.Gallery.Bar;
+            seriesAttributes2.Text = "Pass Qty";
+            seriesAttributes3.AxisY = this.chart1.AxisY2;
+            seriesAttributes3.Gallery = ChartFX.WinForms.Gallery.Lines;
+            seriesAttributes3.Pattern = System.Drawing.Drawing2D.HatchStyle.ForwardDiagonal;
+            seriesAttributes3.Text = "Pass %";
+            seriesAttributes4.AxisY = this.chart1.AxisY2;
+            seriesAttributes4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            seriesAttributes4.Gallery = ChartFX.WinForms.Gallery.Curve;
+            seriesAttributes4.MarkerShape = ChartFX.WinForms.MarkerShape.HorizontalLine;
+            seriesAttributes4.Pattern = System.Drawing.Drawing2D.HatchStyle.SolidDiamond;
+            seriesAttributes4.PointLabels.LineAlignment = System.Drawing.StringAlignment.Far;
+            seriesAttributes4.Stacked = false;
+            seriesAttributes4.Text = "Target %";
+            this.chart1.Series.AddRange(new ChartFX.WinForms.SeriesAttributes[] {
+            seriesAttributes1,
+            seriesAttributes2,
+            seriesAttributes3,
+            seriesAttributes4});
+            this.chart1.Size = new System.Drawing.Size(1016, 472);
+            this.chart1.TabIndex = 0;
+            this.chart1.ToolBar.Visible = true;
+            // 
             // lbl_IncomingDate
             // 
             this.lbl_IncomingDate.BackColor = System.Drawing.SystemColors.Window;
             this.lbl_IncomingDate.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_IncomingDate.ImageIndex = 1;
             this.lbl_IncomingDate.ImageList = this.img_Label;
-            this.lbl_IncomingDate.Location = new System.Drawing.Point(676, 40);
+            this.lbl_IncomingDate.Location = new System.Drawing.Point(665, 40);
             this.lbl_IncomingDate.Name = "lbl_IncomingDate";
-            this.lbl_IncomingDate.Size = new System.Drawing.Size(100, 21);
+            this.lbl_IncomingDate.Size = new System.Drawing.Size(102, 21);
             this.lbl_IncomingDate.TabIndex = 570;
-            this.lbl_IncomingDate.Text = "Year";
+            this.lbl_IncomingDate.Text = "Date(YYYY-MM)";
             this.lbl_IncomingDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dpk_Incomingdate
             // 
-            this.dpk_Incomingdate.CustomFormat = "yyyyy";
+            this.dpk_Incomingdate.CustomFormat = "yyyyy-MM";
             this.dpk_Incomingdate.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dpk_Incomingdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpk_Incomingdate.Location = new System.Drawing.Point(780, 40);
+            this.dpk_Incomingdate.Location = new System.Drawing.Point(770, 40);
             this.dpk_Incomingdate.Name = "dpk_Incomingdate";
             this.dpk_Incomingdate.ShowUpDown = true;
-            this.dpk_Incomingdate.Size = new System.Drawing.Size(49, 21);
+            this.dpk_Incomingdate.Size = new System.Drawing.Size(68, 21);
             this.dpk_Incomingdate.TabIndex = 571;
             // 
             // cmb_Location
@@ -247,7 +304,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.cmb_Location.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cmb_Location.Caption = "";
             this.cmb_Location.CaptionHeight = 17;
-            this.cmb_Location.CaptionStyle = style33;
+            this.cmb_Location.CaptionStyle = style1;
             this.cmb_Location.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.cmb_Location.ColumnCaptionHeight = 18;
             this.cmb_Location.ColumnFooterHeight = 18;
@@ -262,11 +319,11 @@ namespace FlexVJ_Common.Material_Inspection
             this.cmb_Location.EditorFont = new System.Drawing.Font("Gulim", 9F);
             this.cmb_Location.EditorForeColor = System.Drawing.SystemColors.WindowText;
             this.cmb_Location.EditorHeight = 16;
-            this.cmb_Location.EvenRowStyle = style34;
+            this.cmb_Location.EvenRowStyle = style2;
             this.cmb_Location.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_Location.FooterStyle = style35;
-            this.cmb_Location.HeadingStyle = style36;
-            this.cmb_Location.HighLightRowStyle = style37;
+            this.cmb_Location.FooterStyle = style3;
+            this.cmb_Location.HeadingStyle = style4;
+            this.cmb_Location.HighLightRowStyle = style5;
             this.cmb_Location.Images.Add(((System.Drawing.Image)(resources.GetObject("cmb_Location.Images"))));
             this.cmb_Location.ItemHeight = 15;
             this.cmb_Location.Location = new System.Drawing.Point(118, 40);
@@ -275,13 +332,13 @@ namespace FlexVJ_Common.Material_Inspection
             this.cmb_Location.MaxLength = 32767;
             this.cmb_Location.MouseCursor = System.Windows.Forms.Cursors.Default;
             this.cmb_Location.Name = "cmb_Location";
-            this.cmb_Location.OddRowStyle = style38;
+            this.cmb_Location.OddRowStyle = style6;
             this.cmb_Location.RowDivider.Color = System.Drawing.Color.DarkGray;
             this.cmb_Location.RowDivider.Style = C1.Win.C1List.LineStyleEnum.None;
             this.cmb_Location.RowSubDividerColor = System.Drawing.Color.DarkGray;
-            this.cmb_Location.SelectedStyle = style39;
+            this.cmb_Location.SelectedStyle = style7;
             this.cmb_Location.Size = new System.Drawing.Size(160, 20);
-            this.cmb_Location.Style = style40;
+            this.cmb_Location.Style = style8;
             this.cmb_Location.TabIndex = 574;
             this.cmb_Location.SelectedValueChanged += new System.EventHandler(this.cmb_Location_SelectedValueChanged);
             this.cmb_Location.PropBag = resources.GetString("cmb_Location.PropBag");
@@ -325,8 +382,9 @@ namespace FlexVJ_Common.Material_Inspection
             this.pnl_SearchImage.Controls.Add(this.txt_CustSearchKey);
             this.pnl_SearchImage.Controls.Add(this.cmb_Cust);
             this.pnl_SearchImage.Controls.Add(this.label1);
-            this.pnl_SearchImage.Controls.Add(this.picb_MR);
+            this.pnl_SearchImage.Controls.Add(this.dpk_IncomingdateTo);
             this.pnl_SearchImage.Controls.Add(this.dpk_Incomingdate);
+            this.pnl_SearchImage.Controls.Add(this.label2);
             this.pnl_SearchImage.Controls.Add(this.picb_BR);
             this.pnl_SearchImage.Controls.Add(this.lbl_IncomingDate);
             this.pnl_SearchImage.Controls.Add(this.picb_TM);
@@ -339,6 +397,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.pnl_SearchImage.Controls.Add(this.picb_ML);
             this.pnl_SearchImage.Controls.Add(this.pictureBox6);
             this.pnl_SearchImage.Controls.Add(this.textBox1);
+            this.pnl_SearchImage.Controls.Add(this.picb_MR);
             this.pnl_SearchImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_SearchImage.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnl_SearchImage.Location = new System.Drawing.Point(7, 7);
@@ -346,13 +405,27 @@ namespace FlexVJ_Common.Material_Inspection
             this.pnl_SearchImage.Size = new System.Drawing.Size(1002, 78);
             this.pnl_SearchImage.TabIndex = 20;
             // 
+            // txt_CustSearchKey
+            // 
+            this.txt_CustSearchKey.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_CustSearchKey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_CustSearchKey.Font = new System.Drawing.Font("Verdana", 7.5F);
+            this.txt_CustSearchKey.Location = new System.Drawing.Point(391, 40);
+            this.txt_CustSearchKey.MaximumSize = new System.Drawing.Size(86, 20);
+            this.txt_CustSearchKey.MaxLength = 10;
+            this.txt_CustSearchKey.Name = "txt_CustSearchKey";
+            this.txt_CustSearchKey.Size = new System.Drawing.Size(86, 20);
+            this.txt_CustSearchKey.TabIndex = 577;
+            this.txt_CustSearchKey.WordWrap = false;
+            this.txt_CustSearchKey.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_CustSearchKey_KeyDown);
+            // 
             // cmb_Cust
             // 
             this.cmb_Cust.AddItemSeparator = ';';
             this.cmb_Cust.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cmb_Cust.Caption = "";
             this.cmb_Cust.CaptionHeight = 17;
-            this.cmb_Cust.CaptionStyle = style41;
+            this.cmb_Cust.CaptionStyle = style9;
             this.cmb_Cust.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.cmb_Cust.ColumnCaptionHeight = 18;
             this.cmb_Cust.ColumnFooterHeight = 18;
@@ -367,11 +440,11 @@ namespace FlexVJ_Common.Material_Inspection
             this.cmb_Cust.EditorFont = new System.Drawing.Font("Gulim", 9F);
             this.cmb_Cust.EditorForeColor = System.Drawing.SystemColors.WindowText;
             this.cmb_Cust.EditorHeight = 16;
-            this.cmb_Cust.EvenRowStyle = style42;
+            this.cmb_Cust.EvenRowStyle = style10;
             this.cmb_Cust.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_Cust.FooterStyle = style43;
-            this.cmb_Cust.HeadingStyle = style44;
-            this.cmb_Cust.HighLightRowStyle = style45;
+            this.cmb_Cust.FooterStyle = style11;
+            this.cmb_Cust.HeadingStyle = style12;
+            this.cmb_Cust.HighLightRowStyle = style13;
             this.cmb_Cust.Images.Add(((System.Drawing.Image)(resources.GetObject("cmb_Cust.Images"))));
             this.cmb_Cust.ItemHeight = 15;
             this.cmb_Cust.Location = new System.Drawing.Point(476, 40);
@@ -380,13 +453,13 @@ namespace FlexVJ_Common.Material_Inspection
             this.cmb_Cust.MaxLength = 32767;
             this.cmb_Cust.MouseCursor = System.Windows.Forms.Cursors.Default;
             this.cmb_Cust.Name = "cmb_Cust";
-            this.cmb_Cust.OddRowStyle = style46;
+            this.cmb_Cust.OddRowStyle = style14;
             this.cmb_Cust.RowDivider.Color = System.Drawing.Color.DarkGray;
             this.cmb_Cust.RowDivider.Style = C1.Win.C1List.LineStyleEnum.None;
             this.cmb_Cust.RowSubDividerColor = System.Drawing.Color.DarkGray;
-            this.cmb_Cust.SelectedStyle = style47;
+            this.cmb_Cust.SelectedStyle = style15;
             this.cmb_Cust.Size = new System.Drawing.Size(185, 20);
-            this.cmb_Cust.Style = style48;
+            this.cmb_Cust.Style = style16;
             this.cmb_Cust.TabIndex = 576;
             this.cmb_Cust.PropBag = resources.GetString("cmb_Cust.PropBag");
             // 
@@ -403,16 +476,28 @@ namespace FlexVJ_Common.Material_Inspection
             this.label1.Text = "Cust";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // picb_MR
+            // dpk_IncomingdateTo
             // 
-            this.picb_MR.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.picb_MR.Image = ((System.Drawing.Image)(resources.GetObject("picb_MR.Image")));
-            this.picb_MR.Location = new System.Drawing.Point(901, 30);
-            this.picb_MR.Name = "picb_MR";
-            this.picb_MR.Size = new System.Drawing.Size(101, 40);
-            this.picb_MR.TabIndex = 26;
-            this.picb_MR.TabStop = false;
+            this.dpk_IncomingdateTo.CustomFormat = "yyyyy-MM";
+            this.dpk_IncomingdateTo.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpk_IncomingdateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpk_IncomingdateTo.Location = new System.Drawing.Point(858, 39);
+            this.dpk_IncomingdateTo.Name = "dpk_IncomingdateTo";
+            this.dpk_IncomingdateTo.ShowUpDown = true;
+            this.dpk_IncomingdateTo.Size = new System.Drawing.Size(68, 21);
+            this.dpk_IncomingdateTo.TabIndex = 571;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.SystemColors.Window;
+            this.label2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ImageIndex = 1;
+            this.label2.Location = new System.Drawing.Point(840, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(14, 21);
+            this.label2.TabIndex = 570;
+            this.label2.Text = "~";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // picb_BR
             // 
@@ -505,7 +590,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(137, 22);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(900, 40);
+            this.pictureBox6.Size = new System.Drawing.Size(859, 40);
             this.pictureBox6.TabIndex = 27;
             this.pictureBox6.TabStop = false;
             // 
@@ -516,6 +601,17 @@ namespace FlexVJ_Common.Material_Inspection
             this.textBox1.Size = new System.Drawing.Size(86, 22);
             this.textBox1.TabIndex = 145;
             // 
+            // picb_MR
+            // 
+            this.picb_MR.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.picb_MR.Image = ((System.Drawing.Image)(resources.GetObject("picb_MR.Image")));
+            this.picb_MR.Location = new System.Drawing.Point(901, 30);
+            this.picb_MR.Name = "picb_MR";
+            this.picb_MR.Size = new System.Drawing.Size(101, 40);
+            this.picb_MR.TabIndex = 26;
+            this.picb_MR.TabStop = false;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.chart1);
@@ -524,65 +620,6 @@ namespace FlexVJ_Common.Material_Inspection
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1016, 472);
             this.panel4.TabIndex = 578;
-            // 
-            // chart1
-            // 
-            this.chart1.AllSeries.Gallery = ChartFX.WinForms.Gallery.Bar;
-            this.chart1.AllSeries.Volume = ((short)(30));
-            this.chart1.AxisX.LabelAngle = ((short)(90));
-            this.chart1.AxisX.Title.Text = "";
-            this.chart1.AxisY.Title.Text = "";
-            this.chart1.AxisY2.LabelsFormat.Format = ChartFX.WinForms.AxisFormat.Percentage;
-            this.chart1.ContextMenus = false;
-            this.chart1.DataGrid.Visible = true;
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chart1.Highlight.Speed = ChartFX.WinForms.HighlightSpeed.Fast;
-            this.chart1.LegendBox.Visible = false;
-            this.chart1.Location = new System.Drawing.Point(0, 0);
-            this.chart1.Margin = new System.Windows.Forms.Padding(0);
-            this.chart1.Name = "chart1";
-            this.chart1.RandomData.Series = 4;
-            seriesAttributes9.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            seriesAttributes9.PointLabels.LineAlignment = System.Drawing.StringAlignment.Far;
-            seriesAttributes9.Text = "Incoming Qty";
-            seriesAttributes10.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            seriesAttributes10.FillMode = ChartFX.WinForms.FillMode.Solid;
-            seriesAttributes10.Gallery = ChartFX.WinForms.Gallery.Bar;
-            seriesAttributes10.Text = "Pass Qty";
-            seriesAttributes11.AxisY = this.chart1.AxisY2;
-            seriesAttributes11.Gallery = ChartFX.WinForms.Gallery.Lines;
-            seriesAttributes11.Pattern = System.Drawing.Drawing2D.HatchStyle.ForwardDiagonal;
-            seriesAttributes11.Text = "Pass %";
-            seriesAttributes12.AxisY = this.chart1.AxisY2;
-            seriesAttributes12.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            seriesAttributes12.Gallery = ChartFX.WinForms.Gallery.Curve;
-            seriesAttributes12.MarkerShape = ChartFX.WinForms.MarkerShape.HorizontalLine;
-            seriesAttributes12.Pattern = System.Drawing.Drawing2D.HatchStyle.SolidDiamond;
-            seriesAttributes12.PointLabels.LineAlignment = System.Drawing.StringAlignment.Far;
-            seriesAttributes12.Stacked = false;
-            seriesAttributes12.Text = "Target %";
-            this.chart1.Series.AddRange(new ChartFX.WinForms.SeriesAttributes[] {
-            seriesAttributes9,
-            seriesAttributes10,
-            seriesAttributes11,
-            seriesAttributes12});
-            this.chart1.Size = new System.Drawing.Size(1016, 472);
-            this.chart1.TabIndex = 0;
-            this.chart1.ToolBar.Visible = true;
-            // 
-            // txt_CustSearchKey
-            // 
-            this.txt_CustSearchKey.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_CustSearchKey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_CustSearchKey.Font = new System.Drawing.Font("Verdana", 7.5F);
-            this.txt_CustSearchKey.Location = new System.Drawing.Point(391, 40);
-            this.txt_CustSearchKey.MaximumSize = new System.Drawing.Size(86, 20);
-            this.txt_CustSearchKey.MaxLength = 10;
-            this.txt_CustSearchKey.Name = "txt_CustSearchKey";
-            this.txt_CustSearchKey.Size = new System.Drawing.Size(86, 20);
-            this.txt_CustSearchKey.TabIndex = 577;
-            this.txt_CustSearchKey.WordWrap = false;
-            this.txt_CustSearchKey.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_CustSearchKey_KeyDown);
             // 
             // Form_Material_Pass_Status_Year
             // 
@@ -599,13 +636,13 @@ namespace FlexVJ_Common.Material_Inspection
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.panel4, 0);
             ((System.ComponentModel.ISupportInitialize)(this.c1CommandHolder1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Location)).EndInit();
             this.panel2.ResumeLayout(false);
             this.pnl_Search.ResumeLayout(false);
             this.pnl_SearchImage.ResumeLayout(false);
             this.pnl_SearchImage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Cust)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picb_MR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_BR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_TM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_TR)).EndInit();
@@ -613,9 +650,9 @@ namespace FlexVJ_Common.Material_Inspection
             ((System.ComponentModel.ISupportInitialize)(this.picb_BL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_ML)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picb_MR)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -644,5 +681,7 @@ namespace FlexVJ_Common.Material_Inspection
         private System.Windows.Forms.Label label1;
         private ChartFX.WinForms.Chart chart1;
         private System.Windows.Forms.TextBox txt_CustSearchKey;
+        private System.Windows.Forms.DateTimePicker dpk_IncomingdateTo;
+        private System.Windows.Forms.Label label2;
     }
 }

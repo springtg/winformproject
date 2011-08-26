@@ -47,9 +47,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.Tag = arr;
             DialogResult = DialogResult.OK;
         }
-
-
-
+        
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
@@ -61,9 +59,11 @@ namespace FlexVJ_Common.Material_Inspection
             {
                 this.Cursor = Cursors.WaitCursor;
                 InitForm();
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsEndSearch, this);
             }
             catch (Exception ex)
             {
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotSearch, this);
                 COM.ComFunction.User_Message(ex.Message, "Form_Material_Inspection_Report_Load");
             }
             finally

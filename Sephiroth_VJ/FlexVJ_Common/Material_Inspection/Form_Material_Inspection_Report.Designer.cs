@@ -68,6 +68,7 @@ namespace FlexVJ_Common.Material_Inspection
             // 
             // lbl_MainTitle
             // 
+            this.lbl_MainTitle.Size = new System.Drawing.Size(366, 23);
             this.lbl_MainTitle.TabIndex = 0;
             this.lbl_MainTitle.Text = "Material Inspection Report";
             // 
@@ -135,9 +136,9 @@ namespace FlexVJ_Common.Material_Inspection
             this.rbt_DailyInsp.AutoSize = true;
             this.rbt_DailyInsp.Location = new System.Drawing.Point(8, 98);
             this.rbt_DailyInsp.Name = "rbt_DailyInsp";
-            this.rbt_DailyInsp.Size = new System.Drawing.Size(199, 19);
+            this.rbt_DailyInsp.Size = new System.Drawing.Size(159, 19);
             this.rbt_DailyInsp.TabIndex = 3;
-            this.rbt_DailyInsp.Text = "Daily Material Inspection Report";
+            this.rbt_DailyInsp.Text = "Daily Material Inspection";
             this.rbt_DailyInsp.UseVisualStyleBackColor = true;
             this.rbt_DailyInsp.CheckedChanged += new System.EventHandler(this.rbt_DailyInsp_CheckedChanged);
             // 
@@ -146,9 +147,9 @@ namespace FlexVJ_Common.Material_Inspection
             this.rbt_WeeklyInsp.AutoSize = true;
             this.rbt_WeeklyInsp.Location = new System.Drawing.Point(8, 137);
             this.rbt_WeeklyInsp.Name = "rbt_WeeklyInsp";
-            this.rbt_WeeklyInsp.Size = new System.Drawing.Size(211, 19);
+            this.rbt_WeeklyInsp.Size = new System.Drawing.Size(171, 19);
             this.rbt_WeeklyInsp.TabIndex = 6;
-            this.rbt_WeeklyInsp.Text = "Weekly Material Inspection Report";
+            this.rbt_WeeklyInsp.Text = "Weekly Material Inspection";
             this.rbt_WeeklyInsp.UseVisualStyleBackColor = true;
             this.rbt_WeeklyInsp.CheckedChanged += new System.EventHandler(this.rbt_WeeklyInsp_CheckedChanged);
             // 
@@ -157,9 +158,9 @@ namespace FlexVJ_Common.Material_Inspection
             this.rbt_WeeklyRej.AutoSize = true;
             this.rbt_WeeklyRej.Location = new System.Drawing.Point(8, 173);
             this.rbt_WeeklyRej.Name = "rbt_WeeklyRej";
-            this.rbt_WeeklyRej.Size = new System.Drawing.Size(221, 19);
+            this.rbt_WeeklyRej.Size = new System.Drawing.Size(181, 19);
             this.rbt_WeeklyRej.TabIndex = 9;
-            this.rbt_WeeklyRej.Text = "Weekly Material Reject Case Report";
+            this.rbt_WeeklyRej.Text = "Weekly Material Reject Case";
             this.rbt_WeeklyRej.UseVisualStyleBackColor = true;
             this.rbt_WeeklyRej.CheckedChanged += new System.EventHandler(this.rbt_WeeklyRej_CheckedChanged);
             // 
@@ -250,24 +251,22 @@ namespace FlexVJ_Common.Material_Inspection
             // 
             // dpk_DailyInsp
             // 
-            this.dpk_DailyInsp.CustomFormat = "MM-dd";
+            this.dpk_DailyInsp.CustomFormat = "yyyy-MM-dd";
             this.dpk_DailyInsp.Enabled = false;
             this.dpk_DailyInsp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpk_DailyInsp.Location = new System.Drawing.Point(331, 97);
+            this.dpk_DailyInsp.Location = new System.Drawing.Point(300, 97);
             this.dpk_DailyInsp.Name = "dpk_DailyInsp";
-            this.dpk_DailyInsp.ShowUpDown = true;
-            this.dpk_DailyInsp.Size = new System.Drawing.Size(63, 21);
+            this.dpk_DailyInsp.Size = new System.Drawing.Size(95, 21);
             this.dpk_DailyInsp.TabIndex = 5;
             // 
             // dpk_WeeklyInsp
             // 
-            this.dpk_WeeklyInsp.CustomFormat = "MM";
+            this.dpk_WeeklyInsp.CustomFormat = "yyyy-MM-dd";
             this.dpk_WeeklyInsp.Enabled = false;
             this.dpk_WeeklyInsp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpk_WeeklyInsp.Location = new System.Drawing.Point(331, 136);
+            this.dpk_WeeklyInsp.Location = new System.Drawing.Point(300, 136);
             this.dpk_WeeklyInsp.Name = "dpk_WeeklyInsp";
-            this.dpk_WeeklyInsp.ShowUpDown = true;
-            this.dpk_WeeklyInsp.Size = new System.Drawing.Size(63, 21);
+            this.dpk_WeeklyInsp.Size = new System.Drawing.Size(95, 21);
             this.dpk_WeeklyInsp.TabIndex = 8;
             // 
             // label1
@@ -276,7 +275,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.label1.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageIndex = 1;
             this.label1.ImageList = this.img_Label;
-            this.label1.Location = new System.Drawing.Point(230, 172);
+            this.label1.Location = new System.Drawing.Point(194, 172);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 21);
             this.label1.TabIndex = 10;
@@ -289,7 +288,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.label2.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ImageIndex = 1;
             this.label2.ImageList = this.img_Label;
-            this.label2.Location = new System.Drawing.Point(230, 136);
+            this.label2.Location = new System.Drawing.Point(194, 136);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 21);
             this.label2.TabIndex = 7;
@@ -302,7 +301,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.label3.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ImageIndex = 1;
             this.label3.ImageList = this.img_Label;
-            this.label3.Location = new System.Drawing.Point(230, 97);
+            this.label3.Location = new System.Drawing.Point(194, 97);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 21);
@@ -312,20 +311,19 @@ namespace FlexVJ_Common.Material_Inspection
             // 
             // dpk_WeeklyRej
             // 
-            this.dpk_WeeklyRej.CustomFormat = "MM";
+            this.dpk_WeeklyRej.CustomFormat = "yyyy-MM-dd";
             this.dpk_WeeklyRej.Enabled = false;
             this.dpk_WeeklyRej.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpk_WeeklyRej.Location = new System.Drawing.Point(331, 172);
+            this.dpk_WeeklyRej.Location = new System.Drawing.Point(300, 172);
             this.dpk_WeeklyRej.Name = "dpk_WeeklyRej";
-            this.dpk_WeeklyRej.ShowUpDown = true;
-            this.dpk_WeeklyRej.Size = new System.Drawing.Size(63, 21);
+            this.dpk_WeeklyRej.Size = new System.Drawing.Size(95, 21);
             this.dpk_WeeklyRej.TabIndex = 11;
             // 
             // Form_Material_Inspection_Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 268);
+            this.ClientSize = new System.Drawing.Size(400, 268);
             this.Controls.Add(this.dpk_WeeklyRej);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

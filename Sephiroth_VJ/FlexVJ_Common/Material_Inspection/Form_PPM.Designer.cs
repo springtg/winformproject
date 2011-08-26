@@ -28,8 +28,12 @@ namespace FlexVJ_Common.Material_Inspection
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_PPM));
+            ChartFX.WinForms.SeriesAttributes seriesAttributes1 = new ChartFX.WinForms.SeriesAttributes();
+            ChartFX.WinForms.SeriesAttributes seriesAttributes2 = new ChartFX.WinForms.SeriesAttributes();
+            ChartFX.WinForms.SeriesAttributes seriesAttributes3 = new ChartFX.WinForms.SeriesAttributes();
+            ChartFX.WinForms.SeriesAttributes seriesAttributes4 = new ChartFX.WinForms.SeriesAttributes();
+            ChartFX.WinForms.SeriesAttributes seriesAttributes5 = new ChartFX.WinForms.SeriesAttributes();
             this.chr_PPM = new ChartFX.WinForms.Chart();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,11 +43,20 @@ namespace FlexVJ_Common.Material_Inspection
             this.lbl_IncomingDate = new System.Windows.Forms.Label();
             this.dpk_Incomingdate = new System.Windows.Forms.DateTimePicker();
             this.fgrid_PPM = new COM.FSP();
-            
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.c1CommandHolder1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chr_PPM)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fgrid_PPM)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_Action
@@ -177,12 +190,22 @@ namespace FlexVJ_Common.Material_Inspection
             // chr_PPM
             // 
             this.chr_PPM.AllSeries.Gallery = ChartFX.WinForms.Gallery.Bar;
+            this.chr_PPM.AxisY.LabelsFormat.Format = ChartFX.WinForms.AxisFormat.Number;
             this.chr_PPM.Border = ((ChartFX.WinForms.Adornments.SimpleBorder)(new ChartFX.WinForms.Adornments.SimpleBorder(((ChartFX.WinForms.Adornments.SimpleBorderType)(ChartFX.WinForms.Adornments.SimpleBorderType.Color)), System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(125)))), ((int)(((byte)(138))))))));
+            this.chr_PPM.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chr_PPM.Highlight.Speed = ChartFX.WinForms.HighlightSpeed.Fast;
-            this.chr_PPM.LegendBox.Dock = ChartFX.WinForms.DockArea.Bottom;
-            this.chr_PPM.Location = new System.Drawing.Point(8, 83);
+            this.chr_PPM.Location = new System.Drawing.Point(0, 0);
             this.chr_PPM.Name = "chr_PPM";
-            this.chr_PPM.Size = new System.Drawing.Size(1000, 267);
+            this.chr_PPM.RandomData.Series = 5;
+            seriesAttributes5.Gallery = ChartFX.WinForms.Gallery.Lines;
+            seriesAttributes5.Stacked = true;
+            this.chr_PPM.Series.AddRange(new ChartFX.WinForms.SeriesAttributes[] {
+            seriesAttributes1,
+            seriesAttributes2,
+            seriesAttributes3,
+            seriesAttributes4,
+            seriesAttributes5});
+            this.chr_PPM.Size = new System.Drawing.Size(1016, 293);
             this.chr_PPM.TabIndex = 29;
             this.chr_PPM.ToolBar.Visible = true;
             // 
@@ -198,7 +221,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(294, 356);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(277, 4);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -267,7 +290,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.lbl_IncomingDate.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_IncomingDate.ImageIndex = 1;
             this.lbl_IncomingDate.ImageList = this.img_Label;
-            this.lbl_IncomingDate.Location = new System.Drawing.Point(19, 358);
+            this.lbl_IncomingDate.Location = new System.Drawing.Point(2, 4);
             this.lbl_IncomingDate.Name = "lbl_IncomingDate";
             this.lbl_IncomingDate.Size = new System.Drawing.Size(100, 21);
             this.lbl_IncomingDate.TabIndex = 565;
@@ -279,7 +302,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.dpk_Incomingdate.CustomFormat = "MMMM.yyyyy";
             this.dpk_Incomingdate.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dpk_Incomingdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpk_Incomingdate.Location = new System.Drawing.Point(120, 358);
+            this.dpk_Incomingdate.Location = new System.Drawing.Point(103, 4);
             this.dpk_Incomingdate.Name = "dpk_Incomingdate";
             this.dpk_Incomingdate.Size = new System.Drawing.Size(130, 21);
             this.dpk_Incomingdate.TabIndex = 566;
@@ -290,46 +313,90 @@ namespace FlexVJ_Common.Material_Inspection
             this.fgrid_PPM.AllowAddNew = true;
             this.fgrid_PPM.AllowDelete = true;
             this.fgrid_PPM.AllowEditing = false;
-            this.fgrid_PPM.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.fgrid_PPM.ColumnInfo = "10,1,0,0,0,80,Columns:1{AllowMerging:True;}\t";
+            this.fgrid_PPM.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fgrid_PPM.Font = new System.Drawing.Font("Verdana", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.fgrid_PPM.Location = new System.Drawing.Point(8, 382);
+            this.fgrid_PPM.Location = new System.Drawing.Point(0, 0);
             this.fgrid_PPM.Name = "fgrid_PPM";
             this.fgrid_PPM.Rows.Count = 2;
             this.fgrid_PPM.Rows.DefaultSize = 16;
             this.fgrid_PPM.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Cell;
-            this.fgrid_PPM.Size = new System.Drawing.Size(1000, 262);
+            this.fgrid_PPM.Size = new System.Drawing.Size(1016, 239);
             this.fgrid_PPM.StyleInfo = resources.GetString("fgrid_PPM.StyleInfo");
             this.fgrid_PPM.TabIndex = 567;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 80);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.chr_PPM);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.panel2);
+            this.splitContainer1.Size = new System.Drawing.Size(1016, 564);
+            this.splitContainer1.SplitterDistance = 293;
+            this.splitContainer1.TabIndex = 568;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1016, 267);
+            this.panel2.TabIndex = 569;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.fgrid_PPM);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 28);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1016, 239);
+            this.panel4.TabIndex = 569;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dpk_Incomingdate);
+            this.panel3.Controls.Add(this.lbl_IncomingDate);
+            this.panel3.Controls.Add(this.tableLayoutPanel1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1016, 28);
+            this.panel3.TabIndex = 568;
             // 
             // Form_PPM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1016, 666);
-            this.Controls.Add(this.fgrid_PPM);
-            this.Controls.Add(this.lbl_IncomingDate);
-            this.Controls.Add(this.dpk_Incomingdate);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.chr_PPM);
+            this.Controls.Add(this.splitContainer1);
             this.Name = "Form_PPM";
             this.Text = "Incoming Inspection (PPM)";
             this.Load += new System.EventHandler(this.Form_PPM_Load);
-            this.Controls.SetChildIndex(this.chr_PPM, 0);
-            this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.stbar, 0);
             this.Controls.SetChildIndex(this.c1ToolBar1, 0);
-            this.Controls.SetChildIndex(this.dpk_Incomingdate, 0);
-            this.Controls.SetChildIndex(this.lbl_IncomingDate, 0);
-            this.Controls.SetChildIndex(this.fgrid_PPM, 0);
+            this.Controls.SetChildIndex(this.splitContainer1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.c1CommandHolder1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chr_PPM)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fgrid_PPM)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -344,5 +411,9 @@ namespace FlexVJ_Common.Material_Inspection
         private System.Windows.Forms.Label lbl_IncomingDate;
         private System.Windows.Forms.DateTimePicker dpk_Incomingdate;
         private COM.FSP fgrid_PPM;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }
