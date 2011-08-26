@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<server>
+	<url> 
+	    <server_ip>\\211.54.128.15\</server_ip>
+	    <directory>SYSTEM_LIVEUPDATE\SEPHIROTH</directory>  
+	</url>
+</server>
