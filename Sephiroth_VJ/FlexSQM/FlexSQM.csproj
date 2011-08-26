@@ -1,0 +1,419 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2882212C-9D7E-41F0-9AB2-77F38CD7AFD9}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>FlexSQM</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FlexSQM</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ADODB">
+      <Name>adodb</Name>
+      <HintPath>C:\Program Files\Microsoft.NET\Primary Interop Assemblies\adodb.dll</HintPath>
+      <AssemblyFolderKey>hklm\primary interop assemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="AxInterop.RDVIEWER40Lib">
+      <Name>AxInterop.RDVIEWER40Lib</Name>
+      <HintPath>..\DLL\AxInterop.RDVIEWER40Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.SHDocVw">
+      <Name>AxInterop.SHDocVw</Name>
+      <HintPath>..\DLL\AxInterop.SHDocVw.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.C1Zip">
+      <Name>C1.C1Zip</Name>
+      <HintPath>..\DLL\C1.C1Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Chart.2, Version=2.0.20071.17032, Culture=neutral, PublicKeyToken=a22e16972c085838, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Command.2, Version=2.0.20071.19104, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1FlexGrid.2, Version=2.6.20071.324, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Input.2, Version=2.0.20071.32002, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1List.2, Version=2.1.20071.117, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Sizer.2, Version=2.1.20071.17, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1CommandConverter">
+      <Name>C1CommandConverter</Name>
+      <HintPath>C:\Program Files\ComponentOne Studio.NET\bin\C1CommandConverter.dll</HintPath>
+      <AssemblyFolderKey>hklm\c1studio</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="FarPoint.CalcEngine">
+      <Name>FarPoint.CalcEngine</Name>
+      <HintPath>..\DLL\FarPoint.CalcEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Excel">
+      <Name>FarPoint.Excel</Name>
+      <HintPath>..\DLL\FarPoint.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.PluginCalendar.WinForms">
+      <Name>FarPoint.PluginCalendar.WinForms</Name>
+      <HintPath>..\DLL\FarPoint.PluginCalendar.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win">
+      <Name>FarPoint.Win</Name>
+      <HintPath>..\DLL\FarPoint.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Spread">
+      <Name>FarPoint.Win.Spread</Name>
+      <HintPath>..\DLL\FarPoint.Win.Spread.dll</HintPath>
+    </Reference>
+    <Reference Include="FlexPurchase">
+      <Name>FlexPurchase</Name>
+      <HintPath>..\DLL\FlexPurchase.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <Name>Interop.Excel</Name>
+      <HintPath>..\DLL\Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core">
+      <Name>Interop.Microsoft.Office.Core</Name>
+      <HintPath>..\DLL\Interop.Microsoft.Office.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SHDocVw">
+      <Name>Interop.SHDocVw</Name>
+      <HintPath>..\DLL\Interop.SHDocVw.dll</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.DlgFlow">
+      <Name>Lassalle.DlgFlow</Name>
+      <HintPath>..\DLL\Lassalle.DlgFlow.DLL</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.Flow">
+      <Name>Lassalle.Flow</Name>
+      <HintPath>..\DLL\Lassalle.Flow.DLL</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.Flow.Layout.Hierarchic">
+      <Name>Lassalle.Flow.Layout.Hierarchic</Name>
+      <HintPath>..\DLL\Lassalle.Flow.Layout.Hierarchic.DLL</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.Flow.Layout.Orthogonal">
+      <Name>Lassalle.Flow.Layout.Orthogonal</Name>
+      <HintPath>..\DLL\Lassalle.Flow.Layout.Orthogonal.DLL</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.Flow.Layout.Symmetric">
+      <Name>Lassalle.Flow.Layout.Symmetric</Name>
+      <HintPath>..\DLL\Lassalle.Flow.Layout.Symmetric.DLL</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.Flow.Layout.Tree">
+      <Name>Lassalle.Flow.Layout.Tree</Name>
+      <HintPath>..\DLL\Lassalle.Flow.Layout.Tree.DLL</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.Flow.SVG">
+      <Name>Lassalle.Flow.SVG</Name>
+      <HintPath>..\DLL\Lassalle.Flow.SVG.DLL</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.PrnFlow">
+      <Name>Lassalle.PrnFlow</Name>
+      <HintPath>..\DLL\Lassalle.PrnFlow.DLL</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.XMLFlow">
+      <Name>Lassalle.XMLFlow</Name>
+      <HintPath>..\DLL\Lassalle.XMLFlow.DLL</HintPath>
+    </Reference>
+    <Reference Include="NETRONIC.XGantt">
+      <Name>NETRONIC.XGantt</Name>
+      <HintPath>..\DLL\NETRONIC.XGantt.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>system</Name>
+    </Reference>
+    <Reference Include="System.Configuration.Install">
+      <Name>System.Configuration.Install</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.OracleClient">
+      <Name>System.Data.OracleClient</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.DirectoryServices">
+      <Name>System.DirectoryServices</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Drawing.Design">
+      <Name>System.Drawing.Design</Name>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Name>System.EnterpriseServices</Name>
+    </Reference>
+    <Reference Include="System.Management">
+      <Name>System.Management</Name>
+    </Reference>
+    <Reference Include="System.Messaging">
+      <Name>System.Messaging</Name>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting">
+      <Name>System.Runtime.Remoting</Name>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap">
+      <Name>System.Runtime.Serialization.Formatters.Soap</Name>
+    </Reference>
+    <Reference Include="System.Security">
+      <Name>System.Security</Name>
+    </Reference>
+    <Reference Include="System.ServiceProcess">
+      <Name>System.ServiceProcess</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>system.web</Name>
+    </Reference>
+    <Reference Include="System.Web.Mobile">
+      <Name>System.Web.Mobile</Name>
+    </Reference>
+    <Reference Include="System.Web.RegularExpressions">
+      <Name>System.Web.RegularExpressions</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <COMReference Include="RDVIEWER40Lib">
+      <Guid>{D760DF6F-34C7-4887-9CDA-614F693EB6EF}</Guid>
+      <VersionMajor>4</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+    </COMReference>
+    <ProjectReference Include="..\COM\Com.csproj">
+      <Name>Com</Name>
+      <Project>{992378C3-66A1-4E98-96F5-CE2B26E0CAB2}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ClassForm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ComCtl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ComFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ComVar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\IXTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Form_Component_Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Component_Payment.Designer.cs">
+      <DependentUpon>Form_Component_Payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Comp_In.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_In_Out_Seq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Item_Price.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Item_Price.Designer.cs">
+      <DependentUpon>Form_Item_Price.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_MPS_Comp_In.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_MPS_Comp_Out.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Payment_Management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Payment_Management.Designer.cs">
+      <DependentUpon>Form_Payment_Management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Select_Comp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Select_Comp.Designer.cs">
+      <DependentUpon>Form_Select_Comp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Select_Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Select_Style.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Vendor_Seq_Control.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pop_BC_Yield_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pop_New_Process.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pop_New_Process.Designer.cs">
+      <DependentUpon>Pop_New_Process.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pop_Print_In_Out_Ticket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pop_Print_In_Out_Ticket.Designer.cs">
+      <DependentUpon>Pop_Print_In_Out_Ticket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Form_RdViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Form_Component_Payment.resx">
+      <DependentUpon>Form_Component_Payment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Comp_In.resx">
+      <DependentUpon>Form_Comp_In.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_In_Out_Seq.resx">
+      <DependentUpon>Form_In_Out_Seq.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Item_Price.resx">
+      <DependentUpon>Form_Item_Price.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_MPS_Comp_In.resx">
+      <DependentUpon>Form_MPS_Comp_In.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_MPS_Comp_Out.resx">
+      <DependentUpon>Form_MPS_Comp_Out.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Payment_Management.resx">
+      <DependentUpon>Form_Payment_Management.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Select_Comp.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_Select_Comp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Select_Item.resx">
+      <DependentUpon>Form_Select_Item.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Select_Style.resx">
+      <DependentUpon>Form_Select_Style.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Vendor_Seq_Control.resx">
+      <DependentUpon>Form_Vendor_Seq_Control.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="licenses.licx" />
+    <EmbeddedResource Include="Pop_BC_Yield_Info.resx">
+      <DependentUpon>Pop_BC_Yield_Info.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pop_New_Process.resx">
+      <DependentUpon>Pop_New_Process.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pop_Print_In_Out_Ticket.resx">
+      <DependentUpon>Pop_Print_In_Out_Ticket.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Form_RdViewer.resx">
+      <DependentUpon>Form_RdViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Report\viewer.bak" />
+    <None Include="Report\viewer.rdf" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

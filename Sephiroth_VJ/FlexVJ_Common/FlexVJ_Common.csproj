@@ -1,0 +1,413 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5B505EF8-F8D3-4337-BAC8-5DC2FBC74ADF}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>FlexVJ_Common</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FlexVJ_Common</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ADODB">
+      <Name>ADODB</Name>
+      <HintPath>C:\Program Files\Microsoft.NET\Primary Interop Assemblies\ADODB.dll</HintPath>
+      <AssemblyFolderKey>hklm\primary interop assemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="AxInterop.RDBROWSERLib">
+      <Name>AxInterop.RDBROWSERLib</Name>
+      <HintPath>obj\AxInterop.RDBROWSERLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.RDVIEWER40Lib">
+      <Name>AxInterop.RDVIEWER40Lib</Name>
+      <HintPath>..\DLL\AxInterop.RDVIEWER40Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.C1Excel.2, Version=2.1.20071.60, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Chart.2, Version=2.0.20071.17032, Culture=neutral, PublicKeyToken=a22e16972c085838, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Command.2, Version=2.0.20071.19104, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1FlexGrid.2, Version=2.6.20071.324, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1FlexGrid.Classic.2, Version=2.6.20071.324, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Input.2, Version=2.0.20071.32002, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1List.2, Version=2.1.20071.117, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Sizer.2, Version=2.1.20071.17, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="ChartFX.WinForms, Version=7.0.2893.24916, Culture=neutral, PublicKeyToken=a1878e2052c08dce, processorArchitecture=MSIL" />
+    <Reference Include="ChartFX.WinForms.Adornments, Version=7.0.2893.24805, Culture=neutral, PublicKeyToken=a1878e2052c08dce" />
+    <Reference Include="ChartFX.WinForms.Base, Version=7.0.2893.24781, Culture=neutral, PublicKeyToken=a1878e2052c08dce" />
+    <Reference Include="ChartFX.WinForms.Data, Version=7.0.2893.25079, Culture=neutral, PublicKeyToken=a1878e2052c08dce, processorArchitecture=MSIL" />
+    <Reference Include="FarPoint.Excel">
+      <Name>FarPoint.Excel</Name>
+      <HintPath>..\DLL\FarPoint.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win">
+      <Name>FarPoint.Win</Name>
+      <HintPath>..\DLL\FarPoint.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Spread">
+      <Name>FarPoint.Win.Spread</Name>
+      <HintPath>C:\Program Files\FarPoint Technologies\Spread.WinForms\v1.0.2.0\Bin\FarPoint.Win.Spread.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\farpoint spread for windows forms 1.0.2.0</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="Interop.RDBROWSERLib">
+      <Name>Interop.RDBROWSERLib</Name>
+      <HintPath>obj\Interop.RDBROWSERLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.StdType">
+      <Name>Interop.StdType</Name>
+      <HintPath>obj\Interop.StdType.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.VBIDE">
+      <Name>Interop.VBIDE</Name>
+      <HintPath>obj\Interop.VBIDE.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.StdFormat">
+      <Name>Microsoft.StdFormat</Name>
+      <HintPath>C:\Program Files\Microsoft.NET\Primary Interop Assemblies\Microsoft.StdFormat.dll</HintPath>
+      <AssemblyFolderKey>hklm\primary interop assemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <Name>Microsoft.VisualBasic</Name>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.Compatibility">
+      <Name>Microsoft.VisualBasic.Compatibility</Name>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.Compatibility.Data">
+      <Name>Microsoft.VisualBasic.Compatibility.Data</Name>
+    </Reference>
+    <Reference Include="Microsoft.VisualC">
+      <Name>Microsoft.VisualC</Name>
+    </Reference>
+    <Reference Include="MSDATASRC">
+      <Name>MSDATASRC</Name>
+      <HintPath>C:\Program Files\Microsoft.NET\Primary Interop Assemblies\MSDATASRC.dll</HintPath>
+      <AssemblyFolderKey>hklm\primary interop assemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="NETRONIC.XGantt">
+      <Name>NETRONIC.XGantt</Name>
+      <HintPath>C:\Program Files\Microsoft Visual Studio .NET 2003\Common7\IDE\NETRONIC.XGantt.DLL</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.OracleClient">
+      <Name>System.Data.OracleClient</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.DirectoryServices">
+      <Name>System.DirectoryServices</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+    </COMReference>
+    <COMReference Include="stdole1">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+    </COMReference>
+    <ProjectReference Include="..\COM\Com.csproj">
+      <Name>Com</Name>
+      <Project>{992378C3-66A1-4E98-96F5-CE2B26E0CAB2}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\FlexBase\FlexBase.csproj">
+      <Project>{7EDD1127-0A21-4B58-A3A8-8BC506D437FD}</Project>
+      <Name>FlexBase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Report\viewer.bak" />
+    <None Include="Report\viewer.rdf" />
+    <Content Include="App.ico" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ClassForm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ComCtl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ComFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ComVar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\IXTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DPUFE\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DPUFE\Form_Demand_Plan_Upload_Excel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DPUFE\Form_Everyday_Fit_Delivery_Plan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DPUFE\Form_Monthly_Growth_Plan_By_Line.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DPUFE\Form_Plan_Simulation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DPUFE\Form_Select_Model.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ETC\Form_General_Affair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ETC\Form_SVM_Stock_Upload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JMCI\Form_BM_MRP_Plan_Tracking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JMCI\Form_JM_BOTTOM_EFF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Material_Inspection\Form_Material_Pass_Status_Year.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Material_Inspection\Form_Material_Pass_Status_Year.Designer.cs">
+      <DependentUpon>Form_Material_Pass_Status_Year.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Material_Inspection\Form_Material_Inspection_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Material_Inspection\Form_Material_Inspection_Report.Designer.cs">
+      <DependentUpon>Form_Material_Inspection_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Material_Inspection\Form_Material_Pass_Status.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Material_Inspection\Form_Material_Pass_Status.Designer.cs">
+      <DependentUpon>Form_Material_Pass_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Material_Inspection\Form_Incoming.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Material_Inspection\Form_Incoming.Designer.cs">
+      <DependentUpon>Form_Incoming.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Material_Inspection\Form_Incoming_Tail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Material_Inspection\Form_Incoming_Tail.Designer.cs">
+      <DependentUpon>Form_Incoming_Tail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Material_Inspection\Form_MI_Reason.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Material_Inspection\Form_MI_Reason.Designer.cs">
+      <DependentUpon>Form_MI_Reason.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Material_Inspection\Form_PPM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Material_Inspection\Form_PPM.Designer.cs">
+      <DependentUpon>Form_PPM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Material_Inspection\Pop_BC_Yield_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\Form_BM_Material_Tracking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Form_BV_SearchByOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Pop_BM_InOut_Infomation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Form_RdViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="DPUFE\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DPUFE\Form_Demand_Plan_Upload_Excel.resx">
+      <DependentUpon>Form_Demand_Plan_Upload_Excel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DPUFE\Form_Everyday_Fit_Delivery_Plan.resx">
+      <DependentUpon>Form_Everyday_Fit_Delivery_Plan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DPUFE\Form_Monthly_Growth_Plan_By_Line.resx">
+      <DependentUpon>Form_Monthly_Growth_Plan_By_Line.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DPUFE\Form_Plan_Simulation.resx">
+      <DependentUpon>Form_Plan_Simulation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DPUFE\Form_Select_Model.resx">
+      <DependentUpon>Form_Select_Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ETC\Form_General_Affair.resx">
+      <DependentUpon>Form_General_Affair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ETC\Form_SVM_Stock_Upload.resx">
+      <DependentUpon>Form_SVM_Stock_Upload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JMCI\Form_BM_MRP_Plan_Tracking.resx">
+      <DependentUpon>Form_BM_MRP_Plan_Tracking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JMCI\Form_JM_BOTTOM_EFF.resx">
+      <DependentUpon>Form_JM_BOTTOM_EFF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Material_Inspection\Form_Material_Pass_Status_Year.resx">
+      <DependentUpon>Form_Material_Pass_Status_Year.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Material_Inspection\Form_Incoming.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_Incoming.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Material_Inspection\Form_Incoming_Tail.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_Incoming_Tail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Material_Inspection\Form_Material_Inspection_Report.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_Material_Inspection_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Material_Inspection\Form_Material_Pass_Status.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_Material_Pass_Status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Material_Inspection\Form_MI_Reason.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_MI_Reason.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Material_Inspection\Form_PPM.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_PPM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Material_Inspection\Pop_BC_Yield_Info.resx">
+      <DependentUpon>Pop_BC_Yield_Info.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Form_BM_Material_Tracking.resx">
+      <DependentUpon>Form_BM_Material_Tracking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Form_BV_SearchByOption.resx">
+      <DependentUpon>Form_BV_SearchByOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Pop_BM_InOut_Infomation.resx">
+      <DependentUpon>Pop_BM_InOut_Infomation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Form_RdViewer.resx">
+      <DependentUpon>Form_RdViewer.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Base\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
