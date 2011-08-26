@@ -70,7 +70,13 @@ namespace FlexVJ_Common.Material_Inspection
         private CellStyle cs_NormalTotal = null;//format for cell total normal
 
         #endregion
+
         #region "Method"
+
+        /// <summary>
+        /// Get location
+        /// </summary>
+        /// <returns></returns>
         private DataTable SEARCH_SMI_CMN()
         {
             DataSet vds_ret;
@@ -177,7 +183,6 @@ namespace FlexVJ_Common.Material_Inspection
 
         }
 
-
         /// <summary>
         /// clear data on grid
         /// </summary>
@@ -191,7 +196,6 @@ namespace FlexVJ_Common.Material_Inspection
                 arg_FSP.Rows.Count = arg_FSP.Rows.Fixed;
             }
         }
-
 
         /// <summary>
         /// hien thi du lieu len grid
@@ -224,6 +228,9 @@ namespace FlexVJ_Common.Material_Inspection
             }
         }
 
+        /// <summary>
+        /// Rest chart control
+        /// </summary>
         private void ResetChart()
         {
             _memoryStream.Position = 0;
@@ -231,7 +238,6 @@ namespace FlexVJ_Common.Material_Inspection
             chart1.Data.Clear();
             chart1.Cursor = Cursors.Default;
         }
-
 
         /// <summary>
         /// out put data to report
@@ -262,11 +268,15 @@ namespace FlexVJ_Common.Material_Inspection
             report.Show();
         }
 
+        /// <summary>
+        /// Get data for CHART
+        /// </summary>
+        /// <returns></returns>
         private DataTable GET_CHART_VALUE()
         {
             DataSet vds_ret;
 
-            MyOraDB.ReDim_Parameter(5);
+            MyOraDB.ReDim_Parameter(6);
 
             //01.PROCEDURE명
             MyOraDB.Process_Name = "PKG_SMI_MAT_INS_RPT.GET_CHART_VALUE";
@@ -275,30 +285,41 @@ namespace FlexVJ_Common.Material_Inspection
             MyOraDB.Parameter_Name[0] = ARG_FACTORY;
             MyOraDB.Parameter_Name[1] = ARG_INCOMING_LOCATION;
             MyOraDB.Parameter_Name[2] = ARG_CUST_CD;
-            MyOraDB.Parameter_Name[3] = ARG_INCOMING_YMD;            
-            MyOraDB.Parameter_Name[4] = OUT_CURSOR;
+            MyOraDB.Parameter_Name[3] = ARG_INCOMING_YMD;
+            MyOraDB.Parameter_Name[4] = "ARG_INCOMING_YMD_TO";
+            MyOraDB.Parameter_Name[5] = OUT_CURSOR;
 
             //03.DATA TYPE 정의
             MyOraDB.Parameter_Type[0] = (int)OracleType.VarChar;
             MyOraDB.Parameter_Type[1] = (int)OracleType.VarChar;
             MyOraDB.Parameter_Type[2] = (int)OracleType.VarChar;
             MyOraDB.Parameter_Type[3] = (int)OracleType.VarChar;
-            MyOraDB.Parameter_Type[4] = (int)OracleType.Cursor;
+            MyOraDB.Parameter_Type[4] = (int)OracleType.VarChar;
+            MyOraDB.Parameter_Type[5] = (int)OracleType.Cursor;
 
             //04.DATA 정의
             MyOraDB.Parameter_Values[0] = COM.ComVar.This_Factory;
             MyOraDB.Parameter_Values[1] = COM.ComFunction.Empty_Combo(cmb_Location, string.Empty);
             MyOraDB.Parameter_Values[2] = COM.ComFunction.Empty_Combo(cmb_Cust, string.Empty);
             MyOraDB.Parameter_Values[3] = dpk_Incomingdate.Value.ToString("yyyyMMdd");
-            MyOraDB.Parameter_Values[4] = "";
+            MyOraDB.Parameter_Values[4] = dpk_IncomingdateTo.Value.ToString("yyyyMMdd");
+            MyOraDB.Parameter_Values[5] = "";
 
             MyOraDB.Add_Select_Parameter(true);
             vds_ret = MyOraDB.Exe_Select_Procedure();
             if (vds_ret == null) return null;
-
+            vds_ret.Tables[MyOraDB.Process_Name].Columns[0].ColumnName = "Incoming Qty";
+            vds_ret.Tables[MyOraDB.Process_Name].Columns[1].ColumnName = "Pass Qty";
+            vds_ret.Tables[MyOraDB.Process_Name].Columns[2].ColumnName = "Pass %";
+            vds_ret.Tables[MyOraDB.Process_Name].Columns[3].ColumnName = "Target %";
+            vds_ret.Tables[MyOraDB.Process_Name].AcceptChanges();
             return vds_ret.Tables[MyOraDB.Process_Name];
         }
 
+        /// <summary>
+        /// Get data customer
+        /// </summary>
+        /// <returns></returns>
         private DataTable SEARCH_SCM_CUST()
         {
             DataSet vds_ret;
@@ -334,6 +355,9 @@ namespace FlexVJ_Common.Material_Inspection
 
         }
 
+        /// <summary>
+        /// filter data customer with location
+        /// </summary>
         private void FilterCust_by_Location()
         {
             try
@@ -342,9 +366,11 @@ namespace FlexVJ_Common.Material_Inspection
                 cmb_Cust.DataSource = null;
                 DataTable dt = SEARCH_SCM_CUST();
                 COM.ComFunction.Set_ComboList(dt, cmb_Cust, 0, 1, false, COM.ComVar.ComboList_Visible.Code_Name);
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsEndSearch, this);
             }
             catch (Exception ex)
             {
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotSearch, this);
                 COM.ComFunction.User_Message(ex.Message, "FilterCust_by_Location", MessageBoxButtons.OK);
             }
             finally
@@ -362,9 +388,11 @@ namespace FlexVJ_Common.Material_Inspection
                 this.Cursor = Cursors.WaitCursor;
                 InitForm();
                 ResetChart();
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsEndSearch, this);
             }
             catch (Exception ex)
             {
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotSearch, this);
                 COM.ComFunction.User_Message(ex.Message, "Form_Material_Pass_Status_Load");
             }
             finally
@@ -378,12 +406,18 @@ namespace FlexVJ_Common.Material_Inspection
             try
             {
                 this.Cursor = Cursors.WaitCursor;
+                if (COM.ComFunction.Empty_Combo(cmb_Cust, string.Empty).Equals(string.Empty))
+                {
+                    COM.ComFunction.User_Message("Pls, select Customer!!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
                 ResetChart();
                 chart1.DataSourceSettings.DataSource = GET_CHART_VALUE();
                 ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsEndSearch, this);
             }
             catch (Exception ex)
             {
+                ClassLib.ComFunction.Status_Bar_Message(ClassLib.ComVar.MgsDoNotSearch, this);
                 COM.ComFunction.User_Message(ex.Message, "tbtn_Search_Click");
             }
             finally
@@ -397,8 +431,6 @@ namespace FlexVJ_Common.Material_Inspection
             Tbtn_Print_Click();
         }
 
-        #endregion
-
         private void cmb_Location_SelectedValueChanged(object sender, EventArgs e)
         {
             FilterCust_by_Location();
@@ -411,8 +443,8 @@ namespace FlexVJ_Common.Material_Inspection
                 FilterCust_by_Location();
             }
         }
+
+        #endregion
+
     }
-
-
-
 }

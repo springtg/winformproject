@@ -29,14 +29,14 @@ namespace FlexVJ_Common.Material_Inspection
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Material_Pass_Status));
-            C1.Win.C1List.Style style33 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style34 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style35 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style36 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style37 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style38 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style39 = new C1.Win.C1List.Style();
-            C1.Win.C1List.Style style40 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style25 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style26 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style27 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style28 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style29 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style30 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style31 = new C1.Win.C1List.Style();
+            C1.Win.C1List.Style style32 = new C1.Win.C1List.Style();
             this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,12 +47,10 @@ namespace FlexVJ_Common.Material_Inspection
             this.cmb_Location = new C1.Win.C1List.C1Combo();
             this.lbl_Location = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.rbt_PassTotal = new System.Windows.Forms.RadioButton();
-            this.rbt_PassPercent = new System.Windows.Forms.RadioButton();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.fgrid_MaterialPassStatus = new COM.FSP();
             this.pnl_Search = new System.Windows.Forms.Panel();
             this.pnl_SearchImage = new System.Windows.Forms.Panel();
+            this.rbt_PassTotal = new System.Windows.Forms.RadioButton();
+            this.rbt_PassPercent = new System.Windows.Forms.RadioButton();
             this.picb_MR = new System.Windows.Forms.PictureBox();
             this.picb_BR = new System.Windows.Forms.PictureBox();
             this.picb_TM = new System.Windows.Forms.PictureBox();
@@ -63,12 +61,13 @@ namespace FlexVJ_Common.Material_Inspection
             this.picb_ML = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.fgrid_MaterialPassStatus = new COM.FSP();
+            this.rbt_StatusChart = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.c1CommandHolder1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Location)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fgrid_MaterialPassStatus)).BeginInit();
             this.pnl_Search.SuspendLayout();
             this.pnl_SearchImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picb_MR)).BeginInit();
@@ -79,6 +78,8 @@ namespace FlexVJ_Common.Material_Inspection
             ((System.ComponentModel.ISupportInitialize)(this.picb_BL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_ML)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fgrid_MaterialPassStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // img_Action
@@ -235,7 +236,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(165, 71);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(294, 71);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -290,7 +291,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.lbl_IncomingDate.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_IncomingDate.ImageIndex = 1;
             this.lbl_IncomingDate.ImageList = this.img_Label;
-            this.lbl_IncomingDate.Location = new System.Drawing.Point(391, 40);
+            this.lbl_IncomingDate.Location = new System.Drawing.Point(520, 40);
             this.lbl_IncomingDate.Name = "lbl_IncomingDate";
             this.lbl_IncomingDate.Size = new System.Drawing.Size(100, 21);
             this.lbl_IncomingDate.TabIndex = 570;
@@ -302,7 +303,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.dpk_Incomingdate.CustomFormat = "MMMM.yyyyy";
             this.dpk_Incomingdate.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dpk_Incomingdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpk_Incomingdate.Location = new System.Drawing.Point(495, 40);
+            this.dpk_Incomingdate.Location = new System.Drawing.Point(624, 40);
             this.dpk_Incomingdate.Name = "dpk_Incomingdate";
             this.dpk_Incomingdate.Size = new System.Drawing.Size(112, 21);
             this.dpk_Incomingdate.TabIndex = 571;
@@ -313,7 +314,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.cmb_Location.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cmb_Location.Caption = "";
             this.cmb_Location.CaptionHeight = 17;
-            this.cmb_Location.CaptionStyle = style33;
+            this.cmb_Location.CaptionStyle = style25;
             this.cmb_Location.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.cmb_Location.ColumnCaptionHeight = 18;
             this.cmb_Location.ColumnFooterHeight = 18;
@@ -328,26 +329,26 @@ namespace FlexVJ_Common.Material_Inspection
             this.cmb_Location.EditorFont = new System.Drawing.Font("Gulim", 9F);
             this.cmb_Location.EditorForeColor = System.Drawing.SystemColors.WindowText;
             this.cmb_Location.EditorHeight = 16;
-            this.cmb_Location.EvenRowStyle = style34;
+            this.cmb_Location.EvenRowStyle = style26;
             this.cmb_Location.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_Location.FooterStyle = style35;
-            this.cmb_Location.HeadingStyle = style36;
-            this.cmb_Location.HighLightRowStyle = style37;
+            this.cmb_Location.FooterStyle = style27;
+            this.cmb_Location.HeadingStyle = style28;
+            this.cmb_Location.HighLightRowStyle = style29;
             this.cmb_Location.Images.Add(((System.Drawing.Image)(resources.GetObject("cmb_Location.Images"))));
             this.cmb_Location.ItemHeight = 15;
-            this.cmb_Location.Location = new System.Drawing.Point(267, 40);
+            this.cmb_Location.Location = new System.Drawing.Point(396, 40);
             this.cmb_Location.MatchEntryTimeout = ((long)(2000));
             this.cmb_Location.MaxDropDownItems = ((short)(5));
             this.cmb_Location.MaxLength = 32767;
             this.cmb_Location.MouseCursor = System.Windows.Forms.Cursors.Default;
             this.cmb_Location.Name = "cmb_Location";
-            this.cmb_Location.OddRowStyle = style38;
+            this.cmb_Location.OddRowStyle = style30;
             this.cmb_Location.RowDivider.Color = System.Drawing.Color.DarkGray;
             this.cmb_Location.RowDivider.Style = C1.Win.C1List.LineStyleEnum.None;
             this.cmb_Location.RowSubDividerColor = System.Drawing.Color.DarkGray;
-            this.cmb_Location.SelectedStyle = style39;
+            this.cmb_Location.SelectedStyle = style31;
             this.cmb_Location.Size = new System.Drawing.Size(124, 20);
-            this.cmb_Location.Style = style40;
+            this.cmb_Location.Style = style32;
             this.cmb_Location.TabIndex = 574;
             this.cmb_Location.PropBag = resources.GetString("cmb_Location.PropBag");
             // 
@@ -357,7 +358,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.lbl_Location.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Location.ImageIndex = 1;
             this.lbl_Location.ImageList = this.img_Label;
-            this.lbl_Location.Location = new System.Drawing.Point(165, 40);
+            this.lbl_Location.Location = new System.Drawing.Point(294, 40);
             this.lbl_Location.Name = "lbl_Location";
             this.lbl_Location.Size = new System.Drawing.Size(100, 21);
             this.lbl_Location.TabIndex = 573;
@@ -372,6 +373,45 @@ namespace FlexVJ_Common.Material_Inspection
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1016, 126);
             this.panel2.TabIndex = 576;
+            // 
+            // pnl_Search
+            // 
+            this.pnl_Search.BackColor = System.Drawing.SystemColors.Window;
+            this.pnl_Search.Controls.Add(this.pnl_SearchImage);
+            this.pnl_Search.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_Search.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Search.Name = "pnl_Search";
+            this.pnl_Search.Padding = new System.Windows.Forms.Padding(7);
+            this.pnl_Search.Size = new System.Drawing.Size(1016, 130);
+            this.pnl_Search.TabIndex = 47;
+            // 
+            // pnl_SearchImage
+            // 
+            this.pnl_SearchImage.BackColor = System.Drawing.SystemColors.Window;
+            this.pnl_SearchImage.Controls.Add(this.tableLayoutPanel1);
+            this.pnl_SearchImage.Controls.Add(this.rbt_StatusChart);
+            this.pnl_SearchImage.Controls.Add(this.rbt_PassTotal);
+            this.pnl_SearchImage.Controls.Add(this.rbt_PassPercent);
+            this.pnl_SearchImage.Controls.Add(this.picb_MR);
+            this.pnl_SearchImage.Controls.Add(this.dpk_Incomingdate);
+            this.pnl_SearchImage.Controls.Add(this.picb_BR);
+            this.pnl_SearchImage.Controls.Add(this.lbl_IncomingDate);
+            this.pnl_SearchImage.Controls.Add(this.picb_TM);
+            this.pnl_SearchImage.Controls.Add(this.lbl_SubTitle1);
+            this.pnl_SearchImage.Controls.Add(this.cmb_Location);
+            this.pnl_SearchImage.Controls.Add(this.picb_TR);
+            this.pnl_SearchImage.Controls.Add(this.lbl_Location);
+            this.pnl_SearchImage.Controls.Add(this.picb_BM);
+            this.pnl_SearchImage.Controls.Add(this.picb_BL);
+            this.pnl_SearchImage.Controls.Add(this.picb_ML);
+            this.pnl_SearchImage.Controls.Add(this.pictureBox6);
+            this.pnl_SearchImage.Controls.Add(this.textBox1);
+            this.pnl_SearchImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_SearchImage.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.pnl_SearchImage.Location = new System.Drawing.Point(7, 7);
+            this.pnl_SearchImage.Name = "pnl_SearchImage";
+            this.pnl_SearchImage.Size = new System.Drawing.Size(1002, 116);
+            this.pnl_SearchImage.TabIndex = 20;
             // 
             // rbt_PassTotal
             // 
@@ -402,70 +442,6 @@ namespace FlexVJ_Common.Material_Inspection
             this.rbt_PassPercent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbt_PassPercent.UseVisualStyleBackColor = true;
             this.rbt_PassPercent.CheckedChanged += new System.EventHandler(this.rbt_PassPercent_CheckedChanged);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.fgrid_MaterialPassStatus);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 206);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1016, 438);
-            this.panel4.TabIndex = 578;
-            // 
-            // fgrid_MaterialPassStatus
-            // 
-            this.fgrid_MaterialPassStatus.AllowAddNew = true;
-            this.fgrid_MaterialPassStatus.AllowDelete = true;
-            this.fgrid_MaterialPassStatus.AllowEditing = false;
-            this.fgrid_MaterialPassStatus.ColumnInfo = "10,1,0,0,0,80,Columns:1{AllowMerging:True;}\t";
-            this.fgrid_MaterialPassStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fgrid_MaterialPassStatus.Font = new System.Drawing.Font("Verdana", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.fgrid_MaterialPassStatus.Location = new System.Drawing.Point(0, 0);
-            this.fgrid_MaterialPassStatus.Name = "fgrid_MaterialPassStatus";
-            this.fgrid_MaterialPassStatus.Rows.Count = 2;
-            this.fgrid_MaterialPassStatus.Rows.DefaultSize = 16;
-            this.fgrid_MaterialPassStatus.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Cell;
-            this.fgrid_MaterialPassStatus.Size = new System.Drawing.Size(1016, 438);
-            this.fgrid_MaterialPassStatus.StyleInfo = resources.GetString("fgrid_MaterialPassStatus.StyleInfo");
-            this.fgrid_MaterialPassStatus.TabIndex = 573;
-            // 
-            // pnl_Search
-            // 
-            this.pnl_Search.BackColor = System.Drawing.SystemColors.Window;
-            this.pnl_Search.Controls.Add(this.pnl_SearchImage);
-            this.pnl_Search.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_Search.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Search.Name = "pnl_Search";
-            this.pnl_Search.Padding = new System.Windows.Forms.Padding(7);
-            this.pnl_Search.Size = new System.Drawing.Size(1016, 130);
-            this.pnl_Search.TabIndex = 47;
-            // 
-            // pnl_SearchImage
-            // 
-            this.pnl_SearchImage.BackColor = System.Drawing.SystemColors.Window;
-            this.pnl_SearchImage.Controls.Add(this.tableLayoutPanel1);
-            this.pnl_SearchImage.Controls.Add(this.rbt_PassTotal);
-            this.pnl_SearchImage.Controls.Add(this.rbt_PassPercent);
-            this.pnl_SearchImage.Controls.Add(this.picb_MR);
-            this.pnl_SearchImage.Controls.Add(this.dpk_Incomingdate);
-            this.pnl_SearchImage.Controls.Add(this.picb_BR);
-            this.pnl_SearchImage.Controls.Add(this.lbl_IncomingDate);
-            this.pnl_SearchImage.Controls.Add(this.picb_TM);
-            this.pnl_SearchImage.Controls.Add(this.lbl_SubTitle1);
-            this.pnl_SearchImage.Controls.Add(this.cmb_Location);
-            this.pnl_SearchImage.Controls.Add(this.picb_TR);
-            this.pnl_SearchImage.Controls.Add(this.lbl_Location);
-            this.pnl_SearchImage.Controls.Add(this.picb_BM);
-            this.pnl_SearchImage.Controls.Add(this.picb_BL);
-            this.pnl_SearchImage.Controls.Add(this.picb_ML);
-            this.pnl_SearchImage.Controls.Add(this.pictureBox6);
-            this.pnl_SearchImage.Controls.Add(this.textBox1);
-            this.pnl_SearchImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_SearchImage.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.pnl_SearchImage.Location = new System.Drawing.Point(7, 7);
-            this.pnl_SearchImage.Name = "pnl_SearchImage";
-            this.pnl_SearchImage.Size = new System.Drawing.Size(1002, 116);
-            this.pnl_SearchImage.TabIndex = 20;
             // 
             // picb_MR
             // 
@@ -556,7 +532,7 @@ namespace FlexVJ_Common.Material_Inspection
             this.picb_ML.Image = ((System.Drawing.Image)(resources.GetObject("picb_ML.Image")));
             this.picb_ML.Location = new System.Drawing.Point(0, 22);
             this.picb_ML.Name = "picb_ML";
-            this.picb_ML.Size = new System.Drawing.Size(144, 85);
+            this.picb_ML.Size = new System.Drawing.Size(219, 85);
             this.picb_ML.TabIndex = 25;
             this.picb_ML.TabStop = false;
             // 
@@ -580,6 +556,46 @@ namespace FlexVJ_Common.Material_Inspection
             this.textBox1.Size = new System.Drawing.Size(86, 22);
             this.textBox1.TabIndex = 145;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.fgrid_MaterialPassStatus);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 206);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1016, 438);
+            this.panel4.TabIndex = 578;
+            // 
+            // fgrid_MaterialPassStatus
+            // 
+            this.fgrid_MaterialPassStatus.AllowAddNew = true;
+            this.fgrid_MaterialPassStatus.AllowDelete = true;
+            this.fgrid_MaterialPassStatus.AllowEditing = false;
+            this.fgrid_MaterialPassStatus.ColumnInfo = "10,1,0,0,0,80,Columns:1{AllowMerging:True;}\t";
+            this.fgrid_MaterialPassStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fgrid_MaterialPassStatus.Font = new System.Drawing.Font("Verdana", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.fgrid_MaterialPassStatus.Location = new System.Drawing.Point(0, 0);
+            this.fgrid_MaterialPassStatus.Name = "fgrid_MaterialPassStatus";
+            this.fgrid_MaterialPassStatus.Rows.Count = 2;
+            this.fgrid_MaterialPassStatus.Rows.DefaultSize = 16;
+            this.fgrid_MaterialPassStatus.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Cell;
+            this.fgrid_MaterialPassStatus.Size = new System.Drawing.Size(1016, 438);
+            this.fgrid_MaterialPassStatus.StyleInfo = resources.GetString("fgrid_MaterialPassStatus.StyleInfo");
+            this.fgrid_MaterialPassStatus.TabIndex = 573;
+            // 
+            // rbt_StatusChart
+            // 
+            this.rbt_StatusChart.AutoSize = true;
+            this.rbt_StatusChart.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.rbt_StatusChart.Location = new System.Drawing.Point(137, 51);
+            this.rbt_StatusChart.Margin = new System.Windows.Forms.Padding(0);
+            this.rbt_StatusChart.Name = "rbt_StatusChart";
+            this.rbt_StatusChart.Size = new System.Drawing.Size(135, 31);
+            this.rbt_StatusChart.TabIndex = 576;
+            this.rbt_StatusChart.Text = "Pass Status (Chart)";
+            this.rbt_StatusChart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbt_StatusChart.UseVisualStyleBackColor = true;
+            this.rbt_StatusChart.CheckedChanged += new System.EventHandler(this.rbt_StatusChart_CheckedChanged);
+            // 
             // Form_Material_Pass_Status
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
@@ -598,8 +614,6 @@ namespace FlexVJ_Common.Material_Inspection
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Location)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.fgrid_MaterialPassStatus)).EndInit();
             this.pnl_Search.ResumeLayout(false);
             this.pnl_SearchImage.ResumeLayout(false);
             this.pnl_SearchImage.PerformLayout();
@@ -611,6 +625,8 @@ namespace FlexVJ_Common.Material_Inspection
             ((System.ComponentModel.ISupportInitialize)(this.picb_BL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_ML)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fgrid_MaterialPassStatus)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -643,5 +659,6 @@ namespace FlexVJ_Common.Material_Inspection
         public System.Windows.Forms.PictureBox picb_ML;
         public System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RadioButton rbt_StatusChart;
     }
 }
