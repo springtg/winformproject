@@ -1,0 +1,2996 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>C1.Win.C1SuperTooltip.2</name>
+    </assembly>
+    <members>
+        <member name="T:C1.Framework.BasePanel">
+            <summary>
+            Base class for all <see cref="T:C1.Framework.Element"/> object that contain child elements.
+            </summary>
+            <remarks>
+            <para>This class extends <see cref="T:C1.Framework.Element"/> and implements the <see cref="P:C1.Framework.BasePanel.Children"/> property.</para>
+            <para>This class acts like a static canvas. It has no layout logic other than sizing itself to fit its children.</para>
+            </remarks>
+        </member>
+        <member name="M:C1.Framework.Element.#ctor(C1.Framework.Style)">
+            <summary>
+            Creates a new instance of an <see cref="T:C1.Framework.Element"/>.
+            </summary>
+            <param name="style">Style for the new element.</param>
+        </member>
+        <member name="M:C1.Framework.Element.#ctor">
+            <summary>
+            Creates a new instance of an <see cref="T:C1.Framework.Element"/>.
+            </summary>
+        </member>
+        <member name="M:C1.Framework.Element.GetBounds(C1.Framework.Element)">
+            <summary>
+            Gets or sets the element's bounds (size and location) within an arbitrary ancestor, in pixels.
+            <param name="ancestor">Ancestor element (parent, grand-parent, etc).</param>
+            <returns>A <see cref="T:System.Drawing.Rectangle"/> that corresponds to the element's position within its parent.</returns>
+            </summary>
+        </member>
+        <member name="M:C1.Framework.Element.Offset(System.Int32,System.Int32)">
+            <summary>
+            Adjusts the location of this element by the specified amount.
+            </summary>
+            <param name="x">Offset in the horizontal direction.</param>
+            <param name="y">Offset in the vertical direction.</param>
+        </member>
+        <member name="M:C1.Framework.Element.SetDirty(System.Boolean,System.Boolean)">
+            <summary>
+            Marks this element as dirty, forcing all parent and child elements to be laid out.
+            </summary>
+            <param name="dirty">Whether the element needs to be laid out.</param>
+            <param name="layoutOnly">Whether ContentElements (e.g. Text, Images) also need to be laid out.</param>
+        </member>
+        <member name="M:C1.Framework.Element.SetDirty(System.Boolean)">
+            <summary>
+            Marks this element as dirty, forcing all parent and child elements to be laid out.
+            </summary>
+            <param name="dirty">Whether the element needs to be laid out.</param>
+        </member>
+        <member name="M:C1.Framework.Element.SetDirty">
+            <summary>
+            Marks this element as dirty, forcing all parent and child elements to be laid out.
+            </summary>
+        </member>
+        <member name="M:C1.Framework.Element.Clone">
+            <summary>
+            Returns a clone of this element.
+            </summary>
+            <returns>A clone of this element</returns>
+        </member>
+        <member name="M:C1.Framework.Element.Layout(System.Drawing.Graphics)">
+            <summary>
+            Layout this element based on its style and contents.
+            </summary>
+            <param name="g">Graphics object used to measure the element.</param>
+        </member>
+        <member name="M:C1.Framework.Element.Render(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Update element layout and render it into the given rectangle. 
+            </summary>
+            <param name="g">Graphics object where the element will be rendered.</param>
+            <param name="r">Rectangle where the element will be rendered.</param>
+        </member>
+        <member name="M:C1.Framework.Element.RenderContent(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Render this element's content (no children). 
+            </summary>
+            <param name="g">Graphics object where the element will be rendered.</param>
+            <param name="r">Rectangle to render into.</param>
+        </member>
+        <member name="M:C1.Framework.Element.HitTest(System.Drawing.Point)">
+            <summary>
+            Returns the element at a given point.
+            </summary>
+            <param name="pt">Point to check.</param>
+            <returns>The element at the point.</returns>
+        </member>
+        <member name="M:C1.Framework.Element.GetParentOfType(System.Type)">
+            <summary>
+            Navigates up the tree to find an ancestor of a given type.
+            </summary>
+            <param name="type">Type of element we're looking for.</param>
+            <returns>A reference to the ancestor of the given type, null if not found.</returns>
+        </member>
+        <member name="M:C1.Framework.Element.GetScrollOrigin">
+            <summary>
+            Returns the scroll origin (override to implement non-scrolling areas).
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:C1.Framework.Element.IsChildOf(C1.Framework.Element)">
+            <summary>
+            Determines whether this element is a child of another element.
+            </summary>
+            <param name="parent">Parent element to investigate.</param>
+            <returns>True if <paramref name="parent"/> contains this element.</returns>
+        </member>
+        <member name="M:C1.Framework.Element.Invalidate(System.Boolean)">
+            <summary>
+            Invalidates this <see cref="T:C1.Framework.Element"/> within the host control.
+            </summary>
+            <param name="update">Whether to repaint the host control immediately after invalidation.</param>
+        </member>
+        <member name="M:C1.Framework.Element.Invalidate">
+            <summary>
+            Invalidates this <see cref="T:C1.Framework.Element"/> within the host control.
+            </summary>
+        </member>
+        <member name="M:C1.Framework.Element.OnMouseEnter(System.EventArgs)">
+            <summary>
+            Called by the host control when the mouse enters this <see cref="T:C1.Framework.Element"/>.
+            </summary>
+            <param name="e"><see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Framework.Element.OnMouseLeave(System.EventArgs)">
+            <summary>
+            Called by the host control when the mouse leaves this <see cref="T:C1.Framework.Element"/>.
+            </summary>
+            <param name="e"><see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Framework.Element.OnMouseEnterHover(System.EventArgs)">
+            <summary>
+            Called by the host control when the mouse enters this <see cref="T:C1.Framework.Element"/>, 
+            even if another element has captured the mouse.
+            </summary>
+            <param name="e"><see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Framework.Element.OnMouseLeaveHover(System.EventArgs)">
+            <summary>
+            Called by the host control when the mouse leaves this <see cref="T:C1.Framework.Element"/>, 
+            even if another element has captured the mouse.
+            </summary>
+            <param name="e"><see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Framework.Element.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Called by the host control when the user presses a mouse button over this <see cref="T:C1.Framework.Element"/>.
+            </summary>
+            <param name="e"><see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Framework.Element.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Called by the host control when the user releases a mouse button over this <see cref="T:C1.Framework.Element"/>.
+            </summary>
+            <param name="e"><see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Framework.Element.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Called by the host control when the mouse moves over this <see cref="T:C1.Framework.Element"/>.
+            </summary>
+            <param name="e"><see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Framework.Element.OnClick(System.EventArgs)">
+            <summary>
+            Called by the host control when the user clicks this <see cref="T:C1.Framework.Element"/>.
+            </summary>
+            <param name="e"><see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Framework.Element.OnDoubleClick(System.EventArgs)">
+            <summary>
+            Called by the host control when the user double-clicks this <see cref="T:C1.Framework.Element"/>.
+            </summary>
+            <param name="e"><see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Framework.Element.OnGotFocus(System.EventArgs)">
+            <summary>
+            Called by the host control when this <see cref="T:C1.Framework.Element"/> receives the focus.
+            </summary>
+            <param name="e"><see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Framework.Element.OnLostFocus(System.EventArgs)">
+            <summary>
+            Called by the host control when this <see cref="T:C1.Framework.Element"/> loses the focus.
+            </summary>
+            <param name="e"><see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Framework.Element.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Called by the host control when the user presses a key and this <see cref="T:C1.Framework.Element"/> has the focus.
+            </summary>
+            <param name="e"><see cref="T:System.Windows.Forms.KeyEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Framework.Element.OnKeyUp(System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Called by the host control when the user releases a key and this <see cref="T:C1.Framework.Element"/> has the focus.
+            </summary>
+            <param name="e"><see cref="T:System.Windows.Forms.KeyEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Framework.Element.OnKeyPress(System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Called by the host control when the user presses a character key and this <see cref="T:C1.Framework.Element"/> has the focus.
+            </summary>
+            <param name="e"><see cref="T:System.Windows.Forms.KeyEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Framework.Element.OnStateChanged(C1.Framework.Element.ElementFlags)">
+            <summary>
+            Called by the host control when the state of this <see cref="T:C1.Framework.Element"/> changes.
+            </summary>
+            <param name="oldFlags"><see cref="T:C1.Framework.Element.ElementFlags"/> that contains the state before the change.</param>
+            <remarks>
+            The state of an element is represented by a combination of <see cref="T:C1.Framework.Element.ElementFlags"/> values.
+            Each individual flag is represented by a specific property, including <see cref="P:C1.Framework.Element.Visible"/>, <see cref="P:C1.Framework.Element.Enabled"/>,
+            etc.
+            </remarks>
+        </member>
+        <member name="M:C1.Framework.Element.GetImageResource(System.String)">
+            <summary>
+            Gets an <see cref="T:System.Drawing.Image"/> from the application's embedded resources.
+            </summary>
+            <param name="name">Name of the embedded resource that contains the image.</param>
+            <returns>An <see cref="T:System.Drawing.Image"/> stored with the given name, or null if the image could not be found.</returns>
+        </member>
+        <member name="M:C1.Framework.Element.GetBitmapResource(System.String)">
+            <summary>
+            Gets a <see cref="T:System.Drawing.Bitmap"/> from the application's embedded resources.
+            </summary>
+            <param name="name">Name of the embedded resource that contains the bitmap.</param>
+            <returns>A <see cref="T:System.Drawing.Bitmap"/> stored with the given name, or null if the image could not be found.</returns>
+        </member>
+        <member name="M:C1.Framework.Element.FindMnemonic(C1.Framework.Element,System.Char)">
+            <summary>
+            Finds the <see cref="T:C1.Framework.Element"/> that is represented by a given hot key.
+            </summary>
+            <param name="e"><see cref="T:C1.Framework.Element"/> to search (including all its children).</param>
+            <param name="charCode">Hot key to search for.</param>
+            <returns>The <see cref="T:C1.Framework.IMnemonicElement"/> that is represented by the given hot key.</returns>
+        </member>
+        <member name="P:C1.Framework.Element.Parent">
+            <summary>
+            Gets the element's parent, or null if this is the root element.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.Root">
+            <summary>
+            Gets the element's top-level parent.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.Style">
+            <summary>
+            Gets or sets the Style object used to render this Element.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.RenderStyle">
+            <summary>
+            Gets the element's style, or a default style if the element doesn't have one.
+            This never returns null.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.Visible">
+            <summary>
+            Gets or sets whether the element is visible.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.IsVisible">
+            <summary>
+            Gets whether this element and all its ancestors are visible.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.Enabled">
+            <summary>
+            Gets or sets whether the element is enabled (can receive mouse and keyboard messages).
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.IsEnabled">
+            <summary>
+            Gets whether this element and all its ancestors are enabled.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.HitTestable">
+            <summary>
+            Gets or sets whether the element is hit-testable (receives mouse messages).
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.Focusable">
+            <summary>
+            Gets or sets whether the element is focusable (receives keyboard messages).
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.ShowFocusRectangle">
+            <summary>
+            Gets or sets whether the element should display a focus rectangle when it has focus.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.IsHot">
+            <summary>
+            Gets or sets whether the element should be displayed using the Style.Hot style.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.IsPressed">
+            <summary>
+            Gets or sets whether the element should be displayed using the Style.Pressed style.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.Bounds">
+            <summary>
+            Gets or sets the element's bounds (size and location) within its parent element, in pixels.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.Size">
+            <summary>
+            Gets or sets the size of the element.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.ContentBounds">
+            <summary>
+            Content bounds within the parent element, in pixels.
+            This discounts margins, borders, and padding.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.Width">
+            <summary>
+            Element width. Set to -1 to let the element calculate it automatically.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.Height">
+            <summary>
+            Element height. Set to -1 to let the element calculate it automatically.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.Location">
+            <summary>
+            Gets or sets the location of the element within its parent.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.Left">
+            <summary>
+            Gets or sets the horizontal position of the element within its parent.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.Top">
+            <summary>
+            Gets or sets the vertical position of the element within its parent.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.IsDirty">
+            <summary>
+            Gets a valut that indicates this element needs to be laid out.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.LineDescent">
+            <summary>
+            Gets the portion of the element that renders below the baseline.
+            Usually non-zero only for text elements, depends on font.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.ForceLineBreak">
+            <summary>
+            Gets a <see cref="T:C1.Framework.Element.LineBreak"/> value that determines whether there should be
+            line breaks before and/or after this <see cref="T:C1.Framework.Element"/> when it occurs in a paragraph.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.Children">
+            <summary>
+            Gets a list of child elements.
+            </summary>
+            <remarks>
+            The base class always returns null; panel elements should be based on CanvasPanel.
+            </remarks>
+        </member>
+        <member name="P:C1.Framework.Element.HasChildren">
+            <summary>
+            Gets a value that indicates the element has a non-empty Children collection.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Element.HostControl">
+            <summary>
+            Gets the <see cref="T:System.Windows.Forms.Control"/> that is hosting this <see cref="T:C1.Framework.Element"/>.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.Element.ElementFlags">
+            <summary>
+            Flags that represent the state of an <see cref="T:C1.Framework.Element"/>.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.Element.ElementFlags.Dirty">
+            <summary>
+            Element should be laid out before it is rendered.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.Element.ElementFlags.Visible">
+            <summary>
+            Element is visible.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.Element.ElementFlags.AutoWidth">
+            <summary>
+            The width of the element is automatically determined by its style and contents.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.Element.ElementFlags.AutoHeight">
+            <summary>
+            The height of the element is automatically determined by its style and contents.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.Element.ElementFlags.Enabled">
+            <summary>
+            The element is enabled and may receive mouse and keyboard messages.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.Element.ElementFlags.HitTestable">
+            <summary>
+            The element recognizes mouse messages.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.Element.ElementFlags.Focusable">
+            <summary>
+            The element recognizes keyboard messages.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.Element.ElementFlags.ShowFocus">
+            <summary>
+            The element should display a focus rectangle when it has the focus.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.Element.ElementFlags.Hot">
+            <summary>
+            The mouse is over the element.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.Element.ElementFlags.Pressed">
+            <summary>
+            The mouse is over the element and the left button is pressed.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.Element.ElementFlags.Horizontal">
+            <summary>
+            Flow child elements in the horizontal direction.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.Element.LineBreak">
+            <summary>
+            Flags that represent the line-breaking behavior caused by an element when it is contained
+            in a paragraph.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.Element.LineBreak.None">
+            <summary>
+            The element does not cause line breaks.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.Element.LineBreak.Before">
+            <summary>
+            Insert line breaks before the element.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.Element.LineBreak.After">
+            <summary>
+            Insert line breaks after the element.
+            </summary>
+        </member>
+        <member name="M:C1.Framework.BasePanel.#ctor(C1.Framework.Style)">
+            <summary>
+            Initializes a new instance of a <see cref="T:C1.Framework.BasePanel"/> with a given <see cref="T:C1.Framework.Style"/>.
+            </summary>
+            <param name="style"><see cref="T:C1.Framework.Style"/> object used to measure and render this <see cref="T:C1.Framework.BasePanel"/>.</param>
+        </member>
+        <member name="M:C1.Framework.BasePanel.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:C1.Framework.BasePanel"/>.
+            </summary>
+        </member>
+        <member name="M:C1.Framework.BasePanel.Layout(System.Drawing.Graphics)">
+            <summary>
+            Layout this element based on its style and contents.
+            </summary>
+            <param name="g">Graphics object used to measure the element.</param>
+        </member>
+        <member name="P:C1.Framework.BasePanel.Children">
+            <summary>
+            Gets or sets the list of child elements contained in this <see cref="T:C1.Framework.Element"/>.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.ContentElement">
+            <summary>
+            <para>Abstract class for elements that display text or images.</para>
+            
+            <para>Derived classes should override <see cref="M:C1.Framework.ContentElement.GetValue"/> method to 
+            provide the content (text, images, formatted values).</para>
+            
+            <para>This class does not have child elements.</para>
+            </summary>
+        </member>
+        <member name="M:C1.Framework.ContentElement.#ctor(C1.Framework.Style)">
+            <summary>
+            Creates a new instance of a ContentElement.
+            </summary>
+            <param name="style">Style for the new element.</param>
+        </member>
+        <member name="M:C1.Framework.ContentElement.#ctor">
+            <summary>
+            Creates a new instance of a ContentElement.
+            </summary>
+        </member>
+        <member name="M:C1.Framework.ContentElement.GetValue">
+            <summary>
+            Gets the value represented by this <see cref="T:C1.Framework.ContentElement"/>.
+            </summary>
+            <returns>Object to be rendered as this element's content.</returns>
+            <remarks>
+            The value is an object that the <see cref="T:C1.Framework.Style"/> class can measure and render, usually a string,
+            an <see cref="T:System.Drawing.Image"/>, or an <see cref="T:System.IFormattable"/> object.
+            </remarks>
+        </member>
+        <member name="M:C1.Framework.ContentElement.RenderContent(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Renders the element contents into the specified <see cref="T:System.Drawing.Graphics"/> object at the specified location.
+            </summary>
+            <param name="g"><see cref="T:System.Drawing.Graphics"/> object where the <see cref="T:C1.Framework.Element"/> will be rendered.</param>
+            <param name="r"><see cref="T:System.Drawing.Rectangle"/> where the <see cref="T:C1.Framework.Element"/> contents will be rendered.</param>
+        </member>
+        <member name="M:C1.Framework.ContentElement.Layout(System.Drawing.Graphics)">
+            <summary>
+            Layout this element based on its style and contents.
+            </summary>
+            <param name="g"><see cref="T:System.Drawing.Graphics"/> object used to measure the <see cref="T:C1.Framework.Element"/>.</param>
+        </member>
+        <member name="M:C1.Framework.ContentElement.ToString">
+            <summary>
+            Gets a string representation of this <see cref="T:C1.Framework.ContentElement"/>.
+            </summary>
+            <returns>A string representation of this <see cref="T:C1.Framework.ContentElement"/>.</returns>
+        </member>
+        <member name="P:C1.Framework.IControlElement.Element">
+            <summary>
+            Gets a reference to the <see cref="P:C1.Framework.IControlElement.Element"/> that owns this <see cref="T:System.Windows.Forms.Control"/>.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.IToolTipElement.ToolTip">
+            <summary>
+            Gets the text that should be displayed in a tooltip when the mouse hovers over the <see cref="T:C1.Framework.Element"/>.
+            </summary>
+        </member>
+        <member name="M:C1.Framework.IMnemonicElement.HandleMnemonic">
+            <summary>
+            Method that gets called when the user presses the hot key that corresponds to this <see cref="T:C1.Framework.Element"/>.
+            </summary>
+            <returns>True if the hot key was handled by the element, false otherwise.</returns>
+        </member>
+        <member name="T:C1.Framework.ElementList">
+            <summary>
+            Contains a list of Elements that belong to a parent element.
+            </summary>
+        </member>
+        <member name="M:C1.Framework.ElementList.Offset(System.Int32,System.Int32)">
+            <summary>
+            Adjusts the location of all <see cref="T:C1.Framework.Element"/> objects in the list by the specified amount. 
+            </summary>
+            <param name="x">Horizontal offset in pixels.</param>
+            <param name="y">Vertical offset in pixels.</param>
+        </member>
+        <member name="M:C1.Framework.ElementList.Offset(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Adjusts the location of some <see cref="T:C1.Framework.Element"/> objects in the list by the specified amount. 
+            </summary>
+            <param name="x">Horizontal offset in pixels.</param>
+            <param name="y">Vertical offset in pixels.</param>
+            <param name="first">Index of the first <see cref="T:C1.Framework.Element"/> to be offset.</param>
+            <param name="count">Number of elements to offset.</param>
+        </member>
+        <member name="M:C1.Framework.ElementList.OnListChanged">
+            <summary>
+            Called when elements are added or removed from the list.
+            </summary>
+        </member>
+        <member name="M:C1.Framework.ElementList.Add(System.Object)">
+            <summary>
+            Adds an <see cref="T:C1.Framework.Element"/> to the list.
+            </summary>
+            <param name="value"><see cref="T:C1.Framework.Element"/> to add to the list.</param>
+            <returns>The index of the new object in the list.</returns>
+        </member>
+        <member name="M:C1.Framework.ElementList.Insert(System.Int32,System.Object)">
+            <summary>
+            Inserts an <see cref="T:C1.Framework.Element"/> at a specified index.
+            </summary>
+            <param name="index">Index where the <see cref="T:C1.Framework.Element"/> will be inserted.</param>
+            <param name="value"><see cref="T:C1.Framework.Element"/> to add to the list.</param>
+        </member>
+        <member name="M:C1.Framework.ElementList.InsertRange(System.Int32,System.Collections.ICollection)">
+            <summary>
+            Inserts the elements of a collection into the list at the specified index. 
+            </summary>
+            <param name="index">Index where the elements will be inserted.</param>
+            <param name="c"><see cref="T:System.Collections.ICollection"/> whose elements will be inserted.</param>
+        </member>
+        <member name="M:C1.Framework.ElementList.RemoveAt(System.Int32)">
+            <summary>
+            Removes the <see cref="T:C1.Framework.Element"/> at the specified index from the list.
+            </summary>
+            <param name="index">The index of the <see cref="T:C1.Framework.Element"/> to remove.</param>
+        </member>
+        <member name="M:C1.Framework.ElementList.RemoveRange(System.Int32,System.Int32)">
+            <summary>
+            Removes a range of elements from the list.
+            </summary>
+            <param name="index">Index of the first element to remove from the list.</param>
+            <param name="count">Number of elements to remove.</param>
+        </member>
+        <member name="M:C1.Framework.ElementList.Reverse(System.Int32,System.Int32)">
+            <summary>
+            Reverses the order of the elements in the list or a portion of it. 
+            </summary>
+            <param name="index">Index where the reversal should start.</param>
+            <param name="count">Number of elements to reverse.</param>
+        </member>
+        <member name="M:C1.Framework.ElementList.Reverse">
+            <summary>
+            Reverses the order of the elements in the list or a portion of it. 
+            </summary>
+        </member>
+        <member name="M:C1.Framework.ElementList.Clear">
+            <summary>
+            Removes all elements from the list.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.ElementList.Owner">
+            <summary>
+            Gets a reference to the <see cref="T:C1.Framework.Element"/> that owns this <see cref="T:C1.Framework.ElementList"/>.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.ElementList.Item(System.Int32)">
+            <summary>
+            Gets or sets the <see cref="T:C1.Framework.Element"/> at a specified index in the list.
+            </summary>
+            <param name="index">Index of the element to get or set</param>.
+            <returns>The <see cref="T:C1.Framework.Element"/> at the specified index.</returns>
+        </member>
+        <member name="P:C1.Framework.ElementList.Last">
+            <summary>
+            Gets or sets the last <see cref="T:C1.Framework.Element"/> on the list.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.FlowPanel">
+            <summary>
+            <para>Panel that stacks children horizontally or vertically.</para>
+            </summary>
+        </member>
+        <member name="T:C1.Framework.GridCell">
+            <summary>
+            This class is an accessor for getting and setting elements at intersections
+            of grid rows and columns. The actual elements are stored in the rows.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.GridColumn">
+            <summary>
+            Keeps track of column widths and positions
+            </summary>
+        </member>
+        <member name="T:C1.Framework.ValueElement">
+            <summary>
+            <para>Element that displays a simple value (numbers, dates, etc).</para>
+            
+            <para>The element's <see cref="T:C1.Framework.Style"/> is responsible for formatting the value 
+            (with <see cref="T:System.IFormattable"/>).</para>
+            </summary>
+        </member>
+        <member name="T:C1.Framework.GridColumnCollection">
+            <summary>
+            GridColumn collection. Just an ElementList typed to get and set GridColumn objects.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.GridPanel">
+            <summary>
+            Inherits from BasePanel and provides a grid with rows and columns.
+            At each intersection there is a cell object that contains an element.
+            Cells may span rows and columns.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.GridRow">
+            <summary>
+            Keeps track of row heights and positions, stores cells in Children member.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.GridRowCollection">
+            <summary>
+            GridRow collection. Just an ElementList typed to get and set GridRow objects.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.CellSpanInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:C1.Framework.ImageElement">
+            <summary>
+            <para>Element that displays an <see cref="P:C1.Framework.ImageElement.Image"/>.</para>
+            
+            <para>Alignment and scaling are controlled by the element's <see cref="T:C1.Framework.Style"/>.</para>
+            </summary>
+        </member>
+        <member name="P:C1.Framework.ImageElement.LineDescent">
+            <summary>
+            No descent for images.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.ParagraphElement">
+            <summary>
+            <see cref="T:C1.Framework.BasePanel"/> that displays paragraphs.
+            </summary>
+            <remarks>
+            This class is a panel that wraps and aligns its child elements.
+            </remarks>
+        </member>
+        <member name="T:C1.Framework.StackPanel">
+            <summary>
+            <para>Panel that stacks children horizontally or vertically.</para>
+            </summary>
+        </member>
+        <member name="T:C1.Framework.RowPanel">
+            <summary>
+            <para>Panel that stacks children horizontally.</para>
+            </summary>
+        </member>
+        <member name="T:C1.Framework.ColumnPanel">
+            <summary>
+            <para>Panel that stacks children vertically.</para>
+            </summary>
+        </member>
+        <member name="T:C1.Framework.Corners">
+            <summary>
+            Represents corners associated with a user interface (UI) element.
+            </summary>
+        </member>
+        <member name="M:C1.Framework.Corners.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:C1.Framework.Corners"/> class 
+            using a separate radius for each corner. 
+            </summary>
+            <param name="leftTop">Radius of the left top corner, in pixels.</param>
+            <param name="rightTop">Radius of the right top corner, in pixels.</param>
+            <param name="leftBottom">Radius of the left bottom corner, in pixels.</param>
+            <param name="rightBottom">Radius of the right bottom corner, in pixels.</param>
+        </member>
+        <member name="M:C1.Framework.Corners.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:C1.Framework.Corners"/> class 
+            using the supplied radius for all corners.
+            </summary>
+            <param name="radius">Radius of all corners, in pixels.</param>
+        </member>
+        <member name="M:C1.Framework.Corners.GetHashCode">
+            <summary>
+            Generates a hash code for the current <see cref="T:C1.Framework.Corners"/>. 
+            </summary>
+            <returns>A 32-bit signed integer hash code.</returns>
+        </member>
+        <member name="M:C1.Framework.Corners.Equals(System.Object)">
+            <summary>
+            Determines whether the value of the specified object is equivalent 
+            to the current <see cref="T:C1.Framework.Corners"/>. 
+            </summary>
+            <param name="obj">The object to compare to the current <see cref="T:C1.Framework.Corners"/>.</param>
+            <returns>true if the two <see cref="T:C1.Framework.Corners"/> objects are equal; 
+            otherwise, false. </returns>
+        </member>
+        <member name="M:C1.Framework.Corners.op_Equality(C1.Framework.Corners,C1.Framework.Corners)">
+            <summary>
+            Tests whether two specified <see cref="T:C1.Framework.Corners"/> objects are equivalent. 
+            </summary>
+            <param name="c1">A <see cref="T:C1.Framework.Corners"/> to test.</param>
+            <param name="c2">A <see cref="T:C1.Framework.Corners"/> to test.</param>
+            <returns>true if the two <see cref="T:C1.Framework.Corners"/> objects are equal; 
+            otherwise, false. </returns>
+        </member>
+        <member name="M:C1.Framework.Corners.op_Inequality(C1.Framework.Corners,C1.Framework.Corners)">
+            <summary>
+            Tests whether two specified <see cref="T:C1.Framework.Corners"/> objects are not equivalent. 
+            </summary>
+            <param name="c1">A <see cref="T:C1.Framework.Corners"/> to test.</param>
+            <param name="c2">A <see cref="T:C1.Framework.Corners"/> to test.</param>
+            <returns>True if the two <see cref="T:C1.Framework.Corners"/> objects are different; 
+            otherwise, false. </returns>
+        </member>
+        <member name="P:C1.Framework.Corners.Empty">
+            <summary>
+            Provides a <see cref="T:C1.Framework.Corners"/> object with no thickness.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Corners.LeftTop">
+            <summary>
+            Gets or sets the radius for the left top corner. 
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Corners.RightTop">
+            <summary>
+            Gets or sets the radius for the right top corner. 
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Corners.LeftBottom">
+            <summary>
+            Gets or sets the radius for the left bottom corner. 
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Corners.RightBottom">
+            <summary>
+            Gets or sets the radius for the right bottom corner. 
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Corners.IsEmpty">
+            <summary>
+            Returns true if the <see cref="T:C1.Framework.Corners"/> object is empty. 
+            </summary>
+        </member>
+        <member name="T:C1.Framework.CornersConverter">
+            <summary>
+            Provides a type converter to convert <see cref="T:C1.Framework.Corners"/> values 
+            to and from various other representations. 
+            </summary>
+        </member>
+        <member name="M:C1.Framework.CornersConverter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:C1.Framework.CornersConverter"/> class.
+            </summary>
+        </member>
+        <member name="M:C1.Framework.CornersConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns whether this converter can convert an object of one type to the type of this converter.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="sourceType">A <see cref="T:System.Type"/> that represents the type from which to convert.</param>
+            <returns>True if the conversion can be performed; false otherwise.</returns>
+        </member>
+        <member name="M:C1.Framework.CornersConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns whether this converter can convert the object to the specified type, using the specified context. 
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="destinationType">A <see cref="T:System.Type"/> that represents the type to convert to.</param>
+            <returns>True if the conversion can be performed; false otherwise.</returns>
+        </member>
+        <member name="M:C1.Framework.CornersConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Converts the given value to the type of this converter. 
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="culture">The <see cref="T:System.Globalization.CultureInfo"/> to use as the current culture.</param>
+            <param name="value">The <see cref="T:System.Object"/> to convert.</param>
+            <returns>An <see cref="T:System.Object"/> that represents the converted value. </returns>
+        </member>
+        <member name="M:C1.Framework.CornersConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts the given value object to the specified type.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="culture">The <see cref="T:System.Globalization.CultureInfo"/> into which <paramref name="value"/> will be converted.</param>
+            <param name="value">The <see cref="T:System.Object"/> to convert.</param>
+            <param name="destinationType">The <see cref="T:System.Type"/> to convert the <paramref name="value"/> to.</param>
+            <returns>An <see cref="T:System.Object"/> that represents the converted value. </returns>
+        </member>
+        <member name="M:C1.Framework.CornersConverter.CreateInstance(System.ComponentModel.ITypeDescriptorContext,System.Collections.IDictionary)">
+            <summary>
+            Creates a <see cref="T:C1.Framework.Corners"/> object given a set of property values for the object. 
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="propertyValues">A contains a series of name-value pairs with the new property values.</param>
+            <returns>The newly created object, or null if the object could not be created.</returns>
+        </member>
+        <member name="M:C1.Framework.CornersConverter.GetCreateInstanceSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns whether changing a value on this object requires a call to 
+            the <see cref="M:C1.Framework.CornersConverter.CreateInstance(System.ComponentModel.ITypeDescriptorContext,System.Collections.IDictionary)"/> method to create a new value.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <returns>True if the <see cref="M:C1.Framework.CornersConverter.CreateInstance(System.ComponentModel.ITypeDescriptorContext,System.Collections.IDictionary)"/> method should be called when a change is made to one or more properties of this object.</returns>
+        </member>
+        <member name="M:C1.Framework.CornersConverter.GetProperties(System.ComponentModel.ITypeDescriptorContext,System.Object,System.Attribute[])">
+            <summary>
+            Returns a collection of properties for the type of array specified by the value parameter.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="value">An <see cref="T:System.Object"/> that specifies the type of array for which to get properties.</param>
+            <param name="attributes">An array of type <see cref="T:System.Attribute"/> that is used as a filter.</param>
+            <returns>A <see cref="T:System.ComponentModel.PropertyDescriptorCollection"/> with the properties that are exposed for this data type.</returns>
+        </member>
+        <member name="M:C1.Framework.CornersConverter.GetPropertiesSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns whether this object supports properties.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <returns>Always returns true.</returns>
+        </member>
+        <member name="T:C1.Framework.Alignment">
+            <summary>
+            Specifies the text alignment.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.Alignment.NotSet">
+            <summary>
+            Default value.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.Alignment.Near">
+            <summary>
+            Near.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.Alignment.Far">
+            <summary>
+            Far.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.Alignment.Center">
+            <summary>
+            Center.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.Alignment.Spread">
+            <summary>
+            Spread.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.ImageAlignment">
+            <summary>
+            Specifies the image alignment.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.ImageAlignment.LeftTop">
+            <summary>
+            Image is vertically aligned at the top, 
+            and horizontally aligned on the left. 
+            </summary>
+        </member>
+        <member name="F:C1.Framework.ImageAlignment.CenterTop">
+            <summary>
+            Image is vertically aligned at the top, 
+            and horizontally aligned at the center.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.ImageAlignment.RightTop">
+            <summary>
+            Image is vertically aligned at the top, 
+            and horizontally aligned on the right. 
+            </summary>
+        </member>
+        <member name="F:C1.Framework.ImageAlignment.LeftCenter">
+            <summary>
+            Image is vertically aligned in the middle, 
+            and horizontally aligned on the left. 
+            </summary>
+        </member>
+        <member name="F:C1.Framework.ImageAlignment.CenterCenter">
+            <summary>
+            Image is vertically aligned in the middle, 
+            and horizontally aligned at the center. 
+            </summary>
+        </member>
+        <member name="F:C1.Framework.ImageAlignment.RightCenter">
+            <summary>
+            Image is vertically aligned in the middle, 
+            and horizontally aligned on the right. 
+            </summary>
+        </member>
+        <member name="F:C1.Framework.ImageAlignment.LeftBottom">
+            <summary>
+            Image is vertically aligned at the bottom, 
+            and horizontally aligned on the left. 		
+            </summary>
+        </member>
+        <member name="F:C1.Framework.ImageAlignment.CenterBottom">
+            <summary>
+            Image is vertically aligned at the bottom, 
+            and horizontally aligned at the center.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.ImageAlignment.RightBottom">
+            <summary>
+            Image is vertically aligned at the bottom, 
+            and horizontally aligned on the right. 
+            </summary>
+        </member>
+        <member name="T:C1.Framework.ImageScaling">
+            <summary>
+            Specifies the image scaling.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.ImageScaling.Clip">
+            <summary>
+            Use the image's original size, clipping it to the display area if necessary.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.ImageScaling.Stretch">
+            <summary>
+            Stretch the image to fill the display area. 
+            This mode will usually change the image's aspect ratio.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.ImageScaling.Scale">
+            <summary>
+            Scale the image to fit the display area. 
+            This mode may increase or reduce the size of the image 
+            while maintaining its aspect ratio.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.ImageScaling.Tile">
+            <summary>
+            Tile the image to fill the display area.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.ImageScaling.TileStretch">
+            <summary>
+            Tile the image into the 3x3 matrix and stretch it to fill the display area.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.ImageScaling.TileStretchHorizontal">
+            <summary>
+            Tile the image into the row of 3 images and stretch it to fill the display area.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.ImageScaling.TileStretchVertical">
+            <summary>
+            Tile the image into the column of 3 images and stretch it to fill the display area.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.ImageScaling.Hide">
+            <summary>
+            Hide the image.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.GradientMode.None">
+            <summary>
+            No gradient.
+            </summary>
+        </member>
+        <member name="F:C1.Framework.GradientMode.Horizontal">
+            <summary>
+            Horizontal gradient (left to right).
+            </summary>
+        </member>
+        <member name="F:C1.Framework.GradientMode.Vertical">
+            <summary>
+            Vertical gradient (top to bottom).
+            </summary>
+        </member>
+        <member name="F:C1.Framework.GradientMode.DiagonalDown">
+            <summary>
+            Diagonal gradient (left-top to right-bottom).
+            </summary>
+        </member>
+        <member name="F:C1.Framework.GradientMode.DiagonalUp">
+            <summary>
+            Diagonal gradient (left-bottom to right-top).
+            </summary>
+        </member>
+        <member name="T:C1.Framework.Style">
+            <summary>
+            <para>The <see cref="T:C1.Framework.Style"/> class contains display attributes that 
+            determine the appearance of content on the screen/printer. 
+            It includes most elements found in Css styles.</para>
+            <para>The <see cref="T:C1.Framework.Style"/> class also contains methods for rendering 
+            and measuring content (strings and images) based on the style settings 
+            (fonts, margings, etc).</para>
+            <para>The <see cref="T:C1.Framework.Style"/> objects are not hierarchical in the sense 
+            that they don't have parent styles and don't inherit attributes 
+            from the parent style. To create a new style based on an existing one, 
+            you would clone the original style, then apply whatever attributes 
+            you want to the new style.</para>
+            <para>The <see cref="T:C1.Framework.Style"/> objects are hierarchical in the sense that 
+            two style attributes (<see cref="P:C1.Framework.Style.Font"/> and <see cref="P:C1.Framework.Style.ForeBrush"/>) don't 
+            need to be set. If these attributes are not set, they are inherited, 
+            but not from a parent <see cref="T:C1.Framework.Style"/> object. Rather, these attributes 
+            are inherited from the parent UI object.</para>
+            <para>This type of inheritance make it easy to define a font on 
+            a <see cref="T:C1.Framework.Style"/> associated with a parent UI object and have that 
+            font be automatically applied to all UI objects contained in the parent. 
+            By contrast, a <see cref="P:C1.Framework.Style.BackBrush"/> attribute is not explicitly inherited. 
+            Instead, the parent UI object paints its client area with a brush, 
+            and child UI objects have a transparent background by default,
+            so the parent background shows through by default. Other attrivutes such
+            as alignment, margins, padding, etc are also not inherited.</para>
+            </summary>
+        </member>
+        <member name="M:C1.Framework.Style.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:C1.Framework.Style"/> class with the specified name.
+            </summary>
+            <param name="name">The name of the new <see cref="T:C1.Framework.Style"/> object.</param>
+        </member>
+        <member name="M:C1.Framework.Style.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:C1.Framework.Style"/> class.
+            </summary>
+        </member>
+        <member name="M:C1.Framework.Style.Inflate(System.Drawing.Rectangle)">
+            <summary>
+            Inflates the specified <see cref="T:System.Drawing.Rectangle"/> by the values of
+            the current <see cref="T:C1.Framework.Style"/> margins, paddig and border.
+            </summary>
+            <param name="r">A <see cref="T:System.Drawing.Rectangle"/> to inflate.</param>
+            <returns>The resulting <see cref="T:System.Drawing.Rectangle"/>.</returns>
+        </member>
+        <member name="M:C1.Framework.Style.Deflate(System.Drawing.Rectangle)">
+            <summary>
+            Deflates the specified <see cref="T:System.Drawing.Rectangle"/> by the values of
+            the current <see cref="T:C1.Framework.Style"/> margins, paddig and border.
+            </summary>
+            <param name="r">A <see cref="T:System.Drawing.Rectangle"/> to deflate.</param>
+            <returns>The resulting <see cref="T:System.Drawing.Rectangle"/>.</returns>
+        </member>
+        <member name="M:C1.Framework.Style.Clone">
+            <summary>
+            Creates an instance of the <see cref="T:C1.Framework.Style"/> class that is identical 
+            to the current <see cref="T:C1.Framework.Style"/> (except for the <see cref="P:C1.Framework.Style.Locked"/> property,
+            which is always false for clones).
+            </summary>
+            <returns>The copy of the current <see cref="T:C1.Framework.Style"/>.</returns>
+        </member>
+        <member name="M:C1.Framework.Style.TileStretchImage(System.Drawing.Graphics,System.Drawing.Image,System.Drawing.Rectangle,C1.Framework.ImageScaling)">
+            <summary>
+            Draws the specified image onto specified <see cref="T:System.Drawing.Graphics"/> 
+            within the specified <see cref="T:System.Drawing.Rectangle"/> with the specified scale options.
+            </summary>
+            <param name="g"></param>
+            <param name="img"></param>
+            <param name="r"></param>
+            <param name="scale"></param>
+        </member>
+        <member name="E:C1.Framework.Style.StyleChanged">
+            <summary>
+            Fires when any elements of the <see cref="T:C1.Framework.Style"/> change.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.Name">
+            <summary>
+            Gets or sets the style name.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.Locked">
+            <summary>
+            Gets or sets whether the style is locked and cannot be modified.
+            </summary>
+            <remarks>
+            This property is useful when you want to prevent code from accidentally 
+            modifying 'stock' styles.
+            </remarks>
+        </member>
+        <member name="P:C1.Framework.Style.Font">
+            <summary>
+            Gets or sets the font used to paint text within the element.
+            </summary>
+            <remarks>
+            If this property is set to null, the text will be painted using the font
+            specified by the parent element's font.
+            </remarks>
+        </member>
+        <member name="P:C1.Framework.Style.BackBrush">
+            <summary>
+            Gets or sets the brush used to render the element background.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.BackImage">
+            <summary>
+            Gets or sets the background image for the element.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.BackImageAlignment">
+            <summary>
+            Gets or sets the alignment used to render the background image.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.BackImageScaling">
+            <summary>
+            Gets or sets the scaling used to render the background image.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.ForeBrush">
+            <summary>
+            Gets or sets the brush used to paint the text within the element.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.BorderBrush">
+            <summary>
+            Gets or sets the brush used to paint the borders around the element.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.Padding">
+            <summary>
+            Gets or sets the thickness of the padding between the element edges and its content.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.Border">
+            <summary>
+            Gets or sets the thickness of the border around the element.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.Corners">
+            <summary>
+            Gets or sets the radii of the element corners.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.Margins">
+            <summary>
+            Gets or sets the thickness of the margins around the element.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.Clip">
+            <summary>
+            Gets or sets whether long text should be clipped to the element area.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.HorizontalAlignment">
+            <summary>
+            Gets or sets how elements should be aligned in the horizontal direction.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.VerticalAlignment">
+            <summary>
+            Gets or sets how elements should be aligned in the vertical direction.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.ImageAlignment">
+            <summary>
+            Gets or sets how images should be aligned within the element.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.ImageScaling">
+            <summary>
+            Gets or sets how images should be scaled within the element.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.WordWrap">
+            <summary>
+            Gets or sets whether text should be allowed to wrap within the element.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.Trimming">
+            <summary>
+            Gets or sets how to trim characters that do not fit in the space available.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.Format">
+            <summary>
+            Gets or sets the format string used to convert the element value into a string.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.Indent">
+            <summary>
+            Gets or sets the indentation for the first text element.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.ChildSpacing">
+            <summary>
+            Gets or sets the amount of space between child elements.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.Width">
+            <summary>
+            Gets or sets the style width (set to -1 to use the default width).
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.Height">
+            <summary>
+            Gets or sets the style height (set to -1 to use the default height).
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.Cursor">
+            <summary>
+            Gets or sets the cursor that should be dispayed when the mouse is over an element with this style.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.HotkeyPrefix">
+            <summary>
+            Gets or sets the <see cref="P:C1.Framework.Style.HotkeyPrefix"/> value determining how to display hot keys. 
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.Hot">
+            <summary>
+            Gets or sets the style to be used when the element is hot.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.Pressed">
+            <summary>
+            Gets or sets the style to be used when the element is pressed.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.HotPressed">
+            <summary>
+            Gets or sets the style to be used when the element is hot and pressed.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.Disabled">
+            <summary>
+            Gets or sets the style to be used when the element is disabled.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.Shadow">
+            <summary>
+            Gets or sets whether the style includes a shadow.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.DefaultStyle">
+            <summary>
+            Gets a reference to the default style.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.ForeColor">
+            <summary>
+            Gets or sets a text <see cref="T:System.Drawing.Color"/>.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.BackColor">
+            <summary>
+            Gets or sets the background <see cref="T:System.Drawing.Color"/>.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.GradientMode">
+            <summary>
+            Gets or sets the <see cref="P:C1.Framework.Style.GradientMode"/> used to paint the element's background.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.BackColor2">
+            <summary>
+            Gets or sets the secondary color used to build the background gradient.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.GammaCorrection">
+            <summary>
+            Gets or sets whether to apply gamma correction to the background gradient.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.BorderColor">
+            <summary>
+            Gets or sets the border <see cref="T:System.Drawing.Color"/>.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.Style.BackgroundBrushProvider">
+            <summary>
+            Class that encapsulates <see cref="P:C1.Framework.Style.BackgroundBrushProvider.Brush"/> objects used to paint element backgrounds.
+            It exposes properties that can be used to create and serialize <see cref="T:System.Drawing.SolidBrush"/> and 
+            <see cref="T:System.Drawing.Drawing2D.LinearGradientBrush"/> objects.
+            </summary>
+        </member>
+        <member name="M:C1.Framework.Style.BackgroundBrushProvider.GetBrush(System.Drawing.Rectangle)">
+            <summary>
+            Gets an updated <see cref="P:C1.Framework.Style.BackgroundBrushProvider.Brush"/> that can be used to paint an element's background.
+            </summary>
+            <param name="rc">Rectangle used to build <see cref="T:System.Drawing.Drawing2D.LinearGradientBrush"/> if <see cref="P:C1.Framework.Style.BackgroundBrushProvider.GradientMode"/>
+            is set to a value other than <b>None</b>.</param>
+            <returns>A <see cref="P:C1.Framework.Style.BackgroundBrushProvider.Brush"/> that can be used to paint an element's background.</returns>
+        </member>
+        <member name="M:C1.Framework.Style.BackgroundBrushProvider.Clone">
+            <summary>
+            Gets a clone of this <see cref="T:C1.Framework.Style.BackgroundBrushProvider"/>.
+            </summary>
+            <returns>A clone of this <see cref="T:C1.Framework.Style.BackgroundBrushProvider"/>.</returns>
+        </member>
+        <member name="P:C1.Framework.Style.BackgroundBrushProvider.GradientMode">
+            <summary>
+            Gets or sets the <see cref="P:C1.Framework.Style.BackgroundBrushProvider.GradientMode"/> for this <see cref="T:C1.Framework.Style.BackgroundBrushProvider"/>.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.BackgroundBrushProvider.GammaCorrection">
+            <summary>
+            Gets or sets whether the encapsulated <see cref="T:System.Drawing.Drawing2D.LinearGradientBrush"/> has gamma correction.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.BackgroundBrushProvider.BackColor">
+            <summary>
+            Gets or sets the main brush color (used when <see cref="P:C1.Framework.Style.BackgroundBrushProvider.GradientMode"/> is set to <b>None</b>).
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.BackgroundBrushProvider.GradientColor">
+            <summary>
+            Gets or sets the secondary brush color (used when <see cref="P:C1.Framework.Style.BackgroundBrushProvider.GradientMode"/> is set to a value other than <b>None</b>).
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Style.BackgroundBrushProvider.Brush">
+            <summary>
+            Gets or sets a <see cref="P:C1.Framework.Style.BackgroundBrushProvider.Brush"/> object that may be something other than a <see cref="T:System.Drawing.SolidBrush"/> or 
+            <see cref="T:System.Drawing.Drawing2D.LinearGradientBrush"/>.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.Thickness">
+            <summary>
+            Represents padding, border or margin information associated with a 
+            user interface (UI) element.
+            </summary>
+        </member>
+        <member name="M:C1.Framework.Thickness.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:C1.Framework.Thickness"/> class 
+            using a separate thickness size for each edge. 
+            </summary>
+            <param name="left">Thickness of the left edge, in pixels.</param>
+            <param name="top">Thickness of the top edge, in pixels.</param>
+            <param name="right">Thickness of the right edge, in pixels.</param>
+            <param name="bottom">Thickness of the bottom edge, in pixels.</param>
+        </member>
+        <member name="M:C1.Framework.Thickness.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:C1.Framework.Thickness"/> class 
+            using a separate thickness size for vertical and horizontal edges.
+            </summary>
+            <param name="leftRight">Thickness of the left and right edges, in pixels.</param>
+            <param name="topBottom">Thickness of the top and bottom edges, in pixels.</param>
+        </member>
+        <member name="M:C1.Framework.Thickness.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:C1.Framework.Thickness"/> class 
+            using the supplied thickness size for all edges.
+            </summary>
+            <param name="width">Thickness of all edges, in pixels.</param>
+        </member>
+        <member name="M:C1.Framework.Thickness.Inflate(System.Int32,System.Int32)">
+            <summary>
+            Inflates the current <see cref="T:C1.Framework.Thickness"/> by the specified values.
+            </summary>
+            <param name="width">The inflate size for vertical edges.</param>
+            <param name="height">The inflate size for horizontal edges.</param>
+            <returns>The new <see cref="T:C1.Framework.Thickness"/>.</returns>
+        </member>
+        <member name="M:C1.Framework.Thickness.Inflate(System.Int32)">
+            <summary>
+            Inflates the current <see cref="T:C1.Framework.Thickness"/> by the specified size.
+            </summary>
+            <param name="size">The size.</param>
+            <returns>The new <see cref="T:C1.Framework.Thickness"/>.</returns>
+        </member>
+        <member name="M:C1.Framework.Thickness.Inflate(System.Drawing.Rectangle)">
+            <summary>
+            Inflates the specified <see cref="T:System.Drawing.Rectangle"/> by the current <see cref="T:C1.Framework.Thickness"/>.
+            </summary>
+            <param name="r">A <see cref="T:System.Drawing.Rectangle"/> to deflate.</param>
+            <returns>The inflated <see cref="T:System.Drawing.Rectangle"/>.</returns>
+        </member>
+        <member name="M:C1.Framework.Thickness.Deflate(System.Drawing.Rectangle)">
+            <summary>
+            Deflates the specified <see cref="T:System.Drawing.Rectangle"/> by the current <see cref="T:C1.Framework.Thickness"/>.
+            </summary>
+            <param name="r">A <see cref="T:System.Drawing.Rectangle"/> to deflate.</param>
+            <returns>The deflated <see cref="T:System.Drawing.Rectangle"/>.</returns>
+        </member>
+        <member name="M:C1.Framework.Thickness.GetHashCode">
+            <summary>
+            Generates a hash code for the current <see cref="T:C1.Framework.Thickness"/>. 
+            </summary>
+            <returns>A 32-bit signed integer hash code.</returns>
+        </member>
+        <member name="M:C1.Framework.Thickness.Equals(System.Object)">
+            <summary>
+            Determines whether the value of the specified object is equivalent 
+            to the current <see cref="T:C1.Framework.Thickness"/>. 
+            </summary>
+            <param name="obj">The object to compare to the current <see cref="T:C1.Framework.Thickness"/>.</param>
+            <returns>true if the two <see cref="T:C1.Framework.Thickness"/> objects are equal; 
+            otherwise, false. </returns>
+        </member>
+        <member name="M:C1.Framework.Thickness.op_Equality(C1.Framework.Thickness,C1.Framework.Thickness)">
+            <summary>
+            Tests whether two specified <see cref="T:C1.Framework.Thickness"/> objects are equivalent. 
+            </summary>
+            <param name="t1">A <see cref="T:C1.Framework.Thickness"/> to test.</param>
+            <param name="t2">A <see cref="T:C1.Framework.Thickness"/> to test.</param>
+            <returns>true if the two <see cref="T:C1.Framework.Thickness"/> objects are equal; 
+            otherwise, false. </returns>
+        </member>
+        <member name="M:C1.Framework.Thickness.op_Inequality(C1.Framework.Thickness,C1.Framework.Thickness)">
+            <summary>
+            Tests whether two specified <see cref="T:C1.Framework.Thickness"/> objects are not equivalent. 
+            </summary>
+            <param name="t1">A <see cref="T:C1.Framework.Thickness"/> to test.</param>
+            <param name="t2">A <see cref="T:C1.Framework.Thickness"/> to test.</param>
+            <returns>True if the two <see cref="T:C1.Framework.Thickness"/> objects are different; 
+            otherwise, false. </returns>
+        </member>
+        <member name="P:C1.Framework.Thickness.Empty">
+            <summary>
+            Provides a <see cref="T:C1.Framework.Thickness"/> object with no thickness.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Thickness.Left">
+            <summary>
+            Gets or sets the thickness value for the left edge. 
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Thickness.Top">
+            <summary>
+            Gets or sets the thickness value for the top edge. 
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Thickness.Right">
+            <summary>
+            Gets or sets the thickness value for the right edge. 
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Thickness.Bottom">
+            <summary>
+            Gets or sets the thickness value for the bottom edge. 
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Thickness.IsEmpty">
+            <summary>
+            Returns true if the <see cref="T:C1.Framework.Thickness"/> object is empty. 
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Thickness.Height">
+            <summary>
+            Gets the combined thickness for the top and bottom edges. 
+            </summary>
+        </member>
+        <member name="P:C1.Framework.Thickness.Width">
+            <summary>
+            Gets the combined thickness for the right and left edges. 
+            </summary>
+        </member>
+        <member name="T:C1.Framework.ThicknessConverter">
+            <summary>
+            Provides a type converter to convert <see cref="T:C1.Framework.Thickness"/> values 
+            to and from various other representations. 
+            </summary>
+        </member>
+        <member name="M:C1.Framework.ThicknessConverter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:C1.Framework.ThicknessConverter"/> class.
+            </summary>
+        </member>
+        <member name="M:C1.Framework.ThicknessConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns whether this converter can convert an object of one type to the type of this converter.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="sourceType">A <see cref="T:System.Type"/> that represents the type from which to convert.</param>
+            <returns>True if the conversion can be performed; false otherwise.</returns>
+        </member>
+        <member name="M:C1.Framework.ThicknessConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns whether this converter can convert the object to the specified type, using the specified context. 
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="destinationType">A <see cref="T:System.Type"/> that represents the type to convert to.</param>
+            <returns>True if the conversion can be performed; false otherwise.</returns>
+        </member>
+        <member name="M:C1.Framework.ThicknessConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Converts the given value to the type of this converter. 
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="culture">The <see cref="T:System.Globalization.CultureInfo"/> to use as the current culture.</param>
+            <param name="value">The <see cref="T:System.Object"/> to convert.</param>
+            <returns>An <see cref="T:System.Object"/> that represents the converted value. </returns>
+        </member>
+        <member name="M:C1.Framework.ThicknessConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts the given value object to the specified type.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="culture">The <see cref="T:System.Globalization.CultureInfo"/> into which <paramref name="value"/> will be converted.</param>
+            <param name="value">The <see cref="T:System.Object"/> to convert.</param>
+            <param name="destinationType">The <see cref="T:System.Type"/> to convert the <paramref name="value"/> to.</param>
+            <returns>An <see cref="T:System.Object"/> that represents the converted value. </returns>
+        </member>
+        <member name="M:C1.Framework.ThicknessConverter.CreateInstance(System.ComponentModel.ITypeDescriptorContext,System.Collections.IDictionary)">
+            <summary>
+            Creates a <see cref="T:C1.Framework.Thickness"/> object given a set of property values for the object. 
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="propertyValues">A contains a series of name-value pairs with the new property values.</param>
+            <returns>The newly created object, or null if the object could not be created.</returns>
+        </member>
+        <member name="M:C1.Framework.ThicknessConverter.GetCreateInstanceSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns whether changing a value on this object requires a call to 
+            the <see cref="M:C1.Framework.ThicknessConverter.CreateInstance(System.ComponentModel.ITypeDescriptorContext,System.Collections.IDictionary)"/> method to create a new value.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <returns>True if the <see cref="M:C1.Framework.ThicknessConverter.CreateInstance(System.ComponentModel.ITypeDescriptorContext,System.Collections.IDictionary)"/> method should be called when a change is made to one or more properties of this object.</returns>
+        </member>
+        <member name="M:C1.Framework.ThicknessConverter.GetProperties(System.ComponentModel.ITypeDescriptorContext,System.Object,System.Attribute[])">
+            <summary>
+            Returns a collection of properties for the type of array specified by the value parameter.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="value">An <see cref="T:System.Object"/> that specifies the type of array for which to get properties.</param>
+            <param name="attributes">An array of type <see cref="T:System.Attribute"/> that is used as a filter.</param>
+            <returns>A <see cref="T:System.ComponentModel.PropertyDescriptorCollection"/> with the properties that are exposed for this data type.</returns>
+        </member>
+        <member name="M:C1.Framework.ThicknessConverter.GetPropertiesSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns whether this object supports properties.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <returns>Always returns true.</returns>
+        </member>
+        <member name="T:C1.Framework.TextElement">
+            <summary>
+            <para>Element that displays a string.</para>
+            
+            <para>Alignment and formatting are controlled by the element's <see cref="T:C1.Framework.Style"/>.</para>
+            </summary>
+        </member>
+        <member name="M:C1.Framework.TextElement.#ctor(C1.Framework.Style,System.String)">
+            <summary>
+            Initalizes a new instance of a <see cref="T:C1.Framework.TextElement"/> with a given style and contents.
+            </summary>
+            <param name="style"><see cref="T:C1.Framework.Style"/> used to measure and render the <see cref="T:C1.Framework.TextElement"/>,</param>
+            <param name="text">String displayed in the <see cref="T:C1.Framework.TextElement"/>,</param>
+        </member>
+        <member name="M:C1.Framework.TextElement.#ctor(C1.Framework.Style)">
+            <summary>
+            Initalizes a new instance of a <see cref="T:C1.Framework.TextElement"/> with a given style.
+            </summary>
+            <param name="style"><see cref="T:C1.Framework.Style"/> used to measure and render the <see cref="T:C1.Framework.TextElement"/>,</param>
+        </member>
+        <member name="M:C1.Framework.TextElement.#ctor(System.String)">
+            <summary>
+            Initalizes a new instance of a <see cref="T:C1.Framework.TextElement"/> with a given text.
+            </summary>
+            <param name="text">String displayed in the <see cref="T:C1.Framework.TextElement"/>,</param>
+        </member>
+        <member name="M:C1.Framework.TextElement.#ctor">
+            <summary>
+            Initalizes a new instance of an empty <see cref="T:C1.Framework.TextElement"/>.
+            </summary>
+        </member>
+        <member name="M:C1.Framework.TextElement.GetValue">
+            <summary>
+            Gets the string represented by this <see cref="T:C1.Framework.TextElement"/>.
+            </summary>
+            <returns>The string represented by this <see cref="T:C1.Framework.TextElement"/>.</returns>
+        </member>
+        <member name="P:C1.Framework.TextElement.Text">
+            <summary>
+            Gets or sets the string displayed by this <see cref="T:C1.Framework.TextElement"/>.
+            </summary>
+        </member>
+        <member name="P:C1.Framework.TextElement.ForceLineBreak">
+            <summary>
+            Gets a <see cref="T:C1.Framework.Element.LineBreak"/> value that determines whether there should be
+            line breaks before and/or after this <see cref="T:C1.Framework.TextElement"/> when it occurs in a paragraph.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.ResourceLoader">
+            <summary>
+            Class with static methods used for enumerating and retrieving application
+            resources.
+            </summary>
+        </member>
+        <member name="M:C1.Framework.ResourceLoader.GetImages">
+            <summary>
+            Returns all images from the executing assembly. 
+            </summary>
+            <returns>A collection of name/image pairs.</returns>
+        </member>
+        <member name="M:C1.Framework.ResourceLoader.GetImages(System.Reflection.Assembly)">
+            <summary>
+            Returns all images from the specified assembly. 
+            </summary>
+            <param name="a">An <see cref="T:System.Reflection.Assembly"/> to load images from.</param>
+            <returns>A collection of name/image pairs.</returns>
+        </member>
+        <member name="M:C1.Framework.ResourceLoader.GetImage(System.String)">
+            <summary>
+            Loads an image from the executing assembly. 
+            </summary>
+            <param name="name">The case-insensitive name of the requested image.</param>
+            <returns>The <see cref="T:System.Drawing.Image"/> if it is found; null otherwise.</returns>
+        </member>
+        <member name="M:C1.Framework.ResourceLoader.GetImage(System.Reflection.Assembly,System.String)">
+            <summary>
+            Loads an image from the specified assembly. 
+            </summary>
+            <param name="a">An <see cref="T:System.Reflection.Assembly"/> to load image from.</param>
+            <param name="name">The case-insensitive name of the requested image.</param>
+            <returns>The <see cref="T:System.Drawing.Image"/> if it is found; null otherwise.</returns>
+        </member>
+        <member name="M:C1.Framework.ResourceLoader.GetStream(System.String)">
+            <summary>
+            Loads the specified manifest resource from the executing assembly. 
+            </summary>
+            <param name="name">The case-insensitive name of the manifest resource being requested.</param>
+            <returns>A <see cref="T:System.IO.Stream"/> representing this manifest resource.</returns>
+        </member>
+        <member name="M:C1.Framework.ResourceLoader.GetStream(System.Reflection.Assembly,System.String)">
+            <summary>
+            Loads the specified manifest resource from the specified assembly. 
+            </summary>
+            <param name="a">An <see cref="T:System.Reflection.Assembly"/> to load resource from.</param>
+            <param name="name">The case-insensitive name of the manifest resource being requested.</param>
+            <returns>A <see cref="T:System.IO.Stream"/> representing this manifest resource.</returns>
+        </member>
+        <member name="M:C1.Framework.ResourceLoader.DecodeImage(System.String)">
+            <summary>
+            Decodes an image from a base-64-encoded string.
+            </summary>
+            <param name="data">String that contains the encoded image data.</param>
+            <returns><see cref="T:System.Drawing.Image"/> encoded in the string.</returns>
+        </member>
+        <member name="M:C1.Framework.Html.Css.ParseAttribute(System.Collections.Hashtable,System.String,System.String)">
+            <summary>
+            Adds a StyleAttribute to a table based on a name and value.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.Html.HtmlDiv">
+            <summary>
+            Class that represents Hhtml DIV tags.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.Html.HtmlElement">
+            <summary>
+            Class that represents a generic Html <see cref="T:C1.Framework.Element"/>.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.Html.HtmlFont">
+            <summary>
+            Class that represents HTML 'FONT' tags.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.Html.HtmlSpan">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:C1.Framework.Html.HtmlHr">
+            <summary>
+            Extends Element to provide a horizontal rule across the document.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.Html.HtmlHyperlink">
+            <summary>
+            Class that represents HTML 'A' tags.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.Html.HyperlinkElement">
+            <summary>
+            Invisible elements inserted in the HTML stream to delimit hyperlinks.
+            To use this, the viewer should handle the MouseDown event, use HitTest to 
+            find the element clicked, then scan the Children collection to determine
+            whether the click was on a link and what the link parameters are.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.Html.HtmlImage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:C1.Framework.Html.HtmlList">
+            <summary>
+            REVIEW: Replace with 2-column table?
+            The current setup works but makes the document dirty when it renders...
+            </summary>
+        </member>
+        <member name="T:C1.Framework.Html.HtmlListItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:C1.Framework.Html.HtmlLoader">
+            <summary>
+            Utility class with static methods used for loading (and caching)
+            text and images from the web, from disk, or from app resources.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.Html.HtmlParagraph">
+            <summary>
+            Class that represents an HTML paragraph.
+            </summary>
+        </member>
+        <member name="T:C1.Framework.Html.HtmlParser">
+            <summary>
+            Class used to parse that HTML into tags and text.
+            </summary>
+            <remarks>
+            The main method in this class is <see cref="M:C1.Framework.Html.HtmlParser.Read"/>, which advances a pointer and 
+            sets the <see cref="P:C1.Framework.Html.HtmlParser.Tag"/> and <see cref="P:C1.Framework.Html.HtmlParser.Text"/> properties.
+            </remarks>
+        </member>
+        <member name="T:C1.Framework.Html.HtmlReader">
+            <summary>
+            <para>Class used to parse that HTML into tags and text.</para>
+            
+            <para>The main method is <see cref="M:C1.Framework.Html.HtmlReader.Read"/>, which advances a pointer and 
+            sets the <see cref="P:C1.Framework.Html.HtmlReader.Tag"/> and <see cref="P:C1.Framework.Html.HtmlReader.Text"/> properties.</para>
+            </summary>
+        </member>
+        <member name="T:C1.Framework.Html.HtmlTable">
+            <summary>
+            <para>HtmlTable derives from HtmlDiv and contains a single GridPanel, exposed by
+            the <see cref="P:C1.Framework.Html.HtmlTable.Table"/> property.</para>
+            
+            <para>HtmlTable does not derive directly from GridPanel for two reasons:</para>
+            
+            <para>1) To allow horizontal alignment of the table within the paragraph, and</para>
+            <para>2) Because this is simpler than using an interface and different parent classes.</para>
+            
+            </summary>
+        </member>
+        <member name="T:C1.Framework.Html.HtmlCell">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:C1.Win.AboutForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:C1.Win.LicensingForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:C1.Util.Localization.C1DescriptionAttribute">
+            <summary>
+            ------------------------------------------------------------------------
+            C1DescriptionAttribute replaces the DescriptionAttribute
+            and uses the C1Localizer class to return the localized Attribute string
+            </summary>
+        </member>
+        <member name="T:C1.Util.Localization.C1CategoryAttribute">
+            <summary>
+            ------------------------------------------------------------------------
+            C1CategoryAttribute replaces the CategoryAttribute
+            and uses the C1Localizer class to return the localized Attribute string
+            </summary>
+        </member>
+        <member name="T:C1.Util.Localization.C1Localizer">
+            <summary>
+            ------------------------------------------------------------------------
+            C1Localizer contains static methods to load and look up resources
+            </summary>
+        </member>
+        <member name="T:C1.Win.C1SuperTooltip.C1SuperLabel">
+            <summary>
+            Represents a label that shows static information on a form.
+            </summary>
+            <remarks>
+            
+            <para>The <b>C1SuperLabel</b> control is virtually identical to the 
+            <see cref="T:System.Windows.Forms.Label"/> control, with one significant difference: 
+            <b>C1SuperLabel</b> displays HTML text instead of plain text. This way, your labels can 
+            have multiple fonts, colors, tables, lists, and images.</para>
+            
+            <para><b>C1SuperLabel</b> does not use IE to render the HTML content. Instead, it has its own 
+            light-weight HTML parser and renderer. This means the output you get will not be always 
+            be 100% compatible with IE (or FireFox), but in most cases it should be close.
+            <b>C1SuperLabel</b> supports cascading style sheets, tables, and most other HTML features.
+            For more details, see the <see cref="P:C1.Win.C1SuperTooltip.C1SuperLabel.Text"/> property.</para>
+            
+            </remarks>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperLabel.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1SuperTooltip.C1SuperLabel"/> control.
+            </summary>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperLabel.OnLinkClicked(C1.Win.C1SuperTooltip.C1SuperLabelLinkClickedEventArgs)">
+            <summary>
+            Raises the <see cref="E:C1.Win.C1SuperTooltip.C1SuperLabel.LinkClicked"/> event.
+            </summary>
+            <param name="e"><see cref="T:C1.Win.C1SuperTooltip.C1SuperLabelLinkClickedEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperLabel.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.Paint"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperLabel.ProcessMnemonic(System.Char)">
+            <summary>
+            Processes a mnemonic character.
+            </summary>
+            <param name="charCode">The character to process. </param>
+            <returns>True if the character was processed as a mnemonic by the control; otherwise, false.</returns>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperLabel.OnTextChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.TextChanged"/> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperLabel.OnBackColorChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.BackColorChanged"/> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperLabel.OnForeColorChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.ForeColorChanged"/> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperLabel.OnFontChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.FontChanged"/> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperLabel.OnSizeChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.SizeChanged"/> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperLabel.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseDown"/> event.
+            </summary>
+            <param name="e"><see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperLabel.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseMove"/> event.
+            </summary>
+            <param name="e"><see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperLabel.OnCursorChanged(System.EventArgs)">
+            <summary>
+            Occurs when the value of the <see cref="T:System.Windows.Forms.Cursor"/> property changes. 
+            </summary>
+            <param name="e"><see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="E:C1.Win.C1SuperTooltip.C1SuperLabel.LinkClicked">
+            <summary>
+            Event that fires when the user clicks a hyperlink within a <see cref="T:C1.Win.C1SuperTooltip.C1SuperLabel"/> control.
+            </summary>
+            <remarks>
+            Hyperlinks are created using "A" tags in the HTML source text. When hyperlinks are clicked,
+            the <b>LinkClicked</b> event fires and provides information about the link. The event handler
+            can then take appropriate action.
+            </remarks>
+            <example>
+            The example below creates some hyperlinks using "A" tags. When the user clicks the link, the
+            event handler shows a message box.
+            <code>
+            // configure c1superLabel
+            c1superLabel.AutoSize = true;
+            c1superLabel.Text =
+                "click &lt;a href='about'&gt;&lt;b&gt;HERE&lt;/b&gt;&lt;/a&gt; to see an about box.&lt;br&gt;" +
+                "or click &lt;a href='time'&gt;&lt;b&gt;HERE&lt;/b&gt;&lt;/a&gt; to see the current time.";
+            
+            // attach event handler
+            c1superLabel.LinkClicked += new C1SuperLabelLinkClickedEventHandler(c1superLabel_LinkClicked);
+            // ...
+            
+            void c1superLabel_LinkClicked(object sender, C1SuperLabelLinkClickedEventArgs e)
+            {
+              if (e.HRef == "about")
+              {
+                MessageBox.Show("About C1SuperLabel!");
+              }
+              else if (e.HRef == "time")
+              {
+                MessageBox.Show("The time is " + DateTime.Now.ToShortTimeString());
+              }
+            }
+            </code>
+            </example>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperLabel.BorderStyle">
+            <summary>
+            Gets or sets the type of border around the control.
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperLabel.Text">
+            <summary>
+            Gets or sets the HTML text that is displayed in the control.
+            </summary>
+            <remarks>
+            
+            <para><see cref="T:C1.Win.C1SuperTooltip.C1SuperLabel"/> can display HTML text, including cascading style sheets,
+            lists, tables, and images. To include images in your labels, use an &lt;img&gt; tag as
+            usual, and set the 'src' attribute to a string with the following format:</para>
+            
+            <code>'res://[resourcename]'</code>
+            
+            <para>where <code>[resourcename]</code> is is the name of an embedded resource that 
+            contains the image. The example below illustrates this.</para>
+            
+            </remarks>
+            <example>
+            <para>The code below uses a <see cref="T:C1.Win.C1SuperTooltip.C1SuperLabel"/> to display a table with some images
+            in it. The images are retrieved from the current application's resources.</para>
+            <code>
+            _c1SuperLabel.Text =
+              "&lt;table&gt;" +
+              "&lt;tr&gt;" +
+              "&lt;td&gt;&lt;img src='res://newToolStripButton.Image'&gt;" +
+              "&lt;td&gt;This  is the second cell in the top row" +
+              "&lt;tr&gt;" +
+              "&lt;td&gt;&lt;img src='res://openToolStripButton.Image'&gt;" +
+              "&lt;td&gt;This  is the second cell in the bottom row." +
+              "&lt;/table&gt;";
+            </code>
+            </example>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperLabel.Images">
+            <summary>
+            Gets a collection of images that may be shown in the label.
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperLabel.AutoSize">
+            <summary>
+            Gets or sets a value indicating whether the control is automatically resized to display its entire contents. 
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperLabel.BackgroundImageLayout">
+            <summary>
+            Gets or sets the background image layout as defined in the <see cref="P:C1.Win.C1SuperTooltip.C1SuperLabel.BackgroundImageLayout"/> enumeration. 
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperLabel.BackgroundImage">
+            <summary>
+            Gets or sets the background image displayed in the control. 
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperLabel.CreateParams">
+            <summary>
+            Gets the required creation parameters when the control handle is created.
+            </summary>
+        </member>
+        <member name="T:C1.Win.C1SuperTooltip.C1SuperLabelLinkClickedEventHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:C1.Win.C1SuperTooltip.C1SuperLabel.LinkClicked"/> event.
+            </summary>
+            <param name="sender">Object that fired the event.</param>
+            <param name="e"><see cref="T:System.Windows.Forms.LinkClickedEventArgs"/> object that contains the event data.</param>
+        </member>
+        <member name="T:C1.Win.C1SuperTooltip.C1SuperLabelLinkClickedEventArgs">
+            <summary>
+            Provides data for the <see cref="E:C1.Win.C1SuperTooltip.C1SuperLabel.LinkClicked"/> event.
+            </summary>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperLabelLinkClickedEventArgs.#ctor(System.Windows.Forms.MouseButtons,System.String,System.String)">
+            <summary>
+            Inializes a new instance of a <see cref="T:System.Windows.Forms.LinkClickedEventArgs"/>.
+            </summary>
+            <param name="button"><see cref="T:System.Windows.Forms.MouseButtons"/> that was pressed on the link.</param>
+            <param name="hRef">Value of the link's HREF attribute.</param>
+            <param name="target">Value of the link's TARGET attribute.</param>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperLabelLinkClickedEventArgs.Button">
+            <summary>
+            Gets the button that was clicked on the link.
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperLabelLinkClickedEventArgs.HRef">
+            <summary>
+            Gets the value of the link's HREF attribute.
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperLabelLinkClickedEventArgs.Target">
+            <summary>
+            Gets the value of the link's TARGET attribute.
+            </summary>
+        </member>
+        <member name="T:C1.Win.C1SuperTooltip.BackgroundGradient">
+            <summary>
+            Specifies a background gradient for the tooltip.
+            </summary>
+        </member>
+        <member name="F:C1.Win.C1SuperTooltip.BackgroundGradient.None">
+            <summary>
+            Use no background gradient.
+            </summary>
+        </member>
+        <member name="F:C1.Win.C1SuperTooltip.BackgroundGradient.Automatic">
+            <summary>
+            Use a gradient that matches the current system Visual Style.
+            </summary>
+        </member>
+        <member name="F:C1.Win.C1SuperTooltip.BackgroundGradient.Silver">
+            <summary>
+            Use a silver background gradient.
+            </summary>
+        </member>
+        <member name="F:C1.Win.C1SuperTooltip.BackgroundGradient.Blue">
+            <summary>
+            Use a blue background gradient.
+            </summary>
+        </member>
+        <member name="F:C1.Win.C1SuperTooltip.BackgroundGradient.Gold">
+            <summary>
+            Use a gold background gradient.
+            </summary>
+        </member>
+        <member name="F:C1.Win.C1SuperTooltip.BackgroundGradient.Olive">
+            <summary>
+            Use an olive background gradient.
+            </summary>
+        </member>
+        <member name="F:C1.Win.C1SuperTooltip.BackgroundGradient.Vista">
+            <summary>
+            Use the Vista-style background gradient.
+            </summary>
+        </member>
+        <member name="T:C1.Win.C1SuperTooltip.BackgroundImageLayout">
+            <summary>
+            Specifies the layout logic used to display the background image.
+            </summary>
+        </member>
+        <member name="F:C1.Win.C1SuperTooltip.BackgroundImageLayout.None">
+            <summary>
+            The image is left-aligned at the top across the control's client rectangle.
+            </summary>
+        </member>
+        <member name="F:C1.Win.C1SuperTooltip.BackgroundImageLayout.Tile">
+            <summary>
+            The image is tiled across the control's client rectangle.
+            </summary>
+        </member>
+        <member name="F:C1.Win.C1SuperTooltip.BackgroundImageLayout.Center">
+            <summary>
+            The image is centered within the control's client rectangle.
+            </summary>
+        </member>
+        <member name="F:C1.Win.C1SuperTooltip.BackgroundImageLayout.Stretch">
+            <summary>
+            The image is streched across the control's client rectangle. 
+            </summary>
+        </member>
+        <member name="F:C1.Win.C1SuperTooltip.BackgroundImageLayout.Zoom">
+            <summary>
+            The image is enlarged within the control's client rectangle.
+            </summary>
+        </member>
+        <member name="F:C1.Win.C1SuperTooltip.BackgroundImageLayout.TileStretch">
+            <summary>
+            The image is split into nine pieces and tiled within the control's client rectangle.
+            Center tiles are stretched, corner tiles are rendered with the original size.
+            </summary>
+        </member>
+        <member name="T:C1.Win.C1SuperTooltip.C1SuperTooltip">
+            <summary>
+            Represents a pop-up window that displays a brief description of a control's purpose 
+            when the mouse hovers over the control.
+            </summary>
+            <remarks>
+            
+            <para>The <b>C1SuperTooltip</b> component is virtually identical to the 
+            <see cref="T:System.Windows.Forms.ToolTip"/> component, with one significant difference: 
+            <b>C1SuperTooltip</b> displays HTML text instead of plain text. This way, your tooltips can 
+            have multiple fonts, colors, tables, lists, and images. See the <see cref="M:C1.Win.C1SuperTooltip.C1SuperTooltip.SetToolTip(System.Windows.Forms.Control,System.String)"/>
+            method for details and examples.</para>
+            
+            <para>You can associate HTML tooltips with any <see cref="T:System.Windows.Forms.Control"/> or
+            <see cref="T:System.Windows.Forms.ToolStripItem"/> on the form.</para>
+            
+            <para><b>C1SuperTooltip</b> does not use IE to render the HTML content. Instead, it has its own 
+            light-weight HTML parser and renderer. This means the output you get will not be always 
+            be 100% compatible with IE (or FireFox), but in most cases it should be close.
+            <b>C1SuperTooltip</b> supports cascading style sheets, tables, and most other HTML features.
+            For more details, see the <see cref="M:C1.Win.C1SuperTooltip.C1SuperTooltip.SetToolTip(System.Windows.Forms.Control,System.String)"/> method.</para>
+            
+            <para>The <b>C1SuperTooltip</b> component allows you to provide help to users when they place 
+            the mouse cursor over a control. The <b>C1SuperTooltip</b> component is typically used to 
+            alert users to the intended use of a control. For example, you could specify tooltip 
+            text for a <b>TextBox</b> control that accepts a name, specifying the format of the 
+            name to typed into the control. In addition to providing help, you can also use the 
+            <b>C1SuperTooltip</b> component to provide run time status information. For example, you 
+            could use the <b>C1SuperTooltip</b> component to display connection speed and line quality 
+            data when the user moves the mouse cursor over a <b>PictureBox</b> control that displays 
+            Internet connection status.</para>
+            
+            <para>The <b>C1SuperTooltip</b> component provides properties that enable you to modify how 
+            long and how quickly a tooltip window is displayed. The <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.AutoPopDelay"/> 
+            property determines how long a tooltip window is displayed; the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.InitialDelay"/> and 
+            <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.ReshowDelay"/> properties determine the delay before a tooltip window is displayed. 
+            To set all of these properties to a consistent pattern, you can use the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.AutomaticDelay"/>
+            property. This value is then used to calculate and set the values of the other delay properties.
+            To enable a control's tooltip text to be displayed regardless of whether the <b>Form</b> or 
+            container the control is contained within is enabled, you can use the <b>ShowAlways</b> property.
+            If you want to disable all tooltip text from being displayed in your application, you can 
+            use the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.Active"/> property.</para>
+            
+            <para>The <b>C1SuperTooltip</b> component can be used in any container. To specify a specific 
+            container to use the <b>C1SuperTooltip</b> component within, use the <b>C1SuperTooltip</b> constructor. 
+            In order for tooltip text to be displayed when the user moves the mouse cursor over a control,
+            the tooltip text to be displayed must be associated with the control within an instance of the
+            <b>C1SuperTooltip</b> component. To associate tooltip text with a control, use the <see cref="M:C1.Win.C1SuperTooltip.C1SuperTooltip.SetToolTip(System.Windows.Forms.Control,System.String)"/>
+            method. The <b>SetToolTip</b> method can be called more than once for the same control to change
+            the text that is associated with the control. If you want to get the text that is associated 
+            with a control, use the <see cref="M:C1.Win.C1SuperTooltip.C1SuperTooltip.GetToolTip(System.Windows.Forms.Control)"/> method. To remove all tooltip text 
+            associations with an instance of the <b>C1SuperTooltip</b> component, use the <see cref="M:C1.Win.C1SuperTooltip.C1SuperTooltip.RemoveAll"/>
+            method.</para>
+            </remarks>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/> component.
+            </summary>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.#ctor(System.ComponentModel.IContainer)">
+            <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/> component.
+            </summary>
+            <param name="container">An <see cref="T:System.ComponentModel.IContainer"/>that represents the container of the <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/>.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.ShouldSerializeAutoPopDelay">
+            <summary>
+            Gets a value that determines whether the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.AutoPopDelay"/> property should be serialized.
+            </summary>
+            <returns>True if the current value is different from the default (10 * <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.AutomaticDelay"/>).</returns>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.ShouldSerializeInitialDelay">
+            <summary>
+            Gets a value that determines whether the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.InitialDelay"/> property should be serialized.
+            </summary>
+            <returns>True if the current value is different from the default (<see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.AutomaticDelay"/>).</returns>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.ShouldSerializeReshowDelay">
+            <summary>
+            Gets a value that determines whether the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.ReshowDelay"/> property should be serialized.
+            </summary>
+            <returns>True if the current value is different from the default (<see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.AutomaticDelay"/> / 5).</returns>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.GetToolTip(System.Windows.Forms.Control)">
+            <summary>
+            Retrieves the <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/> text associated with the specified control.
+            </summary>
+            <param name="control">The <b>Control</b> for which to retrieve the tooltip text.</param>
+            <returns>The tooltip text for the specified control.</returns>
+            <remarks>
+            This method enables you to retrieve the tooltip text for any control. If the tooltip text 
+            changes dynamically in an application, you can use this method to find out what text is 
+            displayed at any point, depending on the state of the application. To change the text 
+            that a control is displaying, use the <see cref="M:C1.Win.C1SuperTooltip.C1SuperTooltip.SetToolTip(System.Windows.Forms.Control,System.String)"/> method.
+            </remarks>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.SetToolTip(System.Windows.Forms.Control,System.String)">
+            <summary>
+            Associates tooltip HTML text with the specified control.
+            <param name="control">The <b>Control</b> to associate the tooltip text with.</param>
+            <param name="text">The tooltip text to display when the mouse cursor is over the control.</param>
+            </summary>
+            <remarks>
+            
+            <para>In addition to specifying the tooltip text to display for a control, you can also use 
+            this method to modify the tooltip text for a control. Calling the <b>SetToolTip</b> 
+            method more than once for a given control does not specify multiple tooltip text to 
+            display for a control but instead changes the current tooltip text for the control.</para>
+            <para>To determine the tooltip text that is associated with a control at run time, you can 
+            use the <see cref="M:C1.Win.C1SuperTooltip.C1SuperTooltip.GetToolTip(System.Windows.Forms.Control)"/> method.</para>
+            
+            <para><see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/> can display HTML text, including cascading style sheets,
+            lists, tables, and images. To include images in your tooltips, use an &lt;img&gt; tag as
+            usual, and set the 'src' attribute to a string with the following format:</para>
+            
+            <code>'res://[resourcename]'</code>
+            
+            <para>where <code>[resourcename]</code> is is the name of an embedded resource that
+            contains the image. The example below illustrates this.</para>
+            
+            </remarks>
+            <example>
+            The code below associates an HTML snippet with a <b>ListBox</b> control. The HTML
+            contains two lines of text with some bold words in it.
+            <code>
+            _C1SuperTooltip1.SetToolTip(this.listBox1,
+              "This is a tip &lt;b&gt;with bold&lt;/b&gt; text in it&lt;br&gt;it is also multi-line...");
+            </code>
+            The code below associates an HTML snippet with a <b>RichTextBox</b> control. The HTML
+            contains a table with two columns. The first column contains an image, loaded from the
+            application's resources. In this case, the application must include an embedded resource 
+            named 'tips.gif'. The second column contains some formatted text.
+            <code>
+            _C1SuperTooltip1.SetToolTip(richTextBox1,
+              @"&lt;table&gt;&lt;tr&gt;
+              &lt;td&gt;&lt;img src='res://tips.gif'/&gt;&lt;/td&gt;
+              &lt;td&gt;This is a multiline&lt;br&gt;tooltip&lt;br&gt;&lt;b&gt;associated
+              &lt;/b&gt;&lt;br&gt;with the rich text box...&lt;/td&gt;
+              &lt;/tr&gt;&lt;/table&gt;");
+            </code>
+            </example>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.SetToolTip(System.Windows.Forms.ToolStripItem,System.String)">
+            <summary>
+            Associates tooltip HTML text with the specified <see cref="T:System.Windows.Forms.ToolStripItem"/>.
+            </summary>
+            <param name="item">The <b>ToolStripItem</b> to associate the tooltip text with.</param>
+            <param name="text">The tooltip text to display when the mouse cursor is over the control.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.RemoveAll">
+            <summary>
+            Removes all tooltip text currently associated with the <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/> component.
+            </summary>
+            <remarks>
+            You can use this method to remove all tooltip text that is associated with the 
+            <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/> component. To disable the display of text instead of removing all 
+            tooltip text from the <b>C1SuperTooltip</b> control, use the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.Active"/> property.
+            </remarks>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.Show(System.String,System.Windows.Forms.Control,System.Drawing.Point,System.Int32)">
+            <summary>
+            Shows the tooltip with the specified text, for the specified control, at the specified position, for a specified amount of time.
+            </summary>
+            <param name="text">Text to be displayed in the tooltip.</param>
+            <param name="control"><see cref="T:System.Windows.Forms.Control"/> that the tooltip is associated with.</param>
+            <param name="pt"><see cref="T:System.Drawing.Point"/> in client coordinates where the tooltip is to be displayed.</param>
+            <param name="duration">Duration of the tooltip, in milliseconds.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.Show(System.String,System.Windows.Forms.Control,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Shows the tooltip with the specified text, for the specified control, at the specified position, for a specified amount of time.
+            </summary>
+            <param name="text">Text to be displayed in the tooltip.</param>
+            <param name="control"><see cref="T:System.Windows.Forms.Control"/> that the tooltip is associated with.</param>
+            <param name="x">X client coordinate where the tooltip is to be displayed.</param>
+            <param name="y">Y client coordinate where the tooltip is to be displayed.</param>
+            <param name="duration">Duration of the tooltip, in milliseconds.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.Show(System.String,System.Windows.Forms.Control,System.Int32)">
+            <summary>
+            Shows the tooltip with the specified text, for the specified control, for a specified amount of time.
+            </summary>
+            <param name="text">Text to be displayed in the tooltip.</param>
+            <param name="control"><see cref="T:System.Windows.Forms.Control"/> that the tooltip is associated with.</param>
+            <param name="duration">Duration of the tooltip, in milliseconds.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.Show(System.String,System.Windows.Forms.Control,System.Drawing.Point)">
+            <summary>
+            Shows the tooltip with the specified text, for the specified control, at the specified position.
+            </summary>
+            <param name="text">Text to be displayed in the tooltip.</param>
+            <param name="control"><see cref="T:System.Windows.Forms.Control"/> that the tooltip is associated with.</param>
+            <param name="pt"><see cref="T:System.Drawing.Point"/> in client coordinates where the tooltip is to be displayed.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.Show(System.String,System.Windows.Forms.Control,System.Int32,System.Int32)">
+            <summary>
+            Shows the tooltip with the specified text, for the specified control, at the specified position.
+            </summary>
+            <param name="text">Text to be displayed in the tooltip.</param>
+            <param name="control"><see cref="T:System.Windows.Forms.Control"/> that the tooltip is associated with.</param>
+            <param name="x">X client coordinate where the tooltip is to be displayed.</param>
+            <param name="y">Y client coordinate where the tooltip is to be displayed.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.Show(System.String,System.Windows.Forms.Control)">
+            <summary>
+            Shows the tooltip with the specified text for the specified control.
+            </summary>
+            <param name="text">Text to be displayed in the tooltip.</param>
+            <param name="control"><see cref="T:System.Windows.Forms.Control"/> that the tooltip is associated with.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.Hide">
+            <summary>
+            Hides the <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/> if it is currently visible.
+            </summary>
+            <remarks>
+            This method does not disable or otherwise prevent the tooltip from being displayed in the future.
+            To do that, set the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.Active"/> property to false instead.
+            </remarks>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.Hide(System.Windows.Forms.Control)">
+            <summary>
+            Hides the <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/> if it is currently visible.
+            </summary>
+            <param name="control">The <see cref="T:System.Windows.Forms.Control"/> that the <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/> is associated with.</param>
+            <remarks>
+            This method does not disable or otherwise prevent the tooltip from being displayed in the future.
+            To do that, set the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.Active"/> property to false instead.
+            </remarks>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.Show(System.String,System.Windows.Forms.ToolStripItem,System.Drawing.Point,System.Int32)">
+            <summary>
+            Shows the tooltip with the specified text, for the specified <see cref="T:System.Windows.Forms.ToolStripItem"/>, at the specified position, for a specified amount of time.
+            </summary>
+            <param name="text">Text to be displayed in the tooltip.</param>
+            <param name="item"><see cref="T:System.Windows.Forms.ToolStripItem"/> that the tooltip is associated with.</param>
+            <param name="pt"><see cref="T:System.Drawing.Point"/> in client coordinates where the tooltip is to be displayed.</param>
+            <param name="duration">Duration of the tooltip, in milliseconds.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.Show(System.String,System.Windows.Forms.ToolStripItem,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Shows the tooltip with the specified text, for the specified <see cref="T:System.Windows.Forms.ToolStripItem"/>, at the specified position, for a specified amount of time.
+            </summary>
+            <param name="text">Text to be displayed in the tooltip.</param>
+            <param name="item"><see cref="T:System.Windows.Forms.ToolStripItem"/> that the tooltip is associated with.</param>
+            <param name="x">X client coordinate where the tooltip is to be displayed.</param>
+            <param name="y">Y client coordinate where the tooltip is to be displayed.</param>
+            <param name="duration">Duration of the tooltip, in milliseconds.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.Show(System.String,System.Windows.Forms.ToolStripItem,System.Int32)">
+            <summary>
+            Shows the tooltip with the specified text, for the specified <see cref="T:System.Windows.Forms.ToolStripItem"/>, for a specified amount of time.
+            </summary>
+            <param name="text">Text to be displayed in the tooltip.</param>
+            <param name="item"><see cref="T:System.Windows.Forms.ToolStripItem"/> that the tooltip is associated with.</param>
+            <param name="duration">Duration of the tooltip, in milliseconds.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.Show(System.String,System.Windows.Forms.ToolStripItem,System.Drawing.Point)">
+            <summary>
+            Shows the tooltip with the specified text, for the specified <see cref="T:System.Windows.Forms.ToolStripItem"/>, at the specified position.
+            </summary>
+            <param name="text">Text to be displayed in the tooltip.</param>
+            <param name="item"><see cref="T:System.Windows.Forms.ToolStripItem"/> that the tooltip is associated with.</param>
+            <param name="pt"><see cref="T:System.Drawing.Point"/> in client coordinates where the tooltip is to be displayed.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.Show(System.String,System.Windows.Forms.ToolStripItem,System.Int32,System.Int32)">
+            <summary>
+            Shows the tooltip with the specified text, for the specified <see cref="T:System.Windows.Forms.ToolStripItem"/>, at the specified position.
+            </summary>
+            <param name="text">Text to be displayed in the tooltip.</param>
+            <param name="item"><see cref="T:System.Windows.Forms.ToolStripItem"/> that the tooltip is associated with.</param>
+            <param name="x">X client coordinate where the tooltip is to be displayed.</param>
+            <param name="y">Y client coordinate where the tooltip is to be displayed.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.Show(System.String,System.Windows.Forms.ToolStripItem)">
+            <summary>
+            Shows the tooltip with the specified text for the specified <see cref="T:System.Windows.Forms.ToolStripItem"/>.
+            </summary>
+            <param name="text">Text to be displayed in the tooltip.</param>
+            <param name="item"><see cref="T:System.Windows.Forms.ToolStripItem"/> that the tooltip is associated with.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.C1SuperTooltip.Hide(System.Windows.Forms.ToolStripItem)">
+            <summary>
+            Hides the <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/> if it is currently visible.
+            </summary>
+            <param name="item"><see cref="T:System.Windows.Forms.ToolStripItem"/> that the tooltip is associated with.</param>
+            <remarks>
+            This method does not disable or otherwise prevent the tooltip from being displayed in the future.
+            To do that, set the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.Active"/> property to false instead.
+            </remarks>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperTooltip.Active">
+            <summary>
+            Gets or sets a value indicating whether the <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/> is currently active.
+            </summary>
+            <remarks>
+            <para>This property allows you to enable or disable the display of <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/> 
+            text for all controls that have text specified in this particular <b>C1SuperTooltip</b>. 
+            More than one <b>C1SuperTooltip</b> can be created and assigned to a form; setting the 
+            <b>Active</b> property to false only affects the specified <b>C1SuperTooltip</b>.</para>
+            <para>You can allow users to set the value of this property in a form that provides 
+            application options to provide the ability for the user to enable or disable the display 
+            of <b>C1SuperTooltips</b> in your application.</para>
+            </remarks>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperTooltip.AutomaticDelay">
+            <summary>
+            Gets or sets the automatic delay for the <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/>.
+            </summary>
+            <remarks>
+            <para>The <b>AutomaticDelay</b> property enables you to set a single delay value which 
+            is then used to set the values of the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.AutoPopDelay"/>, <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.InitialDelay"/>, 
+            and <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.ReshowDelay"/> properties. Each time the <b>AutomaticDelay</b> property is set, 
+            the following values are set by default.</para>
+            <para><b>AutoPopDelay</b>: 10 times the <b>AutomaticDelay</b> property value.</para>
+            <para><b>InitialDelay</b>: Equal to the <b>AutomaticDelay</b> property value.</para>
+            <para><b>ReshowDelay</b>: 1/5 of the <b>AutomaticDelay</b> property value.</para>
+            <para>These properties can also be set independently once the AutomaticDelay property has been set. 
+            For more information, see the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.AutoPopDelay"/>, <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.InitialDelay"/>, and 
+            <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.ReshowDelay"/> properties. This property is typically used to provide a consistent 
+            delay pattern for your <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/> windows.</para>
+            </remarks>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperTooltip.AutoPopDelay">
+            <summary>
+            Gets or sets the period of time (in milliseconds) the tooltip remains visible if the 
+            mouse pointer is stationary within a control.
+            </summary>
+            <remarks>
+            <para>This property enables you to shorten or lengthen the time that the <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/> 
+            window is displayed when the mouse pointer is over a control. For example, if you display 
+            extensive help in a <b>C1SuperTooltip</b> window, you can increase the value of this property 
+            to ensure that the user has sufficient time to read the text.</para>
+            <para>If you want to have a consistent delay pattern for your <b>C1SuperTooltip</b> windows, 
+            you can set the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.AutomaticDelay"/> property. The <b>AutomaticDelay</b> property 
+            sets the <b>AutoPopDelay</b>, <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.ReshowDelay"/>, and <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.InitialDelay"/> 
+            properties to initial values based on a single value. Every time the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.AutomaticDelay"/> 
+            property is set, the <b>AutoPopDelay</b> property is set to 10 times the <b>AutomaticDelay</b>
+            property value. Once the <b>AutomaticDelay</b> property is set, you can independently 
+            set the <b>AutoPopDelay</b> property, overriding the default value.</para>
+            </remarks>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperTooltip.ShowAlways">
+            <summary>
+            Gets or sets a value indicating whether a <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/> window is displayed even 
+            when its parent control is not active.
+            </summary>
+            <remarks>
+            
+            <para>This property enables you to display a <b>C1SuperTooltip</b> window even when the container 
+            of the tooltip is not active.</para>
+            
+            <para>You can use this feature in a modeless window application to enable <b>C1SuperTooltip</b>
+            windows to be displayed regardless of which modeless window is active. This feature is also 
+            useful when creating a control using the <b>UserControl</b> that contains a number of 
+            controls that display tooltips. Since the <b>UserControl</b> is often not the active 
+            window on a form, setting this property to true enables the controls within the 
+            <b>UserControl</b> to display <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/> windows at any time.</para>
+            
+            </remarks>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperTooltip.InitialDelay">
+            <summary>
+            Gets or sets the time that passes before the tooltip appears.
+            </summary>
+            <remarks>
+            <para>This property enables you to shorten or lengthen the time that the <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/> 
+            waits before displaying a tooltip window. If the value of the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.InitialDelay"/> 
+            property is set to a value that is too long in duration, the user of your application 
+            may not know that your application provides <b>C1SuperTooltip</b> help. You can use this 
+            property to ensure that the user has tooltips displayed quickly by shortening the time 
+            specified.</para>
+            <para>If you want to have a consistent delay pattern for your <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/> windows,
+            you can set the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.AutomaticDelay"/> property. The <b>AutomaticDelay</b> property sets the 
+            <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.AutoPopDelay"/>, <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.ReshowDelay"/>, and <b>InitialDelay</b> properties 
+            to initial values based on a single time value. Every time the <b>AutomaticDelay</b> property 
+            is set, the <b>InitialDelay</b> property is set to the same value as the <b>AutomaticDelay</b>
+            property. Once the <b>AutomaticDelay</b> property is set, you can independently set the 
+            <b>InitialDelay</b> property, overriding the default value.</para>
+            </remarks>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperTooltip.ReshowDelay">
+            <summary>
+            Gets or sets the length of time that must transpire before subsequent <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/> windows appear 
+            as the mouse pointer moves from one control to another.
+            </summary>
+            <remarks>
+            <para>This property enables you to shorten or lengthen the time that the <b>C1SuperTooltip</b> 
+            waits before displaying a tooltip window after a previous tooltip window is displayed. 
+            The first time a tooltip window is displayed the value of the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.InitialDelay"/> 
+            property is used to determine the delay to apply before initially showing the tooltip 
+            window. When a tooltip window is currently being displayed and the user moves the cursor 
+            to another control that displays a tooltip window, the value of the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.ReshowDelay"/> 
+            property is used before showing the tooltip for the new control. The tooltip window from 
+            the previous control must still be displayed in order for the delay specified in the 
+            <b>ReshowDelay</b> property to be used; otherwise the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.InitialDelay"/> property 
+            value is used.</para>
+            <para>If you want to have a consistent delay pattern for your <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/> windows,
+            you can set the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.AutomaticDelay"/> property. The <b>AutomaticDelay</b> property sets the 
+            <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.AutoPopDelay"/>, <b>ReshowDelay</b>, and <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.InitialDelay"/> properties 
+            to initial values based on a single time value. Every time the <b>AutomaticDelay</b> property 
+            is set, the <b>InitialDelay</b> property is set to the same value as the <b>AutomaticDelay</b>
+            property. Once the <b>AutomaticDelay</b> property is set, you can independently set the 
+            <b>InitialDelay</b> property, overriding the default value.</para>
+            </remarks>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperTooltip.BackColor">
+            <summary>
+            Gets or sets the background color of the tooltip window.
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperTooltip.ForeColor">
+            <summary>
+            Gets or sets the foreground color of the tooltip window.
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperTooltip.Font">
+            <summary>
+            Gets or sets the default font used to display the tooltip.
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperTooltip.Shadow">
+            <summary>
+            Gets or sets whether the tooltip window should display a shadow.
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperTooltip.Border">
+            <summary>
+            Gets or sets whether the tooltip window should display a solid border.
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperTooltip.BorderColor">
+            <summary>
+            Gets or sets whether the color of the border drawn around the tooltip when the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.Border"/> property is set to true.
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperTooltip.BackgroundImage">
+            <summary>
+            Gets or sets the background image displayed in tooltip window.
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperTooltip.BackgroundImageLayout">
+            <summary>
+            Gets or sets the background image layout as defined in the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.BackgroundImageLayout"/> enumeration.
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperTooltip.IsBalloon">
+            <summary>
+            Gets or sets whether the tooltip is shown in a balloon shape.
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperTooltip.RoundedCorners">
+            <summary>
+            Gets or sets whether the tooltip window has rounded corners.
+            </summary>
+            <remarks>
+            This property has no effect if <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.IsBalloon"/> is set to true.
+            </remarks>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperTooltip.StripAmpersands">
+            <summary>
+            Gets or sets whether ampersands in the text should be hidden.
+            </summary>
+            <remarks>
+            Ampersands should be encoded in HMTL as <b>'&amp;amp'</b>.
+            Ampersands that are not properly encoded will not be hidden.
+            </remarks>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperTooltip.UseFading">
+            <summary>
+            Gets or sets whether a fade effect should be used when displaying the tooltip.
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperTooltip.Images">
+            <summary>
+            Gets a collection of images that may be shown in tooltips.
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.C1SuperTooltip.BackgroundGradient">
+            <summary>
+            Gets or sets the background gradient for the tooltips.
+            </summary>
+            <remarks>
+            <para>When the <b>BackgroundGradient</b> is set to a value other than none, the gradient
+            is used instead of the image specified by the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.BackgroundImage"/> property.</para>
+            <para>If you want to use a gradient different from the built-in ones, create an image
+            and assign it to the <see cref="P:C1.Win.C1SuperTooltip.C1SuperTooltip.BackgroundImage"/> property.</para>
+            </remarks>
+        </member>
+        <member name="T:C1.Win.C1SuperTooltip.C1SuperTooltip.ToolStripItemControl">
+            <summary>
+            Proxy control to allow adding tooltips to ToolStripItems.
+            </summary>
+        </member>
+        <member name="T:C1.Win.C1SuperTooltip.ToolTipWindow">
+            <summary>
+            Popup control that shows the tooltip content
+            </summary>
+        </member>
+        <member name="T:C1.Win.C1SuperTooltip.Design.SuperTooltipActionList">
+            <summary>
+            C1SuperTooltipDesigner action list
+            </summary>
+        </member>
+        <member name="T:C1.Win.C1SuperTooltip.Design.C1SuperTooltipEditor">
+            <summary>
+            Editor for associating tooltips to controls on the form.
+            </summary>
+        </member>
+        <member name="T:C1.Win.C1SuperTooltip.Design.C1SuperTooltipWizard">
+            <summary>
+            Wizard used to edit SuperTooltip contents.
+            </summary>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.Design.C1SuperTooltipWizard.UpdateLabelStyle">
+            <summary>
+            Update the label style to reflect the owner tooltip properties.
+            </summary>
+        </member>
+        <member name="F:C1.Win.C1SuperTooltip.Design.C1SuperTooltipWizard.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.Design.C1SuperTooltipWizard.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.Design.C1SuperTooltipWizard.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.Design.C1SuperTooltipWizard.OwnerTip">
+            <summary>
+            Gets or sets the owner tooltip. Used to copy styles to label on the form.
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.Design.C1SuperTooltipWizard.PreviewLabel">
+            <summary>
+            Gets a reference to the preview label
+            </summary>
+        </member>
+        <member name="T:C1.Win.C1SuperTooltip.Design.C1SuperLabelEditor">
+            <summary>
+            Editor for creating and previewing simple HTML content.
+            </summary>
+        </member>
+        <member name="T:C1.Win.C1SuperTooltip.Design.C1SuperLabelWizard">
+            <summary>
+            Wizard used to edit SuperLabel contents.
+            </summary>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.Design.C1SuperLabelWizard.UpdateLabelStyle">
+            <summary>
+            Update the label style to reflect the owner tooltip properties.
+            </summary>
+        </member>
+        <member name="F:C1.Win.C1SuperTooltip.Design.C1SuperLabelWizard.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.Design.C1SuperLabelWizard.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.Design.C1SuperLabelWizard.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.Design.C1SuperLabelWizard.OwnerLabel">
+            <summary>
+            Gets or sets the owner label. Used to copy styles to label on the form.
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.Design.C1SuperLabelWizard.PreviewLabel">
+            <summary>
+            Gets a reference to the preview label
+            </summary>
+        </member>
+        <member name="T:C1.Win.C1SuperTooltip.Design.HtmlTextBox">
+            <summary>
+            Specialized RichTextBox used to edit HTML content.
+            </summary>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.Design.HtmlTextBox.#ctor">
+            <summary>
+            Initializes a new instance of an <see cref="T:C1.Win.C1SuperTooltip.Design.HtmlTextBox"/>.
+            </summary>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.Design.HtmlTextBox.InsertTag(System.String)">
+            <summary>
+            Insert a span tag around the current selection.
+            </summary>
+            <param name="tag">Tag to insert (e.g. "b", "i").</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.Design.HtmlTextBox.InsertList(System.Boolean)">
+            <summary>
+            Insert a list at the selection.
+            </summary>
+            <param name="ordered">True to insert a numbered list, false to insert a bullet list.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.Design.HtmlTextBox.InsertImage(System.String)">
+            <summary>
+            Insert an image at the selection.
+            </summary>
+            <param name="image">Name of the image to insert.</param>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.Design.HtmlTextBox.WordWrap">
+            <summary>
+            Override to change the default.
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.Design.HtmlTextBox.Images">
+            <summary>
+            Gets or sets the <see cref="T:C1.Win.C1SuperTooltip.ImageCollection"/> used by the editor.
+            </summary>
+        </member>
+        <member name="T:C1.Win.C1SuperTooltip.Design.HtmlTextBox.HtmlTextBoxContextMenuStrip">
+            <summary>
+            Custom ContextMenuStrip with some HTML commands.
+            </summary>
+        </member>
+        <member name="F:C1.Win.C1SuperTooltip.Design.TooltipTemplate.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.Design.TooltipTemplate.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.Design.TooltipTemplate.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:C1.Win.C1SuperTooltip.Design.OfficeTemplate.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.Design.OfficeTemplate.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.Design.OfficeTemplate.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:C1.Win.C1SuperTooltip.Design.PlainHtmlTemplate.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.Design.PlainHtmlTemplate.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.Design.PlainHtmlTemplate.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:C1.Win.C1SuperTooltip.Design.TooltipProperties.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.Design.TooltipProperties.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.Design.TooltipProperties.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:C1.Win.C1SuperTooltip.ImageCollection">
+            <summary>
+            Collection of images to be displayed in <see cref="T:C1.Win.C1SuperTooltip.C1SuperLabel"/> or 
+            <see cref="T:C1.Win.C1SuperTooltip.C1SuperTooltip"/> components.
+            </summary>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.ImageCollection.#ctor(System.ComponentModel.Component)">
+            <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1SuperTooltip.ImageCollection"/>.
+            </summary>
+            <param name="owner">Component that owns the collection.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.ImageCollection.Add(C1.Win.C1SuperTooltip.ImageEntry)">
+            <summary>
+            Adds an <see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/> to the collection.
+            </summary>
+            <param name="entry"><see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/> to be added to the collection.</param>
+            <returns>The index of the new entry in the collection.</returns>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.ImageCollection.Insert(System.Int32,C1.Win.C1SuperTooltip.ImageEntry)">
+            <summary>
+            Inserts an <see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/> at a specified position in the collection.
+            </summary>
+            <param name="index">Position where the <paramref name="entry"/> will be inserted.</param>
+            <param name="entry"><see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/> to add to the collection.</param>
+            <returns>The index of the new entry in the collection.</returns>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.ImageCollection.Remove(C1.Win.C1SuperTooltip.ImageEntry)">
+            <summary>
+            Removes an <see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/> from the collection.
+            </summary>
+            <param name="entry"><see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/> to remove from the collection.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.ImageCollection.IndexOf(C1.Win.C1SuperTooltip.ImageEntry)">
+            <summary>
+            Gets the index of a given <see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/> in the collection.
+            </summary>
+            <param name="entry"><see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/> to locate in th collection.</param>
+            <returns>The index of the <see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/> in the collection, or -1 if the 
+            collection does not contain the key.</returns>
+            <remarks>The <paramref name="key"/> parameter is not case-sensitive.</remarks>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.ImageCollection.Contains(C1.Win.C1SuperTooltip.ImageEntry)">
+            <summary>
+            Determines whether the <see cref="T:C1.Win.C1SuperTooltip.ImageCollection"/> contains a given key.
+            </summary>
+            <param name="entry"><see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/> to locate in the collection.</param>
+            <returns>True if the collection contains <paramref name="entry"/>, false otherwise.</returns>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.ImageCollection.Contains(System.String)">
+            <summary>
+            Determines whether the <see cref="T:C1.Win.C1SuperTooltip.ImageCollection"/> contains a given key.
+            </summary>
+            <param name="key">String that identifies the <see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/>.</param>
+            <returns>True if the collection contains an <see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/> associated with the given key, false otherwise.</returns>
+            <remarks>The <paramref name="key"/> parameter is not case-sensitive.</remarks>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.ImageCollection.IndexOf(System.String)">
+            <summary>
+            Gets the index of the <see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/> with a given key.
+            </summary>
+            <param name="key">String that identifies the <see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/>.</param>
+            <returns>The index of the <see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/> in the collection, or -1 if the 
+            collection does not contain the key.</returns>
+            <remarks>The <paramref name="key"/> parameter is not case-sensitive.</remarks>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.ImageCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the <see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/> at the specified index in the <see cref="T:C1.Win.C1SuperTooltip.ImageCollection"/>.
+            </summary>
+            <param name="index">Index of the image to get or set.</param>
+            <returns>The <see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/> at the specified index.</returns>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.ImageCollection.Item(System.String)">
+            <summary>
+            Gets or sets the <see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/> with the specified key <see cref="T:C1.Win.C1SuperTooltip.ImageCollection"/>.
+            </summary>
+            <param name="key">String that identifies the <see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/>.</param>
+            <returns>The <see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/> with the specified key.</returns>
+            <remarks>The <paramref name="key"/> parameter is not case-sensitive.</remarks>
+        </member>
+        <member name="T:C1.Win.C1SuperTooltip.ImageCollectionEditor">
+            <summary>
+            Editor for <see cref="T:C1.Win.C1SuperTooltip.ImageCollection"/> class.
+            </summary>
+        </member>
+        <member name="T:C1.Win.C1SuperTooltip.ImageEntry">
+            <summary>
+            Entry in a <see cref="T:C1.Win.C1SuperTooltip.ImageCollection"/>.
+            </summary>
+            <remarks>
+            <para>Each entry contains an <see cref="P:C1.Win.C1SuperTooltip.ImageEntry.Image"/> and its associated <see cref="P:C1.Win.C1SuperTooltip.ImageEntry.Key"/>.</para>
+            <para>Entries may be retrieved from the collection by index or by key.</para>
+            </remarks>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.ImageEntry.#ctor(System.String,System.Drawing.Image)">
+            <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/>.
+            </summary>
+            <param name="key">String used as a key to retrieve the image.</param>
+            <param name="image">Image associated with the key.</param>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.ImageEntry.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/>.
+            </summary>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.ImageEntry.Key">
+            <summary>
+            Gets or sets the key used to retrieve the image from the <see cref="T:C1.Win.C1SuperTooltip.ImageCollection"/>.
+            </summary>
+            <remarks>The key value is not case-sensitive.</remarks>
+        </member>
+        <member name="P:C1.Win.C1SuperTooltip.ImageEntry.Image">
+            <summary>
+            <see cref="P:C1.Win.C1SuperTooltip.ImageEntry.Image"/> in the <see cref="T:C1.Win.C1SuperTooltip.ImageCollection"/>.
+            </summary>
+        </member>
+        <member name="T:C1.Win.C1SuperTooltip.ImageEntryTypeConverter">
+            <summary>
+            <see cref="T:System.ComponentModel.TypeConverter"/> used to persist <see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/> objects.
+            </summary>
+            <remarks>
+            <para>This converter causes Visual Studio to persist the type in code-behind, which is version-neutral.</para>
+            <para>Without this, the <see cref="T:C1.Win.C1SuperTooltip.ImageEntry"/> objects would be persisted as binary resources,
+            along with their specific version, so upgrading the component version would break projects 
+            created with previous versions.</para>
+            </remarks>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.ImageEntryTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns a value that indicates whether the object can be converted to a specified data type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="destType">The data type.</param>
+            <returns>True if the conversion is supported, false otherwise.</returns>
+        </member>
+        <member name="M:C1.Win.C1SuperTooltip.ImageEntryTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts the object into the specified data type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="culture">The culture.</param>
+            <param name="value">The object to convert.</param>
+            <param name="destType">The type to convert to.</param>
+            <returns>The converted object.</returns>
+        </member>
+        <member name="T:C1.Util.Localization.StringTables">
+            <summary>
+            Provide localization for error messages in Japanese.
+            </summary>
+        </member>
+    </members>
+</doc>

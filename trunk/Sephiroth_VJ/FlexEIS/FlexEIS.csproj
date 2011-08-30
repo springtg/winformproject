@@ -1,0 +1,269 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7E9BED2A-E840-49C1-951F-24DC222A9A03}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FlexEIS</RootNamespace>
+    <AssemblyName>FlexEIS</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.RDVIEWER40Lib, Version=4.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\AxInterop.RDVIEWER40Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Command.2, Version=2.0.20071.19104, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Command.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid.2, Version=2.6.20071.324, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1FlexGrid.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Input.2, Version=2.0.20071.32002, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Input.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1List.2, Version=2.1.20071.117, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1List.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Sizer.2, Version=2.1.20071.17, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Sizer.2.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.WinForms, Version=7.0.2893.24916, Culture=neutral, PublicKeyToken=a1878e2052c08dce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\ChartFX.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.WinForms.Adornments, Version=7.0.2893.24805, Culture=neutral, PublicKeyToken=a1878e2052c08dce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\ChartFX.WinForms.Adornments.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.WinForms.Base, Version=7.0.2893.24781, Culture=neutral, PublicKeyToken=a1878e2052c08dce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\ChartFX.WinForms.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EIS\ClassLib\ComCtl.cs" />
+    <Compile Include="EIS\ClassLib\ComFunction.cs" />
+    <Compile Include="EIS\ClassLib\ComVar.cs" />
+    <Compile Include="EIS\ClassLib\IXTable.cs" />
+    <Compile Include="EIS\Common\Pop_ItemGroupSearchAll.cs">
+    </Compile>
+    <Compile Include="EIS\Common\Pop_ItemGroupSearchAll.Designer.cs">
+      <DependentUpon>Pop_ItemGroupSearchAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EIS\Common\Pop_Wait_UsingThread.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EIS\Common\Pop_Wait_UsingThread.Designer.cs">
+      <DependentUpon>Pop_Wait_UsingThread.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EIS\MaterialPriceWeekly\Form_EIS_Weekly_Price_Factory.cs">
+    </Compile>
+    <Compile Include="EIS\MaterialPriceWeekly\Form_EIS_Weekly_Price_Factory.Designer.cs">
+      <DependentUpon>Form_EIS_Weekly_Price_Factory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EIS\MaterialPriceWeekly\Form_EIS_Weekly_Price_Item.cs">
+    </Compile>
+    <Compile Include="EIS\MaterialPriceWeekly\Form_EIS_Weekly_Price_Item.Designer.cs">
+      <DependentUpon>Form_EIS_Weekly_Price_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EIS\MaterialPriceWeekly\Form_EIS_Weekly_Price_Others.cs">
+    </Compile>
+    <Compile Include="EIS\MaterialPriceWeekly\Form_EIS_Weekly_Price_Others.Designer.cs">
+      <DependentUpon>Form_EIS_Weekly_Price_Others.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EIS\MaterialPriceWeekly\Form_EIS_Weekly_Price_Style.cs">
+    </Compile>
+    <Compile Include="EIS\MaterialPriceWeekly\Form_EIS_Weekly_Price_Style.Designer.cs">
+      <DependentUpon>Form_EIS_Weekly_Price_Style.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EIS\MaterialPriceWeekly\Pop_EIS_Weekly_Run_Again.cs">
+    </Compile>
+    <Compile Include="EIS\MaterialPriceWeekly\Pop_EIS_Weekly_Run_Again.Designer.cs">
+      <DependentUpon>Pop_EIS_Weekly_Run_Again.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EIS\MaterialPrice\Form_EIS_MatPrice_MPS_Forecast.cs">
+    </Compile>
+    <Compile Include="EIS\MaterialPrice\Form_EIS_MatPrice_MPS_Forecast.Designer.cs">
+      <DependentUpon>Form_EIS_MatPrice_MPS_Forecast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EIS\MaterialPrice\Form_EIS_MatPrice_MPS_Forecast_All.cs">
+    </Compile>
+    <Compile Include="EIS\MaterialPrice\Form_EIS_MatPrice_MPS_Forecast_All.Designer.cs">
+      <DependentUpon>Form_EIS_MatPrice_MPS_Forecast_All.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EIS\MaterialPrice\Form_EIS_MatPrice_MPS_Forecast_Style.cs">
+    </Compile>
+    <Compile Include="EIS\MaterialPrice\Form_EIS_MatPrice_MPS_Forecast_Style.Designer.cs">
+      <DependentUpon>Form_EIS_MatPrice_MPS_Forecast_Style.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EIS\MaterialPrice\Form_EIS_MatPrice_MPS_Forecast_Style_Item.cs">
+    </Compile>
+    <Compile Include="EIS\MaterialPrice\Form_EIS_MatPrice_MPS_Forecast_Style_Item.Designer.cs">
+      <DependentUpon>Form_EIS_MatPrice_MPS_Forecast_Style_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EIS\Production\Form_EIS_Production_Daily_Report.cs">
+    </Compile>
+    <Compile Include="EIS\Production\Form_EIS_Production_Daily_Report.Designer.cs">
+      <DependentUpon>Form_EIS_Production_Daily_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EIS\Production\Form_EIS_Production_Daily_Target.cs">
+    </Compile>
+    <Compile Include="EIS\Production\Form_EIS_Production_Daily_Target.Designer.cs">
+      <DependentUpon>Form_EIS_Production_Daily_Target.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EIS\Production\Pop_Production_Daily_Report_Style.cs">
+    </Compile>
+    <Compile Include="EIS\Production\Pop_Production_Daily_Report_Style.Designer.cs">
+      <DependentUpon>Pop_Production_Daily_Report_Style.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EIS\Production\Pop_Wait_UsingThread.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EIS\Production\Pop_Wait_UsingThread.Designer.cs">
+      <DependentUpon>Pop_Wait_UsingThread.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EIS\Report\Form_RdViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EIS\Report\Form_RdViewer.Designer.cs">
+      <DependentUpon>Form_RdViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EIS\Common\Pop_ItemGroupSearchAll.resx">
+      <DependentUpon>Pop_ItemGroupSearchAll.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EIS\Common\Pop_Wait_UsingThread.resx">
+      <DependentUpon>Pop_Wait_UsingThread.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EIS\MaterialPriceWeekly\Form_EIS_Weekly_Price_Factory.resx">
+      <DependentUpon>Form_EIS_Weekly_Price_Factory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EIS\MaterialPriceWeekly\Form_EIS_Weekly_Price_Item.resx">
+      <DependentUpon>Form_EIS_Weekly_Price_Item.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EIS\MaterialPriceWeekly\Form_EIS_Weekly_Price_Others.resx">
+      <DependentUpon>Form_EIS_Weekly_Price_Others.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EIS\MaterialPriceWeekly\Form_EIS_Weekly_Price_Style.resx">
+      <DependentUpon>Form_EIS_Weekly_Price_Style.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EIS\MaterialPriceWeekly\Pop_EIS_Weekly_Run_Again.resx">
+      <DependentUpon>Pop_EIS_Weekly_Run_Again.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EIS\MaterialPrice\Form_EIS_MatPrice_MPS_Forecast.resx">
+      <DependentUpon>Form_EIS_MatPrice_MPS_Forecast.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EIS\MaterialPrice\Form_EIS_MatPrice_MPS_Forecast_All.resx">
+      <DependentUpon>Form_EIS_MatPrice_MPS_Forecast_All.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EIS\MaterialPrice\Form_EIS_MatPrice_MPS_Forecast_Style.resx">
+      <DependentUpon>Form_EIS_MatPrice_MPS_Forecast_Style.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EIS\MaterialPrice\Form_EIS_MatPrice_MPS_Forecast_Style_Item.resx">
+      <DependentUpon>Form_EIS_MatPrice_MPS_Forecast_Style_Item.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EIS\Production\Form_EIS_Production_Daily_Report.resx">
+      <DependentUpon>Form_EIS_Production_Daily_Report.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EIS\Production\Form_EIS_Production_Daily_Target.resx">
+      <DependentUpon>Form_EIS_Production_Daily_Target.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EIS\Production\Pop_Production_Daily_Report_Style.resx">
+      <DependentUpon>Pop_Production_Daily_Report_Style.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EIS\Production\Pop_Wait_UsingThread.resx">
+      <DependentUpon>Pop_Wait_UsingThread.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EIS\Report\Form_RdViewer.resx">
+      <DependentUpon>Form_RdViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about1_bg.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\COM\Com.csproj">
+      <Project>{992378C3-66A1-4E98-96F5-CE2B26E0CAB2}</Project>
+      <Name>Com</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

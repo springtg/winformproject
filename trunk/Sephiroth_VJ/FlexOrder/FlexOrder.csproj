@@ -1,0 +1,424 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{07E3FF96-FF60-4F13-BEFB-FD0E4DFC9818}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>FlexOrder</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FlexOrder</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.RDVIEWER40Lib">
+      <Name>AxInterop.RDVIEWER40Lib</Name>
+      <HintPath>..\DLL\AxInterop.RDVIEWER40Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Common, Version=1.0.20031.116, Culture=neutral, PublicKeyToken=e272bb32d11b1948">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Command.2, Version=2.0.20071.19104, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Command.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid.2, Version=2.6.20071.324, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1FlexGrid.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Input.2, Version=2.0.20071.32002, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Input.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1List.2, Version=2.1.20071.117, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1List.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <Name>Interop.Excel</Name>
+      <HintPath>..\DLL\Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core">
+      <Name>Interop.Microsoft.Office.Core</Name>
+      <HintPath>..\DLL\Interop.Microsoft.Office.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.RDVIEWER40Lib">
+      <Name>Interop.RDVIEWER40Lib</Name>
+      <HintPath>..\DLL\Interop.RDVIEWER40Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.Flow, Version=1.5.1.0, Culture=neutral, PublicKeyToken=bfc5c756e54a9d2a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Lassalle.Flow.DLL</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.OracleClient">
+      <Name>System.Data.OracleClient</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+    <EmbeddedResource Include="ExpBase\Form_BP_Dest.resx">
+      <DependentUpon>Form_BP_Dest.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpBase\Form_EB_Region.resx">
+      <DependentUpon>Form_EB_Region.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpBase\Form_EB_Size.resx">
+      <DependentUpon>Form_EB_Size.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpBP\Form_EB_BAL.resx">
+      <DependentUpon>Form_EB_BAL.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpBP\Form_EB_HIST.resx">
+      <DependentUpon>Form_EB_HIST.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpBP\Form_EB_SRCH.resx">
+      <DependentUpon>Form_EB_SRCH.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpBP\Form_EB_WEEK.resx">
+      <DependentUpon>Form_EB_WEEK.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpBP\Form_EB_Week_OBS.resx">
+      <DependentUpon>Form_EB_Week_OBS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpLoad\Form_EL_BP.resx">
+      <DependentUpon>Form_EL_BP.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpLoad\Form_EL_ERR.resx">
+      <DependentUpon>Form_EL_ERR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpLoad\Form_EL_ID_ORDER.resx">
+      <DependentUpon>Form_EL_ID_ORDER.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpLoad\Form_EL_MCR.resx">
+      <DependentUpon>Form_EL_MCR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpLoad\Form_EL_PA.resx">
+      <DependentUpon>Form_EL_PA.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpLoad\Form_EL_PGS.resx">
+      <DependentUpon>Form_EL_PGS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpLoad\Form_EL_RPM.resx">
+      <DependentUpon>Form_EL_RPM.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpLoad\POP_EL_BP.resx">
+      <DependentUpon>POP_EL_BP.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpLoad\POP_EL_GAC.resx">
+      <DependentUpon>POP_EL_GAC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpLoad\POP_EL_GAC_LOAD.resx">
+      <DependentUpon>POP_EL_GAC_LOAD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpLoad\POP_EL_ID.resx">
+      <DependentUpon>POP_EL_ID.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpLoad\POP_EL_RPM.resx">
+      <DependentUpon>POP_EL_RPM.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpLoad\POP_EL_UPC_LOAD.resx">
+      <DependentUpon>POP_EL_UPC_LOAD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpLoad\Pop_Thread.resx">
+      <DependentUpon>Pop_Thread.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpOA\Form_OA_CFM.resx">
+      <DependentUpon>Form_OA_CFM.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpOA\Form_OA_Create.resx">
+      <DependentUpon>Form_OA_Create.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpOA\Form_OA_Create_Cancel.resx">
+      <DependentUpon>Form_OA_Create_Cancel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpOA\Form_OA_Create_Confirm.resx">
+      <DependentUpon>Form_OA_Create_Confirm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpOA\Form_OA_CRT01.resx">
+      <DependentUpon>Form_OA_CRT01.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpOA\Pop_OA_Order_Size.resx">
+      <DependentUpon>Pop_OA_Order_Size.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpOBSCS\Form_EC_CRT.resx">
+      <DependentUpon>Form_EC_CRT.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpOBSCS\Form_EC_ETCCRT.resx">
+      <DependentUpon>Form_EC_ETCCRT.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpOBSCS\Form_EC_Req.resx">
+      <DependentUpon>Form_EC_Req.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpOBS\Form_EO_Hist.resx">
+      <DependentUpon>Form_EO_Hist.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpOBS\Form_EO_Req.resx">
+      <DependentUpon>Form_EO_Req.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpOBS\Form_EO_SRCH.resx">
+      <DependentUpon>Form_EO_SRCH.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpOBS\POP_EO_INFO.resx">
+      <DependentUpon>POP_EO_INFO.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpOBS\POP_EO_Request_History.resx">
+      <DependentUpon>POP_EO_Request_History.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpOBS\POP_EO_Type_Change.resx">
+      <DependentUpon>POP_EO_Type_Change.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="licenses.licx" />
+    <EmbeddedResource Include="Report\Form_RD_Base.resx">
+      <DependentUpon>Form_RD_Base.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Form_RD_PKG_Base.resx">
+      <DependentUpon>Form_RD_PKG_Base.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassLib\ClassForm.cs" />
+    <Compile Include="ClassLib\Class_PERT.cs" />
+    <Compile Include="ClassLib\ComCtl.cs" />
+    <Compile Include="ClassLib\ComFunction.cs" />
+    <Compile Include="ClassLib\ComVar.cs" />
+    <Compile Include="ClassLib\IXTable.cs" />
+    <Compile Include="ClassLib\OraDB.cs" />
+    <Compile Include="ExpBase\Form_BP_Dest.cs">
+    </Compile>
+    <Compile Include="ExpBase\Form_EB_Region.cs">
+    </Compile>
+    <Compile Include="ExpBase\Form_EB_Size.cs">
+    </Compile>
+    <Compile Include="ExpBP\Form_EB_BAL.cs">
+    </Compile>
+    <Compile Include="ExpBP\Form_EB_HIST.cs">
+    </Compile>
+    <Compile Include="ExpBP\Form_EB_SRCH.cs">
+    </Compile>
+    <Compile Include="ExpBP\Form_EB_WEEK.cs">
+    </Compile>
+    <Compile Include="ExpBP\Form_EB_Week_OBS.cs">
+    </Compile>
+    <Compile Include="ExpLoad\Form_EL_BP.cs">
+    </Compile>
+    <Compile Include="ExpLoad\Form_EL_ERR.cs">
+    </Compile>
+    <Compile Include="ExpLoad\Form_EL_ID_ORDER.cs">
+    </Compile>
+    <Compile Include="ExpLoad\Form_EL_MCR.cs">
+    </Compile>
+    <Compile Include="ExpLoad\Form_EL_PA.cs">
+    </Compile>
+    <Compile Include="ExpLoad\Form_EL_PGS.cs">
+    </Compile>
+    <Compile Include="ExpLoad\Form_EL_RPM.cs">
+    </Compile>
+    <Compile Include="ExpLoad\POP_EL_BP.cs">
+    </Compile>
+    <Compile Include="ExpLoad\POP_EL_GAC.cs">
+    </Compile>
+    <Compile Include="ExpLoad\POP_EL_GAC_LOAD.cs">
+    </Compile>
+    <Compile Include="ExpLoad\POP_EL_ID.cs">
+    </Compile>
+    <Compile Include="ExpLoad\POP_EL_RPM.cs">
+    </Compile>
+    <Compile Include="ExpLoad\POP_EL_UPC_LOAD.cs">
+    </Compile>
+    <Compile Include="ExpLoad\Pop_Thread.cs">
+    </Compile>
+    <Compile Include="ExpOA\Form_OA_CFM.cs">
+    </Compile>
+    <Compile Include="ExpOA\Form_OA_Create.cs">
+    </Compile>
+    <Compile Include="ExpOA\Form_OA_Create_Cancel.cs">
+    </Compile>
+    <Compile Include="ExpOA\Form_OA_Create_Confirm.cs">
+    </Compile>
+    <Compile Include="ExpOA\Form_OA_CRT01.cs">
+    </Compile>
+    <Compile Include="ExpOA\Pop_OA_Order_Size.cs">
+    </Compile>
+    <Compile Include="ExpOBSCS\Form_EC_CRT.cs">
+    </Compile>
+    <Compile Include="ExpOBSCS\Form_EC_ETCCRT.cs">
+    </Compile>
+    <Compile Include="ExpOBSCS\Form_EC_Req.cs">
+    </Compile>
+    <Compile Include="ExpOBS\Form_EO_Hist.cs">
+    </Compile>
+    <Compile Include="ExpOBS\Form_EO_Req.cs">
+    </Compile>
+    <Compile Include="ExpOBS\Form_EO_SRCH.cs">
+    </Compile>
+    <Compile Include="ExpOBS\POP_EO_INFO.cs">
+    </Compile>
+    <Compile Include="ExpOBS\POP_EO_Request_History.cs">
+    </Compile>
+    <Compile Include="ExpOBS\POP_EO_Type_Change.cs">
+    </Compile>
+    <Compile Include="Report\Form_RD_Base.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Form_RD_PKG_Base.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Report\Form_EB_Dest.mrd" />
+    <None Include="Report\Form_EB_Region.mrd" />
+    <None Include="Report\Form_EB_Size.mrd" />
+    <None Include="Report\Form_EB_SRCH.mrd" />
+    <None Include="Report\Form_EB_STY.mrd" />
+    <None Include="Report\Form_EL_ERR.mrd" />
+    <None Include="Report\Form_EO_MARA.mrd" />
+    <None Include="Report\Form_EO_SRCH.mrd" />
+    <None Include="Report\FORM_OA_CRT.mrd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\COM\Com.csproj">
+      <Project>{992378C3-66A1-4E98-96F5-CE2B26E0CAB2}</Project>
+      <Name>Com</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

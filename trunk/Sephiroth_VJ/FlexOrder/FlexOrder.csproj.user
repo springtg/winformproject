@@ -1,0 +1,57 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastOpenVersion>7.10.3077</LastOpenVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ReferencePath>C:\Sephiroth\DLL\;D:\19. BSC\1. Source\Sephiroth_20070702\DLL\;D:\19. BSC\1. Source\Sephiroth_20070703\DLL\;D:\19. BSC\1. Source\Sephiroth_20070705\DLL\;D:\19. BSC\1. Source\Sephiroth_20070802\DLL\;D:\19. BSC\1. Source\Sephiroth_20070813\DLL\;D:\19. BSC\1. Source\Sephiroth_20070910\DLL\;D:\19. BSC\1. Source\Sephiroth_20070919\DLL\;D:\19. BSC\1. Source\Sephiroth_20071009\DLL\;D:\19. BSC\1. Source\Sephiroth_20071010\DLL\;D:\19. BSC\1. Source\Sephiroth_20071011\DLL\;D:\19. BSC\1. Source\Sephiroth_20071012\DLL\;D:\19. BSC\1. Source\Sephiroth_20071015\DLL\;D:\19. BSC\1. Source\Sephiroth_20071016\DLL\;D:\19. BSC\1. Source\Sephiroth_20071017\DLL\;D:\19. BSC\1. Source\Sephiroth_20071019\DLL\;D:\19. BSC\2. Source\Sephiroth_20071019\DLL\;D:\19. BSC\2. Source\Sephiroth_20071023\DLL\;D:\19. BSC\2. Source\Sephiroth\DLL\;D:\18. BSC\2. Source\Sephiroth\DLL\;D:\작업\1. BSC\2. Source\Sephiroth\DLL\;D:\05. BSC\2. Source\Sephiroth\DLL\;C:\Documents and Settings\administrator.DSKOREA\바탕 화면\Sephiroth 최신 소스\Sephiroth\DLL\;D:\Sephiroth 최신 소스\_Sephiroth Source\Sephiroth\DLL\;D:\06. 인도네시아 JJ\소스\Sephiroth_vs2003\DLL\</ReferencePath>
+    <CopyProjectDestinationFolder>
+    </CopyProjectDestinationFolder>
+    <CopyProjectUncPath>
+    </CopyProjectUncPath>
+    <CopyProjectOption>0</CopyProjectOption>
+    <ProjectView>ProjectFiles</ProjectView>
+    <ProjectTrust>0</ProjectTrust>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <EnableASPDebugging>false</EnableASPDebugging>
+    <EnableASPXDebugging>false</EnableASPXDebugging>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <EnableSQLServerDebugging>false</EnableSQLServerDebugging>
+    <RemoteDebugEnabled>false</RemoteDebugEnabled>
+    <RemoteDebugMachine>
+    </RemoteDebugMachine>
+    <StartAction>Project</StartAction>
+    <StartArguments>
+    </StartArguments>
+    <StartPage>
+    </StartPage>
+    <StartProgram>
+    </StartProgram>
+    <StartURL>
+    </StartURL>
+    <StartWorkingDirectory>
+    </StartWorkingDirectory>
+    <StartWithIE>true</StartWithIE>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <EnableASPDebugging>false</EnableASPDebugging>
+    <EnableASPXDebugging>false</EnableASPXDebugging>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <EnableSQLServerDebugging>false</EnableSQLServerDebugging>
+    <RemoteDebugEnabled>false</RemoteDebugEnabled>
+    <RemoteDebugMachine>
+    </RemoteDebugMachine>
+    <StartAction>Project</StartAction>
+    <StartArguments>
+    </StartArguments>
+    <StartPage>
+    </StartPage>
+    <StartProgram>
+    </StartProgram>
+    <StartURL>
+    </StartURL>
+    <StartWorkingDirectory>
+    </StartWorkingDirectory>
+    <StartWithIE>false</StartWithIE>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,664 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{28D00078-DAAA-4976-AE27-6563FEEEF455}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FlexCosting</RootNamespace>
+    <AssemblyName>FlexCosting</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.RDVIEWER40Lib, Version=4.0.0.0, Culture=neutral" />
+    <Reference Include="C1.Data.2, Version=2.0.20053.0, Culture=neutral, PublicKeyToken=900b028620cd3a1b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Data.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Chart.2, Version=2.0.20071.17032, Culture=neutral, PublicKeyToken=a22e16972c085838, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Chart.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Command.2, Version=2.0.20071.19104, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Command.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid.2, Version=2.6.20071.324, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1FlexGrid.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Input.2, Version=2.0.20071.32002, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Input.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1List.2, Version=2.1.20071.117, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1List.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Sizer.2, Version=2.1.20071.17, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Sizer.2.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.Base, Version=6.2.1342.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\ChartFX.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.WinForms, Version=7.0.2893.24916, Culture=neutral, PublicKeyToken=a1878e2052c08dce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\ChartFX.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.WinForms.Adornments, Version=7.0.2893.24805, Culture=neutral, PublicKeyToken=a1878e2052c08dce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\ChartFX.WinForms.Adornments.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.WinForms.Base, Version=7.0.2893.24781, Culture=neutral, PublicKeyToken=a1878e2052c08dce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\ChartFX.WinForms.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FarPoint.Win, Version=1.0.2.2, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.Win.Spread, Version=1.0.2.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="Interop.Excel, Version=1.5.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.RDVIEWER40Lib, Version=4.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Interop.RDVIEWER40Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Data.OracleClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Basic\Ctl\SearchPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Basic\Ctl\SearchPanel.Designer.cs">
+      <DependentUpon>SearchPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Ctl\TextSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Basic\Ctl\TextSearch.Designer.cs">
+      <DependentUpon>TextSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Frm\Form_Base_Information.cs">
+    </Compile>
+    <Compile Include="Basic\Frm\Form_Base_Information.Designer.cs">
+      <DependentUpon>Form_Base_Information.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Frm\Form_Item_Master.cs">
+    </Compile>
+    <Compile Include="Basic\Frm\Form_Item_Master.Designer.cs">
+      <DependentUpon>Form_Item_Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Frm\CellUserData.cs" />
+    <Compile Include="Basic\Frm\Form_Bottom_Componend_Cost.cs">
+    </Compile>
+    <Compile Include="Basic\Frm\Form_Bottom_Componend_Cost.Designer.cs">
+      <DependentUpon>Form_Bottom_Componend_Cost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Frm\Form_FX_Rate.cs">
+    </Compile>
+    <Compile Include="Basic\Frm\Form_FX_Rate.Designer.cs">
+      <DependentUpon>Form_FX_Rate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Frm\Form_Item_Master_New.cs">
+    </Compile>
+    <Compile Include="Basic\Frm\Form_Item_Master_New.Designer.cs">
+      <DependentUpon>Form_Item_Master_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Frm\Form_Material_Management.cs">
+    </Compile>
+    <Compile Include="Basic\Frm\Form_Material_Management.Designer.cs">
+      <DependentUpon>Form_Material_Management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Frm\Form_Nike_Standard_Defective_Rate.cs">
+    </Compile>
+    <Compile Include="Basic\Frm\Form_Nike_Standard_Defective_Rate.Designer.cs">
+      <DependentUpon>Form_Nike_Standard_Defective_Rate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Frm\Form_Pattern_Name_Matrix.cs">
+    </Compile>
+    <Compile Include="Basic\Frm\Form_Pattern_Name_Matrix.Designer.cs">
+      <DependentUpon>Form_Pattern_Name_Matrix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Frm\Form_Tooling_Master.cs">
+    </Compile>
+    <Compile Include="Basic\Frm\Form_Tooling_Master.Designer.cs">
+      <DependentUpon>Form_Tooling_Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Bottom_Formula.cs">
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Bottom_Formula.Designer.cs">
+      <DependentUpon>Pop_Bottom_Formula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Item_Master_Add_Cust.cs">
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Item_Master_Add_Cust.Designer.cs">
+      <DependentUpon>Pop_Item_Master_Add_Cust.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Item_Master_Conv.cs">
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Item_Master_Conv.Designer.cs">
+      <DependentUpon>Pop_Item_Master_Conv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Loading.Designer.cs">
+      <DependentUpon>Pop_Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Material_History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Material_History.Designer.cs">
+      <DependentUpon>Pop_Material_History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Search_Part.cs">
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Search_Part.Designer.cs">
+      <DependentUpon>Pop_Search_Part.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Select_Sephiroth_Material.cs">
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Select_Sephiroth_Material.designer.cs">
+      <DependentUpon>Pop_Select_Sephiroth_Material.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Tooling_History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Tooling_History.Designer.cs">
+      <DependentUpon>Pop_Tooling_History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Type_And_Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Type_And_Search.Designer.cs">
+      <DependentUpon>Pop_Type_And_Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Type_And_Search_Mat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Type_And_Search_Mat.Designer.cs">
+      <DependentUpon>Pop_Type_And_Search_Mat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Type_And_Search_Part.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Type_And_Search_Part.Designer.cs">
+      <DependentUpon>Pop_Type_And_Search_Part.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Type_And_Search_Cust.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Basic\Pop\Pop_Type_And_Search_Cust.Designer.cs">
+      <DependentUpon>Pop_Type_And_Search_Cust.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassLib\ComFunction.cs" />
+    <Compile Include="ClassLib\ComFunction_Cost.cs" />
+    <Compile Include="ClassLib\ComVar.cs" />
+    <Compile Include="ClassLib\IXTable.cs" />
+    <Compile Include="Management\Analysis\Frm\Form_CBD_Master_Search.cs">
+    </Compile>
+    <Compile Include="Management\Analysis\Frm\Form_CBD_Master_Search.Designer.cs">
+      <DependentUpon>Form_CBD_Master_Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Analysis\Frm\Form_CBD_Master_Search_FullCBD.cs">
+    </Compile>
+    <Compile Include="Management\Analysis\Frm\Form_CBD_Master_Search_FullCBD.Designer.cs">
+      <DependentUpon>Form_CBD_Master_Search_FullCBD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Analysis\Frm\Form_CBD_Master_Viewer.cs">
+    </Compile>
+    <Compile Include="Management\Analysis\Frm\Form_CBD_Master_Viewer.Designer.cs">
+      <DependentUpon>Form_CBD_Master_Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Analysis\Frm\Form_EIS_MatPrice_Check_FOB.cs">
+    </Compile>
+    <Compile Include="Management\Analysis\Frm\Form_EIS_MatPrice_Check_FOB.Designer.cs">
+      <DependentUpon>Form_EIS_MatPrice_Check_FOB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Analysis\Frm\Form_EIS_MatPrice_Inspection_FOB.cs">
+    </Compile>
+    <Compile Include="Management\Analysis\Frm\Form_EIS_MatPrice_Inspection_FOB.designer.cs">
+      <DependentUpon>Form_EIS_MatPrice_Inspection_FOB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Analysis\Frm\Pop_EIS_MatPrice_Order_Qty.cs">
+    </Compile>
+    <Compile Include="Management\Analysis\Frm\Pop_EIS_MatPrice_Order_Qty.Designer.cs">
+      <DependentUpon>Pop_EIS_MatPrice_Order_Qty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Costing\Frm\CBDExcel\ExcelUpload_5523.cs">
+    </Compile>
+    <Compile Include="Management\Costing\Frm\CBDExcel\ExcelUpload_5523.Designer.cs">
+      <DependentUpon>ExcelUpload_5523.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Costing\Frm\CBDExcel\ExcelUpload_MEOF.cs">
+    </Compile>
+    <Compile Include="Management\Costing\Frm\CBDExcel\ExcelUpload_MEOF.Designer.cs">
+      <DependentUpon>ExcelUpload_MEOF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Costing\Frm\CBDExcel\V_1_220\DBMngr.cs" />
+    <Compile Include="Management\Costing\Frm\CBDExcel\V_1_220\ExcelExport.cs" />
+    <Compile Include="Management\Costing\Frm\CBDExcel\V_1_220\Header_5523.cs" />
+    <Compile Include="Management\Costing\Frm\CBDExcel\V_1_220\Header_MEOF.cs" />
+    <Compile Include="Management\Costing\Frm\Form_CBD_Master_ExportDB.cs" />
+    <Compile Include="Management\Costing\Frm\Form_CBD_Master_v6.cs">
+    </Compile>
+    <Compile Include="Management\Costing\Frm\Form_CBD_Master_v6.Designer.cs">
+      <DependentUpon>Form_CBD_Master_v6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Costing\Frm\Form_CBD_Master_Export.cs" />
+    <Compile Include="Management\Costing\Frm\Form_CBD_Master_Status.cs">
+    </Compile>
+    <Compile Include="Management\Costing\Frm\Form_CBD_Master_Status.Designer.cs">
+      <DependentUpon>Form_CBD_Master_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Costing\Frm\Form_CBD_XML_Create.cs">
+    </Compile>
+    <Compile Include="Management\Costing\Frm\Form_CBD_XML_Create.Designer.cs">
+      <DependentUpon>Form_CBD_XML_Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Costing\Pop\Pop_CBD_Master_CheckDPO.cs">
+    </Compile>
+    <Compile Include="Management\Costing\Pop\Pop_CBD_Master_CheckDPO.Designer.cs">
+      <DependentUpon>Pop_CBD_Master_CheckDPO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Costing\Pop\Pop_CBD_Master_Mat.cs">
+    </Compile>
+    <Compile Include="Management\Costing\Pop\Pop_CBD_Master_Mat.Designer.cs">
+      <DependentUpon>Pop_CBD_Master_Mat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Costing\Pop\Pop_CBD_Master_Print.cs">
+    </Compile>
+    <Compile Include="Management\Costing\Pop\Pop_CBD_Master_Print.Designer.cs">
+      <DependentUpon>Pop_CBD_Master_Print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Costing\Pop\Pop_CBD_Master_Charge.cs">
+    </Compile>
+    <Compile Include="Management\Costing\Pop\Pop_CBD_Master_Charge.Designer.cs">
+      <DependentUpon>Pop_CBD_Master_Charge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Costing\Pop\Pop_CBD_Master_CopyCBD.cs">
+    </Compile>
+    <Compile Include="Management\Costing\Pop\Pop_CBD_Master_CopyCBD.Designer.cs">
+      <DependentUpon>Pop_CBD_Master_CopyCBD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Costing\Pop\Pop_ProCost_Yield_Search.cs">
+    </Compile>
+    <Compile Include="Management\Costing\Pop\Pop_ProCost_Yield_Search.Designer.cs">
+      <DependentUpon>Pop_ProCost_Yield_Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Costing\Pop\Pop_Search_Part_For_Upper.cs">
+    </Compile>
+    <Compile Include="Management\Costing\Pop\Pop_Search_Part_For_Upper.Designer.cs">
+      <DependentUpon>Pop_Search_Part_For_Upper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Costing\Pop\Pop_BOM_Search_From_CBD_Mst_v6.cs">
+    </Compile>
+    <Compile Include="Management\Costing\Pop\Pop_BOM_Search_From_CBD_Mst_v6.Designer.cs">
+      <DependentUpon>Pop_BOM_Search_From_CBD_Mst_v6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Costing\Pop\Pop_CBD_Master_Find.cs">
+    </Compile>
+    <Compile Include="Management\Costing\Pop\Pop_CBD_Master_Find.Designer.cs">
+      <DependentUpon>Pop_CBD_Master_Find.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Form_RdViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="v5523\Frm\Form_5523_Management.cs">
+    </Compile>
+    <Compile Include="v5523\Frm\Form_5523_Management.Designer.cs">
+      <DependentUpon>Form_5523_Management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="v5523\Pop\Pop_5523_Add_Bom.cs">
+    </Compile>
+    <Compile Include="v5523\Pop\Pop_5523_Add_Bom.Designer.cs">
+      <DependentUpon>Pop_5523_Add_Bom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="v5523\Pop\Pop_5523_List_Loading.cs">
+    </Compile>
+    <Compile Include="v5523\Pop\Pop_5523_List_Loading.Designer.cs">
+      <DependentUpon>Pop_5523_List_Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vTooling\Frm\Form_FOB_List.cs">
+    </Compile>
+    <Compile Include="vTooling\Frm\Form_FOB_List.Designer.cs">
+      <DependentUpon>Form_FOB_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vTooling\Frm\Form_Tooling_Amortize_New.cs">
+    </Compile>
+    <Compile Include="vTooling\Frm\Form_Tooling_Amortize_New.Designer.cs">
+      <DependentUpon>Form_Tooling_Amortize_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vTooling\Frm\Form_Tooling_Cost_Tracking.cs">
+    </Compile>
+    <Compile Include="vTooling\Frm\Form_Tooling_Cost_Tracking.Designer.cs">
+      <DependentUpon>Form_Tooling_Cost_Tracking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vTooling\Pop\Pop_CBD_Copy_By_Viewer.cs">
+    </Compile>
+    <Compile Include="vTooling\Pop\Pop_CBD_Copy_By_Viewer.Designer.cs">
+      <DependentUpon>Pop_CBD_Copy_By_Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vTooling\Pop\Pop_Tooling_Cost_Tracking_Calc.cs">
+    </Compile>
+    <Compile Include="vTooling\Pop\Pop_Tooling_Cost_Tracking_Calc.Designer.cs">
+      <DependentUpon>Pop_Tooling_Cost_Tracking_Calc.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Basic\Ctl\SearchPanel.resx">
+      <DependentUpon>SearchPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Ctl\TextSearch.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TextSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Frm\Form_Base_Information.resx">
+      <DependentUpon>Form_Base_Information.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Frm\Form_Bottom_Componend_Cost.resx">
+      <DependentUpon>Form_Bottom_Componend_Cost.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Frm\Form_FX_Rate.resx">
+      <DependentUpon>Form_FX_Rate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Frm\Form_Item_Master.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_Item_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Frm\Form_Item_Master_New.resx">
+      <DependentUpon>Form_Item_Master_New.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Frm\Form_Material_Management.resx">
+      <DependentUpon>Form_Material_Management.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Frm\Form_Nike_Standard_Defective_Rate.resx">
+      <DependentUpon>Form_Nike_Standard_Defective_Rate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Frm\Form_Pattern_Name_Matrix.resx">
+      <DependentUpon>Form_Pattern_Name_Matrix.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Frm\Form_Tooling_Master.resx">
+      <DependentUpon>Form_Tooling_Master.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Pop\Pop_Bottom_Formula.resx">
+      <DependentUpon>Pop_Bottom_Formula.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Pop\Pop_Item_Master_Add_Cust.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Pop_Item_Master_Add_Cust.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Pop\Pop_Item_Master_Conv.resx">
+      <DependentUpon>Pop_Item_Master_Conv.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Pop\Pop_Loading.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Pop_Loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Pop\Pop_Material_History.resx">
+      <DependentUpon>Pop_Material_History.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Pop\Pop_Select_Sephiroth_Material.resx">
+      <DependentUpon>Pop_Select_Sephiroth_Material.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Pop\Pop_Tooling_History.resx">
+      <DependentUpon>Pop_Tooling_History.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Pop\Pop_Type_And_Search.resx">
+      <DependentUpon>Pop_Type_And_Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Pop\Pop_Type_And_Search_Mat.resx">
+      <DependentUpon>Pop_Type_And_Search_Mat.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Pop\Pop_Type_And_Search_Part.resx">
+      <DependentUpon>Pop_Type_And_Search_Part.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Pop\Pop_Type_And_Search_Cust.resx">
+      <DependentUpon>Pop_Type_And_Search_Cust.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Analysis\Frm\Form_CBD_Master_Search.resx">
+      <DependentUpon>Form_CBD_Master_Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Analysis\Frm\Form_CBD_Master_Search_FullCBD.resx">
+      <DependentUpon>Form_CBD_Master_Search_FullCBD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Analysis\Frm\Form_CBD_Master_Viewer.resx">
+      <DependentUpon>Form_CBD_Master_Viewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Analysis\Frm\Form_EIS_MatPrice_Check_FOB.resx">
+      <DependentUpon>Form_EIS_MatPrice_Check_FOB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Analysis\Frm\Form_EIS_MatPrice_Inspection_FOB.resx">
+      <DependentUpon>Form_EIS_MatPrice_Inspection_FOB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Analysis\Frm\Pop_EIS_MatPrice_Order_Qty.resx">
+      <DependentUpon>Pop_EIS_MatPrice_Order_Qty.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Costing\Frm\CBDExcel\ExcelUpload_5523.resx">
+      <DependentUpon>ExcelUpload_5523.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Costing\Frm\CBDExcel\ExcelUpload_MEOF.resx">
+      <DependentUpon>ExcelUpload_MEOF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Costing\Frm\Form_CBD_Master_v6.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_CBD_Master_v6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Costing\Frm\Form_CBD_Master_Status.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_CBD_Master_Status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Costing\Frm\Form_CBD_XML_Create.resx">
+      <DependentUpon>Form_CBD_XML_Create.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Costing\Pop\Pop_CBD_Master_CheckDPO.resx">
+      <DependentUpon>Pop_CBD_Master_CheckDPO.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Costing\Pop\Pop_CBD_Master_Mat.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Pop_CBD_Master_Mat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Costing\Pop\Pop_CBD_Master_Print.resx">
+      <DependentUpon>Pop_CBD_Master_Print.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Costing\Pop\Pop_CBD_Master_Charge.resx">
+      <DependentUpon>Pop_CBD_Master_Charge.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Costing\Pop\Pop_CBD_Master_CopyCBD.resx">
+      <DependentUpon>Pop_CBD_Master_CopyCBD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Costing\Pop\Pop_ProCost_Yield_Search.resx">
+      <DependentUpon>Pop_ProCost_Yield_Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Costing\Pop\Pop_Search_Part_For_Upper.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Pop_Search_Part_For_Upper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Costing\Pop\Pop_BOM_Search_From_CBD_Mst_v6.resx">
+      <DependentUpon>Pop_BOM_Search_From_CBD_Mst_v6.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Costing\Pop\Pop_CBD_Master_Find.resx">
+      <DependentUpon>Pop_CBD_Master_Find.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Form_RdViewer.resx">
+      <DependentUpon>Form_RdViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="v5523\Frm\Form_5523_Management.resx">
+      <DependentUpon>Form_5523_Management.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="v5523\Pop\Pop_5523_Add_Bom.resx">
+      <DependentUpon>Pop_5523_Add_Bom.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="v5523\Pop\Pop_5523_List_Loading.resx">
+      <DependentUpon>Pop_5523_List_Loading.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vTooling\Frm\Form_FOB_List.resx">
+      <DependentUpon>Form_FOB_List.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vTooling\Frm\Form_Tooling_Amortize_New.resx">
+      <DependentUpon>Form_Tooling_Amortize_New.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vTooling\Frm\Form_Tooling_Cost_Tracking.resx">
+      <DependentUpon>Form_Tooling_Cost_Tracking.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vTooling\Pop\Pop_CBD_Copy_By_Viewer.resx">
+      <DependentUpon>Pop_CBD_Copy_By_Viewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vTooling\Pop\Pop_Tooling_Cost_Tracking_Calc.resx">
+      <DependentUpon>Pop_Tooling_Cost_Tracking_Calc.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\COM\Com.csproj">
+      <Project>{992378C3-66A1-4E98-96F5-CE2B26E0CAB2}</Project>
+      <Name>Com</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxRDVIEWER50Lib">
+      <Guid>{A048734F-9EA5-43C6-B367-F720B99632EB}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="RDVIEWER50Lib">
+      <Guid>{A048734F-9EA5-43C6-B367-F720B99632EB}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
