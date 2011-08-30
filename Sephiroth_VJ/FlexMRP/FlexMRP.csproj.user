@@ -1,0 +1,57 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastOpenVersion>7.10.3077</LastOpenVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ReferencePath>D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070416_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070417_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070418_Local\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070419_Local\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070420_Local\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070423_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070424_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070425_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070426_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070427_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070502_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070503_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070504_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070507_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070508_Local\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070509_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070510_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070515_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070516_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070517_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070518_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070521_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070522_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070523_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070524_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070525_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070528_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070530_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070531_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070601_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070604_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070605_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070606_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070607_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070608_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070611_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070614_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070615_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070616_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070618_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070620_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070621_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070622_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070625_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070626_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070627_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070628_최종\DLL\;D:\03. 신 자재\2. 프로그램 소스\1. 소스\Sephiroth_B_20070629_최종\DLL\;D:\19. BSC\1. Source\Sephiroth_20070702\DLL\;D:\19. BSC\1. Source\Sephiroth_20070703\DLL\;D:\19. BSC\1. Source\Sephiroth_20070705\DLL\;D:\19. BSC\1. Source\Sephiroth_20070801\DLL\;D:\19. BSC\1. Source\Sephiroth_20070802\DLL\;D:\19. BSC\1. Source\Sephiroth_20070813\DLL\;D:\19. BSC\1. Source\Sephiroth_20070910\DLL\;D:\19. BSC\1. Source\Sephiroth_20070919\DLL\;D:\19. BSC\1. Source\Sephiroth_20071009\DLL\;D:\19. BSC\1. Source\Sephiroth_20071012\DLL\;D:\19. BSC\1. Source\Sephiroth_20071019\DLL\;D:\19. BSC\2. Source\Sephiroth_20071019\DLL\;D:\19. BSC\2. Source\Sephiroth_20071023\DLL\;D:\19. BSC\2. Source\Sephiroth\DLL\;D:\18. BSC\2. Source\Sephiroth\DLL\;D:\작업\1. BSC\2. Source\Sephiroth\DLL\;D:\05. BSC\2. Source\Sephiroth\DLL\;C:\Documents and Settings\administrator.DSKOREA\바탕 화면\Sephiroth 최신 소스\Sephiroth\DLL\;D:\Sephiroth 최신 소스\_Sephiroth Source\Sephiroth\DLL\;D:\06. 인도네시아 JJ\소스\Sephiroth_vs2003\DLL\</ReferencePath>
+    <CopyProjectDestinationFolder>
+    </CopyProjectDestinationFolder>
+    <CopyProjectUncPath>
+    </CopyProjectUncPath>
+    <CopyProjectOption>0</CopyProjectOption>
+    <ProjectView>ProjectFiles</ProjectView>
+    <ProjectTrust>0</ProjectTrust>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <EnableASPDebugging>false</EnableASPDebugging>
+    <EnableASPXDebugging>false</EnableASPXDebugging>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <EnableSQLServerDebugging>false</EnableSQLServerDebugging>
+    <RemoteDebugEnabled>false</RemoteDebugEnabled>
+    <RemoteDebugMachine>
+    </RemoteDebugMachine>
+    <StartAction>Project</StartAction>
+    <StartArguments>
+    </StartArguments>
+    <StartPage>
+    </StartPage>
+    <StartProgram>
+    </StartProgram>
+    <StartURL>
+    </StartURL>
+    <StartWorkingDirectory>
+    </StartWorkingDirectory>
+    <StartWithIE>false</StartWithIE>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <EnableASPDebugging>false</EnableASPDebugging>
+    <EnableASPXDebugging>false</EnableASPXDebugging>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <EnableSQLServerDebugging>false</EnableSQLServerDebugging>
+    <RemoteDebugEnabled>false</RemoteDebugEnabled>
+    <RemoteDebugMachine>
+    </RemoteDebugMachine>
+    <StartAction>Project</StartAction>
+    <StartArguments>
+    </StartArguments>
+    <StartPage>
+    </StartPage>
+    <StartProgram>
+    </StartProgram>
+    <StartURL>
+    </StartURL>
+    <StartWorkingDirectory>
+    </StartWorkingDirectory>
+    <StartWithIE>false</StartWithIE>
+  </PropertyGroup>
+</Project>

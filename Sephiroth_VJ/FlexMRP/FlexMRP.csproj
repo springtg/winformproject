@@ -1,0 +1,527 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2DD36F35-4D27-46E7-95B0-B8A87F60BBA4}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>FlexMRP</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FlexMRP</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+    </COMReference>
+    <Reference Include="AxInterop.RDVIEWER40Lib">
+      <Name>AxInterop.RDVIEWER40Lib</Name>
+      <HintPath>..\DLL\AxInterop.RDVIEWER40Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Common, Version=1.0.20031.116, Culture=neutral, PublicKeyToken=e272bb32d11b1948">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Command.2, Version=2.0.20071.19104, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Command.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid.2, Version=2.6.20071.324, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1FlexGrid.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Input.2, Version=2.0.20071.32002, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Input.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1List.2, Version=2.1.20071.117, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1List.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Report, Version=1.1.20023.28, Culture=neutral, PublicKeyToken=c9c7ad9c0a5706c9">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Report.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Sizer.2, Version=2.1.20071.17, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1Sizer.2.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.CalcEngine">
+      <Name>FarPoint.CalcEngine</Name>
+      <HintPath>..\DLL\FarPoint.CalcEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Excel">
+      <Name>FarPoint.Excel</Name>
+      <HintPath>..\DLL\FarPoint.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.PluginCalendar.WinForms">
+      <Name>FarPoint.PluginCalendar.WinForms</Name>
+      <HintPath>..\DLL\FarPoint.PluginCalendar.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win">
+      <Name>FarPoint.Win</Name>
+      <HintPath>..\DLL\FarPoint.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Spread">
+      <Name>FarPoint.Win.Spread</Name>
+      <HintPath>..\DLL\FarPoint.Win.Spread.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <Name>Interop.Excel</Name>
+      <HintPath>..\DLL\Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core">
+      <Name>Interop.Microsoft.Office.Core</Name>
+      <HintPath>..\DLL\Interop.Microsoft.Office.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.RDVIEWER40Lib">
+      <Name>Interop.RDVIEWER40Lib</Name>
+      <HintPath>..\DLL\Interop.RDVIEWER40Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.OracleClient">
+      <Name>System.Data.OracleClient</Name>
+    </Reference>
+    <Reference Include="System.DirectoryServices">
+      <Name>System.DirectoryServices</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ClassForm.cs" />
+    <Compile Include="ClassLib\ComCtl.cs" />
+    <Compile Include="ClassLib\ComFunction.cs" />
+    <Compile Include="ClassLib\ComVar.cs" />
+    <Compile Include="ClassLib\IXTable.cs" />
+    <Compile Include="MRP\Ctl_BM_MRP_Operation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MRP\Form_BM_Business_Area.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_Current_Adjust.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_JITForecast.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_MRP_Adjust.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_MRP_Item.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_MRP_List.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_MRP_Local.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_MRP_Local_30.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_MRP_Local_Material_BySRF.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_MRP_Monitoring.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_MRP_Monitoring_Local2.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_MRP_Monitoring_Style.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_MRP_Operation.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_MRP_Request.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_Ready_MPS.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_Ready_Mps_Yield.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_Ready_Order.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_Ready_Order_Local.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_Ready_Size.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_Ready_Yield.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_Ready_Yield_Local.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_Ready_Yield_Local2.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_Shipping_Adjust.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_Shipping_Air_Flight.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_Shipping_Confirm.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_Shipping_LeadTime.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_Shipping_Local_Forecast.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_Shipping_Local_Search_ByStyle.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_Shipping_Master.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_Shipping_Parameter.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_Shipping_Schedule_Search_Mps.cs">
+    </Compile>
+    <Compile Include="MRP\Form_BM_Shipping_Search.cs">
+    </Compile>
+    <Compile Include="MRP\Pop_BM_Changer.cs">
+    </Compile>
+    <Compile Include="MRP\Pop_BM_CItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MRP\Pop_BM_DItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MRP\Pop_BM_Forecast_List.cs">
+    </Compile>
+    <Compile Include="MRP\Pop_BM_InOut_Infomation.cs">
+    </Compile>
+    <Compile Include="MRP\Pop_BM_MRP_Adjust_Usage_Check.cs">
+    </Compile>
+    <Compile Include="MRP\Pop_BM_MRP_No_List.cs">
+    </Compile>
+    <Compile Include="MRP\Pop_BM_MRP_Usage_Local_Purchase.cs">
+    </Compile>
+    <Compile Include="MRP\Pop_BM_Order_List.cs">
+    </Compile>
+    <Compile Include="MRP\Pop_BM_Password.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MRP\Pop_BM_Print_Type.cs">
+    </Compile>
+    <Compile Include="MRP\Pop_BM_Shipping_Confirm.cs">
+    </Compile>
+    <Compile Include="MRP\Pop_BM_Shipping_LeadTime.cs">
+    </Compile>
+    <Compile Include="MRP\Pop_BM_Shipping_Schedule_OA.cs">
+    </Compile>
+    <Compile Include="MRP\Pop_BM_Shipping_Schedule_Remarks.cs">
+    </Compile>
+    <Compile Include="MRP\Pop_BM_Shipping_Schedule_Size.cs">
+    </Compile>
+    <Compile Include="MRP\Pop_BM_Shipping_Wait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MRP\Pop_BM_Silhouette.cs">
+    </Compile>
+    <Compile Include="MRP\Pop_BM_Text.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MRP\Pop_Finder.cs">
+    </Compile>
+    <EmbeddedResource Include="licenses.licx" />
+    <EmbeddedResource Include="MRP\Ctl_BM_MRP_Operation.resx">
+      <DependentUpon>Ctl_BM_MRP_Operation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_Business_Area.resx">
+      <DependentUpon>Form_BM_Business_Area.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_Current_Adjust.resx">
+      <DependentUpon>Form_BM_Current_Adjust.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_JITForecast.resx">
+      <DependentUpon>Form_BM_JITForecast.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_MRP_Adjust.resx">
+      <DependentUpon>Form_BM_MRP_Adjust.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_MRP_Item.resx">
+      <DependentUpon>Form_BM_MRP_Item.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_MRP_List.resx">
+      <DependentUpon>Form_BM_MRP_List.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_MRP_Local.resx">
+      <DependentUpon>Form_BM_MRP_Local.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_MRP_Local_30.resx">
+      <DependentUpon>Form_BM_MRP_Local_30.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_MRP_Local_Material_BySRF.resx">
+      <DependentUpon>Form_BM_MRP_Local_Material_BySRF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_MRP_Monitoring.resx">
+      <DependentUpon>Form_BM_MRP_Monitoring.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_MRP_Monitoring_Local2.resx">
+      <DependentUpon>Form_BM_MRP_Monitoring_Local2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_MRP_Monitoring_Style.resx">
+      <DependentUpon>Form_BM_MRP_Monitoring_Style.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_MRP_Operation.resx">
+      <DependentUpon>Form_BM_MRP_Operation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_MRP_Request.resx">
+      <DependentUpon>Form_BM_MRP_Request.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_Ready_MPS.resx">
+      <DependentUpon>Form_BM_Ready_MPS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_Ready_Mps_Yield.resx">
+      <DependentUpon>Form_BM_Ready_Mps_Yield.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_Ready_Order.resx">
+      <DependentUpon>Form_BM_Ready_Order.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_Ready_Order_Local.resx">
+      <DependentUpon>Form_BM_Ready_Order_Local.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_Ready_Size.resx">
+      <DependentUpon>Form_BM_Ready_Size.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_Ready_Yield.resx">
+      <DependentUpon>Form_BM_Ready_Yield.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_Ready_Yield_Local.resx">
+      <DependentUpon>Form_BM_Ready_Yield_Local.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_Ready_Yield_Local2.resx">
+      <DependentUpon>Form_BM_Ready_Yield_Local2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_Shipping_Adjust.resx">
+      <DependentUpon>Form_BM_Shipping_Adjust.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_Shipping_Air_Flight.resx">
+      <DependentUpon>Form_BM_Shipping_Air_Flight.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_Shipping_Confirm.resx">
+      <DependentUpon>Form_BM_Shipping_Confirm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_Shipping_LeadTime.resx">
+      <DependentUpon>Form_BM_Shipping_LeadTime.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_Shipping_Local_Forecast.resx">
+      <DependentUpon>Form_BM_Shipping_Local_Forecast.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_Shipping_Local_Search_ByStyle.resx">
+      <DependentUpon>Form_BM_Shipping_Local_Search_ByStyle.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_Shipping_Master.resx">
+      <DependentUpon>Form_BM_Shipping_Master.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_Shipping_Parameter.resx">
+      <DependentUpon>Form_BM_Shipping_Parameter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_Shipping_Schedule_Search_Mps.resx">
+      <DependentUpon>Form_BM_Shipping_Schedule_Search_Mps.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Form_BM_Shipping_Search.resx">
+      <DependentUpon>Form_BM_Shipping_Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Pop_BM_Changer.resx">
+      <DependentUpon>Pop_BM_Changer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Pop_BM_CItem.resx">
+      <DependentUpon>Pop_BM_CItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Pop_BM_DItem.resx">
+      <DependentUpon>Pop_BM_DItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Pop_BM_Forecast_List.resx">
+      <DependentUpon>Pop_BM_Forecast_List.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Pop_BM_InOut_Infomation.resx">
+      <DependentUpon>Pop_BM_InOut_Infomation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Pop_BM_MRP_Adjust_Usage_Check.resx">
+      <DependentUpon>Pop_BM_MRP_Adjust_Usage_Check.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Pop_BM_MRP_No_List.resx">
+      <DependentUpon>Pop_BM_MRP_No_List.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Pop_BM_MRP_Usage_Local_Purchase.resx">
+      <DependentUpon>Pop_BM_MRP_Usage_Local_Purchase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Pop_BM_Order_List.resx">
+      <DependentUpon>Pop_BM_Order_List.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Pop_BM_Password.resx">
+      <DependentUpon>Pop_BM_Password.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Pop_BM_Print_Type.resx">
+      <DependentUpon>Pop_BM_Print_Type.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Pop_BM_Shipping_Confirm.resx">
+      <DependentUpon>Pop_BM_Shipping_Confirm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Pop_BM_Shipping_LeadTime.resx">
+      <DependentUpon>Pop_BM_Shipping_LeadTime.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Pop_BM_Shipping_Schedule_OA.resx">
+      <DependentUpon>Pop_BM_Shipping_Schedule_OA.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Pop_BM_Shipping_Schedule_Remarks.resx">
+      <DependentUpon>Pop_BM_Shipping_Schedule_Remarks.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Pop_BM_Shipping_Schedule_Size.resx">
+      <DependentUpon>Pop_BM_Shipping_Schedule_Size.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Pop_BM_Shipping_Wait.resx">
+      <DependentUpon>Pop_BM_Shipping_Wait.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Pop_BM_Silhouette.resx">
+      <DependentUpon>Pop_BM_Silhouette.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Pop_BM_Text.resx">
+      <DependentUpon>Pop_BM_Text.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MRP\Pop_Finder.resx">
+      <DependentUpon>Pop_Finder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\COM\Com.csproj">
+      <Project>{992378C3-66A1-4E98-96F5-CE2B26E0CAB2}</Project>
+      <Name>Com</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FlexBase\FlexBase.csproj">
+      <Project>{7EDD1127-0A21-4B58-A3A8-8BC506D437FD}</Project>
+      <Name>FlexBase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

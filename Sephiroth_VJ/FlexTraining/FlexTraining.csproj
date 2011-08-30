@@ -1,0 +1,420 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1088C548-6E29-43ED-94FC-F1674D2D7F9F}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>FlexTraining</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FlexTraining</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.RDBROWSERLib">
+      <Name>AxInterop.RDBROWSERLib</Name>
+      <HintPath>obj\AxInterop.RDBROWSERLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.RDVIEWER40Lib">
+      <Name>AxInterop.RDVIEWER40Lib</Name>
+      <HintPath>obj\AxInterop.RDVIEWER40Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Common">
+      <Name>C1.Common</Name>
+      <HintPath>bin\Debug\C1.Common.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\c1studio</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="C1.Win.C1Command.2, Version=2.0.20071.19104, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1FlexGrid.2, Version=2.6.20071.324, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Input.2, Version=2.0.20071.32002, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\C1.Win.C1Input.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1List.2, Version=2.1.20071.117, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Sizer.2, Version=2.1.20071.17, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\C1.Win.C1Sizer.2.dll</HintPath>
+    </Reference>
+    <Reference Include="COM">
+      <Name>COM</Name>
+      <HintPath>..\COM\bin\Debug\COM.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win">
+      <Name>FarPoint.Win</Name>
+      <HintPath>..\DLL\FarPoint.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Spread">
+      <Name>FarPoint.Win.Spread</Name>
+      <HintPath>..\DLL\FarPoint.Win.Spread.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <Name>Interop.Excel</Name>
+      <HintPath>..\DLL\Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core">
+      <Name>Interop.Microsoft.Office.Core</Name>
+      <HintPath>..\DLL\Interop.Microsoft.Office.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.RDBROWSERLib">
+      <Name>Interop.RDBROWSERLib</Name>
+      <HintPath>obj\Interop.RDBROWSERLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.OracleClient">
+      <Name>System.Data.OracleClient</Name>
+    </Reference>
+    <Reference Include="System.DirectoryServices">
+      <Name>System.DirectoryServices</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Mobile">
+      <Name>System.Web.Mobile</Name>
+    </Reference>
+    <Reference Include="System.Web.RegularExpressions">
+      <Name>System.Web.RegularExpressions</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <COMReference Include="RDVIEWER40Lib">
+      <Guid>{D760DF6F-34C7-4887-9CDA-614F693EB6EF}</Guid>
+      <VersionMajor>4</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+    </COMReference>
+    <COMReference Include="StdType">
+      <Guid>{BEF6E001-A874-101A-8BBA-00AA00300CAB}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <Content Include="App.ico" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ClassForm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ComCtl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ComFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ComVar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\IXTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ETC\Form_NMI_Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ETC\Form_Nosew_NMI_Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ETC\Form_SIV_TCM_Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ETC\Form_SVM_Common.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ETC\Form_SVM_Standard_RPM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ETC\Form_SVM_VOC_Material_Process_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ETC\Form_SVM_VOC_Material_Tracking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ETC\Form_SVM_VOC_Material_Tracking_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ETC\Form_SVM_VOC_Material_Tracking_T.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ETC\Form_SVM_VOC_Tracking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Evaluation\Form_Evaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Evaluation\Form_Follow_Up_Head.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Evaluation\Pop_SIM_Skill_Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Report\Frm_Daily_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\Form_Emp_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\Form_Skill_Management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\Form_Training_Attendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\Form_Training_Management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\Form_Training_PGM_Schedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\Pop_Emp_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\Pop_Trainee_Outside.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\Pop_Trainer_Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\Pop_Training_Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Form_Target.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Form_Trainee_Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Form_Trainer_Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Form_Training_GRP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Form_Training_Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Form_Training_Required.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Form_Training_Target.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Pop_Employee_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Pop_Trainer_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Pop_Training_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Form_RdViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="ETC\Form_NMI_Register.resx">
+      <DependentUpon>Form_NMI_Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ETC\Form_Nosew_NMI_Register.resx">
+      <DependentUpon>Form_Nosew_NMI_Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ETC\Form_SIV_TCM_Register.resx">
+      <DependentUpon>Form_SIV_TCM_Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ETC\Form_SVM_Common.resx">
+      <DependentUpon>Form_SVM_Common.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ETC\Form_SVM_Standard_RPM.resx">
+      <DependentUpon>Form_SVM_Standard_RPM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ETC\Form_SVM_VOC_Material_Process_Report.resx">
+      <DependentUpon>Form_SVM_VOC_Material_Process_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ETC\Form_SVM_VOC_Material_Tracking.resx">
+      <DependentUpon>Form_SVM_VOC_Material_Tracking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ETC\Form_SVM_VOC_Material_Tracking_Report.resx">
+      <DependentUpon>Form_SVM_VOC_Material_Tracking_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ETC\Form_SVM_VOC_Material_Tracking_T.resx">
+      <DependentUpon>Form_SVM_VOC_Material_Tracking_T.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Evaluation\Form_Evaluation.resx">
+      <DependentUpon>Form_Evaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Evaluation\Form_Follow_Up_Head.resx">
+      <DependentUpon>Form_Follow_Up_Head.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Evaluation\Pop_SIM_Skill_Master.resx">
+      <DependentUpon>Pop_SIM_Skill_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Report\Frm_Daily_Report.resx">
+      <DependentUpon>Frm_Daily_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="licenses.licx" />
+    <EmbeddedResource Include="Management\Form_Emp_Info.resx">
+      <DependentUpon>Form_Emp_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_Skill_Management.resx">
+      <DependentUpon>Form_Skill_Management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_Training_Attendance.resx">
+      <DependentUpon>Form_Training_Attendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_Training_Management.resx">
+      <DependentUpon>Form_Training_Management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_Training_PGM_Schedule.resx">
+      <DependentUpon>Form_Training_PGM_Schedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Pop_Emp_List.resx">
+      <DependentUpon>Pop_Emp_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Pop_Trainee_Outside.resx">
+      <DependentUpon>Pop_Trainee_Outside.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Pop_Trainer_Master.resx">
+      <DependentUpon>Pop_Trainer_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Pop_Training_Master.resx">
+      <DependentUpon>Pop_Training_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Form_Target.resx">
+      <DependentUpon>Form_Target.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Form_Trainee_Information.resx">
+      <DependentUpon>Form_Trainee_Information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Form_Trainer_Master.resx">
+      <DependentUpon>Form_Trainer_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Form_Training_GRP.resx">
+      <DependentUpon>Form_Training_GRP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Form_Training_Master.resx">
+      <DependentUpon>Form_Training_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Form_Training_Required.resx">
+      <DependentUpon>Form_Training_Required.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Form_Training_Target.resx">
+      <DependentUpon>Form_Training_Target.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Pop_Employee_List.resx">
+      <DependentUpon>Pop_Employee_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Pop_Trainer_List.resx">
+      <DependentUpon>Pop_Trainer_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Pop_Training_List.resx">
+      <DependentUpon>Pop_Training_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Form_RdViewer.resx">
+      <DependentUpon>Form_RdViewer.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Base\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

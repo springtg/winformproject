@@ -1,0 +1,505 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6D24664E-C677-427B-B2D5-D235EF79E0D6}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>FlexMold</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FlexMold</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.RDVIEWER40Lib">
+      <Name>AxInterop.RDVIEWER40Lib</Name>
+      <HintPath>obj\AxInterop.RDVIEWER40Lib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="C1.Common">
+      <Name>C1.Common</Name>
+      <HintPath>C:\Program Files\ComponentOne Studio.NET\bin\C1.Common.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\c1studio</AssemblyFolderKey>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="C1.Win.C1Chart">
+      <Name>C1.Win.C1Chart</Name>
+      <HintPath>C:\Program Files\ComponentOne Studio.NET\bin\C1.Win.C1Chart.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\c1studio</AssemblyFolderKey>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="C1.Win.C1Chart.2, Version=2.0.20071.17032, Culture=neutral, PublicKeyToken=a22e16972c085838, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Chart3D">
+      <Name>C1.Win.C1Chart3D</Name>
+      <HintPath>C:\Program Files\ComponentOne Studio.NET\bin\C1.Win.C1Chart3D.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\c1studio</AssemblyFolderKey>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="C1.Win.C1Command.2, Version=2.0.20071.19104, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1FlexGrid.2, Version=2.6.20071.324, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Input">
+      <Name>C1.Win.C1Input</Name>
+      <HintPath>C:\Program Files\ComponentOne Studio.NET\bin\C1.Win.C1Input.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\c1studio</AssemblyFolderKey>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="C1.Win.C1List.2, Version=2.1.20071.117, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1List.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Report">
+      <Name>C1.Win.C1Report</Name>
+      <HintPath>C:\Program Files\ComponentOne Studio.NET\bin\C1.Win.C1Report.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\c1studio</AssemblyFolderKey>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="C1.Win.C1Sizer">
+      <Name>c1.win.c1sizer</Name>
+      <HintPath>..\DLL\c1.win.c1sizer.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\c1studio</AssemblyFolderKey>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FarPoint.Win">
+      <Name>FarPoint.Win</Name>
+      <HintPath>C:\Program Files\FarPoint Technologies\Spread.WinForms\v1.0.2.0\Bin\FarPoint.Win.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\farpoint spread for windows forms 1.0.2.0</AssemblyFolderKey>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FarPoint.Win.Spread">
+      <Name>FarPoint.Win.Spread</Name>
+      <HintPath>C:\Program Files\FarPoint Technologies\Spread.WinForms\v1.0.2.0\Bin\FarPoint.Win.Spread.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\farpoint spread for windows forms 1.0.2.0</AssemblyFolderKey>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <Name>Interop.Excel</Name>
+      <HintPath>..\DLL\Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core">
+      <Name>Interop.Microsoft.Office.Core</Name>
+      <HintPath>..\DLL\Interop.Microsoft.Office.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.OracleClient">
+      <Name>System.Data.OracleClient</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.DirectoryServices">
+      <Name>System.DirectoryServices</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Management">
+      <Name>System.Management</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security">
+      <Name>System.Security</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+      <Private>False</Private>
+    </Reference>
+    <COMReference Include="AxMSChart20Lib">
+      <Guid>{65E121D4-0C60-11D2-A9FC-0000F8754DA1}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Private>True</Private>
+    </COMReference>
+    <COMReference Include="AxOWC">
+      <Guid>{0002E540-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Private>True</Private>
+    </COMReference>
+    <COMReference Include="MSChart20Lib">
+      <Guid>{65E121D4-0C60-11D2-A9FC-0000F8754DA1}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Private>True</Private>
+    </COMReference>
+    <COMReference Include="MSComctlLib">
+      <Guid>{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Private>True</Private>
+    </COMReference>
+    <COMReference Include="MSDATASRC">
+      <Guid>{7C0FFAB0-CD84-11D0-949A-00A0C91110ED}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Private>True</Private>
+    </COMReference>
+    <COMReference Include="OWC">
+      <Guid>{0002E540-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Private>True</Private>
+    </COMReference>
+    <COMReference Include="RDVIEWER40Lib">
+      <Guid>{D760DF6F-34C7-4887-9CDA-614F693EB6EF}</Guid>
+      <VersionMajor>4</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Private>True</Private>
+    </COMReference>
+    <COMReference Include="stdole1">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Private>False</Private>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Private>False</Private>
+    </COMReference>
+    <ProjectReference Include="..\COM\Com.csproj">
+      <Name>Com</Name>
+      <Project>{992378C3-66A1-4E98-96F5-CE2B26E0CAB2}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+    <Content Include="bin\Debug\AxInterop.RDVIEWER40Lib.dll" />
+    <Content Include="bin\Debug\FarPoint.Win.dll" />
+    <Content Include="bin\Debug\FarPoint.Win.Spread.dll" />
+    <Content Include="bin\Debug\FlexMold.dll" />
+    <Content Include="bin\Debug\FlexMold.pdb" />
+    <Content Include="bin\Debug\Interop.Excel.dll" />
+    <Content Include="bin\Debug\Interop.Microsoft.Office.Core.dll" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ClassForm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ComCtl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ComFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\ComVar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassLib\IXTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Demand\Form_VM_DP_LOAD.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Model_Mold.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_Daily_Report.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_Error.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_Err_Report.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_History.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_In.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_In_Out_Daily.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_Located.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_Located_Report.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_Monthlly_Amount_Report.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_Monthly_Report.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_Moving_Paper.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_Out.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_PO.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_Prod.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_Prod_Report.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_Repair.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_Repair_History.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_Repair_Report.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_Repair_Search.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_Repair_Vendor.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_Slip.cs">
+    </Compile>
+    <Compile Include="Management\Form_PB_Mold_Status.cs">
+    </Compile>
+    <Compile Include="Management\Form_Sys_PGM_Mon.cs">
+    </Compile>
+    <Compile Include="Management\Form_Sys_PGM_Monitor_By_Date.cs">
+    </Compile>
+    <Compile Include="Master\Form_PB_Model.cs">
+    </Compile>
+    <Compile Include="Master\Form_PB_Mold_Basic_Error.cs">
+    </Compile>
+    <Compile Include="Master\Form_PB_Mold_Basic_Wh.cs">
+    </Compile>
+    <Compile Include="Master\Form_PB_Mold_Master.cs">
+    </Compile>
+    <Compile Include="Master\Pop_Mold_List.cs">
+    </Compile>
+    <Compile Include="Report\Form_RdViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tooling\Form_ST_Purchase_Code.cs">
+    </Compile>
+    <Compile Include="Tooling\Form_ST_Purchase_Order.cs">
+    </Compile>
+    <Compile Include="Tooling\Form_ST_Purchase_PO_Report.cs">
+    </Compile>
+    <Compile Include="Tooling\Form_ST_Purchas_Search.cs">
+    </Compile>
+    <Compile Include="Tooling\Pop_DC_ModelSearch.cs">
+    </Compile>
+    <EmbeddedResource Include="Demand\Form_VM_DP_LOAD.resx">
+      <DependentUpon>Form_VM_DP_LOAD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="licenses.licx" />
+    <EmbeddedResource Include="Management\Form_PB_Model_Mold.resx">
+      <DependentUpon>Form_PB_Model_Mold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold.resx">
+      <DependentUpon>Form_PB_Mold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_Daily_Report.resx">
+      <DependentUpon>Form_PB_Mold_Daily_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_Error.resx">
+      <DependentUpon>Form_PB_Mold_Error.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_Err_Report.resx">
+      <DependentUpon>Form_PB_Mold_Err_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_History.resx">
+      <DependentUpon>Form_PB_Mold_History.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_In.resx">
+      <DependentUpon>Form_PB_Mold_In.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_In_Out_Daily.resx">
+      <DependentUpon>Form_PB_Mold_In_Out_Daily.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_Located.resx">
+      <DependentUpon>Form_PB_Mold_Located.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_Located_Report.resx">
+      <DependentUpon>Form_PB_Mold_Located_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_Monthlly_Amount_Report.resx">
+      <DependentUpon>Form_PB_Mold_Monthlly_Amount_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_Monthly_Report.resx">
+      <DependentUpon>Form_PB_Mold_Monthly_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_Moving_Paper.resx">
+      <DependentUpon>Form_PB_Mold_Moving_Paper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_Out.resx">
+      <DependentUpon>Form_PB_Mold_Out.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_PO.resx">
+      <DependentUpon>Form_PB_Mold_PO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_Prod.resx">
+      <DependentUpon>Form_PB_Mold_Prod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_Prod_Report.resx">
+      <DependentUpon>Form_PB_Mold_Prod_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_Repair.resx">
+      <DependentUpon>Form_PB_Mold_Repair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_Repair_History.resx">
+      <DependentUpon>Form_PB_Mold_Repair_History.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_Repair_Report.resx">
+      <DependentUpon>Form_PB_Mold_Repair_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_Repair_Search.resx">
+      <DependentUpon>Form_PB_Mold_Repair_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_Repair_Vendor.resx">
+      <DependentUpon>Form_PB_Mold_Repair_Vendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_Slip.resx">
+      <DependentUpon>Form_PB_Mold_Slip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_PB_Mold_Status.resx">
+      <DependentUpon>Form_PB_Mold_Status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_Sys_PGM_Mon.resx">
+      <DependentUpon>Form_Sys_PGM_Mon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\Form_Sys_PGM_Monitor_By_Date.resx">
+      <DependentUpon>Form_Sys_PGM_Monitor_By_Date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Form_PB_Model.resx">
+      <DependentUpon>Form_PB_Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Form_PB_Mold_Basic_Error.resx">
+      <DependentUpon>Form_PB_Mold_Basic_Error.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Form_PB_Mold_Basic_Wh.resx">
+      <DependentUpon>Form_PB_Mold_Basic_Wh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Form_PB_Mold_Master.resx">
+      <DependentUpon>Form_PB_Mold_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Pop_Mold_List.resx">
+      <DependentUpon>Pop_Mold_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Form_RdViewer.resx">
+      <DependentUpon>Form_RdViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tooling\Form_ST_Purchase_Code.resx">
+      <DependentUpon>Form_ST_Purchase_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tooling\Form_ST_Purchase_Order.resx">
+      <DependentUpon>Form_ST_Purchase_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tooling\Form_ST_Purchase_PO_Report.resx">
+      <DependentUpon>Form_ST_Purchase_PO_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tooling\Form_ST_Purchas_Search.resx">
+      <DependentUpon>Form_ST_Purchas_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tooling\Pop_DC_ModelSearch.resx">
+      <DependentUpon>Pop_DC_ModelSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Report\viewer.bak" />
+    <None Include="Report\viewer.rdf" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
