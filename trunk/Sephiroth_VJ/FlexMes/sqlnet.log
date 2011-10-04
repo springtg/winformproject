@@ -1,0 +1,954 @@
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 12-JAN-04 14:51:47
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:수신지에 연결할 수 없습니다
+    ns main err code: 12560
+    TNS-12560: TNS:프로토콜 어댑터 오류
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: 프로토콜 어댑터 오류입니다
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 13-JAN-04 17:28:02
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:수신지에 연결할 수 없습니다
+    ns main err code: 12560
+    TNS-12560: TNS:프로토콜 어댑터 오류
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: 프로토콜 어댑터 오류입니다
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 13-JAN-04 17:28:03
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:수신지에 연결할 수 없습니다
+    ns main err code: 12560
+    TNS-12560: TNS:프로토콜 어댑터 오류
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: 프로토콜 어댑터 오류입니다
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 18-MAY-04 18:46:45
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 18-MAY-04 18:46:56
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 18-MAY-04 18:46:57
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 18-MAY-04 18:46:57
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 18-MAY-04 18:46:57
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 18-MAY-04 18:47:03
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 18-MAY-04 18:47:03
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 18-MAY-04 18:47:03
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 18-MAY-04 18:47:03
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 18-MAY-04 18:47:09
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 18-MAY-04 18:47:13
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=211.54.128.9)(Port=1521)))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 01-JUL-04 06:56:17
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 538
+    TNS-00538: Message 538 not found;  product=NET80; facility=TNS
+
+    nt secondary err code: 65
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 01-JUL-04 06:56:17
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=211.54.128.9)(Port=1521)))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 01-JUL-04 06:59:28
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12535
+    TNS-12535: TNS:operation timed out
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: Operation timed out
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 01-JUL-04 06:59:28
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=211.54.128.9)(Port=1521)))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 09-AUG-04 07:34:01
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 538
+    TNS-00538: Message 538 not found;  product=NET80; facility=TNS
+
+    nt secondary err code: 65
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 09-AUG-04 07:34:01
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=211.54.128.9)(Port=1521)))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 09-AUG-04 07:34:40
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12535
+    TNS-12535: TNS:operation timed out
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: Operation timed out
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 09-AUG-04 07:34:40
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=211.54.128.9)(Port=1521)))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 20-SEP-04 07:07:40
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12535
+    TNS-12535: TNS:operation timed out
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: Operation timed out
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 20-SEP-04 07:07:41
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=211.54.128.9)(Port=1521)))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 08-NOV-04 07:10:53
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 538
+    TNS-00538: Message 538 not found;  product=NET80; facility=TNS
+
+    nt secondary err code: 65
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 08-NOV-04 07:10:53
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=211.54.128.9)(Port=1521)))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 08-NOV-04 07:14:15
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12535
+    TNS-12535: TNS:operation timed out
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: Operation timed out
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 08-NOV-04 07:14:15
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=211.54.128.9)(Port=1521)))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 12-NOV-04 07:03:18
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 538
+    TNS-00538: Message 538 not found;  product=NET80; facility=TNS
+
+    nt secondary err code: 65
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 12-NOV-04 07:03:19
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=211.54.128.9)(Port=1521)))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 12-NOV-04 07:03:39
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 538
+    TNS-00538: Message 538 not found;  product=NET80; facility=TNS
+
+    nt secondary err code: 65
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 12-NOV-04 07:03:39
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=211.54.128.9)(Port=1521)))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 12-NOV-04 07:03:43
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 538
+    TNS-00538: Message 538 not found;  product=NET80; facility=TNS
+
+    nt secondary err code: 65
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 12-NOV-04 07:03:43
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=211.54.128.9)(Port=1521)))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 12-NOV-04 07:03:56
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 538
+    TNS-00538: Message 538 not found;  product=NET80; facility=TNS
+
+    nt secondary err code: 65
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 12-NOV-04 07:03:56
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=211.54.128.9)(Port=1521)))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 28-NOV-04 22:21:56
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 538
+    TNS-00538: Message 538 not found;  product=NET80; facility=TNS
+
+    nt secondary err code: 65
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 28-NOV-04 22:21:56
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=211.54.128.9)(Port=1521)))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 10-DEC-04 07:01:21
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 538
+    TNS-00538: Message 538 not found;  product=NET80; facility=TNS
+
+    nt secondary err code: 65
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 10-DEC-04 07:01:21
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=211.54.128.9)(Port=1521)))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 10-DEC-04 07:02:10
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12535
+    TNS-12535: TNS:operation timed out
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: Operation timed out
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 10-DEC-04 07:02:10
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=211.54.128.9)(Port=1521)))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 12-FEB-05 21:18:47
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 538
+    TNS-00538: Message 538 not found;  product=NET80; facility=TNS
+
+    nt secondary err code: 65
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 12-FEB-05 21:18:47
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: TNS:unable to connect to destination
+    ns main err code: 12560
+    TNS-12560: TNS:protocol adapter error
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Protocol adapter error
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12203, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle80)(ARGV0=oracle80ORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\CSI\NEOMICS_PROD\MES.exe)(HOST=SHWKANG)(USER=sunghwa.kang))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 8.0.5.0.0 - Production
+  Time: 05-APR-05 15:01:17
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 12203
+    TNS-12203: Message 12203 not found; No message file for product=NET80, facility=TNS
+    ns main err code: 12538
+    TNS-12538: Message 12538 not found; No message file for product=NET80, facility=TNS
+    ns secondary err code: 12560
+    nt main err code: 508
+    TNS-00508: Message 508 not found; No message file for product=NET80, facility=TNS
+    nt secondary err code: 0
+    nt OS err code: 0

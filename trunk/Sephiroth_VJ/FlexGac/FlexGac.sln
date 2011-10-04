@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlexGac", "FlexGac.csproj", "{39F2A51F-1681-46F3-B3CA-12083FD52346}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{39F2A51F-1681-46F3-B3CA-12083FD52346}.Debug.ActiveCfg = Debug|.NET
+		{39F2A51F-1681-46F3-B3CA-12083FD52346}.Debug.Build.0 = Debug|.NET
+		{39F2A51F-1681-46F3-B3CA-12083FD52346}.Release.ActiveCfg = Release|.NET
+		{39F2A51F-1681-46F3-B3CA-12083FD52346}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
