@@ -1,0 +1,157 @@
+[Root]
+Most Recent Package=Standard Setup Package 1
+
+
+[Package|Standard Setup Package 1|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\CSI\NEOMICS_PROD\Package (2)
+
+[Package|Standard Setup Package 1|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup Package 1|Files Found]
+
+[Package|Standard Setup Package 1|Files Released]
+
+[Package|Standard Setup Package 1|Missing Dependency Information]
+C:\CSI\NEOMICS_PROD\MesDown.exe=
+
+[Package|Standard Setup Package 1|Out-of-Date Dependency Information]
+D:\WINNT\system32\MSCOMCTL.OCX=
+
+[Package|Standard Setup Package 1|Files Added]
+c:\csi\neomics_prod\mesdown.exe=
+c:\csi\neomics_prod\neomics.ini=
+
+[Package|Standard Setup Package 1|Files Removed]
+
+[Package|Standard Setup Package 1|Files In Project]
+C:\CSI\NEOMICS_PROD\MES.exe=Yes
+D:\WINNT\system32\MSVBVM60.DLL=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+D:\WINNT\system32\VB6KO.DLL=Yes
+D:\WINNT\system32\Vsflex7L.ocx=Yes
+D:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=Yes
+D:\WINNT\system32\msjet40.dll=Yes
+D:\WINNT\system32\msjter40.dll=Yes
+D:\WINNT\system32\msjint40.dll=Yes
+D:\WINNT\system32\vbajet32.dll=Yes
+D:\WINNT\system32\expsrv.dll=Yes
+D:\WINNT\system32\mswstr10.dll=Yes
+D:\WINNT\system32\mswdat10.dll=Yes
+D:\WINNT\system32\msrd2x40.dll=Yes
+D:\WINNT\system32\msrd3x40.dll=Yes
+D:\WINNT\system32\msrepl40.dll=Yes
+D:\WINNT\system32\msjtes40.dll=Yes
+D:\WINNT\system32\VB5DB.DLL=Yes
+D:\WINNT\system32\MSCOMCTL.OCX=Yes
+D:\WINNT\system32\MSCMCKO.DLL=Yes
+D:\WINNT\system32\MSADODC.OCX=Yes
+D:\WINNT\system32\MSSTDFMT.DLL=Yes
+D:\WINNT\system32\STDFTKO.DLL=Yes
+D:\WINNT\system32\ADODCKO.DLL=Yes
+D:\WINNT\system32\COMDLG32.OCX=Yes
+D:\WINNT\system32\CMDLGKO.DLL=Yes
+D:\WINNT\system32\THREED32.OCX=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MFC40.DLL=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=Yes
+D:\WINNT\system32\MSCOMCT2.OCX=Yes
+D:\WINNT\system32\MSCC2KO.DLL=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+D:\WINNT\system32\VB6STKIT.DLL=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\CSI\NEOMICS_PROD\MesDown.exe=Yes
+C:\CSI\NEOMICS_PROD\NEOMICS.INI=Yes
+
+[Package|Standard Setup Package 1|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup Package 1|Install Locations]
+C:\CSI\NEOMICS_PROD\MES.exe=$(AppPath)
+D:\WINNT\system32\MSVBVM60.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+D:\WINNT\system32\VB6KO.DLL=$(WinSysPath)
+D:\WINNT\system32\Vsflex7L.ocx=$(WinSysPath)
+D:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=$(MSDAOPath)
+D:\WINNT\system32\msjet40.dll=$(WinSysPathSysFile)
+D:\WINNT\system32\msjter40.dll=$(WinSysPathSysFile)
+D:\WINNT\system32\msjint40.dll=$(WinSysPathSysFile)
+D:\WINNT\system32\vbajet32.dll=$(WinSysPathSysFile)
+D:\WINNT\system32\expsrv.dll=$(WinSysPathSysFile)
+D:\WINNT\system32\mswstr10.dll=$(WinSysPathSysFile)
+D:\WINNT\system32\mswdat10.dll=$(WinSysPathSysFile)
+D:\WINNT\system32\msrd2x40.dll=$(WinSysPathSysFile)
+D:\WINNT\system32\msrd3x40.dll=$(WinSysPathSysFile)
+D:\WINNT\system32\msrepl40.dll=$(WinSysPathSysFile)
+D:\WINNT\system32\msjtes40.dll=$(WinSysPathSysFile)
+D:\WINNT\system32\VB5DB.DLL=$(WinSysPath)
+D:\WINNT\system32\MSCOMCTL.OCX=$(WinSysPath)
+D:\WINNT\system32\MSCMCKO.DLL=$(WinSysPath)
+D:\WINNT\system32\MSADODC.OCX=$(WinSysPath)
+D:\WINNT\system32\MSSTDFMT.DLL=$(WinSysPath)
+D:\WINNT\system32\STDFTKO.DLL=$(WinSysPath)
+D:\WINNT\system32\ADODCKO.DLL=$(WinSysPath)
+D:\WINNT\system32\COMDLG32.OCX=$(WinSysPath)
+D:\WINNT\system32\CMDLGKO.DLL=$(WinSysPath)
+D:\WINNT\system32\THREED32.OCX=$(WinSysPath)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MFC40.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+D:\WINNT\system32\MSCOMCT2.OCX=$(WinSysPath)
+D:\WINNT\system32\MSCC2KO.DLL=$(WinSysPath)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+D:\WINNT\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\CSI\NEOMICS_PROD\MesDown.exe=$(AppPath)
+C:\CSI\NEOMICS_PROD\NEOMICS.INI=$(AppPath)
+
+[Package|Standard Setup Package 1|Configure Shared Files]
+Applicable=Yes
+C:\CSI\NEOMICS_PROD\MES.exe=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\CSI\NEOMICS_PROD\MesDown.exe=Yes
+C:\CSI\NEOMICS_PROD\NEOMICS.INI=Yes
+
+[Package|Standard Setup Package 1|Distribution]
+Type=single
+Size=
+Title=MES
+
+[Package|Standard Setup Package 1|Package]
+PackageFolder=C:\CSI\NEOMICS_PROD\Package (2)
+ProjectFolder=C:\CSI\NEOMICS_PROD
+ServerSideCab=
+File1=C:\CSI\NEOMICS_PROD\Package (2)\setup.exe
+File2=C:\CSI\NEOMICS_PROD\Package (2)\Setup.Lst
+File3=C:\CSI\NEOMICS_PROD\Package (2)\MES.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Package|Standard Setup Package 1|IconGroups]
+Group0=MES
+PrivateGroup0=-1
+Parent0=$(Programs)
+
+[Package|Standard Setup Package 1|MES]
+Icon1=MES.exe
+Title1=MES
+StartIn1=$(AppPath)
+Key1=Icon1
